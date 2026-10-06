@@ -95,7 +95,12 @@ h1 .arrow{color:var(--grey);margin-left:-4px}
 .house .lbl{font-size:11px;color:var(--grey-2);letter-spacing:1px;text-transform:uppercase;margin:0 0 6px}
 .house h2{font-size:18px;margin:0 0 4px}
 .house p{margin:0 0 12px;font-size:14px;color:#333}
-.house .ctas{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.house .ctas{display:flex;flex-wrap:nowrap;gap:8px;align-items:center}
+@media(max-width:340px){.house .ctas{flex-wrap:wrap}}
+.house .cta{white-space:nowrap}
+
+.house .cta.sec{font-weight:600;border-width:1.5px;text-decoration:none}
+.house .cta.sec:hover{text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:var(--yellow);text-underline-offset:3px}
 .house .cta{display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--ink);border:2px solid var(--yellow);font-weight:800;border-radius:10px;padding:8px 13px;font-size:14px;text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:.45em;text-underline-offset:-.22em;text-decoration-skip-ink:none}
 .house .cta:hover{background:#fffbea}
 .house .own{border-top:1px solid var(--line);margin-top:14px;padding-top:8px;font-size:12px;color:var(--grey-2)}
@@ -202,7 +207,7 @@ body[data-state="closed"] .house .own{display:none}
 <p>Our AI agent runs it for you, by WhatsApp or email, and brings you new customers. Your name and your branding, not ours. Your numbers stay behind this same check: real customers pass in one tap, scrapers and spam bots don't.</p>
 <div class="ctas">
 <a class="cta" href="https://wa.me/newcustomers?text=%5BGATE%7Csignup%5D%20Hi%2C%20sign%20me%20up%20for%20my%20free%20website.%0AMy%20email%3A%20"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Start on WhatsApp</a>
-<a class="cta" href="mailto:newcustomers@contact.page?subject=%5BGATE%7Csignup%5D%20Sign%20me%20up%20for%20my%20free%20website&amp;body=Business%20name%3A%0ACity%3A%0AOne%20way%20customers%20can%20reach%20you%3A"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>By email</a>
+<a class="cta sec" href="mailto:newcustomers@contact.page?subject=%5BGATE%7Csignup%5D%20Sign%20me%20up%20for%20my%20free%20website&amp;body=Business%20name%3A%0ACity%3A%0AOne%20way%20customers%20can%20reach%20you%3A"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>By email</a>
 </div>
 <div class="own"><a class="linkbtn" href="https://wa.me/newcustomers?text=%5BGATE%7Ckh34363%7Cclaim%5D%20Hi%2C%20I%20work%20at%20or%20own%20Yellow%20Tower%20%28kh34363.contact.page%29%20and%20want%20to%20claim%20this%20page.">Claim</a> · <a class="linkbtn" href="https://wa.me/newcustomers?text=%5BGATE%7Ckh34363%7Cedit%5D%20Hi%2C%20I%20want%20to%20update%20Yellow%20Tower%20%28kh34363.contact.page%29.">Edit</a> · <a class="linkbtn" href="https://wa.me/newcustomers?text=%5BGATE%7Ckh34363%7Cremove%5D%20Hi%2C%20I%20want%20Yellow%20Tower%20%28kh34363.contact.page%29%20removed.">Remove</a> · <a class="linkbtn" href="https://wa.me/newcustomers?text=%5BGATE%7Ckh34363%7Creport%5D%20Hi%2C%20I%20want%20to%20report%20a%20problem%20with%20Yellow%20Tower%20%28kh34363.contact.page%29%3A%20">Report</a></div>
 
@@ -210,7 +215,7 @@ body[data-state="closed"] .house .own{display:none}
 
 
 <div class="meta">
-sample, not production · Yellow Tower security page · version 13 · 2026-10-07 · older versions in archive/<br>
+sample, not production · Yellow Tower security page · version 14 · 2026-10-07 · older versions in archive/<br>
 states:
 <button type="button" data-state="first" data-ts="auto" aria-pressed="true">human slide passes</button> ·
 <button type="button" data-state="first" data-ts="click" aria-pressed="false">challenge wants a click</button> ·
