@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact Yellow Tower (chat)</title>
+<meta name="theme-color" content="#f7f5f2">
+
+
+<style>
+:root{--ink:#161616;--grey:#667781;--line:#e3e1dd;--wall:#efeae2;--in:#fff;--out:#d9fdd3;--sys:#fff5c4;--yellow:#FFC400;--wa:#25D366;--ok:#1a7f37;--bad:#b42318}
+*{box-sizing:border-box}
+html,body{margin:0;background:#e9e7e3;color:var(--ink)}
+html{scroll-padding:64px 0 72px}
+body{font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:inherit}
+.app{max-width:480px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;background:var(--wall);position:relative}
+.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;padding:8px 12px;background:#f7f5f2;border-top:3px solid var(--yellow);border-bottom:1px solid var(--line)}
+.top .bk{display:flex;color:var(--ink);text-decoration:none;padding:4px}
+.av{width:36px;height:36px;border-radius:50%;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex:none}
+.top .who{flex:1;min-width:0;line-height:1.25}
+.top b{display:block;font-size:16px}
+.top small{color:var(--grey);font-size:12px}
+.top .alt{font-size:12px;color:var(--grey)}
+.src{position:absolute;top:14px;right:6px;color:#cfcac2;line-height:0;z-index:6}
+.log{flex:1;padding:12px 10px 8px;display:flex;flex-direction:column;gap:6px}
+.sys{align-self:center;max-width:88%;background:var(--sys);color:#54656f;font-size:12.5px;text-align:center;padding:5px 10px;border-radius:8px;box-shadow:0 1px .5px rgba(0,0,0,.08)}
+.sys a{color:var(--ink)}
+.b{max-width:86%;padding:6px 9px 4px;border-radius:8px;box-shadow:0 1px .5px rgba(0,0,0,.13);animation:in .12s ease-out}
+.b.in{align-self:flex-start;background:var(--in);border-top-left-radius:2px}
+.b.out{align-self:flex-end;background:var(--out);border-top-right-radius:2px}
+.b p{margin:0 0 4px}
+.t{display:block;text-align:right;font-size:11px;color:var(--grey);margin-top:2px}
+@keyframes in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.b{animation:none}}
+.k{font-size:12px;color:var(--grey);margin:0}
+.v{font-size:17px;font-weight:700;margin:1px 0 2px;word-break:break-word}
+.b.un .v{font-size:15px;font-weight:600}
+.st{font-size:12px;color:var(--grey);display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.st .ok{color:var(--ok);font-weight:600}
+.st .bad{color:var(--bad)}
+.acts{display:flex;gap:8px;margin:7px 0 2px;flex-wrap:wrap}
+.ia{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:#fff;display:inline-flex;align-items:center;justify-content:center;color:var(--ink);cursor:pointer;padding:0;text-decoration:none}
+.ia:hover{background:#f5f5f5}
+.ia:focus-visible,.chip:focus-visible,.lk:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.ia svg{width:17px;height:17px}
+.ia.wa{color:var(--wa)}
+.ia.tg{color:#2AABEE}
+.ia.dim{opacity:.55}
+.lk{background:none;border:0;padding:0;font:inherit;font-weight:600;color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.vote{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--grey);margin-top:4px}
+.vote button{display:inline-flex;align-items:center;gap:4px;height:26px;padding:0 8px;border:1px solid var(--line);border-radius:13px;background:#fff;font:600 12px/1 inherit;color:var(--ink);cursor:pointer}
+.vote button svg{width:13px;height:13px}
+.vote button.on{border-color:var(--ink)}
+.vote button:disabled{cursor:default}
+.pin{display:flex;gap:8px;align-items:flex-start}
+.pin svg{width:18px;height:18px;margin-top:2px;color:var(--grey)}
+.tick{width:14px;height:14px;color:var(--ok)}
+.toast{font-size:12px;color:var(--ok);margin-left:4px}
+.bar{position:sticky;bottom:0;z-index:5;background:#f7f5f2;border-top:1px solid var(--line);padding:8px 10px calc(8px + env(safe-area-inset-bottom))}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 0}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 13px;border:1px solid #d6d2cb;border-radius:17px;background:#fff;color:var(--ink);font:500 14px/1 inherit;cursor:pointer;text-decoration:none;white-space:nowrap}
+.chip svg{width:15px;height:15px}
+.chip .wa{color:var(--wa)}
+.foot{max-width:480px;margin:0 auto;padding:12px 14px 28px;font-size:12px;color:var(--grey);background:#f7f5f2}
+.foot p{margin:0 0 6px}
+.foot a{color:var(--grey)}
+.sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6" /></symbol><symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <path d="M12 6v6l4 2" /></symbol><symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" /> <path d="M20 2v4" /> <path d="M22 4h-4" /> <circle cx="4" cy="20" r="2" /></symbol><symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></symbol><symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /> <rect x="2" y="4" width="20" height="16" rx="2" /></symbol><symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2" /> <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></symbol><symbol id="i-circle-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <path d="m16 9-5.5 5.5L8 12" /></symbol><symbol id="i-thumbs-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" /> <path d="M7 10v12" /></symbol><symbol id="i-thumbs-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z" /> <path d="M17 14V2" /></symbol><symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></symbol><symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6" /> <path d="m8 6-6 6 6 6" /></symbol><symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol><symbol id="i-telegram" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></symbol></svg>
+<div class="app">
+<a class="src" href="index.html" aria-label="View page source" title="Source"><svg width="12" height="12"><use href="#i-code"/></svg></a>
+
+
+<header class="top">
+<a class="bk" href="yellow-tower-listing-page.html" aria-label="Back to Yellow Tower"><svg width="22" height="22"><use href="#i-chevron-left"/></svg></a>
+<span class="av" aria-hidden="true">YT</span>
+<span class="who"><b>Yellow Tower</b><small>contact.page assistant · automated</small></span>
+<a class="alt" href="yellow-tower-contact-details-page.html">Card view</a>
+</header>
+
+
+<main class="log" id="log" role="log" aria-live="polite" aria-label="Contact details for Yellow Tower">
+<noscript><p class="sys">This page needs JavaScript to load the contact details.</p></noscript>
+</main>
+
+
+<div class="bar"><div class="chips" id="chips" role="group" aria-label="Quick replies">
+<button class="chip" type="button" data-q="more">Other numbers</button>
+<button class="chip" type="button" data-q="hours"><svg><use href="#i-clock"/></svg>Opening hours</button>
+<a class="chip" href="https://www.google.com/search?udm=50&amp;hl=en&amp;q=Yellow%20Tower%20office%20space%2C%20Phnom%20Penh%20%28kh34363.contact.page%29%3A%20what%20is%20the%20best%20way%20to%20contact%20them%2C%20and%20when%20are%20they%20open%3F" target="_blank" rel="noopener nofollow"><svg><use href="#i-sparkles"/></svg>Ask Google AI Mode</a>
+<a class="chip" href="https://wa.me/newcustomers?text=%5BGATE%7Ckh34363%7Cclaim%5D%20Hi%2C%20I%20work%20at%20or%20own%20Yellow%20Tower%20%28kh34363.contact.page%29%20and%20want%20to%20claim%20this%20page.%0AMy%20email%3A%20"><svg class="wa"><use href="#i-whatsapp"/></svg>Is this yours?</a>
+</div></div>
+</div>
+
+
+<footer class="foot">
+<p>Help: <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Chelp%5D%20Hi%2C%20I%20need%20help%20with%20contact.page.%0AMy%20email%3A%20">WhatsApp</a> · <a href="mailto:newcustomers@contact.page?subject=%5BDETAILS%7Ckh34363%7Chelp%5D%20Help%20with%20contact.page&amp;body=What%20do%20you%20need%20help%20with%3F%0A">Email</a> · <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cedit%5D%20Hi%2C%20I%20want%20to%20update%20or%20add%20contact%20details%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.%0AMy%20email%3A%20">Edit or add contact details</a> · <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Creport%5D%20Hi%2C%20I%20want%20to%20report%20a%20problem%20with%20the%20contact%20details%20of%20Yellow%20Tower%20%28kh34363.contact.page%29.%0AMy%20email%3A%20">Report this page</a></p>
+<p>Standard mockup set: <a href="phnom-penh-office-rental-vertical-page.html">1 vertical</a> → <a href="yellow-tower-listing-page.html">2 listing</a> → <a href="yellow-tower-security-page.html">3 security check</a> → <a href="yellow-tower-contact-details-page.html">4 contact details (card, default)</a> · <b>4 chat (alternate)</b></p>
+<p>sample, not production · Yellow Tower contact details, chat version · 2026-10-07 · .page Mockups</p>
+</footer>
+
+
+<script type="application/json" id="cdata">{"id": "kh34363", "name": "Yellow Tower", "category": "Office space", "city": "Phnom Penh", "best": {"kind": "whatsapp", "label": "WhatsApp, main number", "value": "+855 12 869 111", "tel": "+85512869111", "wa": "85512869111", "telegram": "unconfirmed", "confirmed": true, "worked": 4, "failed": 1, "last": "3 days ago"}, "more": [{"kind": "phone", "label": "Phone, main line", "value": "+855 12 869 111", "tel": "+85512869111", "confirmed": true, "worked": 3, "failed": 0}, {"kind": "email", "label": "Email", "value": "info@yellow-tower.com", "confirmed": true, "worked": 2, "failed": 0}, {"kind": "whatsapp", "label": "WhatsApp · sample data, not sourced", "value": "+855 00 000 001 (sample)", "wa": "85500000001", "confirmed": false, "worked": 0, "failed": 0}, {"kind": "email", "label": "Email · reported not working recently (illustrative)", "value": "yellow.tower.co@gmail.com", "confirmed": false, "worked": 0, "failed": 2}], "address": "No. 191, Tonle Sap Road, Sangkat Chroy Changva, Khan Chroy Changva, Phnom Penh 12210", "map": "https://kh34363.contact.page/location/", "hours": [["Opening hours", "Monday to Friday, 8:00–19:00"], ["Viewings", "Monday to Friday, 9:00–17:00"]], "open": {"days": [1, 5], "from": 8, "to": 19, "tz": 7}, "ad": {"wa": "https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Csignup%5D%20Hi%2C%20sign%20me%20up%20for%20my%20free%20page.%0AMy%20email%3A%20", "mail": "mailto:newcustomers@contact.page?subject=%5BDETAILS%7Ckh34363%7Csignup%5D%20Sign%20me%20up%20for%20my%20free%20page&body=Business%20name%3A%0ACity%3A%0AOne%20way%20customers%20can%20reach%20you%3A"}}</script>
+<script>
+// Mockup behaviour: renders the chat from the data; votes change in-memory state only; nothing is sent.
+(function(){
+  var D=JSON.parse(document.getElementById('cdata').textContent), log=document.getElementById('log'), chips=document.getElementById('chips');
+  var role=new URLSearchParams(location.search).get('role')||'';
+  function now(){ var d=new Date(); return ('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2); }
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function ic(n){ return '<svg aria-hidden="true"><use href="#i-'+n+'"/></svg>'; }
+  function add(cls,html){ var e=document.createElement('div'); e.className=cls; e.innerHTML=html+(cls.indexOf('sys')<0?'<span class="t">'+now()+'</span>':''); log.appendChild(e); return e; }
+  function say(html,extra){ return add('b in'+(extra?' '+extra:''),html); }
+  function me(text){ return add('b out','<p>'+esc(text)+'</p>'); }
+  function scroll(e){ e.scrollIntoView({block:'nearest',behavior:'smooth'}); }
+  function acts(c){
+    var a='';
+    if(c.tel) a+='<a class="ia" href="tel:'+esc(c.tel)+'" aria-label="Call '+esc(c.value)+'">'+ic('phone')+'</a>';
+    if(c.wa) a+=c.confirmed ? '<a class="ia wa" href="https://wa.me/'+esc(c.wa)+'" target="_blank" rel="noopener" aria-label="WhatsApp">'+ic('whatsapp')+'</a>'
+                            : '<button class="ia wa" type="button" data-wa="'+esc(c.wa)+'" aria-label="WhatsApp (not confirmed yet)">'+ic('whatsapp')+'</button>';
+    if(c.telegram) a+='<a class="ia tg'+(c.telegram==='unconfirmed'?' dim':'')+'" href="https://t.me/'+esc(c.tel)+'" target="_blank" rel="noopener" aria-label="Telegram'+(c.telegram==='unconfirmed'?' (not confirmed yet)':'')+'" title="Telegram'+(c.telegram==='unconfirmed'?', not confirmed yet':'')+'">'+ic('telegram')+'</a>';
+    if(c.kind==='email') a+='<a class="ia" href="mailto:'+esc(c.value)+'" aria-label="Email '+esc(c.value)+'">'+ic('mail')+'</a>';
+    a+='<button class="ia" type="button" data-copy="'+esc(c.value)+'" aria-label="Copy '+esc(c.value)+'">'+ic('copy')+'</button>';
+    return '<div class="acts">'+a+'</div>';
+  }
+  function status(c){
+    if(c.confirmed) return '<span class="st"><span class="ok">'+ic('circle-check').replace('<svg','<svg class="tick"')+' Confirmed</span> · '+c.worked+' worked'+(c.failed?' · '+c.failed+' didn&rsquo;t':'')+(c.last?' · last confirmed '+esc(c.last):'')+'</span>';
+    return '<span class="st">Not confirmed yet · <span class="w">'+c.worked+'</span> worked · <span class="bad"><span class="f">'+c.failed+'</span> didn&rsquo;t</span></span>';
+  }
+  function line(c,i){
+    var e=say('<p class="k">'+esc(c.label)+'</p><p class="v">'+esc(c.value)+'</p>'+status(c)+acts(c)+
+      (c.confirmed?'':'<div class="vote" data-i="'+i+'">Did it work? <button type="button" data-v="w">'+ic('thumbs-up')+'Yes</button><button type="button" data-v="f">'+ic('thumbs-down')+'No</button></div>'),
+      c.confirmed?'':'un');
+    e.dataset.i=i; return e;
+  }
+  var greet={customer:'You said you’re a customer, so here’s the quickest way to reach them.',
+    supplier:'You said you’re a supplier: here’s their main line, and the email works well for offers.',
+    job_seeker:'You said you’re looking for a job: the email is usually best for a CV, and here’s their main line.',
+    works_here:'You said you’re the owner or staff: this is what visitors see. Tap “Is this yours?” below to update it.'};
+
+  // 1. Greeting, 2. best line, 3. load more, 4. map, 5. house ad
+  add('sys','Contact details for '+esc(D.name)+', shown after the security check');
+  say('<p>Hi! I’m the contact.page assistant. Here’s how to reach <b>'+esc(D.name)+'</b>, '+esc(D.category.toLowerCase())+' in '+esc(D.city)+'.</p><p>'+esc(greet[role]||'Here’s the quickest way to reach them.')+'</p>');
+  var best=say('<p class="k">Best way · '+esc(D.best.label)+'</p><p class="v">'+esc(D.best.value)+'</p>'+status(D.best)+acts(D.best));
+  var lm=say('<p>There are '+D.more.length+' more ways to reach them.</p><button class="lk" type="button" id="loadMore">Load more</button>');
+  say('<div class="pin">'+ic('map-pin')+'<span>'+esc(D.address)+' · <a href="'+esc(D.map)+'">map</a></span></div>');
+  add('sys','<b>contact.page</b> · Want a page like this for your business? It’s free: our AI agent runs it for you. <a href="'+esc(D.ad.wa)+'">Start on WhatsApp</a> · <a href="'+esc(D.ad.mail)+'">By email</a>');
+
+  var more=false;
+  function loadMore(fromChip){
+    if(more) return; more=true;
+    var at; if(fromChip){ at=me('Other numbers'); lm.remove(); } else { at=lm; lm.querySelector('p').textContent='Here are '+D.more.length+' more ways to reach them.'; }
+    var b=document.getElementById('loadMore'); if(b) b.remove();
+    var c=chips.querySelector('[data-q="more"]'); if(c) c.remove();
+    D.more.forEach(function(x,i){ var e=line(x,i); log.insertBefore(e,at.nextSibling); at=e; });
+    scroll(log.querySelector('[data-i="0"]'));
+  }
+  document.getElementById('loadMore').addEventListener('click',function(){ loadMore(false); });
+
+  function openNow(){ var o=D.open, n=new Date(Date.now()+(o.tz*60+new Date().getTimezoneOffset())*60000), d=n.getDay(), h=n.getHours()+n.getMinutes()/60;
+    return d>=o.days[0]&&d<=o.days[1]&&h>=o.from&&h<o.to; }
+  chips.addEventListener('click',function(e){ var q=e.target.closest('[data-q]'); if(!q) return;
+    if(q.dataset.q==='more') loadMore(true);
+    if(q.dataset.q==='hours'){ me('Opening hours');
+      scroll(say(D.hours.map(function(h){ return '<p><b>'+esc(h[0])+':</b> '+esc(h[1])+'</p>'; }).join('')+'<p class="st">'+(openNow()?'<span class="ok">Open now</span>':'Closed right now')+' (Phnom Penh time)</p>')); }
+  });
+
+  // Copy, votes, WhatsApp on an unconfirmed number
+  var pending=null;
+  log.addEventListener('click',function(e){
+    var c=e.target.closest('[data-copy]');
+    if(c){ var v=c.dataset.copy, fb=function(){ var x=document.createElement('textarea'); x.value=v; document.body.appendChild(x); x.select(); try{ document.execCommand('copy'); }catch(_){} x.remove(); };
+      try{ navigator.clipboard.writeText(v).catch(fb); }catch(_){ fb(); }
+      var t=document.createElement('span'); t.className='toast'; t.textContent='Copied'; c.after(t); setTimeout(function(){ t.remove(); },1500); return; }
+    var vb=e.target.closest('.vote button');
+    if(vb){ vote(vb.closest('.vote'),vb.dataset.v,vb); return; }
+    var w=e.target.closest('[data-wa]');
+    if(w){ pending=w.closest('[data-i]'); window.open('https://wa.me/'+w.dataset.wa,'_blank','noopener'); setTimeout(back,2500); }
+  });
+  var voted={};
+  function vote(box,v,btn){
+    var i=box.dataset.i; if(voted[i]) return; voted[i]=v;
+    log.querySelectorAll('.vote[data-i="'+i+'"]').forEach(function(b){ b.querySelectorAll('button').forEach(function(x){ x.disabled=true; if(x.dataset.v===v) x.classList.add('on'); }); });
+    var el=log.querySelector('.b[data-i="'+i+'"] .'+v); if(el) el.textContent=(+el.textContent)+1;
+    scroll(say('<p>Thanks! That helps the next person who tries this line.</p>'));
+  }
+  function back(){ if(!pending) return; var i=pending.dataset.i; pending=null;
+    if(voted[i]) return;
+    var a=say('<p>Did WhatsApp work?</p><div class="vote ask" data-i="'+i+'"><button type="button" data-v="w">'+ic('thumbs-up')+'Yes, it worked</button><button type="button" data-v="f">'+ic('thumbs-down')+'No</button></div>');
+    scroll(a); }
+  document.addEventListener('visibilitychange',function(){ if(!document.hidden) back(); });
+  window.addEventListener('focus',back);
+})();
+</script>
+</body>
+</html>

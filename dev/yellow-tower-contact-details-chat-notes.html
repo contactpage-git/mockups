@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Developer notes: Contact details, chat version (alternate, D018 experiment)</title>
+<style>body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:1040px;margin:32px auto;padding:0 16px;color:#161616}
+h1{font-size:22px;border-left:5px solid #FFC400;padding-left:10px}p{color:#6f6f6f;font-size:14px}a{color:#161616}
+ol{padding-left:28px}li{margin:0 0 14px}li::marker{font-weight:700;color:#8a8a8a}
+pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fafafa;border:1px solid #e9e9e9;border-radius:8px;padding:10px 12px;margin:0}</style></head>
+<body><p><a href="../index.html">All mockups</a> · <a href="../yellow-tower-contact-details-chat.html">Open the mockup</a></p>
+<h1>Developer notes: Contact details, chat version (alternate, D018 experiment)</h1>
+<p>The notes written into the mockup's source, summary first, then in page order (top to bottom). Sample data only; contact values are masked.</p>
+<ol>
+<li><pre>DEVELOPER SUMMARY: CONTACT DETAILS AS A CHAT (alternate mockup, D018 open experiment, Kim 2026-10-07)
+1. App shell, not a page. This HTML holds NO contact values. After the security page&#x27;s server-side Turnstile siteverify
+   sets cp_verified (HttpOnly, Secure, SameSite=Lax, short-lived), the shell fetches the data:
+   GET /api/contact-details/&lt;id&gt; (credentials: same-origin) -&gt; JSON like the #cdata block below.
+   Data response: Cache-Control: no-store, private; Vary: Cookie; never cached by the CDN or a service worker.
+   No valid cp_verified -&gt; 401 -&gt; the shell sends the visitor back to the security page. The shell itself may be cached
+   (it is the same for every business), with X-Robots-Tag: noindex, nofollow.
+2. Mirrors the real WhatsApp agent: same messages in the same order (greeting, best line, &quot;Load more&quot;, map, quick replies
+   = WhatsApp reply buttons / list message), so visitors and owners learn the flow they later get in WhatsApp (onboarding).
+3. Quiet UI: no big yellow block buttons; small inline icon actions (call, WhatsApp, Telegram, copy), chips at the bottom.
+   Honest: the assistant is labelled &quot;automated&quot;; templated messages, no typing dots, no fake delays.
+4. Unconfirmed lines carry a small &quot;Did it work?&quot; vote; WhatsApp on an unconfirmed number asks &quot;Did WhatsApp work?&quot; when
+   the visitor comes back (visibilitychange / focus). Votes: POST /api/vote, rate-limited per cp_verified session.
+5. &quot;Ask Google AI Mode&quot; = google.com/search?udm=50&amp;q=..., target=_blank rel=&quot;noopener nofollow&quot;: a new-tab outbound link has
+   no SEO cost, and this page stays noindex, nofollow, out of the sitemap. Kim is fine with visitors leaving.
+6. Ads: house-ad policy, NO AdSense here; our own house ad only, as a small system notice. Lean: no framework, one small
+   inline script, one inline SVG sprite (design icons), no web fonts, no third-party requests.</pre></li>
+<li><pre>YELLOW TOWER CONTACT DETAILS, CHAT VERSION (current file, no version in the name; .page Mockups). Alternate to the card
+version yellow-tower-contact-details-page.html (v4, stays the default). Kim 2026-10-07: &quot;an alternative styled as a real
+chat window&quot;. Route in production: same as the card version (kh34363.contact.page/contact-details after the check); which
+one ships is open (design-state D018). Data: same values as the card version; phone numbers are placeholders
+({{YT_PHONE}} etc.) filled at publish from the box-only values file (the repo holds no raw phone digits); the unconfirmed
+WhatsApp number and the gmail &quot;not working&quot; status are sample / illustrative. Role from ?role= (production: from the
+server session the security page set), greeting in friendly first-person wording, no questions asked.
+
+CHANGE LOG
+v1 2026-10-07 (.page Mockups): first version (Kim): WhatsApp-like chat, app shell + data, inline icon actions, Load more,
+               map bubble, quick-reply chips, house ad as a system notice.</pre></li>
+<li><pre>HEADER like a WhatsApp chat: back to the listing, avatar, business name, &quot;contact.page assistant · automated&quot; (AI/bot
+disclosure), and a quiet link to the card version.</pre></li>
+<li><pre>THE CHAT LOG. Rendered by the inline script from the data (production: fetched after siteverify, no-store). role=log +
+aria-live=polite so screen readers hear new messages.</pre></li>
+<li><pre>QUICK REPLIES (= WhatsApp reply buttons later). &quot;Ask Google AI Mode&quot; opens a new tab (noopener nofollow); &quot;Is this
+yours?&quot; = WhatsApp to our agent with [GATE|kh34363|claim], prefill asks for the owner&#x27;s email (N25).</pre></li>
+<li><pre>FOOTER (Kim 2026-10-07, MVP): Help by WhatsApp and email; owner actions stay WhatsApp deep links.</pre></li>
+<li><pre>MOCKUP DATA = the shape of GET /api/contact-details/kh34363 (production: fetched, Cache-Control: no-store; never inline).
+Values as on the card version; sample / illustrative where marked.</pre></li>
+</ol></body></html>
