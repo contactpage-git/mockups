@@ -9,7 +9,7 @@ pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe 
 <h1>Developer notes: Contact details</h1>
 <p>The notes written into the mockup's source, summary first, then in page order (top to bottom). Sample data only; contact values are masked.</p>
 <ol>
-<li><pre>YELLOW TOWER CONTACT DETAILS PAGE (current: version 3, 2026-10-07, .page Mockups). Design task D015. Route in production:
+<li><pre>YELLOW TOWER CONTACT DETAILS PAGE (current: version 4, 2026-10-07, .page Mockups). Design task D015. Route in production:
 kh34363.contact.page/contact-details after the check (the security page and this page share the route; the server shows
 this page once cp_verified is set). Page 4 of the standard mockup set (Kim 2026-10-06):
 1 phnom-penh-office-rental-vertical-page.html -&gt; 2 yellow-tower-listing-page.html -&gt; 3 yellow-tower-security-page.html -&gt; 4 this page.
@@ -23,7 +23,7 @@ BUILT FROM
 
 ORDER, mobile first: header (back link, H1, subline, open pill) -&gt; role line (the owner or staff) -&gt; best way card with votes -&gt;
 other ways (+ earlier contact lines, archived) -&gt; agent row -&gt; how to find them -&gt; when to reach them -&gt; community notes -&gt;
-ad -&gt; need help -&gt; footer: owner box (proposal), edit / claim / report, set chain, sample line.
+footer: owner box (proposal), house ad, AI help (Google AI Mode), help, edit / claim / report, set chain, sample line.
 
 RULES APPLIED
 - noindex (N14). No AdSense on the gate; one slot here, after the content, never beside a contact button.
@@ -41,6 +41,10 @@ OPEN FOR KIM
 - Which channel leads when there are no votes yet (proposal: the one the owner marks main, else phone).
 
 CHANGE LOG
+v4 2026-10-07 (.page Mockups, Kim): confirmed contact lines first with a green tick, unconfirmed lines below, smaller, each
+               with &quot;Did it work?&quot; Yes/No and &quot;Is this yours? Confirm it&quot; ([GATE|kh34363|confirm], asks the email); WhatsApp
+               on an unconfirmed number opens a slide-out panel, then asks &quot;Did WhatsApp work?&quot;; AI help = one button to
+               Google AI Mode (new tab, noopener nofollow) below the house ad, replacing the assistant chips. v3 in archive/.
 v3 2026-10-07 (.page Mockups): Kim: no subline under the H1; every contact value in full (phone placeholders filled at
                publish, emails literal); &quot;Open WhatsApp&quot; in the new style (solid yellow, weight 600, no underline). Audit: AdSense slot replaced by our house ad (get your free site), placed after the
                owner box, far from the AI chips; WhatsApp texts ask for the email (N25); dev notes for items 8 and 10. Also footer Help offers both channels, WhatsApp and the email bot (Kim 2026-10-07, MVP; email preferred longer-term); no other footer links added (Terms / Cookie settings wait for Kim). v2 in archive/.
@@ -73,7 +77,17 @@ Same field set and order as the owner screen&#x27;s &quot;Your contact details&q
 Phone (main line), WhatsApp, Email; extra emails as extra rows. No website row (N22: open whether it shows after a
 link check passes; not shown until Kim decides).
 DATA RULE (Kim 2026-10-06, data-pool-design layer 6): contact lines are add-only. A new number is a new row; an old one
-is archived with its date, never edited or deleted (&quot;Earlier contact lines&quot; below; the archived line is sample data).</pre></li>
+is archived with its date, never edited or deleted (&quot;Earlier contact lines&quot; below; the archived line is sample data).
+VERIFIED VS UNVERIFIED (Kim 2026-10-07, v4): confirmed lines first, each with a green tick; unconfirmed lines below,
+smaller, each with a &quot;Did it work? Yes / No&quot; vote and &quot;Is this yours? Confirm it&quot; = WhatsApp to our agent with
+[GATE|kh34363|confirm], prefill asks for the owner&#x27;s email (N25). Confirmed = owner-confirmed OR enough net &quot;worked&quot;
+votes (threshold open). The unconfirmed WhatsApp number is SAMPLE data ({{SAMPLE_UNCONF_WA}}, filled at publish with an
+obvious +855 00 ... (sample) value); the gmail row&#x27;s &quot;not working&quot; status is illustrative.
+WHATSAPP ON AN UNCONFIRMED NUMBER (Kim 2026-10-07): tapping it opens a slide-out panel (bottom sheet) with &quot;Open WhatsApp&quot;
+(new tab); when the visitor comes back (visibilitychange / focus) the panel asks &quot;Did WhatsApp work?&quot; Yes / No, and the
+vote counts toward confirming the number. Confirmed numbers open WhatsApp directly, no panel.
+OPEN (design-state D017, waits for Kim&#x27;s go): one pattern for every number row (call, WhatsApp, Telegram, copy;
+unconfirmed channels use the vote slide-out) and one card shape instead of the chat-bubble cards.</pre></li>
 <li><pre>4. HOUSE AGENT ROW (D015 spec 4). Styled apart from the business&#x27;s own channels; AI disclosed in the label (start-here).</pre></li>
 <li><pre>5. ADDRESS AND DIRECTIONS. Same fields and order as the owner screen (layer 6): Street address, Landmark, Floor, Entrance,
 Parking, Directions in Khmer, Map pin note. Profile fields: they overwrite in place (no history). IF empty: a quiet
@@ -86,16 +100,23 @@ when one is posted, also shows here as one line under the hours (none posted: hi
 / owner), date. No chat bubbles, avatars or typing dots (honest UI). Composer: textarea, quick chips, Post; notes are
 checked before they show. The three notes are illustrative sample data (security page shows &quot;Community notes 3&quot;).
 Notes use inbox_items route=contact_note (agent-channels.md). Below, collapsed: &quot;Possibly related, unverified&quot;.</pre></li>
-<li><pre>9. NEED HELP (D015 spec 7): behind the gate the brief carries the FULL record (listing-page-engine). Mockup: no values.</pre></li>
 <li><pre>10. OWNER ENTRY. PROPOSAL, waits for Kim (design-state question 1): the owner&#x27;s side is Page Bot&#x27;s owner screen
 (CONTACT/kb/mockups/owner-screen-2026-10-06.html, owner layers from kb/data-pool-design-2026-10-06.md). It is linked,
 not copied: the visitor page and the owner screen use the same fields; the owner sees full values and the layers,
 visitors see this page. Production: &quot;Sign in&quot; = owner login, then the owner screen.</pre></li>
 <li><pre>8. HOUSE AD (audit 2026-10-07): replaces the AdSense slot. Ours, labelled &quot;contact.page&quot;: get your own free site
-(same box as the security page). Placed in the footer after the owner box, far from the AI assistant chips.
+(same box as the security page). Placed in the footer after the owner box; the AI help button sits below it (Kim 2026-10-07).
 DEVELOPER (item 8): no AdSense on this page in the MVP; if AdSense comes back here: async + lazy, fixed 250px slot,
 never next to a contact value, a button or the AI chips.</pre></li>
+<li><pre>9. NEED HELP: AI HELP BUTTON (Kim 2026-10-07, v4). One button that opens Google AI Mode (udm=50) in a new tab with a
+prefilled question about this business; target=_blank rel=&quot;noopener nofollow&quot;. Placed below the contact rows and
+below the house ad, never at the top. Kim is fine with visitors leaving the page. Replaces the five assistant chips.
+DEVELOPER: a new-tab outbound link has no SEO cost (nofollow passes no ranking signal, and this page stays
+noindex, nofollow and out of the sitemap). Query = &quot;&lt;name&gt; &lt;category&gt;, &lt;city&gt; (&lt;id&gt;.contact.page): what is the best way
+to contact them, and when are they open?&quot; built server-side from the listing; no contact values in the query.</pre></li>
 <li><pre>FOOTER HELP (Kim 2026-10-07, MVP): both channels, WhatsApp and the email bot (email preferred longer-term for a
 business feel and record keeping). Claim / Edit / Remove / Report stay WhatsApp deep links. No other footer links
 yet: Terms and Cookie settings wait for Kim.</pre></li>
+<li><pre>SLIDE-OUT PANEL for WhatsApp on an unconfirmed number (Kim 2026-10-07). Step 1: open WhatsApp (new tab). Step 2, after
+the visitor returns: &quot;Did WhatsApp work?&quot; Yes / No; the vote lands on that row. Esc or the backdrop closes it.</pre></li>
 </ol></body></html>
