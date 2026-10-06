@@ -9,7 +9,7 @@ pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe 
 <h1>Developer notes: Listing page: Yellow Tower</h1>
 <p>The notes written into the mockup's source, summary first, then in page order (top to bottom). Sample data only; contact values are masked.</p>
 <ol>
-<li><pre>YELLOW TOWER LISTING PAGE (current: version 18, 2026-10-07; design owner Page Claude Code, v17-v18 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
+<li><pre>YELLOW TOWER LISTING PAGE (current: version 19, 2026-10-07; design owner Page Claude Code, v17-v19 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
 Built from v3 (Page Muse) after the review in CONTACT/kb/listing-page-v3-review-2026-10-06.md.
 
 ORDER, mobile first (rules: mobile first; design-evidence rules 1-3; engine &quot;the page earns its ads&quot;; decisions file):
@@ -42,6 +42,8 @@ v4 2026-10-06: see CONTACT/kb/listing-page-v3-review-2026-10-06.md for the full 
 One current file per page, older versions in archive/ (Kim 2026-10-06).
 v5 2026-10-06: kicker smaller, grey, italic, regular weight (Kim&#x27;s comment: too big and too clear). Still a link (SEO). v4 in archive/.
 v6 2026-10-06 (Kim: &quot;survival and growth hacking, within AdSense rules&quot;): ad plan below; v5 in archive/.
+v19 2026-10-07 (.page Mockups, Kim): masked number shows all but the last 3 digits; &quot;View contact details&quot; = outlined
+               yellow unlock button with the lock, no underline; Grade C note (no grade/premium wording). v18 in archive/.
 v18 2026-10-07 (.page Mockups): audit fixes: intro 2 lines and glance 1 line so &quot;View contact details&quot; is above the fold
                at 360x640; no ↓ and no &quot;Manage advertisement&quot;; ad label &quot;Advertisements&quot;; BreadcrumbList JSON-LD; WebP 320/600 with
                srcset + width/height; descriptive alt texts; every WhatsApp text asks for the email (N25); dev notes for
@@ -101,6 +103,12 @@ a link. &quot;Website&quot; and &quot;Social&quot; dropped from the copy (N22; s
 DEVELOPER (item 4, A/B test): exclude the unlock button from AdSense vignettes with data-google-interstitial=&quot;false&quot;
 on this link (variant B) vs the default (variant A); compare contact_gate_solved rate and vignette revenue per 1,000
 views before deciding. Above the fold at 360x640 with a clear gap to the ad (glance line + box header between).</pre></li>
+<li><pre>MASKED NUMBERS (Kim 2026-10-07): show all but the last 3 digits (&quot;+855 12 869 ***&quot;), never more hidden. The repo holds
+no raw phone digits, so masks are placeholders ({{YT_PHONE_MASKED}}, {{MASK_KH...}}) filled at publish from the box-only
+values file; other businesses&#x27; numbers come from their live &lt;id&gt;.contact.page listings.
+UNLOCK BUTTON (Kim 2026-10-07): every unlock button is the outlined yellow &quot;View contact details&quot; with the gold lock:
+white fill, 2px yellow border, weight 600, no underline (.btn.unlock).
+GRADE (Kim 2026-10-07): Yellow Tower is Grade C; no grade/premium wording; lead with real strengths.</pre></li>
 <li><pre>NEED HELP (D3): narrower, tucked under the contact box (overlap 12px, lower stacking, faint shadow), yellow AI badge.
 The AI choices sit IN the card (v3&#x27;s separate AI box and any jump to it are gone: no jump links). Each pick opens the
 assistant with the public brief (no contact values; the full record only after the gate). Logs ai_handoff_pick.</pre></li>

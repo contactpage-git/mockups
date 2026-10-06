@@ -9,7 +9,7 @@ pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe 
 <h1>Developer notes: Vertical page: office space for rent in Phnom Penh</h1>
 <p>The notes written into the mockup's source, summary first, then in page order (top to bottom). Sample data only; contact values are masked.</p>
 <ol>
-<li><pre>PHNOM PENH OFFICE RENTAL VERTICAL PAGE (current: version 5, 2026-10-07, .page Mockups). Older versions: archive/. Page 1 of the standard mockup set
+<li><pre>PHNOM PENH OFFICE RENTAL VERTICAL PAGE (current: version 6, 2026-10-07, .page Mockups). Older versions: archive/. Page 1 of the standard mockup set
 (Kim 2026-10-06): 1 this vertical -&gt; 2 yellow-tower-listing-page.html -&gt; 3 yellow-tower-security-page.html
 -&gt; 4 yellow-tower-contact-details-page.html. Design state: CONTACT/design-state.md.
 The old lab page CONTACT/pages/phnom-penh-mini-verticals/phnom-penh-office-rentals.html (dark theme, real listings) is NOT
@@ -38,6 +38,9 @@ OPEN
 - D007 tier design and the Freelancer card variant (D006) are not in this version.
 
 CHANGE LOG
+v6 2026-10-07 (.page Mockups, Kim): card 1 photo = bright exterior from yellow-tower.com (WebP 320/600); masked numbers show
+               all but the last 3 digits; every unlock button = outlined yellow &quot;View contact details&quot; with the lock (no underline,
+               card 1 no longer heavier); Yellow Tower is Grade C: no grade/premium wording on its card. v5 in archive/.
 v5 2026-10-07 (.page Mockups): audit fixes: no ↓ above the first ad, ad label &quot;Advertisements&quot;, canonical + OG tags,
                WebP 320/600 srcset + width/height, static map 660x440 (~25 KB), descriptive alt texts, WhatsApp texts ask
                for the email (N25), dev notes for items 8 and 10. Also footer Help offers both channels, WhatsApp and the email bot (Kim 2026-10-07, MVP; email preferred longer-term); no other footer links added (Terms / Cookie settings wait for Kim). v4 in archive/.
@@ -84,6 +87,13 @@ activities from the live page), masked number, lock button to the security page 
 /contact-details?from=vertical on live sites). Only card 1 has the bold yellow-underline button; cards 2-6 use the
 light one (outline + lock, normal weight, no thick underline; Kim 2026-10-07). Order 2-6 is not a verified ranking
 yet (D007). No prices (N31), no website (N22), numbers masked, no digits in source.</pre></li>
+<li><pre>MASKED NUMBERS (Kim 2026-10-07): show all but the last 3 digits (&quot;+855 12 869 ***&quot;), never more hidden. The repo holds
+no raw phone digits, so masks are placeholders ({{YT_PHONE_MASKED}}, {{MASK_KH...}}) filled at publish from the box-only
+values file; other businesses&#x27; numbers come from their live &lt;id&gt;.contact.page listings.
+UNLOCK BUTTON (Kim 2026-10-07): every unlock button is the outlined yellow &quot;View contact details&quot; with the gold lock:
+white fill, 2px yellow border, weight 600, no underline (.btn.unlock).
+GRADE (Kim 2026-10-07): Yellow Tower is a Grade C office building. Never imply Grade A/B or &quot;premium&quot; on its card or
+listing; lead with its real strengths (vertical garden, river peninsula, parking included, co-working + private offices).</pre></li>
 <li><pre>No real photo: static map fallback (Kim 2026-10-07, kb/static-map-images.md). Pin from kh56012.contact.page/map; OpenFreeMap/OSM render via design/tools/static_map.py, attribution on the image.</pre></li>
 <li><pre>AD #MID after card 4 (end of row 2 on wide screens, so no hole in the grid): content above and below, never next
 to a contact button.</pre></li>
