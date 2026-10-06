@@ -194,6 +194,33 @@ body[data-role="works_here"] .rolemsg{display:block}
 .ownerbox li{margin:2px 0}
 .rule{font-size:12px;color:var(--grey);margin:10px 0 0}
 .chain{font-size:12px;color:var(--grey);margin:14px 0 0}
+.fhelp{font-size:13px;color:var(--grey);margin:12px 0 0}
+.fhelp a{color:var(--grey);text-decoration:underline;text-decoration-color:#d0d0d0;text-underline-offset:3px}
+.fhelp a:hover{color:var(--ink)}
+
+.house{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:26px 0 0;background:#fff;max-width:420px}
+.house .lbl{font-size:11px;color:var(--grey-2);letter-spacing:1px;text-transform:uppercase;margin:0 0 6px}
+.house h2{font-size:18px;margin:0 0 4px}
+.house p{margin:0 0 12px;font-size:14px;color:#333}
+.house .ctas{display:flex;flex-wrap:nowrap;gap:8px;align-items:center}
+@media(max-width:340px){.house .ctas{flex-wrap:wrap}}
+
+.house .cta{display:inline-flex;align-items:center;justify-content:center;gap:6px;flex:1 1 0;min-width:0;white-space:nowrap;
+  background:#fff;color:var(--ink);border:2px solid var(--yellow);font-weight:600;border-radius:10px;padding:0 12px;height:40px;
+  font-size:14px;text-decoration:none}
+.house .cta svg{width:16px;height:16px;flex:none}
+.house .cta svg [fill]:not([fill="none"]){fill:currentColor}
+.house .cta.pri{background:var(--yellow)}
+.house .cta.pri:hover{background:#ffd23d}
+.house .cta.sec:hover{background:#fffbea}
+.house .cta:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.house .own{border-top:1px solid var(--line);margin-top:14px;padding-top:8px;font-size:12px;color:var(--grey-2)}
+.house .own .linkbtn{color:var(--grey-2);font-size:12px}
+.house .own.hot .linkbtn:first-of-type{color:var(--ink);text-decoration-color:var(--yellow);text-decoration-thickness:3px}
+
+.best .btn.pri{background:var(--yellow);border:2px solid var(--yellow);color:var(--ink);font-weight:600;text-decoration:none}
+.best .btn.pri:hover{background:#ffd23d}
+.best .btn.pri svg [fill]:not([fill="none"]){fill:currentColor}
 </style>
 </head>
 <body data-role="">
@@ -205,19 +232,17 @@ body[data-role="works_here"] .rolemsg{display:block}
 
 <a class="crumb" href="yellow-tower-listing-page.html"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>Yellow Tower</a>
 <h1 class="dh1">Contact Yellow Tower</h1>
-<p class="sub">Office Space Rental &middot; Chroy Changvar, Phnom Penh</p>
 <span class="pill" id="openPill">Closed</span>
 
 
-<p class="rolemsg">You said you’re the owner or staff. <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cclaim%5D%20Hi%2C%20I%20work%20at%20or%20own%20Yellow%20Tower%20%28kh34363.contact.page%29%20and%20want%20to%20claim%20this%20page.">Claim this page</a> to update it, or <a href="owner-screen.html">see the owner screen</a>.</p>
+<p class="rolemsg">You said you’re the owner or staff. <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cclaim%5D%20Hi%2C%20I%20work%20at%20or%20own%20Yellow%20Tower%20%28kh34363.contact.page%29%20and%20want%20to%20claim%20this%20page.%0AMy%20email%3A%20">Claim this page</a> to update it, or <a href="owner-screen.html">see the owner screen</a>.</p>
 
 
 <section class="best" aria-labelledby="b-h">
 <p class="k" id="b-h">Best way to reach them</p>
-<p class="val"><svg viewBox="0 0 24 24" width="26" height="26" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>+855 12 ••• •••</p>
+<p class="val"><svg viewBox="0 0 24 24" width="26" height="26" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>+855 12 869 111</p>
 <p class="kind">WhatsApp &middot; main number</p>
-<a class="btn wide" href="#" data-note="n-act"><svg viewBox="0 0 24 24" width="18" height="18" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Open WhatsApp</a>
-<p class="note" id="n-act">Mockup: opens WhatsApp with this number in production.</p>
+<a class="btn wide pri" href="https://wa.me/85512869111"><svg viewBox="0 0 24 24" width="18" height="18" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Open WhatsApp</a>
 <div class="votes" data-ch="wa">
 <span><span class="ok">&#10003; <b class="w">4</b> worked</span> &middot; <span class="bad">&#10007; <b class="f">1</b> didn't</span> &middot; last confirmed 3 days ago</span>
 </div>
@@ -231,19 +256,19 @@ body[data-role="works_here"] .rolemsg{display:block}
 <section class="sec" aria-labelledby="o-h">
 <h2 class="h2s" id="o-h">Other ways</h2>
 <ul class="ways">
-<li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg><span><span class="lb">Phone, main line</span><span class="v">+855 12 ••• •••</span></span><span><a class="act" href="#">Call</a> <span class="vc">&#10003;3</span></span></li>
-<li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /> <rect x="2" y="4" width="20" height="16" rx="2" /></svg><span><span class="lb">Email</span><span class="v">i•••@yellow-tower.com</span></span><span><a class="act" href="#">Email</a> <span class="vc">&#10003;2</span></span></li>
-<li class="gone"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /> <rect x="2" y="4" width="20" height="16" rx="2" /></svg><span><span class="lb">Email &middot; reported not working recently</span><span class="v">y•••@gmail.com</span></span><span><a class="act" href="#">Email</a> <span class="vc">&#10007;2</span></span></li>
-<li class="empty"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /> <path d="M12 5v14" /></svg><span>No Messenger, Instagram, LINE or Telegram yet &middot; <a class="small-act" href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cadd-channel%5D%20Hi%2C%20I%20want%20to%20add%20a%20contact%20channel%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.">add</a></span></li>
+<li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg><span><span class="lb">Phone, main line</span><span class="v">+855 12 869 111</span></span><span><a class="act" href="tel:+85512869111">Call</a> <span class="vc">&#10003;3</span></span></li>
+<li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /> <rect x="2" y="4" width="20" height="16" rx="2" /></svg><span><span class="lb">Email</span><span class="v">info@yellow-tower.com</span></span><span><a class="act" href="mailto:info@yellow-tower.com">Email</a> <span class="vc">&#10003;2</span></span></li>
+<li class="gone"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /> <rect x="2" y="4" width="20" height="16" rx="2" /></svg><span><span class="lb">Email &middot; reported not working recently</span><span class="v">yellow.tower.co@gmail.com</span></span><span><a class="act" href="mailto:yellow.tower.co@gmail.com">Email</a> <span class="vc">&#10007;2</span></span></li>
+<li class="empty"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /> <path d="M12 5v14" /></svg><span>No Messenger, Instagram, LINE or Telegram yet &middot; <a class="small-act" href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cadd-channel%5D%20Hi%2C%20I%20want%20to%20add%20a%20contact%20channel%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.%0AMy%20email%3A%20">add</a></span></li>
 </ul>
 <details class="arch">
 <summary>Earlier contact lines (1), kept as they were</summary>
-<ul><li>+855 •• ••• ••• &middot; Phone &middot; archived 12 Mar 2026 when a new number was added</li></ul>
+<ul><li>+855 00 000 000 (sample) &middot; Phone &middot; archived 12 Mar 2026 when a new number was added</li></ul>
 </details>
 <p class="rule">Contact lines are never changed or deleted: a new one is added and the old one is archived with its date.</p>
 
 
-<div class="agent"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8" /> <rect width="16" height="12" x="4" y="8" rx="2" /> <path d="M2 14h2" /> <path d="M20 14h2" /> <path d="M15 13v2" /> <path d="M9 13v2" /></svg><span>Can't get through? <b>Our WhatsApp agent</b> can help: <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Chelp%5D%20Hi%2C%20I%20can%27t%20reach%20Yellow%20Tower%20%28kh34363.contact.page%29.">@newcustomers (AI)</a></span></div>
+<div class="agent"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8" /> <rect width="16" height="12" x="4" y="8" rx="2" /> <path d="M2 14h2" /> <path d="M20 14h2" /> <path d="M15 13v2" /> <path d="M9 13v2" /></svg><span>Can't get through? <b>Our WhatsApp agent</b> can help: <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Chelp%5D%20Hi%2C%20I%20can%27t%20reach%20Yellow%20Tower%20%28kh34363.contact.page%29.%0AMy%20email%3A%20">@newcustomers (AI)</a></span></div>
 </section>
 
 
@@ -251,12 +276,12 @@ body[data-role="works_here"] .rolemsg{display:block}
 <h2 class="h2s" id="a-h">How to find them</h2>
 <dl class="df">
 <dt>Street address</dt><dd>No. 191, Tonle Sap Road, Sangkat Chroy Changva, Khan Chroy Changva, Phnom Penh 12210</dd>
-<dt>Landmark</dt><dd><span class="none">No landmark yet &middot; <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cadd-landmark%5D%20Hi%2C%20I%20want%20to%20add%20the%20landmark%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.">add</a></span></dd>
-<dt>Floor</dt><dd><span class="none">No floor yet &middot; <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cadd-floor%5D%20Hi%2C%20I%20want%20to%20add%20the%20floor%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.">add</a></span></dd>
-<dt>Entrance</dt><dd><span class="none">No entrance yet &middot; <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cadd-entrance%5D%20Hi%2C%20I%20want%20to%20add%20the%20entrance%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.">add</a></span></dd>
+<dt>Landmark</dt><dd><span class="none">No landmark yet &middot; <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cadd-landmark%5D%20Hi%2C%20I%20want%20to%20add%20the%20landmark%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.%0AMy%20email%3A%20">add</a></span></dd>
+<dt>Floor</dt><dd><span class="none">No floor yet &middot; <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cadd-floor%5D%20Hi%2C%20I%20want%20to%20add%20the%20floor%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.%0AMy%20email%3A%20">add</a></span></dd>
+<dt>Entrance</dt><dd><span class="none">No entrance yet &middot; <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cadd-entrance%5D%20Hi%2C%20I%20want%20to%20add%20the%20entrance%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.%0AMy%20email%3A%20">add</a></span></dd>
 <dt>Parking</dt><dd>Parking included.<span class="tag">From the owner</span></dd>
-<dt>Directions in Khmer</dt><dd><span class="none">No directions in Khmer yet &middot; <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cadd-directions%5D%20Hi%2C%20I%20want%20to%20add%20the%20directions%20in%20Khmer%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.">add</a></span></dd>
-<dt>Map pin note</dt><dd><span class="none">No map pin note yet &middot; <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cadd-pin%5D%20Hi%2C%20I%20want%20to%20add%20the%20map%20pin%20note%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.">add</a></span></dd>
+<dt>Directions in Khmer</dt><dd><span class="none">No directions in Khmer yet &middot; <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cadd-directions%5D%20Hi%2C%20I%20want%20to%20add%20the%20directions%20in%20Khmer%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.%0AMy%20email%3A%20">add</a></span></dd>
+<dt>Map pin note</dt><dd><span class="none">No map pin note yet &middot; <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cadd-pin%5D%20Hi%2C%20I%20want%20to%20add%20the%20map%20pin%20note%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.%0AMy%20email%3A%20">add</a></span></dd>
 </dl>
 <p class="maplink"><a href="https://kh34363.contact.page/location/"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></svg>Open in map</a></p>
 </section>
@@ -267,8 +292,8 @@ body[data-role="works_here"] .rolemsg{display:block}
 <dl class="df">
 <dt>Opening hours</dt><dd>Monday to Friday, 8:00–19:00</dd>
 <dt>Viewings</dt><dd>Monday to Friday, 9:00–17:00</dd>
-<dt>Languages spoken</dt><dd><span class="none">No languages yet &middot; <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cadd-languages%5D%20Hi%2C%20I%20want%20to%20add%20the%20languages%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.">add</a></span></dd>
-<dt>Booking link</dt><dd><span class="none">No booking link yet &middot; <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cadd-booking%5D%20Hi%2C%20I%20want%20to%20add%20the%20booking%20link%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.">add</a></span></dd>
+<dt>Languages spoken</dt><dd><span class="none">No languages yet &middot; <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cadd-languages%5D%20Hi%2C%20I%20want%20to%20add%20the%20languages%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.%0AMy%20email%3A%20">add</a></span></dd>
+<dt>Booking link</dt><dd><span class="none">No booking link yet &middot; <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cadd-booking%5D%20Hi%2C%20I%20want%20to%20add%20the%20booking%20link%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.%0AMy%20email%3A%20">add</a></span></dd>
 </dl>
 </section>
 
@@ -289,9 +314,6 @@ body[data-role="works_here"] .rolemsg{display:block}
 </div>
 <details class="maybe"><summary>Possibly related, unverified (0)</summary><p class="fine">Numbers and pages that might belong to this business show here until someone confirms them.</p></details>
 </section>
-
-
-<div class="ad"><div class="slot"><span>Advertisement</span></div></div>
 
 
 <section class="help" style="margin:18px 0 0;border-radius:12px" aria-labelledby="h-h">
@@ -318,9 +340,23 @@ body[data-role="works_here"] .rolemsg{display:block}
 <p class="rule">Contact lines are add-only (old ones archived with their date); directions, hours and other profile fields are updated in place.</p>
 </div>
 
-<p class="report"><a class="small-act" href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cedit%5D%20Hi%2C%20I%20want%20to%20update%20or%20add%20contact%20details%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.">Edit or add contact details</a> &middot; <a class="small-act" href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cclaim%5D%20Hi%2C%20I%20work%20at%20or%20own%20Yellow%20Tower%20%28kh34363.contact.page%29%20and%20want%20to%20claim%20this%20page.">Claim this page</a> &middot; <a class="small-act" href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Creport%5D%20Hi%2C%20I%20want%20to%20report%20a%20problem%20with%20the%20contact%20details%20of%20Yellow%20Tower%20%28kh34363.contact.page%29.">Report this page</a></p>
+
+<aside class="house" aria-label="contact.page">
+<p class="lbl">contact.page</p>
+<h2>Get your own .contact.page, free</h2>
+<p>Our AI agent runs it for you, by WhatsApp or email, and brings you new customers. Your name and your branding, not ours. Your numbers stay behind a simple slide: real customers get through, scrapers and spam bots don't.</p>
+<div class="ctas">
+<a class="cta pri" href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Csignup%5D%20Hi%2C%20sign%20me%20up%20for%20my%20free%20website.%0AMy%20email%3A%20"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Start on WhatsApp</a>
+<a class="cta sec" href="mailto:newcustomers@contact.page?subject=%5BDETAILS%7Ckh34363%7Csignup%5D%20Sign%20me%20up%20for%20my%20free%20website&amp;body=Business%20name%3A%0ACity%3A%0AOne%20way%20customers%20can%20reach%20you%3A"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>By email</a>
+</div>
+
+</aside>
+
+
+<p class="fhelp">Help: <a href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Chelp%5D%20Hi%2C%20I%20need%20help%20with%20contact.page%3A%0AMy%20email%3A%20">WhatsApp</a> · <a href="mailto:newcustomers@contact.page?subject=%5BDETAILS%7Ckh34363%7Chelp%5D%20Help%20with%20contact.page&amp;body=What%20do%20you%20need%20help%20with%3F%0A">Email</a></p>
+<p class="report"><a class="small-act" href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cedit%5D%20Hi%2C%20I%20want%20to%20update%20or%20add%20contact%20details%20for%20Yellow%20Tower%20%28kh34363.contact.page%29.%0AMy%20email%3A%20">Edit or add contact details</a> &middot; <a class="small-act" href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Cclaim%5D%20Hi%2C%20I%20work%20at%20or%20own%20Yellow%20Tower%20%28kh34363.contact.page%29%20and%20want%20to%20claim%20this%20page.%0AMy%20email%3A%20">Claim this page</a> &middot; <a class="small-act" href="https://wa.me/newcustomers?text=%5BDETAILS%7Ckh34363%7Creport%5D%20Hi%2C%20I%20want%20to%20report%20a%20problem%20with%20the%20contact%20details%20of%20Yellow%20Tower%20%28kh34363.contact.page%29.%0AMy%20email%3A%20">Report this page</a></p>
 <p class="chain">Standard mockup set (Kim 2026-10-06): <a href="phnom-penh-office-rental-vertical-page.html">1 vertical</a> &rarr; <a href="yellow-tower-listing-page.html">2 listing</a> &rarr; <a href="yellow-tower-security-page.html">3 security check</a> &rarr; <b>4 contact details</b></p>
-<p class="meta">sample, not production · Yellow Tower contact details page · version 2 · 2026-10-07 · .page Mockups</p>
+<p class="meta">sample, not production · Yellow Tower contact details page · version 3 · 2026-10-07 · .page Mockups</p>
 </footer>
 </div>
 <script>

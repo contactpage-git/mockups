@@ -25,7 +25,7 @@ pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe 
 Rejected: puzzle sliders (GeeTest etc.), solver services beat them for about $1 per 1,000. If we leave Cloudflare: Cap.js
 (self-hosted, free).</pre></li>
 <li><pre>Gate is noindex, follow and has NO canonical (N14, N17).</pre></li>
-<li><pre>YELLOW TOWER SECURITY PAGE (current: version 14 of 2026-10-07 by .page Mockups; versions 1 to 11 by Page Claude Code). Route in production: kh34363.contact.page/contact-details
+<li><pre>YELLOW TOWER SECURITY PAGE (current: version 15 of 2026-10-07 by .page Mockups; versions 1 to 11 by Page Claude Code). Route in production: kh34363.contact.page/contact-details
 
 KIM&#x27;S ORDER (2026-10-06, &quot;what we need if you land there directly&quot;), top to bottom:
   1. Small header: &quot;‹ Yellow Tower&quot; (the back link IS the name, one H1, small like a back button), then
@@ -48,8 +48,8 @@ RULES KEPT
   handle. DEVELOPER: slide telemetry (path, timing, speed variance, vertical jitter) is a SIGNAL ONLY. Real verification
   stays server-side: validate the Turnstile token (managed/invisible mode) with siteverify on every unlock. Never trust
   the client-side check alone; a bot can fake a curvy path. Send the score with the token for logging/tuning.
-- Buttons (other than the slider): other buttons yellow outline, dark text, yellow highlight
-  stroke (home .cta); no heavy yellow fills, no black blocks. Words to owners: &quot;your site&quot;, never &quot;listing&quot;.
+- Buttons (other than the slider): house ad pair = same size, weight 600, yellow border, no underline; primary solid
+  yellow fill, secondary white (Kim 2026-10-07). No black blocks. Words to owners: &quot;your site&quot;, never &quot;listing&quot;.
 - Spec, dev note and the MVP (Turnstile alone): CONTACT/kb/contact-gate-bot-protection.md.
 
 PER-BLOCK SCENARIOS
@@ -74,6 +74,9 @@ v6 2026-10-06: Kim&#x27;s home page rules applied: column 684px with a bordered 
 v7 2026-10-06: column back to 760px (the new listing page width; 684px was the old live page). v6 kept.
 v8 2026-10-06: one current file, versions in archive/ (Kim). Owner line is only &quot;Claim · Edit · Remove · Report&quot;, smaller and
                greyer; the separate report link is gone. Lock icons gold (#E0A500, Kim).
+v15 2026-10-07 (.page Mockups): audit: meta description without &quot;website&quot;; WhatsApp texts ask for the email (N25);
+               dev notes for items 8 and 10. House ad button pair made consistent (Kim): same size, weight 600, 2px yellow border,
+               16px icons, no underline; WhatsApp = solid yellow fill, email = white fill. Also footer Help offers both channels, WhatsApp and the email bot (Kim 2026-10-07, MVP; email preferred longer-term); no other footer links added (Terms / Cookie settings wait for Kim). v14 in archive/.
 v14 2026-10-07 (.page Mockups, Kim): house ad buttons on one line side by side (wrap only under 340px); &quot;By email&quot; is
                the lighter secondary (outline, normal weight, no thick underline), &quot;Start on WhatsApp&quot; keeps the
                yellow underline. v13 in archive/.
@@ -90,6 +93,15 @@ v12 2026-10-07 (.page Mockups): back link goes to the listing mockup (yellow-tow
 v11 2026-10-06: chips thinner (24px), 5px corners, 12px regular (Kim: still too fat and round). v10 in archive/.
 v10 2026-10-06: role chips follow the one chip rule (grey fill, no border, 28px, 12.5px; picked = yellow ring + check). v9 in archive/.
 v9 2026-10-06: Claim · Edit · Remove · Report each open our agent on WhatsApp with [GATE|kh34363|action] (Kim). v8 in archive/.</pre></li>
+<li><pre>DEVELOPER (audit 2026-10-07, not visible): PRODUCTION INDEXING RULES
+- Listing page (kh....contact.page/): index, follow; canonical to itself; LocalBusiness + BreadcrumbList + FAQPage JSON-LD.
+- Vertical page (city + category): index, follow; canonical to itself; ItemList + BreadcrumbList; OG tags.
+- Security page (/contact-details before the check): noindex, follow; NO canonical (N14, N17).
+- Contact details page (after the check): noindex, nofollow; never in the sitemap; values only server-side after siteverify.
+- Mockups (this repo and the public copies): noindex, nofollow + robots.txt Disallow.
+ADS (item 8): AdSense script async and loaded lazily (after first interaction or when a slot nears the viewport); every
+slot has a fixed reserved height (300x250 -&gt; 250px) so nothing shifts (CLS 0). NO AdSense on the home page or the
+security page. Cloudflare Turnstile ONLY on the security page, nowhere else.</pre></li>
 <li><pre>1. HEADER, small, the opposite order of the listing page (Kim 2026-10-06): name as the back link, then category and city.
 No description, no logo: most visitors come from the listing page where all that already is; the few who land
 directly get enough from the name, the category line and the table below. The frozen yellow line belongs to the
@@ -116,7 +128,11 @@ showing details. Keyboard (Enter/Space/arrows on the handle) and &quot;or tap he
 Email shows its first letter and domain only. NO WEBSITE ROW (Kim 2026-10-06): too many listed websites are dead and
 send visitors to 404s, so the website is not shown on the gate. Community notes: shown only when at least one
 note exists; the count of 3 here is sample data (the feature is not live).</pre></li>
-<li><pre>6. HOUSE AD (ours, labelled). Buttons on ONE line (wrap only under 340px): WhatsApp primary with the yellow underline,
-email secondary and lighter (outline, no thick underline; Kim 2026-10-07). What contact.page can do + claim / edit / remove in the same box.
+<li><pre>6. HOUSE AD (ours, labelled). Buttons on ONE line (wrap only under 340px), same size, weight 600,
+border and icon size, no underline; primary (WhatsApp) solid yellow fill, secondary (email) white fill with the same
+yellow border (Kim 2026-10-07). What contact.page can do + claim / edit / remove in the same box.
 Copy follows the home page (CONTACT/pages/home/index.html). Buttons give honest notes until the routes ship.</pre></li>
+<li><pre>FOOTER HELP (Kim 2026-10-07, MVP): both channels, WhatsApp and the email bot (email preferred longer-term for a
+business feel and record keeping). Claim / Edit / Remove / Report stay WhatsApp deep links. No other footer links
+yet: Terms and Cookie settings wait for Kim.</pre></li>
 </ol></body></html>

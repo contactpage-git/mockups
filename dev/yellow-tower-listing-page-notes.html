@@ -9,7 +9,7 @@ pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe 
 <h1>Developer notes: Listing page: Yellow Tower</h1>
 <p>The notes written into the mockup's source, summary first, then in page order (top to bottom). Sample data only; contact values are masked.</p>
 <ol>
-<li><pre>YELLOW TOWER LISTING PAGE (current: version 17, 2026-10-07; design owner Page Claude Code, v17 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
+<li><pre>YELLOW TOWER LISTING PAGE (current: version 18, 2026-10-07; design owner Page Claude Code, v17-v18 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
 Built from v3 (Page Muse) after the review in CONTACT/kb/listing-page-v3-review-2026-10-06.md.
 
 ORDER, mobile first (rules: mobile first; design-evidence rules 1-3; engine &quot;the page earns its ads&quot;; decisions file):
@@ -42,6 +42,10 @@ v4 2026-10-06: see CONTACT/kb/listing-page-v3-review-2026-10-06.md for the full 
 One current file per page, older versions in archive/ (Kim 2026-10-06).
 v5 2026-10-06: kicker smaller, grey, italic, regular weight (Kim&#x27;s comment: too big and too clear). Still a link (SEO). v4 in archive/.
 v6 2026-10-06 (Kim: &quot;survival and growth hacking, within AdSense rules&quot;): ad plan below; v5 in archive/.
+v18 2026-10-07 (.page Mockups): audit fixes: intro 2 lines and glance 1 line so &quot;View contact details&quot; is above the fold
+               at 360x640; no ↓ and no &quot;Manage advertisement&quot;; ad label &quot;Advertisements&quot;; BreadcrumbList JSON-LD; WebP 320/600 with
+               srcset + width/height; descriptive alt texts; every WhatsApp text asks for the email (N25); dev notes for
+               items 4, 8, 10. Also footer Help offers both channels, WhatsApp and the email bot (Kim 2026-10-07, MVP; email preferred longer-term); no other footer links added (Terms / Cookie settings wait for Kim). v17 in archive/.
 v17 2026-10-07 (.page Mockups): kicker and keyword chips link to the new vertical mockup phnom-penh-office-rental-vertical-page.html
                 (standard mockup set, Kim 2026-10-06: vertical -&gt; listing -&gt; security check -&gt; contact details); nothing else changed. v16 in archive/.
 v16 2026-10-06: photos and product photos cropped to one 4:3 box size; rounded corners kept (Kim loves them). v15 in archive/.
@@ -71,19 +75,32 @@ AD PLAN (growth within AdSense policy)
 - Never: ads on the security gate, ads next to the contact or call buttons, two ads in a row, wording that invites clicks,
   styling a card to look like an ad or an ad to look like content.
 - Measure: page RPM and contact reveals per session (design-evidence events) before and after; drop Ad #mid if reveals fall.</pre></li>
+<li><pre>DEVELOPER (audit 2026-10-07, not visible): PRODUCTION INDEXING RULES
+- Listing page (kh....contact.page/): index, follow; canonical to itself; LocalBusiness + BreadcrumbList + FAQPage JSON-LD.
+- Vertical page (city + category): index, follow; canonical to itself; ItemList + BreadcrumbList; OG tags.
+- Security page (/contact-details before the check): noindex, follow; NO canonical (N14, N17).
+- Contact details page (after the check): noindex, nofollow; never in the sitemap; values only server-side after siteverify.
+- Mockups (this repo and the public copies): noindex, nofollow + robots.txt Disallow.
+ADS (item 8): AdSense script async and loaded lazily (after first interaction or when a slot nears the viewport); every
+slot has a fixed reserved height (300x250 -&gt; 250px) so nothing shifts (CLS 0). NO AdSense on the home page or the
+security page. Cloudflare Turnstile ONLY on the security page, nowhere else.</pre></li>
 <li><pre>IDENTITY. Only identity above Ad #1 (design-evidence rule 1). Kicker links to the one existing office rental vertical.
 IF data: kicker, H1 with the frozen yellow line, logo when a real logo file exists (none in the repo yet, so none shown:
 never an &quot;awaiting asset&quot; placeholder), short description. IF no short description: the bridge cascade (engine decision 1).
-The ↓ is a plain indicator, never a link (D14). Description editing lives only under About (D31).</pre></li>
+Intro max 2 lines on a 360px phone, no ↓ (audit 2026-10-07: &quot;View contact details&quot; above the fold at 360x640). Description editing lives only under About (D31).</pre></li>
 <li><pre>AD #1, 300x250 fixed on every screen, height reserved, never collapses (D5).
-IF creative: the ad + tiny &quot;Manage advertisement&quot;. IF none: &quot;No advertisement yet — add&quot;. REMOVE: &quot;Advertisement hidden&quot; + Undo.</pre></li>
+Label &quot;Advertisements&quot;; no &quot;Manage advertisement&quot; link and no ↓ above it (audit 2026-10-07).
+DEVELOPER (item 8): AdSense async + lazy, slot height fixed at 250px (no layout shift).</pre></li>
 <li><pre>AT A GLANCE: the dead zone between the ad and the contact button (engine 2026-10-05). Plain text, nothing to tap.
 Rows only when the record has them: today&#x27;s hours, area, channel types. No price row: prices come only from the owner (Kim 2026-10-06) (never values,
-never &quot;website&quot;, N22). IF fewer than two rows: left out.</pre></li>
+never &quot;website&quot;, N22). IF fewer than two rows: left out. ONE line only (audit 2026-10-07; area is already in the kicker).</pre></li>
 <li><pre>CONTACT BOX (mother box, D2, D33, D35). Masked number only. The lock button goes to the separate security page
 (production /contact-details; here the security page mockup). Two ragged lines of tiny grey unlock copy, the ↓ is not
 a link. &quot;Website&quot; and &quot;Social&quot; dropped from the copy (N22; social profiles are not verified for this business).
-&quot;Edit or add contact details&quot; centred below, for owners. No WhatsApp or email chips, no divider below (D2).</pre></li>
+&quot;Edit or add contact details&quot; centred below, for owners. No WhatsApp or email chips, no divider below (D2).
+DEVELOPER (item 4, A/B test): exclude the unlock button from AdSense vignettes with data-google-interstitial=&quot;false&quot;
+on this link (variant B) vs the default (variant A); compare contact_gate_solved rate and vignette revenue per 1,000
+views before deciding. Above the fold at 360x640 with a clear gap to the ad (glance line + box header between).</pre></li>
 <li><pre>NEED HELP (D3): narrower, tucked under the contact box (overlap 12px, lower stacking, faint shadow), yellow AI badge.
 The AI choices sit IN the card (v3&#x27;s separate AI box and any jump to it are gone: no jump links). Each pick opens the
 assistant with the public brief (no contact values; the full record only after the gate). Logs ai_handoff_pick.</pre></li>
@@ -127,4 +144,7 @@ our agent @newcustomers on WhatsApp with a tagged message [PAGE|kh34363|action];
 Wording to owners: &quot;site&quot; and &quot;page&quot;, never &quot;listing&quot;.</pre></li>
 <li><pre>REPORT (D36, Kim 2026-10-06): opens the agent with [PAGE|kh34363|report]; the agent asks the reason (closed, wrong
 information, legal, fraud, other), confirms with a reference, and routes formal legal notices to compliance. Small and grey.</pre></li>
+<li><pre>FOOTER HELP (Kim 2026-10-07, MVP): both channels, WhatsApp and the email bot (email preferred longer-term for a
+business feel and record keeping). Claim / Edit / Remove / Report stay WhatsApp deep links. No other footer links
+yet: Terms and Cookie settings wait for Kim.</pre></li>
 </ol></body></html>

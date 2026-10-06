@@ -9,7 +9,7 @@ pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe 
 <h1>Developer notes: Contact details</h1>
 <p>The notes written into the mockup's source, summary first, then in page order (top to bottom). Sample data only; contact values are masked.</p>
 <ol>
-<li><pre>YELLOW TOWER CONTACT DETAILS PAGE (current: version 2, 2026-10-07, .page Mockups). Design task D015. Route in production:
+<li><pre>YELLOW TOWER CONTACT DETAILS PAGE (current: version 3, 2026-10-07, .page Mockups). Design task D015. Route in production:
 kh34363.contact.page/contact-details after the check (the security page and this page share the route; the server shows
 this page once cp_verified is set). Page 4 of the standard mockup set (Kim 2026-10-06):
 1 phnom-penh-office-rental-vertical-page.html -&gt; 2 yellow-tower-listing-page.html -&gt; 3 yellow-tower-security-page.html -&gt; 4 this page.
@@ -41,15 +41,31 @@ OPEN FOR KIM
 - Which channel leads when there are no votes yet (proposal: the one the owner marks main, else phone).
 
 CHANGE LOG
+v3 2026-10-07 (.page Mockups): Kim: no subline under the H1; every contact value in full (phone placeholders filled at
+               publish, emails literal); &quot;Open WhatsApp&quot; in the new style (solid yellow, weight 600, no underline). Audit: AdSense slot replaced by our house ad (get your free site), placed after the
+               owner box, far from the AI chips; WhatsApp texts ask for the email (N25); dev notes for items 8 and 10. Also footer Help offers both channels, WhatsApp and the email bot (Kim 2026-10-07, MVP; email preferred longer-term); no other footer links added (Terms / Cookie settings wait for Kim). v2 in archive/.
 v2 2026-10-07 (Kim): role line in first-person wording to match the security page&#x27;s &quot;I am…&quot; (&quot;You said you’re the owner
                or staff.&quot;). v1 in archive/.
 v1 2026-10-07: first version (.page Mockups).</pre></li>
-<li><pre>1. HEADER (D015 spec 1). Breadcrumb back to the listing page, H1 &quot;Contact &lt;name&gt;&quot;, category and area as a grey subline,
+<li><pre>DEVELOPER (audit 2026-10-07, not visible): PRODUCTION INDEXING RULES
+- Listing page (kh....contact.page/): index, follow; canonical to itself; LocalBusiness + BreadcrumbList + FAQPage JSON-LD.
+- Vertical page (city + category): index, follow; canonical to itself; ItemList + BreadcrumbList; OG tags.
+- Security page (/contact-details before the check): noindex, follow; NO canonical (N14, N17).
+- Contact details page (after the check): noindex, nofollow; never in the sitemap; values only server-side after siteverify.
+- Mockups (this repo and the public copies): noindex, nofollow + robots.txt Disallow.
+ADS (item 8): AdSense script async and loaded lazily (after first interaction or when a slot nears the viewport); every
+slot has a fixed reserved height (300x250 -&gt; 250px) so nothing shifts (CLS 0). NO AdSense on the home page or the
+security page. Cloudflare Turnstile ONLY on the security page, nowhere else.</pre></li>
+<li><pre>1. HEADER (D015 spec 1). Breadcrumb back to the listing page, H1 &quot;Contact &lt;name&gt;&quot; (no category/area subline: visitors
+already saw it, Kim 2026-10-07),
 Open now / Closed pill from the hours data (Phnom Penh time). Security check (page 3) is one step back in the browser.</pre></li>
 <li><pre>ROLE LINE. The security page sends ?role=; &quot;the owner or staff&quot; (works_here) adds a claim line (security page comment, block 2).</pre></li>
 <li><pre>2. BEST WAY TO REACH THEM (D015 spec 2, the &quot;vibe bar&quot;). One big card: icon, value, one action, the vote status line and
 two one-tap buttons. The best channel = most net &quot;worked&quot; votes, then the most recent confirmation.
-MOCKUP: values are masked (no real digits in the repo, D015 builder rules); production shows the full value here.
+FULL VALUES (Kim 2026-10-07): this is the page after the unlock, so every value shows in full; masked/locked rows belong
+only before the unlock. The repo keeps no raw phone digits (wiki_check), so phone numbers are placeholders here
+({{YT_PHONE}} etc.) that publish-mockups.sh fills in the public copy from a box-side file. Sources: Yellow Tower&#x27;s own
+values (yellow-tower.com + kh34363.contact.page, kb/listing-page-engine.md); the archived number is an obvious sample.
 Vote counts are illustrative sample data. Votes change in-memory state only.</pre></li>
 <li><pre>3. OTHER WAYS (D015 spec 3). Compact rows: icon, label, value, tiny vote count, action. Order by net &quot;worked&quot; votes.
 A channel reported not working recently drops to the bottom in grey, never hidden. Empty channels: ONE quiet row.
@@ -70,11 +86,16 @@ when one is posted, also shows here as one line under the hours (none posted: hi
 / owner), date. No chat bubbles, avatars or typing dots (honest UI). Composer: textarea, quick chips, Post; notes are
 checked before they show. The three notes are illustrative sample data (security page shows &quot;Community notes 3&quot;).
 Notes use inbox_items route=contact_note (agent-channels.md). Below, collapsed: &quot;Possibly related, unverified&quot;.</pre></li>
-<li><pre>8. AD SLOT (D015 spec 6): one fixed 300x250 after the content, same empty-state contract as the listing page.
-Never next to a contact button. (N14 bans AdSense on the gate, page 3; this page is after the gate.)</pre></li>
 <li><pre>9. NEED HELP (D015 spec 7): behind the gate the brief carries the FULL record (listing-page-engine). Mockup: no values.</pre></li>
 <li><pre>10. OWNER ENTRY. PROPOSAL, waits for Kim (design-state question 1): the owner&#x27;s side is Page Bot&#x27;s owner screen
 (CONTACT/kb/mockups/owner-screen-2026-10-06.html, owner layers from kb/data-pool-design-2026-10-06.md). It is linked,
 not copied: the visitor page and the owner screen use the same fields; the owner sees full values and the layers,
 visitors see this page. Production: &quot;Sign in&quot; = owner login, then the owner screen.</pre></li>
+<li><pre>8. HOUSE AD (audit 2026-10-07): replaces the AdSense slot. Ours, labelled &quot;contact.page&quot;: get your own free site
+(same box as the security page). Placed in the footer after the owner box, far from the AI assistant chips.
+DEVELOPER (item 8): no AdSense on this page in the MVP; if AdSense comes back here: async + lazy, fixed 250px slot,
+never next to a contact value, a button or the AI chips.</pre></li>
+<li><pre>FOOTER HELP (Kim 2026-10-07, MVP): both channels, WhatsApp and the email bot (email preferred longer-term for a
+business feel and record keeping). Claim / Edit / Remove / Report stay WhatsApp deep links. No other footer links
+yet: Terms and Cookie settings wait for Kim.</pre></li>
 </ol></body></html>
