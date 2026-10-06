@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Developer notes: Vertical page: office space for rent in Phnom Penh</title>
+<style>body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:1040px;margin:32px auto;padding:0 16px;color:#161616}
+h1{font-size:22px;border-left:5px solid #FFC400;padding-left:10px}p{color:#6f6f6f;font-size:14px}a{color:#161616}
+ol{padding-left:28px}li{margin:0 0 14px}li::marker{font-weight:700;color:#8a8a8a}
+pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fafafa;border:1px solid #e9e9e9;border-radius:8px;padding:10px 12px;margin:0}</style></head>
+<body><p><a href="../index.html">All mockups</a> · <a href="../phnom-penh-office-rental-vertical-page.html">Open the mockup</a></p>
+<h1>Developer notes: Vertical page: office space for rent in Phnom Penh</h1>
+<p>The notes written into the mockup's source, summary first, then in page order (top to bottom). Sample data only; contact values are masked.</p>
+<ol>
+<li><pre>PHNOM PENH OFFICE RENTAL VERTICAL PAGE (current: version 4, 2026-10-07, .page Mockups). Older versions: archive/. Page 1 of the standard mockup set
+(Kim 2026-10-06): 1 this vertical -&gt; 2 yellow-tower-listing-page.html -&gt; 3 yellow-tower-security-page.html
+-&gt; 4 yellow-tower-contact-details-page.html. Design state: CONTACT/design-state.md.
+The old lab page CONTACT/pages/phnom-penh-mini-verticals/phnom-penh-office-rentals.html (dark theme, real listings) is NOT
+touched and NOT replaced by this file; this is the mockup in the current design.
+
+ORDER, mobile first: breadcrumb nav -&gt; H1 with the frozen yellow line -&gt; count subline -&gt; intro -&gt; Ad #1 -&gt; cards 1-3 -&gt; Ad #mid -&gt; cards 4+
+-&gt; add your business -&gt; Ad #2 -&gt; footer: green category box, set chain, sample line.
+
+RULES APPLIED
+- Design package (CONTACT/design/README.md): light only, #FFC400, 760px column (phone frame on wide screens, N30 note),
+  buttons yellow outline, gold lock, chip rule, icons from CONTACT/design/icons, no emoji. CSS copied from the listing page v16.
+- Data: Yellow Tower lines copied from the listing mockup; cards 2-6 are real businesses (Kim 2026-10-07, N33), every
+  fact sourced (sources per card in design-state.md, read 2026-10-07). Emerald HUB was dropped: reported permanently closed. Order 2-6
+  is not a verified ranking yet (verification counts not stored for them). No contact values in source.
+- No jump links, no prices (N31), no website (N22), no ratings (C10). Cards go straight to the gate (N17).
+- Up to 50 cards ranked by verification count (N12). Tiers and a &quot;verified&quot; badge are design task D007 (open), not drawn here.
+- noindex in the mockup. Production: indexable vertical, canonical to its own URL.
+- SEO head (Kim 2026-10-07): &lt;title&gt; and meta description differ from the H1 and carry the long-tail words; JSON-LD
+  BreadcrumbList (mirrors the nav) and ItemList (cards in rank order; production gives every card its page URL, the
+  cards 2-6 carry their live page URLs). {{CITY_URL}} = fill before launch, the Phnom Penh city route is not decided.
+- Teaser rules: masked numbers only, no contact values in source or JSON-LD (C5, D6).
+
+OPEN
+- The count in the subline (&quot;6 office spaces&quot;) is the mockup count; production shows the real count.
+- Phnom Penh city page and the country route (www vs cambodia.contact.page) are not decided; breadcrumb links are stand-ins.
+- D007 tier design and the Freelancer card variant (D006) are not in this version.
+
+CHANGE LOG
+v4 2026-10-07 (Kim): cards are editorial teasers under &quot;Top standouts&quot; (angle line + sourced highlights, no chips);
+               the 5 &quot;Example ...&quot; cards replaced by 5 real Phnom Penh office-rental businesses, ItemList with their
+               URLs; rank as a small yellow badge top-right; only card 1 keeps the bold underlined button, cards 2-6
+               the light one; full-width photo on top with the rank badge on it, tags back; grid 1 column on phones, 2 columns from
+               900px (the frame widens there); &quot;Mockup: 1 real business, 5 examples&quot; note dropped; intro and meta reworded. v3 in archive/.
+v3 2026-10-07 (Kim): the whole breadcrumb takes the listing page kicker style (12px, italic, regular weight, grey,
+               light-grey underlined links), current item not bold; &quot;direct contact with each business&quot; dropped from the
+               subline and the meta description. v2 in archive/.
+v2 2026-10-07 (Kim: the kicker above the H1 repeated it, weak for SEO): kicker replaced by a breadcrumb nav (Cambodia &gt; Phnom Penh &gt;
+               Office Space) with BreadcrumbList JSON-LD; H1 &quot;Office Space for Rent in Phnom Penh&quot; + count subline; long-tail intro;
+               new title and meta description; ItemList JSON-LD. v1 in archive/.
+v1 2026-10-07: first version (.page Mockups).</pre></li>
+<li><pre>BREADCRUMB (Kim 2026-10-07: the kicker repeated the H1, weak for SEO). A real nav with links, BreadcrumbList JSON-LD in
+the head mirrors it. Cambodia = the live Cambodia portal today (www.contact.page; becomes cambodia.contact.page only if
+Kim approves that move, site-architecture.md). Phnom Penh: no city page exists yet, so the mockup links the Phnom Penh
+preview index in the repo (production: the Phnom Penh city page, route still to decide). Last crumb = this page, not a link.</pre></li>
+<li><pre>H1 (one only) with the frozen yellow line: the main search phrase. Subline = count + value, plain text (count is the mockup
+count; production prints the real number of cards). Intro: two sentences of natural long-tail words (districts, serviced /
+private / small office, co-working); no prices, no claims about any business, no keyword lists.</pre></li>
+<li><pre>AD #1, 300x250 fixed, right after the identity (design-evidence rule 1; &quot;the page earns its ads&quot;, Kim 2026-10-05).
+The first card comes after it with content in between, never a button right under the ad.</pre></li>
+<li><pre>CARDS (&quot;Top standouts&quot;, Kim 2026-10-07: vertical cards are editorial teasers, a standout angle plus real highlights, not
+listing fields). Yellow Tower is card 1; cards 2-6 are REAL Phnom Penh office-rental businesses (Kim 2026-10-07,
+conflicts N33). Every fact has a source (live contact.page page, the business&#x27;s own site, or a public reference; list
+in design-state.md); a fact without a source is left out. No ratings yet: none found from a source we can cite (C10
+still holds until a sourced rating exists). No photos of cards 2-6 in the repo, so a grey placeholder.
+Each card (Kim 2026-10-07): full-width 3:2 photo on top (object-fit cover, rounded top corners; no real photo =
+neutral placeholder with the category icon, never a fake photo), small yellow rank badge over the photo&#x27;s top-right
+corner; below: name (links to the business&#x27;s page), area, angle line, 1-2 sentences of highlights, tags (business
+activities from the live page), masked number, lock button to the security page (V5; N17: straight to the gate,
+/contact-details?from=vertical on live sites). Only card 1 has the bold yellow-underline button; cards 2-6 use the
+light one (outline + lock, normal weight, no thick underline; Kim 2026-10-07). Order 2-6 is not a verified ranking
+yet (D007). No prices (N31), no website (N22), numbers masked, no digits in source.</pre></li>
+<li><pre>No real photo: static map fallback (Kim 2026-10-07, kb/static-map-images.md). Pin from kh56012.contact.page/map; OpenFreeMap/OSM render via design/tools/static_map.py, attribution on the image.</pre></li>
+<li><pre>AD #MID after card 4 (end of row 2 on wide screens, so no hole in the grid): content above and below, never next
+to a contact button.</pre></li>
+<li><pre>ADD YOUR BUSINESS: owner words (N26: &quot;your site&quot;, never &quot;listing&quot;); opens our agent with a tagged message, email works too.</pre></li>
+<li><pre>AD #2 (bottom): after the content; never two ads in a row.</pre></li>
+<li><pre>GREEN CATEGORY BOX (frozen, option A, K7).</pre></li>
+</ol></body></html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Developer notes: Contact details</title>
+<style>body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:1040px;margin:32px auto;padding:0 16px;color:#161616}
+h1{font-size:22px;border-left:5px solid #FFC400;padding-left:10px}p{color:#6f6f6f;font-size:14px}a{color:#161616}
+ol{padding-left:28px}li{margin:0 0 14px}li::marker{font-weight:700;color:#8a8a8a}
+pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fafafa;border:1px solid #e9e9e9;border-radius:8px;padding:10px 12px;margin:0}</style></head>
+<body><p><a href="../index.html">All mockups</a> · <a href="../yellow-tower-contact-details-page.html">Open the mockup</a></p>
+<h1>Developer notes: Contact details</h1>
+<p>The notes written into the mockup's source, summary first, then in page order (top to bottom). Sample data only; contact values are masked.</p>
+<ol>
+<li><pre>YELLOW TOWER CONTACT DETAILS PAGE (current: version 2, 2026-10-07, .page Mockups). Design task D015. Route in production:
+kh34363.contact.page/contact-details after the check (the security page and this page share the route; the server shows
+this page once cp_verified is set). Page 4 of the standard mockup set (Kim 2026-10-06):
+1 phnom-penh-office-rental-vertical-page.html -&gt; 2 yellow-tower-listing-page.html -&gt; 3 yellow-tower-security-page.html -&gt; 4 this page.
+
+BUILT FROM
+- Claude&#x27;s D015 spec: CONTACT/room/notes/2026-10-06-114935-claude.md (order, votes, notes, agent row, builder rules).
+- Owner side: Page Bot&#x27;s owner screen CONTACT/kb/mockups/owner-screen-2026-10-06.html (linked, not copied; same field names:
+  contact details; address and directions with the six direction fields; opening hours; languages spoken; booking link).
+- Owner layers 1-7: CONTACT/kb/data-pool-design-2026-10-06.md. Placement on this page = PROPOSAL waiting for Kim
+  (design-state.md, question 1): here only a small &quot;Owner? Sign in&quot; box that lists them and links to the owner screen.
+
+ORDER, mobile first: header (back link, H1, subline, open pill) -&gt; role line (the owner or staff) -&gt; best way card with votes -&gt;
+other ways (+ earlier contact lines, archived) -&gt; agent row -&gt; how to find them -&gt; when to reach them -&gt; community notes -&gt;
+ad -&gt; need help -&gt; footer: owner box (proposal), edit / claim / report, set chain, sample line.
+
+RULES APPLIED
+- noindex (N14). No AdSense on the gate; one slot here, after the content, never beside a contact button.
+- No contact values in the repo: masked values only (D015 builder rule); production shows full values. Yellow Tower&#x27;s
+  public lines (address, hours, parking answer) copied from the listing mockup; masked emails as on the security page.
+- Data rule (Kim 2026-10-06): contact lines add-only, old ones archived with their date; profile fields overwrite.
+- No website row (N22, open). No stars, ratings or percentages; &quot;didn&#x27;t work&quot; is a fact about a number, shown.
+- Design package: light, #FFC400, 760px column / phone frame, yellow-outline buttons, gold lock, chip rule, design icons.
+- Owner actions open our agent with [DETAILS|kh34363|action] (design README, Owner actions).
+- Vote counts, notes and the archived line are illustrative sample data.
+
+OPEN FOR KIM
+- Owner layers on this page vs a separate owner screen (proposal above).
+- Website after a link check (N22).
+- Which channel leads when there are no votes yet (proposal: the one the owner marks main, else phone).
+
+CHANGE LOG
+v2 2026-10-07 (Kim): role line in first-person wording to match the security page&#x27;s &quot;I am…&quot; (&quot;You said you’re the owner
+               or staff.&quot;). v1 in archive/.
+v1 2026-10-07: first version (.page Mockups).</pre></li>
+<li><pre>1. HEADER (D015 spec 1). Breadcrumb back to the listing page, H1 &quot;Contact &lt;name&gt;&quot;, category and area as a grey subline,
+Open now / Closed pill from the hours data (Phnom Penh time). Security check (page 3) is one step back in the browser.</pre></li>
+<li><pre>ROLE LINE. The security page sends ?role=; &quot;the owner or staff&quot; (works_here) adds a claim line (security page comment, block 2).</pre></li>
+<li><pre>2. BEST WAY TO REACH THEM (D015 spec 2, the &quot;vibe bar&quot;). One big card: icon, value, one action, the vote status line and
+two one-tap buttons. The best channel = most net &quot;worked&quot; votes, then the most recent confirmation.
+MOCKUP: values are masked (no real digits in the repo, D015 builder rules); production shows the full value here.
+Vote counts are illustrative sample data. Votes change in-memory state only.</pre></li>
+<li><pre>3. OTHER WAYS (D015 spec 3). Compact rows: icon, label, value, tiny vote count, action. Order by net &quot;worked&quot; votes.
+A channel reported not working recently drops to the bottom in grey, never hidden. Empty channels: ONE quiet row.
+Same field set and order as the owner screen&#x27;s &quot;Your contact details&quot; (CONTACT/kb/mockups/owner-screen-2026-10-06.html):
+Phone (main line), WhatsApp, Email; extra emails as extra rows. No website row (N22: open whether it shows after a
+link check passes; not shown until Kim decides).
+DATA RULE (Kim 2026-10-06, data-pool-design layer 6): contact lines are add-only. A new number is a new row; an old one
+is archived with its date, never edited or deleted (&quot;Earlier contact lines&quot; below; the archived line is sample data).</pre></li>
+<li><pre>4. HOUSE AGENT ROW (D015 spec 4). Styled apart from the business&#x27;s own channels; AI disclosed in the label (start-here).</pre></li>
+<li><pre>5. ADDRESS AND DIRECTIONS. Same fields and order as the owner screen (layer 6): Street address, Landmark, Floor, Entrance,
+Parking, Directions in Khmer, Map pin note. Profile fields: they overwrite in place (no history). IF empty: a quiet
+&quot;No X yet · add&quot; (block builder: missing data shown, never hidden, never invented). Street address from the listing;
+Parking from the owner&#x27;s FAQ answer on the listing (&quot;Is parking included? Yes.&quot;). &quot;Open in map&quot; = our own map page (N32).</pre></li>
+<li><pre>6. WHEN TO REACH THEM + BEFORE YOU CONTACT. Owner-screen sections &quot;Opening hours&quot;, &quot;Languages spoken&quot;, &quot;Booking link&quot;
+(same names). Hours from the listing. Announcements and FAQ from the owner live on the listing page; an announcement,
+when one is posted, also shows here as one line under the hours (none posted: hidden, owner screen rule 7a).</pre></li>
+<li><pre>7. COMMUNITY NOTES (D015 spec 5): &quot;How reaching them went&quot;. Plain list with hairlines: text, source tag (person / AI agent
+/ owner), date. No chat bubbles, avatars or typing dots (honest UI). Composer: textarea, quick chips, Post; notes are
+checked before they show. The three notes are illustrative sample data (security page shows &quot;Community notes 3&quot;).
+Notes use inbox_items route=contact_note (agent-channels.md). Below, collapsed: &quot;Possibly related, unverified&quot;.</pre></li>
+<li><pre>8. AD SLOT (D015 spec 6): one fixed 300x250 after the content, same empty-state contract as the listing page.
+Never next to a contact button. (N14 bans AdSense on the gate, page 3; this page is after the gate.)</pre></li>
+<li><pre>9. NEED HELP (D015 spec 7): behind the gate the brief carries the FULL record (listing-page-engine). Mockup: no values.</pre></li>
+<li><pre>10. OWNER ENTRY. PROPOSAL, waits for Kim (design-state question 1): the owner&#x27;s side is Page Bot&#x27;s owner screen
+(CONTACT/kb/mockups/owner-screen-2026-10-06.html, owner layers from kb/data-pool-design-2026-10-06.md). It is linked,
+not copied: the visitor page and the owner screen use the same fields; the owner sees full values and the layers,
+visitors see this page. Production: &quot;Sign in&quot; = owner login, then the owner screen.</pre></li>
+</ol></body></html>

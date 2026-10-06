@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Developer notes: Owner screen (Page Bot, proposal)</title>
+<style>body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:1040px;margin:32px auto;padding:0 16px;color:#161616}
+h1{font-size:22px;border-left:5px solid #FFC400;padding-left:10px}p{color:#6f6f6f;font-size:14px}a{color:#161616}
+ol{padding-left:28px}li{margin:0 0 14px}li::marker{font-weight:700;color:#8a8a8a}
+pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fafafa;border:1px solid #e9e9e9;border-radius:8px;padding:10px 12px;margin:0}</style></head>
+<body><p><a href="../index.html">All mockups</a> · <a href="../owner-screen.html">Open the mockup</a></p>
+<h1>Developer notes: Owner screen (Page Bot, proposal)</h1>
+<p>The notes written into the mockup's source, summary first, then in page order (top to bottom). Sample data only; contact values are masked.</p>
+<ol>
+<li><pre>OWNER SCREEN MOCKUP v1, 2026-10-06, Page Bot. Spec: CONTACT/kb/data-pool-design-2026-10-06.md, &quot;Owner layers&quot; 1-7.
+What it is: the owner&#x27;s own screen behind the security door (signed in). Mockup only, nothing here is wired to production.
+Sample data: Mekong Bean Coffee is INVENTED (not from the MOC crawl). Phone +855 12 000 000 and *.example emails are fake.
+ORDER (mobile, one column):
+ greeting = interview question 1 from the MOC record (layer 6 + 1) -&gt; your contact details (full values, owner only)
+ -&gt; what your page shows: field checklist, all ticked by default, Products unticked as the example (layer 7)
+ -&gt; address and directions with the extra direction fields (layer 6) -&gt; missing details with &quot;Try to find it&quot; (layer 4)
+ -&gt; announcements composer (archive-only comms) -&gt; FAQ from the owner -&gt; refresh my page (layer 2)
+ -&gt; private panel: deep register data, owner-pass (layer 1).
+DESKTOP (container 920px+): two columns. Main: greeting, address, missing details, announcements, FAQ.
+ Side: contact details, checklist, refresh, private panel. Same markup, CSS container queries; the &quot;Phone&quot; toggle in the
+ mockup bar puts the same screen in a 390px phone frame.
+RULES APPLIED: design package colours (#FFC400 accents, gold lock #E0A500, ink #161616, lines #e9e9e9, light only); buttons are
+ the yellow outline with the highlight stroke; chips per the chip rule; Lucide/Simple Icons from CONTACT/design/icons, no emoji;
+ the 4px yellow top line and the yellow bar before the name (frozen). Words to owners: &quot;your page&quot;, never &quot;listing&quot;
+ (so the button reads &quot;Refresh my page&quot;). Comms lines (announcements) are archive-only; profile fields just overwrite.
+OPEN FOR KIM: (1) Khmer lines are a draft and need a native check. (2) The register record normally carries the registration
+ number; the empty-field example uses it because the brief asked for it, a real owner would more likely see e.g. the patent
+ tax or VAT certificate number empty. (3) Owners still change everything by WhatsApp too: every card keeps the agent route.
+CHANGE LOG: v1 2026-10-06 first version (Page Bot).</pre></li>
+<li><pre>TOP BAR. Logo, the business name (desktop), link to the public page, owner avatar.</pre></li>
+<li><pre>SECURITY DOOR STRIP. Tells the owner why he sees full values: he is signed in and nobody else sees this screen.</pre></li>
+<li><pre>IDENTITY. Same kicker and yellow bar as the public page, so the owner recognises his own page.</pre></li>
+<li><pre>1. GREETING = INTERVIEW QUESTION 1 (layers 6 + 1). Opens with his own register record: an easy yes/no, and proof we
+already know his business. IF no register match: open with the most valuable empty field instead. Yes = confirm and
+go to question 2; Fix it = the address fields below open for editing. Progress = questions answered, not % of fields.</pre></li>
+<li><pre>3. ADDRESS AND DIRECTIONS (layer 6). Street from the register; the extra fields help people actually find the door.
+Each field overwrites (profile field, no history). IF a field is empty: it shows as a grey &quot;Add&quot; row and becomes an
+interview question. Map preview is drawn by us, never an embed (D8).</pre></li>
+<li><pre>4. MISSING DETAILS with &quot;Try to find it&quot; (layer 4). Each empty field has a small button. Tapped: the warning (no
+guarantee) and an optional box for his own sources, then Go. The result comes back as a message, never auto-published:
+he confirms it first. Row 1 shows the open state, row 2 the default.</pre></li>
+<li><pre>7a. ANNOUNCEMENTS composer. A comms line: archive-only, never edited (rule 2026-10-06). Type chips, how long it shows,
+Khmer copy on/off. IF none posted: the block is hidden on the public page, the composer stays here.</pre></li>
+<li><pre>7b. FAQ FROM THE OWNER. His own words, labelled as his. Suggestions come from his trade (layer 3). On the public page
+it joins the FAQ block (2+ real answers rule) and its JSON-LD.</pre></li>
+<li><pre>CONTACT DETAILS, full values (owner&#x27;s private screen). Visitors only ever see them after the security check.</pre></li>
+<li><pre>2. FIELD CHECKLIST (layer 7). Every section in one list, ALL ticked by default. Untick = hidden from the page and the
+interview, never deleted, tick it back any time. Products unticked as the example, with the nudge that turns
+&quot;no products&quot; into &quot;which services?&quot;.</pre></li>
+<li><pre>5. REFRESH MY PAGE (layer 2). Agents re-pull and enrich; about a day; we message him when done. IF a refresh is
+running: the button turns into &quot;Refreshing, started 21:40&quot; and is off until it ends.</pre></li>
+<li><pre>6. PRIVATE PANEL (layer 1, owner-pass). Deep register data only the verified owner sees; never on the public page,
+never in the JSON-LD, never sent to visitors or AIs. Shareholders and full filings need his own MOC login.</pre></li>
+</ol></body></html>

@@ -151,13 +151,12 @@ body[data-state="closed"] .house .own{display:none}
 <form class="gate" id="gateForm" method="post" action="#" novalidate>
 
 <div class="step" id="who">
-<p class="step-t" id="who-t">Who are you?</p>
+<p class="step-t" id="who-t">I am…</p>
 <div class="roles" role="radiogroup" aria-labelledby="who-t">
-<input type="radio" name="role" id="r-customer" value="customer"><label for="r-customer"><svg class="ck" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Customer</label>
-<input type="radio" name="role" id="r-supplier" value="supplier"><label for="r-supplier"><svg class="ck" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Supplier</label>
-<input type="radio" name="role" id="r-job_seeker" value="job_seeker"><label for="r-job_seeker"><svg class="ck" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Job seeker</label>
-<input type="radio" name="role" id="r-works_here" value="works_here"><label for="r-works_here"><svg class="ck" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>I work here</label>
-<input type="radio" name="role" id="r-other" value="other"><label for="r-other"><svg class="ck" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Other</label>
+<input type="radio" name="role" id="r-customer" value="customer"><label for="r-customer"><svg class="ck" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>a customer</label>
+<input type="radio" name="role" id="r-supplier" value="supplier"><label for="r-supplier"><svg class="ck" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>a supplier</label>
+<input type="radio" name="role" id="r-job_seeker" value="job_seeker"><label for="r-job_seeker"><svg class="ck" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>looking for a job</label>
+<input type="radio" name="role" id="r-works_here" value="works_here"><label for="r-works_here"><svg class="ck" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>the owner or staff</label>
 </div>
 </div>
 
@@ -265,7 +264,7 @@ states:
   }
   function needRole(){
     if(role()) return false;
-    who.classList.add('needs'); hint.textContent='Pick who you are first.';
+    who.classList.add('needs'); hint.textContent='Pick one of the “I am…” options first.';
     form.querySelector('input[name=role]').focus(); reset(); return true;
   }
   function unlock(){

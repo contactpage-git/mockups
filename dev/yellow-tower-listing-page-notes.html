@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Developer notes: Listing page: Yellow Tower</title>
+<style>body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:1040px;margin:32px auto;padding:0 16px;color:#161616}
+h1{font-size:22px;border-left:5px solid #FFC400;padding-left:10px}p{color:#6f6f6f;font-size:14px}a{color:#161616}
+ol{padding-left:28px}li{margin:0 0 14px}li::marker{font-weight:700;color:#8a8a8a}
+pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fafafa;border:1px solid #e9e9e9;border-radius:8px;padding:10px 12px;margin:0}</style></head>
+<body><p><a href="../index.html">All mockups</a> · <a href="../yellow-tower-listing-page.html">Open the mockup</a></p>
+<h1>Developer notes: Listing page: Yellow Tower</h1>
+<p>The notes written into the mockup's source, summary first, then in page order (top to bottom). Sample data only; contact values are masked.</p>
+<ol>
+<li><pre>YELLOW TOWER LISTING PAGE (current: version 17, 2026-10-07; design owner Page Claude Code, v17 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
+Built from v3 (Page Muse) after the review in CONTACT/kb/listing-page-v3-review-2026-10-06.md.
+
+ORDER, mobile first (rules: mobile first; design-evidence rules 1-3; engine &quot;the page earns its ads&quot;; decisions file):
+ identity (kicker, H1 with the frozen yellow line, short description ending in a plain ↓)
+ -&gt; Ad #1 -&gt; at a glance (dead zone: nothing clickable) -&gt; contact box -&gt; Need help card -&gt; Location -&gt; FAQ -&gt; Photos
+ -&gt; About -&gt; Offerings -&gt; Facts -&gt; Related categories -&gt; Hours -&gt; More in the area -&gt; Ad #2
+ -&gt; footer: green category box (frozen, option A), page chips, Tools, owner box, Report this page.
+
+RULES APPLIED (newest Kim word wins; conflicts page rows in brackets)
+- No jump links anywhere: the &quot;…&quot; link and the in-page footer anchors of v3 are gone (design-evidence rule 3).
+- Contact box after Ad #1 AND a gap of real content (engine 2026-10-05). The gap is the at-a-glance card, no links.
+- No contact values in source: masked number only; JSON-LD without telephone, email or priceCurrency (D6, D7, C5).
+- No website anywhere on this page, not even in &quot;unlocks&quot; (N22). No video (frozen rule). No map embed, no Google Maps link (D8).
+- Links only to routes that exist: the lock button goes to the security page mockup (production /contact-details);
+  section headers, page chips and &quot;View all photos&quot; link to this business&#x27;s own subpages (Kim 2026-10-06, N28); neighbour lines stay text (fake names).
+- Buttons: yellow outline, dark text, yellow highlight stroke; no heavy yellow fills, no black blocks (N24).
+- Icons only from CONTACT/design/icons, no emoji. 760px column. Light only. #FFC400.
+- Words to owners: &quot;your site&quot;, &quot;page&quot;, never &quot;listing&quot; (bot review, 2026-10-06).
+- Prices without currency, everywhere (D6). Offer names never repeat the price (D23).
+- Mockup data: Yellow Tower is the only real business; neighbours are &quot;Example ...&quot; names (N16).
+
+STILL OPEN FOR KIM (from the 2026-10-03 review)
+- Empty states (&quot;No X yet&quot; + Add) shown to every visitor or only in owner view? This page shows full data, so the
+  three-state pattern lives in the per-block comments only.
+- Currency: decided &quot;never&quot;; schema.org expects priceCurrency on offers. Kept out as decided.
+
+CHANGE LOG
+v3 2026-10-03 (Page Muse), now archive/yellow-tower-listing-page-v3.html.
+v4 2026-10-06: see CONTACT/kb/listing-page-v3-review-2026-10-06.md for the full list. Lock icons gold (#E0A500, Kim).
+One current file per page, older versions in archive/ (Kim 2026-10-06).
+v5 2026-10-06: kicker smaller, grey, italic, regular weight (Kim&#x27;s comment: too big and too clear). Still a link (SEO). v4 in archive/.
+v6 2026-10-06 (Kim: &quot;survival and growth hacking, within AdSense rules&quot;): ad plan below; v5 in archive/.
+v17 2026-10-07 (.page Mockups): kicker and keyword chips link to the new vertical mockup phnom-penh-office-rental-vertical-page.html
+                (standard mockup set, Kim 2026-10-06: vertical -&gt; listing -&gt; security check -&gt; contact details); nothing else changed. v16 in archive/.
+v16 2026-10-06: photos and product photos cropped to one 4:3 box size; rounded corners kept (Kim loves them). v15 in archive/.
+v15 2026-10-06: all prices and offers out (cards, lines, Facts, FAQ, JSON-LD, AI brief); the block is &quot;Products and services&quot; with names
+                and photos only (Kim). v14 in archive/.
+v14 2026-10-06: real photos from yellow-tower.com; chips thinner (24px) with 5px corners; every block ends in a small grey
+                add/update link that opens our agent with a tagged message (Kim: owners update everything by WhatsApp or email). v13 in archive/.
+v13 2026-10-06: &quot;Can I buy&quot; FAQ and the strata-sale line dropped; new FAQ &quot;Is parking included? Yes.&quot; (owner answer, Kim). v12 in archive/.
+v12 2026-10-06: price question dropped from the FAQ and its JSON-LD (Kim: only when the owner answered it). v11 in archive/.
+v11 2026-10-06: section headers (Location, FAQ, Photos, About, Offerings, Hours) link to their subpages with a grey arrow on the
+                right; page chips and &quot;View all photos&quot; link too (Kim). v10 in archive/.
+v10 2026-10-06: Location: &quot;Reachable by road and ferry&quot; and the Facts &quot;Access&quot; row dropped (not in the data); &quot;Open in map&quot; link
+                to our own map page added (Kim). v9 in archive/.
+v9 2026-10-06: one chip style for all chip rows (AI, keywords, page chips): grey fill, no border, 28px, 12.5px (Kim). v8 in archive/.
+v8 2026-10-06: edit, add, claim, manage and report all open our agent on WhatsApp with a tagged message (Kim: &quot;it opens the
+               agent to do all that&quot;); those links smaller and grey; the report form is gone (the agent asks). v7 in archive/.
+v7 2026-10-06: &quot;From&quot; price row dropped from the facts strip (Kim: prices only from the owner, or a synced source that keeps them updated; we do not collect prices). v6 in archive/.
+
+AD PLAN (growth within AdSense policy)
+- Ad #1 right after the identity: the most-seen spot on the page, with the category and place words around it so the ads
+  match what the visitor came for.
+- The gap after Ad #1 is now a compact facts strip with no heading (about 110px, nothing tappable): the contact box comes
+  sooner, but never right against the ad. Google counts buttons near ads as an accidental-click risk; it would put the whole
+  account at risk, which is the one thing survival can&#x27;t afford.
+- Ad #mid between Photos and About, Ad #2 at the bottom: three units on a long page, each with content on both sides,
+  lower two lazy-loaded.
+- Never: ads on the security gate, ads next to the contact or call buttons, two ads in a row, wording that invites clicks,
+  styling a card to look like an ad or an ad to look like content.
+- Measure: page RPM and contact reveals per session (design-evidence events) before and after; drop Ad #mid if reveals fall.</pre></li>
+<li><pre>IDENTITY. Only identity above Ad #1 (design-evidence rule 1). Kicker links to the one existing office rental vertical.
+IF data: kicker, H1 with the frozen yellow line, logo when a real logo file exists (none in the repo yet, so none shown:
+never an &quot;awaiting asset&quot; placeholder), short description. IF no short description: the bridge cascade (engine decision 1).
+The ↓ is a plain indicator, never a link (D14). Description editing lives only under About (D31).</pre></li>
+<li><pre>AD #1, 300x250 fixed on every screen, height reserved, never collapses (D5).
+IF creative: the ad + tiny &quot;Manage advertisement&quot;. IF none: &quot;No advertisement yet — add&quot;. REMOVE: &quot;Advertisement hidden&quot; + Undo.</pre></li>
+<li><pre>AT A GLANCE: the dead zone between the ad and the contact button (engine 2026-10-05). Plain text, nothing to tap.
+Rows only when the record has them: today&#x27;s hours, area, channel types. No price row: prices come only from the owner (Kim 2026-10-06) (never values,
+never &quot;website&quot;, N22). IF fewer than two rows: left out.</pre></li>
+<li><pre>CONTACT BOX (mother box, D2, D33, D35). Masked number only. The lock button goes to the separate security page
+(production /contact-details; here the security page mockup). Two ragged lines of tiny grey unlock copy, the ↓ is not
+a link. &quot;Website&quot; and &quot;Social&quot; dropped from the copy (N22; social profiles are not verified for this business).
+&quot;Edit or add contact details&quot; centred below, for owners. No WhatsApp or email chips, no divider below (D2).</pre></li>
+<li><pre>NEED HELP (D3): narrower, tucked under the contact box (overlap 12px, lower stacking, faint shadow), yellow AI badge.
+The AI choices sit IN the card (v3&#x27;s separate AI box and any jump to it are gone: no jump links). Each pick opens the
+assistant with the public brief (no contact values; the full record only after the gate). Logs ai_handoff_pick.</pre></li>
+<li><pre>LOCATION (D24, D8): label left, content right on wide screens; stacks on phones. Address one part per line.
+&quot;Open in map&quot; goes to our own map page for this business (location/, Kim 2026-10-06: the block needs a map link);
+never a map embed, never a Google Maps link. The route has to ship with the page.
+IF no street address: &quot;Serves [area], [city]&quot;, never an invented street.</pre></li>
+<li><pre>FAQ (D25 order: right after Location; N14: only with 2+ real answers). No price questions unless the owner answered
+them (Kim 2026-10-06, N31). Answers come only from this listing&#x27;s data
+and never print contact values. FAQPage JSON-LD mirrors exactly what is visible. All answers visible, no collapsibles.</pre></li>
+<li><pre>PHOTOS (D9, D19): at most six, two columns, an odd last photo full width, 1px light frame, small radius, no crop,
+no carousel, no logo under them. Labels and alt text from the live listing only: &quot;Office Space&quot; for 1-5,
+&quot;Yellow Tower&quot; for 6. Photos from yellow-tower.com (the owner&#x27;s own site). All boxes the same size: 4:3, centre-cropped, 8px rounded corners (Kim 2026-10-06, replaces D9&#x27;s no-crop rule).
+&quot;View all photos&quot; links to photos/ once that subpage exists. IF none: &quot;No photos yet.&quot; + Add photos.</pre></li>
+<li><pre>AD #MID (Kim 2026-10-06: survival and growth): a third 300x250 between Photos and About. Content above and below it,
+no buttons next to it, lazy-loaded (only requested when it comes near the screen: better viewability, better price per
+view). Three units on a page this long stays well under the 30% mobile ad-density rule. Same three states as Ad #1.</pre></li>
+<li><pre>ABOUT: plain paragraphs only, mapped 1:1 to the schema.org description; no boxes inside. The description&#x27;s edit
+affordance lives here and only here (D31). No video (frozen rule).</pre></li>
+<li><pre>PRODUCTS AND SERVICES (Kim 2026-10-06): names and photos only. No prices and no offers (rent-free months etc.) unless the
+owner adds them (N31). Photos from the owner&#x27;s site; which photo goes with which product is the owner&#x27;s call (sample pairing).
+IF none: &quot;No products yet.&quot; + the add link.</pre></li>
+<li><pre>FACTS. Amenity bullets are the frozen yellow bullets (D22). Related categories sit directly below (D28):
+English name first, the Google id after it in tiny grey (category display rule).</pre></li>
+<li><pre>KEYWORDS (D26, C1): generated from the page&#x27;s own words at render time, never stored. Slim chips; every chip links to
+the one existing office rental vertical page.</pre></li>
+<li><pre>HOURS (D28 opening hours): day left, hours right-aligned in one column; today&#x27;s row bold; Open now / Closed pill
+above (Phnom Penh time). IF unknown: block left out; never assume &quot;closed&quot;.</pre></li>
+<li><pre>MORE IN THE AREA (Kim 2026-10-05, N17): one line per neighbour, each straight to that listing&#x27;s security gate
+(/contact-details?from=area-list). Mockup: neighbours are fake &quot;Example ...&quot; names, so the lines are not links.
+IF fewer than 5 in the area: widen to the city.</pre></li>
+<li><pre>AD #2 (bottom): after the content; never two ads in a row; lazy-loaded; same three states as Ad #1.</pre></li>
+<li><pre>GREEN CATEGORY BOX (frozen, option A, K7): name first, Google id first code line, cpac second (none yet), English
+description (none in the category master yet: left empty, never invented). &quot;Add or manage your business&quot; top right.</pre></li>
+<li><pre>PAGE CHIPS (D10, D27): tight light-grey chips to this business&#x27;s own subpages, never in-page anchors.
+Only routes that exist are links (D8): contact goes to the security page; the rest become links as they ship.</pre></li>
+<li><pre>TOOLS (D11, D15): one unframed small-text strip. vCard and JSON carry public identity only: name, address, category,
+page URL; never phone, WhatsApp or email. Send to WhatsApp uses only the number the visitor types.</pre></li>
+<li><pre>OWNER BOX (D12): framed, separate from tools and content. Every owner action (add, claim, edit, remove, report) opens
+our agent @newcustomers on WhatsApp with a tagged message [PAGE|kh34363|action]; the agent does the work (Kim 2026-10-06).
+Wording to owners: &quot;site&quot; and &quot;page&quot;, never &quot;listing&quot;.</pre></li>
+<li><pre>REPORT (D36, Kim 2026-10-06): opens the agent with [PAGE|kh34363|report]; the agent asks the reason (closed, wrong
+information, legal, fraud, other), confirms with a reference, and routes formal legal notices to compliance. Small and grey.</pre></li>
+</ol></body></html>

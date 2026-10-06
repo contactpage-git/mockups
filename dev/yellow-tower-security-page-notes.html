@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Developer notes: Security check</title>
+<style>body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:1040px;margin:32px auto;padding:0 16px;color:#161616}
+h1{font-size:22px;border-left:5px solid #FFC400;padding-left:10px}p{color:#6f6f6f;font-size:14px}a{color:#161616}
+ol{padding-left:28px}li{margin:0 0 14px}li::marker{font-weight:700;color:#8a8a8a}
+pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fafafa;border:1px solid #e9e9e9;border-radius:8px;padding:10px 12px;margin:0}</style></head>
+<body><p><a href="../index.html">All mockups</a> · <a href="../yellow-tower-security-page.html">Open the mockup</a></p>
+<h1>Developer notes: Security check</h1>
+<p>The notes written into the mockup's source, summary first, then in page order (top to bottom). Sample data only; contact values are masked.</p>
+<ol>
+<li><pre>DEVELOPER SUMMARY: THE SECURITY CHECK (Kim 2026-10-07)
+1. The slide is ONLY the UI. &quot;No separate check: just a slide, and the slide has the security check built in.&quot; The
+   security comes from Cloudflare Turnstile behind it, not from the slide itself.
+2. Turnstile: Managed mode, appearance &quot;interaction-only&quot;, execution &quot;execute&quot;. Call turnstile.execute() when the drag
+   starts, so the token is ready when the slide ends. Turnstile has no slide mode; the slide bar is ours.
+   Docs: https://developers.cloudflare.com/turnstile/concepts/widget/
+3. Server: validate the Turnstile token with Cloudflare siteverify BEFORE releasing any contact value. No valid token,
+   no details. The client never decides on its own.
+4. Slide telemetry (pointer path, timing, speed variance, vertical jitter) is a hint only, never a pass. Parked for MVP.
+5. MVP SCOPE: our own simple slide bar + hidden Turnstile (Cloudflare handles IP/reputation). No own bot-detection
+   system for MVP. A full slide unlocks unless Turnstile asks for an interaction; then its box shows inline above the slide.
+6. Fallbacks: keyboard (handle is role=&quot;slider&quot;: Enter, Space, arrow keys, End) and the &quot;or tap here&quot; link both go
+   through the visible Turnstile box. The &quot;I am…&quot; choice must be picked first, else a hint and the slide snaps back.
+Rejected: puzzle sliders (GeeTest etc.), solver services beat them for about $1 per 1,000. If we leave Cloudflare: Cap.js
+(self-hosted, free).</pre></li>
+<li><pre>Gate is noindex, follow and has NO canonical (N14, N17).</pre></li>
+<li><pre>YELLOW TOWER SECURITY PAGE (current: version 13 of 2026-10-07 by .page Mockups; versions 1 to 11 by Page Claude Code). Route in production: kh34363.contact.page/contact-details
+
+KIM&#x27;S ORDER (2026-10-06, &quot;what we need if you land there directly&quot;), top to bottom:
+  1. Small header: &quot;‹ Yellow Tower&quot; (the back link IS the name, one H1, small like a back button), then
+     &quot;Office Space Rental – Phnom Penh&quot; under it. Opposite order of the listing page. No description (Kim: most come
+     from the listing page where the info already is; some land directly).
+  2. I am… (Kim 2026-10-07: was &quot;Who are you?&quot;; friendly first-person wording, no interrogating questions)
+  3+4. SLIDE TO UNLOCK (Kim 2026-10-07): no separate check, just a slide with hidden Turnstile behind it (see the
+     DEVELOPER SUMMARY). The slider is live at once; a full slide unlocks unless Turnstile asks for an interaction, then
+     its box shows inline above the slide. Keyboard and &quot;or tap here&quot; always go through the visible Turnstile box.
+     Under it: &quot;Protected by Cloudflare Turnstile&quot;. (Later, not MVP: score the drag as an extra hint.)
+  5. Tiny table of what is behind the screen, masked.
+  6. House ad: what contact.page can do, with claim, edit and remove in the same box.
+  Then only &quot;Report this listing&quot; and the tiny grey sample line.
+
+RULES KEPT
+- No contact values anywhere in this file: masked prefixes only. The values exist only on the contact details page.
+- No AdSense on the gate (N14). The house ad is ours and labelled &quot;contact.page&quot;.
+- Light only, #FFC400. Column 760px (the new listing page width, LAYOUT decision), a bordered card on desktop.
+- Slider: pill track as wide as the Turnstile box (300px, same left/right edges, one column), 52px high, yellow round
+  handle. DEVELOPER: slide telemetry (path, timing, speed variance, vertical jitter) is a SIGNAL ONLY. Real verification
+  stays server-side: validate the Turnstile token (managed/invisible mode) with siteverify on every unlock. Never trust
+  the client-side check alone; a bot can fake a curvy path. Send the score with the token for logging/tuning.
+- Buttons (other than the slider): other buttons yellow outline, dark text, yellow highlight
+  stroke (home .cta); no heavy yellow fills, no black blocks. Words to owners: &quot;your site&quot;, never &quot;listing&quot;.
+- Spec, dev note and the MVP (Turnstile alone): CONTACT/kb/contact-gate-bot-protection.md.
+
+PER-BLOCK SCENARIOS
+- Table: one row per value that exists (main first); no row for a missing channel; never a website row; community notes only when 1+ exist.
+- Closed or opted-out listing: no roles, tick, button or table; &quot;no longer active&quot; + same category in the same city.
+- Returning visitor with cp_verified: the gate is skipped, the details open directly.
+- Tick fails or the script can&#x27;t load: plain message + the house ad&#x27;s WhatsApp agent as the way forward. No details.
+
+CHANGE LOG
+v1 2026-10-06: first version (identity strip, lock tiles, roles, invisible check, About, agent card, owner box).
+v2 2026-10-06: slim (Kim: &quot;way too much on that page, it is NOT the home page&quot;).
+v3 2026-10-06: Kim&#x27;s exact order above. Small header (name as back link, category and city under it, no description); visible Cloudflare tick; button lights up after the tick;
+               masked table moved under the button; house ad box carries claim / edit / remove. v1 and v2 kept.
+v4 2026-10-06: table in Kim&#x27;s format (lock, label, masked value), one row per email, community notes row; website row
+               removed (Kim: too many dead websites lead to 404s). v3 kept.
+v5 2026-10-06: icons from the design package (CONTACT/design/icons: Lucide + the real WhatsApp mark), no emoji; category line
+               smaller; role chips smaller with a check on the picked one; roles Customer, Supplier, Job seeker, I work here, Other;
+               &quot;Behind the check&quot; caption removed; button reads &quot;Unlock contact details&quot;; &quot;I work here&quot; lights up Claim. v4 kept.
+v6 2026-10-06: Kim&#x27;s home page rules applied: column 684px with a bordered card on desktop; gate button turns GREEN when
+               ready; picked chip is a yellow outline with a check (no fill); house ad buttons in the yellow-outline style,
+               WhatsApp AND email with tagged prefills [GATE|signup]; &quot;page&quot; instead of &quot;listing&quot; in visitor text. v5 kept.
+v7 2026-10-06: column back to 760px (the new listing page width; 684px was the old live page). v6 kept.
+v8 2026-10-06: one current file, versions in archive/ (Kim). Owner line is only &quot;Claim · Edit · Remove · Report&quot;, smaller and
+               greyer; the separate report link is gone. Lock icons gold (#E0A500, Kim).
+v13 2026-10-07 (.page Mockups, Kim): &quot;Who are you?&quot; -&gt; &quot;I am…&quot; with first-person options (a customer, a supplier,
+               looking for a job, the owner or staff; &quot;Other&quot; removed). SLIDE TO UNLOCK replaces the big button and is the check: Turnstile managed/
+               invisible in the background (box hidden), drag scored (path, timing, speed variance, jitter); suspicious
+               or keyboard/tap -&gt; visible Turnstile box inline; &quot;Protected by Cloudflare Turnstile&quot; + &quot;or tap here&quot;; slider
+               and box share one 300px column. Locked contact rows made secondary: 13px, muted grey text (#6b6b6b, 5.3:1), grey icons
+               (WhatsApp not green), values not bold, small light-grey locks instead of gold, tighter rows, lighter
+               dividers. Unlock button unchanged. v12 in archive/.
+v12 2026-10-07 (.page Mockups): back link goes to the listing mockup (yellow-tower-listing-page.html) instead of the live site;
+               passing the check opens the contact details mockup (yellow-tower-contact-details-page.html, D015) with ?role=.
+               Standard mockup set (Kim 2026-10-06). Nothing else changed. v11 in archive/.
+v11 2026-10-06: chips thinner (24px), 5px corners, 12px regular (Kim: still too fat and round). v10 in archive/.
+v10 2026-10-06: role chips follow the one chip rule (grey fill, no border, 28px, 12.5px; picked = yellow ring + check). v9 in archive/.
+v9 2026-10-06: Claim · Edit · Remove · Report each open our agent on WhatsApp with [GATE|kh34363|action] (Kim). v8 in archive/.</pre></li>
+<li><pre>1. HEADER, small, the opposite order of the listing page (Kim 2026-10-06): name as the back link, then category and city.
+No description, no logo: most visitors come from the listing page where all that already is; the few who land
+directly get enough from the name, the category line and the table below. The frozen yellow line belongs to the
+listing page H1 and is not repeated here.</pre></li>
+<li><pre>2. I AM… (Kim 2026-10-07: replaces &quot;Who are you?&quot;; options read as first-person completions: a customer, a supplier,
+looking for a job, the owner or staff; &quot;Other&quot; removed, Kim 2026-10-07: no meaning for us; values unchanged). Required; sent with the reveal as `role`. v5 set (Kim asked about &quot;I work here&quot;): Customer, Supplier,
+Job seeker, I work here (owners and staff, the same words as the claim box), Other (keeps the data honest instead of a forced pick).
+&quot;the owner or staff&quot; (works_here; v5 label &quot;I work here&quot;) lights up Claim in the house ad and adds a claim line on the details page. Selected chip shows a check.</pre></li>
+<li><pre>3+4. SLIDE TO UNLOCK = the check (Kim 2026-10-07). MVP SCOPE (Kim 2026-10-07): our own simple slide bar with hidden
+Turnstile behind it (Cloudflare handles IP/reputation); no own bot-detection system for MVP. The drag scoring
+described next is parked for later (switched off in the script: USE_SLIDE_SCORE=false). Production: Turnstile in managed/invisible mode runs on load
+(&lt;div class=&quot;cf-turnstile&quot; data-sitekey=&quot;...&quot; data-appearance=&quot;interaction-only&quot; data-execution=&quot;execute&quot; data-callback=&quot;onTick&quot;&gt;&lt;/div&gt;);
+turnstile.execute() is called when the drag starts, and the box only appears if Cloudflare wants an interaction.
+Turnstile has no slide mode of its own: the slide bar is ours. Puzzle sliders (GeeTest etc.) rejected: solver
+services beat them for about $1 per 1,000. Fallback if we leave Cloudflare: Cap.js (self-hosted, free).
+Docs: https://developers.cloudflare.com/turnstile/concepts/widget/ The slider records the drag (pointer path, timing, speed variance,
+vertical jitter) and scores it: human-looking -&gt; submit; suspicious -&gt; show the Turnstile box (fallback challenge).
+DEVELOPER: the slide score is a signal only; the server ALWAYS validates the Turnstile token (siteverify) before
+showing details. Keyboard (Enter/Space/arrows on the handle) and &quot;or tap here&quot; go through the visible Turnstile.</pre></li>
+<li><pre>Honeypot + fields the server checks (spec, layers 1 and 3).</pre></li>
+<li><pre>5. TINY MASKED TABLE (secondary: small, muted grey, Kim 2026-10-07): channel icon, label, masked value, small grey lock. No caption (Kim v5). One row per value that exists, main one first.
+Email shows its first letter and domain only. NO WEBSITE ROW (Kim 2026-10-06): too many listed websites are dead and
+send visitors to 404s, so the website is not shown on the gate. Community notes: shown only when at least one
+note exists; the count of 3 here is sample data (the feature is not live).</pre></li>
+<li><pre>6. HOUSE AD (ours, labelled). What contact.page can do + claim / edit / remove in the same box.
+Copy follows the home page (CONTACT/pages/home/index.html). Buttons give honest notes until the routes ship.</pre></li>
+</ol></body></html>
