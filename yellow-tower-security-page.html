@@ -53,6 +53,24 @@ h1 .arrow{color:var(--grey);margin-left:-4px}
 .btn.on{background:var(--green);color:var(--green-ink);box-shadow:0 4px 14px rgba(34,197,94,.35)}
 .btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .hint{font-size:13px;color:var(--warn);margin:6px 0 0;min-height:1.2em}
+
+.unlockcol{width:300px;max-width:100%}
+.ts.hidden{display:none}
+.ts{margin:0 0 10px}
+.slide{position:relative;width:100%;height:52px;border-radius:999px;background:#f1f1f1;border:1px solid #e2e2e2;
+  user-select:none;-webkit-user-select:none;touch-action:none;overflow:hidden}
+.slide .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--yellow-soft);border-radius:999px}
+.slide .track{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:0 16px 0 58px;
+  font-size:14px;font-weight:600;color:#6b6b6b;pointer-events:none}
+.slide .knob{position:absolute;left:4px;top:4px;width:44px;height:44px;border-radius:50%;background:var(--yellow);color:var(--ink);
+  display:flex;align-items:center;justify-content:center;cursor:grab;box-shadow:0 1px 4px rgba(0,0,0,.2);transition:left .25s}
+.slide .knob:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.slide.drag .knob{transition:none;cursor:grabbing}
+.slide.off{background:#f4f4f4}
+.slide.off .knob{background:#d9d9d9;color:#8a8a8a;cursor:not-allowed}
+.slide.wait .track::after{content:"…"}
+.under{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:6px 2px 0;font-size:11px;color:#767676}
+.under a{color:#767676;text-decoration:underline;text-decoration-color:#cfcfcf;text-underline-offset:2px;font-size:12px}
 .hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 
 
@@ -144,21 +162,26 @@ body[data-state="closed"] .house .own{display:none}
 </div>
 
 
-<div class="step">
-<div class="ts" id="ts" data-ts="wait" aria-live="polite">
+<div class="step unlockcol">
+<div class="ts hidden" id="ts" data-ts="wait" aria-live="polite">
 <span class="spin" id="tsSpin" aria-hidden="true"></span>
 <span class="box" id="tsBox" role="checkbox" aria-checked="false" tabindex="-1" aria-label="Verify you are human" style="display:none"></span>
 <span class="txt" id="tsTxt">Checking…</span>
 <span class="brand">Cloudflare<br>Turnstile</span>
 </div>
+<div class="slide" id="slide">
+<div class="fill" id="slideFill"></div>
+<div class="track" id="slideTxt">Slide to unlock contact details</div>
+<div class="knob" id="knob" role="slider" tabindex="0" aria-label="Slide to unlock contact details" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="locked"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+</div>
+<div class="under"><span>Protected by Cloudflare Turnstile</span><a href="#" id="tapUnlock">or tap here</a></div>
 </div>
 
 
 <div class="hp" aria-hidden="true"><label for="company_website">Company website</label><input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off"></div>
 <input type="hidden" name="cf-turnstile-response" id="tsToken" value="">
+<input type="hidden" name="slide_score" id="slideScore" value="">
 
-
-<button class="btn" type="submit" id="go"><svg class="bi" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>Unlock contact details</button>
 <p class="hint" id="hint" aria-live="polite"></p>
 </form>
 
@@ -190,28 +213,36 @@ body[data-state="closed"] .house .own{display:none}
 <div class="meta">
 sample, not production · Yellow Tower security page · version 13 · 2026-10-07 · older versions in archive/<br>
 states:
-<button type="button" data-state="first" data-ts="auto" aria-pressed="true">ticks itself</button> ·
-<button type="button" data-state="first" data-ts="click" aria-pressed="false">wants a click</button> ·
+<button type="button" data-state="first" data-ts="auto" aria-pressed="true">human slide passes</button> ·
+<button type="button" data-state="first" data-ts="click" aria-pressed="false">challenge wants a click</button> ·
 <button type="button" data-state="fail" aria-pressed="false">check failed</button> ·
 <button type="button" data-state="returning" aria-pressed="false">returning</button> ·
 <button type="button" data-state="closed" aria-pressed="false">closed</button> ·
-<button type="button" data-state="done" aria-pressed="false">after the button</button>
+<button type="button" data-state="done" aria-pressed="false">after the slide</button>
 </div>
 
 </div>
 <script>
-// Mockup behaviour only. Production: Turnstile's callback sets the token; the form posts to /contact-details; the server verifies.
+// Mockup behaviour only. Production: Turnstile (managed/invisible) sets the token in the background; the slide adds a
+// score; the form posts role + token + score + honeypot to /contact-details; the server verifies the TOKEN (siteverify).
+// The slide score is never enough on its own.
 (function(){
   var body=document.body, ts=document.getElementById('ts'), spin=document.getElementById('tsSpin'),
-      box=document.getElementById('tsBox'), txt=document.getElementById('tsTxt'), go=document.getElementById('go'),
-      hint=document.getElementById('hint'), who=document.getElementById('who'), form=document.getElementById('gateForm'), timer;
+      box=document.getElementById('tsBox'), txt=document.getElementById('tsTxt'),
+      slide=document.getElementById('slide'), knob=document.getElementById('knob'), fill=document.getElementById('slideFill'),
+      stxt=document.getElementById('slideTxt'), tap=document.getElementById('tapUnlock'),
+      hint=document.getElementById('hint'), who=document.getElementById('who'), form=document.getElementById('gateForm'),
+      timer, tsKind='auto', pts=[], dragging=false, x0=0, pos=0;
   function role(){ return form.querySelector('input[name=role]:checked'); }
-  function ticked(){ return ts.dataset.ts==='ok'; }
-  function refresh(focus){
-    var ready=role() && ticked();
-    go.classList.toggle('on', !!ready);
-    if(ready){ hint.textContent=''; who.classList.remove('needs'); if(focus) go.focus(); }
+  function maxX(){ return slide.clientWidth - knob.offsetWidth - 8; }
+  function setPos(px, anim){
+    pos=Math.max(0, Math.min(maxX(), px));
+    slide.classList.toggle('drag', !anim);
+    knob.style.left=(4+pos)+'px'; fill.style.width=(pos+48)+'px';
+    knob.setAttribute('aria-valuenow', Math.round(pos/maxX()*100));
   }
+  function reset(){ setPos(0,true); fill.style.width='0'; knob.setAttribute('aria-valuetext','locked'); stxt.textContent='Slide to unlock contact details'; }
+  // Visible Turnstile box (fallback challenge)
   function tsSet(mode){
     clearTimeout(timer); ts.dataset.ts=mode;
     spin.style.display = mode==='wait' ? '' : 'none';
@@ -221,37 +252,76 @@ states:
     box.tabIndex = mode==='click' ? 0 : -1;
     txt.textContent = {wait:'Checking…', click:'Verify you are human', ok:'Success!', fail:'Check failed'}[mode];
   }
-  function start(kind){
+  function challenge(){
+    // Show Turnstile inline. "ticks itself" = managed check passes after a moment; "wants a click" = one click.
+    ts.classList.remove('hidden'); stxt.textContent='One more check above'; knob.setAttribute('aria-valuetext','checking');
     tsSet('wait');
     timer=setTimeout(function(){
-      if(kind==='click'){ tsSet('click'); }
-      else { tsSet('ok'); document.getElementById('tsToken').value='TURNSTILE-TOKEN'; refresh(!!role()); }
+      if(tsKind==='click'){ tsSet('click'); box.focus(); }
+      else { tsSet('ok'); setTimeout(unlock, 400); }
     },1200);
   }
-  function setState(s, tsKind, btn){
-    body.setAttribute('data-state', s);
-    document.querySelectorAll('.meta button').forEach(function(b){ b.setAttribute('aria-pressed', b===btn ? 'true':'false'); });
-    go.classList.remove('on');
-    if(s==='first'){ form.reset(); start(tsKind||'auto'); }
-    if(s==='fail'){ tsSet('fail'); }
+  function needRole(){
+    if(role()) return false;
+    who.classList.add('needs'); hint.textContent='Pick who you are first.';
+    form.querySelector('input[name=role]').focus(); reset(); return true;
   }
-  document.querySelectorAll('.meta button').forEach(function(b){ b.addEventListener('click', function(){ setState(b.dataset.state, b.dataset.ts, b); }); });
-  function clickTick(){ if(ts.dataset.ts==='click'){ tsSet('ok'); refresh(!!role()); } }
+  function unlock(){
+    if(document.getElementById('company_website').value) return; // honeypot: silent
+    document.getElementById('tsToken').value='TURNSTILE-TOKEN';
+    setPos(maxX(),true); stxt.textContent='Unlocked'; knob.setAttribute('aria-valuetext','unlocked');
+    // Production: POST role + token + slide_score + honeypot -> server siteverify -> cp_verified -> details.
+    // GA4: contact_gate_solved {role, mode: slide|challenge}
+    setState('done');
+    setTimeout(function(){ location.href='yellow-tower-contact-details-page.html?role='+encodeURIComponent(role().value); }, 900);
+  }
+  // Score the drag: humans are a bit slow, uneven and wobbly; scripts are instant, straight and constant.
+  function score(){
+    if(pts.length<6) return {human:false, why:'too few points'};
+    var dur=pts[pts.length-1].t-pts[0].t, speeds=[], ys=pts.map(function(p){return p.y;});
+    for(var i=1;i<pts.length;i++){ var dt=pts[i].t-pts[i-1].t; if(dt>0) speeds.push((pts[i].x-pts[i-1].x)/dt); }
+    var m=speeds.reduce(function(a,b){return a+b;},0)/(speeds.length||1);
+    var sd=Math.sqrt(speeds.reduce(function(a,b){return a+(b-m)*(b-m);},0)/(speeds.length||1));
+    var cv=m ? sd/Math.abs(m) : 0, jitter=Math.max.apply(null,ys)-Math.min.apply(null,ys);
+    var flags=0; if(dur<250) flags++; if(cv<0.15) flags++; if(jitter<1) flags++;
+    document.getElementById('slideScore').value=JSON.stringify({dur:dur,cv:+cv.toFixed(2),jitter:jitter,n:pts.length});
+    return {human: flags<2 && dur>=150, why:{dur:dur,cv:cv,jitter:jitter}};
+  }
+  knob.addEventListener('pointerdown', function(e){
+    if(needRole()) return;
+    dragging=true; x0=e.clientX-pos; pts=[{x:e.clientX,y:e.clientY,t:performance.now()}];
+    knob.setPointerCapture(e.pointerId); slide.classList.add('drag'); hint.textContent='';
+  });
+  knob.addEventListener('pointermove', function(e){
+    if(!dragging) return;
+    pts.push({x:e.clientX,y:e.clientY,t:performance.now()}); setPos(e.clientX-x0,false);
+  });
+  function release(){
+    if(!dragging) return; dragging=false;
+    if(pos < maxX()-6){ reset(); return; }
+    var s=score();
+    if(s.human && tsKind!=='click'){ unlock(); } else { setPos(maxX(),true); challenge(); }
+  }
+  knob.addEventListener('pointerup', release);
+  knob.addEventListener('pointercancel', function(){ dragging=false; reset(); });
+  // Keyboard and tap fallbacks: always through the visible Turnstile box.
+  knob.addEventListener('keydown', function(e){
+    if(['Enter',' ','ArrowRight','ArrowUp','End'].indexOf(e.key)<0) return;
+    e.preventDefault(); if(needRole()) return; setPos(maxX(),true); challenge();
+  });
+  tap.addEventListener('click', function(e){ e.preventDefault(); if(needRole()) return; setPos(maxX(),true); challenge(); });
+  function clickTick(){ if(ts.dataset.ts==='click'){ tsSet('ok'); setTimeout(unlock, 400); } }
   box.addEventListener('click', clickTick);
   box.addEventListener('keydown', function(e){ if(e.key===' '||e.key==='Enter'){ e.preventDefault(); clickTick(); } });
-  form.addEventListener('change', function(){ refresh(true); var r=role(); document.querySelector('.house .own').classList.toggle('hot', !!r && r.value==='works_here'); });
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    if(!role()){ who.classList.add('needs'); hint.textContent='Pick who you are first.'; form.querySelector('input[name=role]').focus(); return; }
-    if(!ticked()){ hint.textContent = ts.dataset.ts==='click' ? 'Tick the box first.' : 'One moment, the check is still running.'; return; }
-    if(document.getElementById('company_website').value) return; // honeypot: silent
-    // Production: POST role + Turnstile token + honeypot -> server siteverify -> cp_verified -> reload into the details.
-    // GA4: contact_gate_solved {role, mode}
-    setState('done');
-    // Mockup: go on to the contact details page mockup (page 4 of the standard set), with the role.
-    setTimeout(function(){ location.href='yellow-tower-contact-details-page.html?role='+encodeURIComponent(role().value); }, 900);
-  });
-  start('auto');
+  function setState(s, kind, btn){
+    body.setAttribute('data-state', s);
+    if(btn) document.querySelectorAll('.meta button').forEach(function(b){ b.setAttribute('aria-pressed', b===btn ? 'true':'false'); });
+    if(s==='first'){ form.reset(); tsKind=kind||'auto'; ts.classList.add('hidden'); clearTimeout(timer); reset(); }
+    if(s==='fail'){ ts.classList.remove('hidden'); tsSet('fail'); }
+  }
+  document.querySelectorAll('.meta button').forEach(function(b){ b.addEventListener('click', function(){ setState(b.dataset.state, b.dataset.ts, b); }); });
+  form.addEventListener('change', function(){ if(role()){ hint.textContent=''; who.classList.remove('needs'); } var r=role(); document.querySelector('.house .own').classList.toggle('hot', !!r && r.value==='works_here'); });
+  form.addEventListener('submit', function(e){ e.preventDefault(); });
 })();
 </script>
 </body>
