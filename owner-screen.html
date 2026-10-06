@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en"><head>
+<meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Owner screen: Mekong Bean Coffee (mockup)</title>
+
+<style>
+:root{--y:#FFC400;--gold:#E0A500;--ys:#FFF6D6;--yl:#fffbea;--ink:#161616;--grey:#6f6f6f;--grey2:#9a9a9a;--line:#e9e9e9;--bg:#f4f5f6;
+ --amber:#92400e;--amber-bg:#fffbeb;--amber-line:#f5d27a;--g:#15803d;--g-bg:#eaf6ec}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"Noto Sans Khmer","Khmer Sangam MN",sans-serif;-webkit-text-size-adjust:100%}
+svg{flex:none;vertical-align:middle}
+a{color:inherit;text-underline-offset:3px}
+.km{font-family:"Noto Sans Khmer","Khmer Sangam MN","Khmer OS",system-ui,sans-serif}
+button,input,textarea,select{font:inherit;color:inherit}
+
+
+.mbar{display:none}
+.notes{display:none}
+@media(min-width:600px){
+ .mbar{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1160px;margin:0 auto;padding:18px 24px 12px}
+ .mbar h1{font-size:15px;margin:0;font-weight:700}.mbar p{margin:0;color:var(--grey);font-size:13px}
+ .seg{display:inline-flex;background:#e7e9eb;border-radius:9px;padding:3px}
+ .seg button{border:0;background:none;border-radius:7px;padding:5px 14px;font-size:13px;font-weight:600;color:var(--grey);cursor:pointer}
+ .seg button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+ .notes{display:block;max-width:1160px;margin:0 auto;padding:6px 24px 40px;color:var(--grey);font-size:13px}
+ .notes ol{margin:6px 0 0;padding-left:18px;columns:2;column-gap:36px}.notes li{margin:0 0 6px;break-inside:avoid}
+ .notes b{color:var(--ink)}
+}
+
+
+.stage{padding:0}
+@media(min-width:600px){.stage{padding:0 24px 28px}}
+.app{container-type:inline-size;max-width:1160px;margin:0 auto;background:var(--bg);position:relative}
+@media(min-width:600px){.app{border:1px solid #dfe2e5;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.08)}}
+.stage[data-view=phone] .app{width:390px;border:12px solid #161616;border-radius:46px;box-shadow:0 20px 50px rgba(0,0,0,.18)}
+.keyline{height:4px;background:var(--y)}
+
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px;background:#fff;border-bottom:1px solid var(--line)}
+.logo{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:17px;text-decoration:none;white-space:nowrap}
+.logo img{height:24px;width:auto}.logo i{font-style:normal;background:var(--y);border-radius:4px;padding:0 3px}
+.top .mid{display:none}
+.who{display:flex;align-items:center;gap:8px}
+.viewlink{display:none;font-size:13px;color:var(--grey);text-decoration:none;align-items:center;gap:4px}
+.av{width:32px;height:32px;border-radius:50%;background:var(--ys);border:1.5px solid var(--y);display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+.secure{display:flex;align-items:center;gap:6px;padding:7px 16px;font-size:12px;color:var(--grey);background:#fff;border-bottom:1px solid var(--line)}
+.secure svg{color:var(--g)}
+.secure b{color:var(--ink);font-weight:600}
+
+
+.body{display:flex;flex-direction:column;gap:14px;padding:16px 14px 26px;max-width:600px;margin:0 auto}
+.col{display:contents}
+.o1{order:1}.o2{order:2}.o3{order:3}.o4{order:4}.o5{order:5}.o6{order:6}.o7{order:7}.o8{order:8}.o9{order:9}.o10{order:10}
+.ident{order:0;padding:4px 2px 0}
+
+
+.kicker{font-size:12px;font-style:italic;color:var(--grey)}
+.h1row{display:flex;gap:11px;align-items:stretch;margin:4px 0 0}
+.h1bar{width:5px;border-radius:2px;background:var(--y);flex:none}
+.h1row h2{font-size:26px;line-height:1.15;margin:0;font-weight:800;letter-spacing:-.01em}
+.url{display:inline-flex;align-items:center;gap:5px;margin:6px 0 0;font-size:13px;color:var(--grey)}
+.url a{color:var(--ink);font-weight:600}
+
+
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}
+.ch{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin:0 0 12px}
+.ch h3{margin:0;font-size:17px;line-height:1.25;font-weight:800;display:flex;align-items:center;gap:8px}
+.ch h3 svg{color:var(--grey)}
+.ch .kml{display:block;font-size:12.5px;font-weight:400;color:var(--grey2);margin:1px 0 0 26px}
+.lead{margin:-4px 0 12px;color:var(--grey);font-size:13.5px}
+.small{font-size:12px;color:var(--grey)}
+.agent{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--grey2);text-decoration:none;margin-top:12px}
+.agent span{text-decoration:underline;text-decoration-color:#d6d6d6}
+
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:#fff;color:var(--ink);border:2px solid var(--y);font-weight:800;border-radius:10px;padding:10px 16px;font-size:15px;text-decoration:underline;text-decoration-color:var(--y);text-decoration-thickness:.45em;text-underline-offset:-.22em;text-decoration-skip-ink:none;cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--yl)}
+.btn.wide{display:flex;width:100%}
+.btn.sm{padding:6px 11px;font-size:13px;border-width:1.5px;border-radius:8px;gap:5px}
+.btn.ghost{border:1.5px solid #d4d4d4;text-decoration:none;font-weight:700}
+.btn.ghost:hover{background:#f7f7f7}
+.btn.on{background:var(--yl)}
+.chip{display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 8px;border:0;border-radius:5px;background:#f1f2f3;color:var(--ink);font-size:12px;line-height:1;white-space:nowrap;cursor:pointer}
+.chip:hover{background:#e6e8ea}
+.chip.pick{background:#fff;box-shadow:inset 0 0 0 1.5px var(--y);font-weight:700}
+.chiprow{display:flex;flex-wrap:wrap;gap:6px}
+.tag{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--grey);background:#f1f2f3;border-radius:5px;padding:2px 7px;white-space:nowrap}
+.tag.new{background:var(--g-bg);color:var(--g)}
+.tag.reg{background:#eef2f7;color:#334155}
+
+
+.greet{border:1.5px solid var(--y);box-shadow:0 10px 30px rgba(224,165,0,.12);padding:18px 16px 16px}
+.bot{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--grey)}
+.bot img{height:22px}
+.bot b{color:var(--ink)}
+.hello{font-size:21px;font-weight:800;margin:12px 0 2px;line-height:1.25}
+.hello .km{display:block;font-size:13px;font-weight:400;color:var(--grey2);margin-top:2px}
+.q{font-size:16.5px;line-height:1.45;margin:8px 0 12px}
+.regaddr{display:flex;gap:10px;background:#fafafa;border:1px solid var(--line);border-radius:12px;padding:12px}
+.regaddr svg{color:var(--grey);margin-top:2px}
+.regaddr p{margin:0;font-size:14.5px;line-height:1.5}
+.srcrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 14px}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.prog{margin:16px 0 0;padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;gap:10px;font-size:12px;color:var(--grey)}
+.bar{flex:1;height:6px;background:#f1f2f3;border-radius:6px;overflow:hidden}.bar i{display:block;height:100%;width:64%;background:var(--y);border-radius:6px}
+.wa{display:flex;align-items:center;gap:6px;margin:10px 0 0;font-size:12.5px;color:var(--grey)}
+.wa a{color:var(--ink);font-weight:600}
+
+
+.cl{list-style:none;margin:0;padding:0}
+.cl li{display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.cl li:first-child{border-top:0;padding-top:2px}
+.cl .ic{width:34px;height:34px;border-radius:10px;background:#f6f6f6;display:flex;align-items:center;justify-content:center;color:var(--ink);flex:none}
+.cl .v{flex:1;min-width:0}.cl .v b{display:block;font-size:15px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.cl .v small{color:var(--grey);font-size:12px}
+.edit{color:var(--grey2);display:inline-flex;padding:4px}
+.priv-note{display:flex;gap:8px;align-items:flex-start;margin:10px 0 0;font-size:12px;color:var(--grey);background:#f8f9f8;border-radius:10px;padding:9px 10px}
+.priv-note svg{color:var(--g);margin-top:1px}
+
+
+.fl{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.fl li{display:flex;align-items:center;gap:12px;padding:10px 12px;border-top:1px solid var(--line);background:#fff}
+.fl li:first-child{border-top:0}
+.fl .fi{color:var(--ink);display:flex}
+.fl .ft{flex:1;min-width:0}.fl .ft b{display:block;font-size:14.5px;font-weight:600;line-height:1.3}.fl .ft small{display:block;font-size:12px;color:var(--grey);line-height:1.35;margin-top:1px}
+.fl small.empty{color:var(--grey2);font-style:italic}
+.cb{width:22px;height:22px;border-radius:6px;background:var(--y);display:flex;align-items:center;justify-content:center;color:var(--ink);flex:none}
+.cb.off{background:#fff;box-shadow:inset 0 0 0 2px #c8c8c8}
+.fl li.off{background:#fafafa}
+.fl li.off .fi,.fl li.off b{color:var(--grey2)}
+.fl li.off b{text-decoration:line-through;text-decoration-color:#cfcfcf}
+.nudge{position:relative;margin:0;padding:0 12px 12px 46px;background:#fafafa;border-top:0 !important;display:block !important}
+.nudge .bub{position:relative;background:#fff;border:1px solid var(--amber-line);border-radius:12px;padding:10px 12px}
+.nudge .bub:before{content:"";position:absolute;top:-6px;left:18px;width:10px;height:10px;background:#fff;border-left:1px solid var(--amber-line);border-top:1px solid var(--amber-line);transform:rotate(45deg)}
+.nudge p{margin:0 0 8px;font-size:13.5px;font-weight:600;display:flex;align-items:center;gap:7px}
+.nudge p img{height:18px}
+.flsum{display:flex;justify-content:space-between;gap:8px;margin:10px 2px 0;font-size:12px;color:var(--grey)}
+.restore{display:flex;gap:8px;align-items:flex-start;margin:0 0 12px;font-size:13px;color:var(--grey);background:#f8f9f8;border-radius:10px;padding:9px 10px}
+.restore svg{color:var(--grey);margin-top:1px}
+
+
+.map{position:relative;height:150px;border-radius:12px;overflow:hidden;border:1px solid var(--line);margin:0 0 12px;
+ background:
+  linear-gradient(90deg,transparent 46%,#fff 46%,#fff 52%,transparent 52%),
+  linear-gradient(0deg,transparent 56%,#fff 56%,#fff 63%,transparent 63%),
+  linear-gradient(90deg,transparent 14%,#fff 14%,#fff 16.5%,transparent 16.5%),
+  linear-gradient(90deg,transparent 80%,#fff 80%,#fff 82.5%,transparent 82.5%),
+  linear-gradient(0deg,transparent 18%,#fff 18%,#fff 21%,transparent 21%),
+  #eef0ec}
+.map .blk{position:absolute;background:#e3e7df;border-radius:4px}
+.map .mkt{position:absolute;left:54%;top:8%;width:24%;height:42%;background:#e4ebdc;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#6b7a5e;letter-spacing:.04em;text-transform:uppercase;text-align:center;line-height:1.2}
+.map .st{position:absolute;font-size:9.5px;color:#8b8f86;letter-spacing:.05em}
+.pin{position:absolute;left:47%;top:43%;transform:translate(-50%,-100%);color:var(--ink);filter:drop-shadow(0 2px 2px rgba(0,0,0,.25))}
+.pin svg{fill:var(--y)}
+.pinnote{position:absolute;left:8px;bottom:8px;right:8px;background:rgba(255,255,255,.96);border-radius:9px;padding:6px 9px;font-size:12px;display:flex;gap:6px;align-items:center;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.pinnote b{font-weight:700}
+.df{display:grid;grid-template-columns:1fr;gap:0;margin:0}
+.df .r{display:grid;grid-template-columns:24px 1fr auto;gap:10px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
+.df .r:first-child{border-top:0;padding-top:0}
+.df .r>svg{color:var(--grey);margin-top:2px}
+.df dt{font-size:12px;color:var(--grey);margin:0;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.df dd{margin:1px 0 0;font-size:14.5px;line-height:1.45}
+.df dd.km{font-size:14.5px;line-height:1.75;word-break:keep-all}
+.nw{white-space:nowrap}
+.sugg{margin:12px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12px;color:var(--grey)}
+
+
+.mf{border:1px solid var(--line);border-radius:12px;padding:12px;margin:0 0 10px}
+.mf:last-of-type{margin-bottom:0}
+.mf label{display:block;font-size:13px;font-weight:700;margin:0 0 6px}
+.mrow{display:flex;gap:8px;align-items:center}
+.inp{flex:1;min-width:0;height:40px;border:1.5px dashed #d6d6d6;border-radius:9px;padding:0 11px;font-size:14px;color:var(--grey2);display:flex;align-items:center;background:#fcfcfc}
+.mf.open{border-color:var(--y);box-shadow:0 0 0 3px rgba(255,196,0,.12)}
+.exp{margin:12px 0 0}
+.warn{display:flex;gap:9px;align-items:flex-start;background:var(--amber-bg);border:1px solid var(--amber-line);color:var(--amber);border-radius:10px;padding:10px 11px;font-size:13.5px;line-height:1.4}
+.warn b{display:block}
+.warn svg{margin-top:1px}
+.exp label{margin:12px 0 6px;font-size:13px}
+.exp label span{font-weight:400;color:var(--grey)}
+.ta{width:100%;min-height:76px;border:1.5px solid #d6d6d6;border-radius:9px;padding:9px 11px;font-size:14px;line-height:1.45;color:var(--grey2);background:#fff;resize:none;display:block}
+.go{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:10px 0 0}
+.go .small{max-width:62%}
+
+
+.compose{border:1.5px solid #d6d6d6;border-radius:12px;padding:11px 12px;min-height:84px;font-size:15px;line-height:1.45}
+.compose .cur{display:inline-block;width:1.5px;height:17px;background:var(--ink);vertical-align:-3px;margin-left:1px}
+.copts{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:10px 0 0;flex-wrap:wrap}
+.sel{display:inline-flex;align-items:center;gap:5px;font-size:13px;border:1px solid var(--line);border-radius:8px;padding:5px 9px;color:var(--ink);background:#fff}
+.sel svg{color:var(--grey)}
+.tgl{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--ink)}
+.tgl i{width:32px;height:19px;border-radius:19px;background:var(--y);position:relative;display:inline-block}
+.tgl i:after{content:"";position:absolute;right:2px;top:2px;width:15px;height:15px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.post{display:flex;justify-content:flex-end;margin:12px 0 0}
+.arch{margin:14px 0 0;padding-top:12px;border-top:1px solid var(--line)}
+.arch .small{display:block;margin:0 0 8px}
+.ai{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;padding:6px 0;color:var(--grey)}
+.ai .d{flex:none;font-size:11.5px;color:var(--grey2);width:64px;padding-top:1px}
+.ai .live{color:var(--g);font-weight:700}
+.faq{border-left:3px solid var(--y);padding:2px 0 2px 12px;margin:0 0 14px}
+.faq h4{margin:0 0 4px;font-size:15.5px;line-height:1.35}
+.faq p{margin:0;font-size:14.5px;color:#333}
+.faq .by{display:flex;align-items:center;gap:6px;margin:8px 0 0}
+
+
+.refresh .row{display:flex;gap:12px;align-items:flex-start;margin:0 0 14px}
+.refresh .ri{width:40px;height:40px;border-radius:12px;background:var(--ys);display:flex;align-items:center;justify-content:center;flex:none}
+.refresh p{margin:0;font-size:14px;color:#333}
+.refresh .small{margin:10px 0 0;display:flex;align-items:flex-start;gap:6px}.refresh .small svg{margin-top:3px}
+
+
+.private{background:
+  repeating-linear-gradient(135deg,rgba(224,165,0,.06) 0 10px,transparent 10px 20px),#fffdf5;border:1.5px dashed var(--gold)}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#7a5a00;background:var(--ys);border:1px solid #f1d27a;border-radius:99px;padding:3px 9px 3px 7px}
+.pill svg{color:var(--gold)}
+.private h3{font-size:18px}
+.pd{display:grid;grid-template-columns:auto 1fr;gap:9px 14px;margin:12px 0 0;font-size:14px;background:rgba(255,255,255,.75);border:1px solid #f0e3bd;border-radius:12px;padding:12px}
+.pd dt{color:var(--grey);font-size:12.5px;padding-top:1px}
+.pd dd{margin:0;font-weight:600}
+.pd dd small{display:block;font-weight:400;color:var(--grey);font-size:12px}
+.mask{font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:600;letter-spacing:.04em}
+.locked{display:flex;gap:10px;align-items:center;margin:10px 0 0;padding:11px 12px;border-radius:12px;background:rgba(255,255,255,.75);border:1px solid #f0e3bd}
+.locked .lt{flex:1;font-size:13px;color:var(--grey)}.locked .lt b{display:block;color:var(--ink);font-size:14px}
+.locked>svg{color:var(--gold)}
+.foot{order:20;text-align:center;font-size:11px;color:#b0b0b0;padding:6px 0 0}
+
+
+@container (min-width:920px){
+ .top{padding:12px 28px}
+ .top .mid{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--grey)}
+ .top .mid b{color:var(--ink)}
+ .viewlink{display:inline-flex}
+ .secure{padding:8px 28px}
+ .body{display:grid;grid-template-columns:minmax(0,1fr) 372px;gap:22px;max-width:none;padding:24px 28px 30px;align-items:start}
+ .ident{grid-column:1 / -1;display:flex;align-items:flex-end;justify-content:space-between;padding:0 2px}
+ .h1row h2{font-size:32px}
+ .col{display:flex;flex-direction:column;gap:18px}
+ .card{padding:20px}
+ .greet{padding:22px 22px 18px}
+ .hello{font-size:24px}
+ .q{font-size:18px}
+ .answers{grid-template-columns:auto auto;justify-content:start}
+ .answers .btn{min-width:170px}
+ .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+ .map{height:170px}
+ .foot{grid-column:1 / -1}
+}
+</style></head>
+<body>
+<header class="mbar">
+ <div><h1>Owner screen, contact.page</h1><p>Mockup v1 &middot; Page Bot &middot; 6 Oct 2026 &middot; sample data, invented business</p></div>
+ <div class="seg" role="group" aria-label="View"><button type="button" aria-pressed="true" data-v="desktop">Desktop</button><button type="button" aria-pressed="false" data-v="phone">Phone</button></div>
+</header>
+
+<div class="stage" data-view="desktop">
+<div class="app">
+<div class="keyline"></div>
+
+<div class="top">
+ <a class="logo" href="#"><img src="data:image/png;base64,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" alt=""><span>contact<i>.page</i></span></a>
+ <div class="mid"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5" /><path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244" /><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05" /></svg><b>Mekong Bean Coffee</b>&nbsp;&middot;&nbsp;Owner view</div>
+ <div class="who"><a class="viewlink" href="#">View my page <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg></a><span class="av" aria-label="Signed in as Dara">D</span></div>
+</div>
+
+<div class="secure"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg><span><b>Signed in as the owner.</b> Only you see this screen.</span></div>
+
+<main class="body">
+ 
+ <div class="ident">
+  <div>
+   <div class="kicker">Coffee Shop &bull; Boeung Keng Kang, Phnom Penh</div>
+   <div class="h1row"><div class="h1bar" aria-hidden="true"></div><h2>Mekong Bean Coffee</h2></div>
+  </div>
+  <div class="url"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg><a href="#">kh00000.contact.page</a></div>
+ </div>
+
+ <div class="col main">
+ 
+ <section class="card greet o1" aria-labelledby="g-h">
+  <div class="bot"><img src="data:image/png;base64,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" alt=""><span><b>Your contact.page assistant</b> &middot; just now</span></div>
+  <p class="hello" id="g-h">Good evening, Dara.<span class="km">សួស្តី ដារ៉ា</span></p>
+  <p class="q">We found your business registration from 2019. Is this address still right?</p>
+  <div class="regaddr"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg><p>No. 27, Street 308<br>Sangkat Boeung Keng Kang 1<br>Khan Boeung Keng Kang, Phnom Penh</p></div>
+  <div class="srcrow"><span class="tag reg"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 12h4" /><path d="M10 8h4" /><path d="M14 21v-3a2 2 0 0 0-4 0v3" /><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" /><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" /></svg>Source: Ministry of Commerce register</span><span class="small">registered 14 Mar 2019</span></div>
+  <div class="answers">
+   <button class="btn" type="button"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Yes, it's right</button>
+   <button class="btn ghost" type="button"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /><path d="m15 5 4 4" /></svg>Fix it</button>
+  </div>
+  <div class="prog"><span>Question 1 of 12</span><span class="bar"><i></i></span><span>Page 64% done</span></div>
+  <p class="wa"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Rather chat? <a href="#">Answer on WhatsApp</a> instead.</p>
+ </section>
+
+ 
+ <section class="card o4" aria-labelledby="a-h">
+  <div class="ch"><div><h3 id="a-h"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg>Address and directions</h3><span class="kml km" lang="km">អាសយដ្ឋាន និង​ទិសដៅ</span></div><a class="edit" href="#" aria-label="Edit address"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /><path d="m15 5 4 4" /></svg></a></div>
+  <div class="two">
+   <div>
+    <div class="map" aria-label="Map preview with your pin">
+     <span class="st" style="left:18%;top:4%">ST 57</span><span class="st" style="left:3%;top:32%">STREET 308</span>
+     <div class="mkt">BKK1<br>market</div>
+     <div class="pin"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg></div>
+     <div class="pinnote"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" /></svg><span><b>Pin note:</b> on the Street 57 side door</span></div>
+    </div>
+    <dl class="df">
+     <div class="r"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 12h4" /><path d="M10 8h4" /><path d="M14 21v-3a2 2 0 0 0-4 0v3" /><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" /><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" /></svg><div><dt>Street address <span class="tag reg">From register</span></dt><dd>No. 27, Street 308, Sangkat Boeung Keng Kang 1, Khan Boeung Keng Kang, Phnom Penh</dd></div><a class="edit" href="#" aria-label="Edit"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /><path d="m15 5 4 4" /></svg></a></div>
+     <div class="r"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11" /></svg><div><dt>Landmark <span class="tag new">New</span></dt><dd>Opposite BKK1 market, next to the green-cross pharmacy</dd></div><a class="edit" href="#" aria-label="Edit"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /><path d="m15 5 4 4" /></svg></a></div>
+    </dl>
+   </div>
+   <dl class="df">
+    <div class="r"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 12h4" /><path d="M10 8h4" /><path d="M14 21v-3a2 2 0 0 0-4 0v3" /><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" /><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" /></svg><div><dt>Floor</dt><dd>Ground floor. More seats upstairs.</dd></div><a class="edit" href="#" aria-label="Edit"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /><path d="m15 5 4 4" /></svg></a></div>
+    <div class="r"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg><div><dt>Entrance <span class="tag new">New</span></dt><dd>Corner shop: use the side door on Street 57</dd></div><a class="edit" href="#" aria-label="Edit"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /><path d="m15 5 4 4" /></svg></a></div>
+    <div class="r"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" /><path d="M15 18H9" /><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" /><circle cx="17" cy="18" r="2" /><circle cx="7" cy="18" r="2" /></svg><div><dt>Parking</dt><dd>Motorbikes free in front. Cars: paid lot on Street 51.</dd></div><a class="edit" href="#" aria-label="Edit"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /><path d="m15 5 4 4" /></svg></a></div>
+    <div class="r"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6" /><path d="m4 14 6-6 2-3" /><path d="M2 5h12" /><path d="M7 2h1" /><path d="m22 22-5-10-5 10" /><path d="M14 18h6" /></svg><div><dt>Directions in Khmer <span class="tag new">New</span></dt><dd class="km" lang="km"><span class="nw">ទល់មុខផ្សារបឹងកេងកង</span> <span class="nw">ក្បែរឱសថស្ថាន។</span> <span class="nw">ច្រកចូលនៅផ្លូវ ៥៧។</span></dd></div><a class="edit" href="#" aria-label="Edit"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /><path d="m15 5 4 4" /></svg></a></div>
+    <div class="r"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" /><path d="M15 5.764v15" /><path d="M9 3.236v15" /></svg><div><dt>Map pin note</dt><dd>The pin is on the Street 57 door, not the main road.</dd></div><a class="edit" href="#" aria-label="Edit"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /><path d="m15 5 4 4" /></svg></a></div>
+   </dl>
+  </div>
+ </section>
+
+ 
+ <section class="card o5" aria-labelledby="m-h">
+  <div class="ch"><div><h3 id="m-h"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.34-4.34" /><circle cx="11" cy="11" r="8" /></svg>Missing details</h3><span class="kml km" lang="km">ព័ត៌មាន​ដែល​ខ្វះ</span></div></div>
+  <p class="lead" style="margin-top:0">Fill it in yourself, or let our agents look for it.</p>
+  <div class="mf open">
+   <label>Business registration number</label>
+   <div class="mrow"><div class="inp">Not on your page yet</div><button class="btn sm on" type="button" aria-expanded="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.34-4.34" /><circle cx="11" cy="11" r="8" /></svg>Try to find it</button></div>
+   <div class="exp">
+    <div class="warn"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /><path d="M12 9v4" /><path d="M12 17h.01" /></svg><span><b>Our agents will research this.</b>We may not find it.</span></div>
+    <label>Add your own sources <span>(optional)</span></label>
+    <div class="ta">A website, your Facebook page, an old invoice, your accountant&hellip;</div>
+    <div class="go"><span class="small">We'll message you with what we find. Nothing goes on your page until you say yes.</span><button class="btn" type="button">Go <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></button></div>
+   </div>
+  </div>
+  <div class="mf">
+   <label>Year founded</label>
+   <div class="mrow"><div class="inp">Not on your page yet</div><button class="btn sm" type="button"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.34-4.34" /><circle cx="11" cy="11" r="8" /></svg>Try to find it</button></div>
+  </div>
+ </section>
+
+ <div class="two o6">
+ 
+ <section class="card" aria-labelledby="n-h">
+  <div class="ch"><div><h3 id="n-h"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" /><path d="M7 11h10" /><path d="M7 15h6" /><path d="M7 7h8" /></svg>Announcements</h3><span class="kml km" lang="km">សេចក្តី​ប្រកាស</span></div></div>
+  <div class="chiprow" style="margin:0 0 10px"><span class="chip pick"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>News</span><span class="chip">Offer</span><span class="chip">Closed today</span><span class="chip">New stock in</span></div>
+  <div class="compose">Iced palm-sugar latte is back from Monday. Try it with our new banana bread.<span class="cur"></span></div>
+  <div class="copts"><span class="sel"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v3" /><path d="M16 2v3" /><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18" /></svg>Show for 7 days <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></span><span class="tgl"><i></i>Also in Khmer</span></div>
+  <div class="post"><button class="btn" type="button"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" /><path d="m21.854 2.147-10.94 10.939" /></svg>Post announcement</button></div>
+  <div class="arch"><span class="small">Old announcements are kept as they were, never changed.</span>
+   <div class="ai"><span class="d">28 Sep</span><span>Closed for Pchum Ben, 1 to 3 October. &middot; archived</span></div>
+   <div class="ai"><span class="d">2 Sep</span><span>New: oat milk for every drink. &middot; archived</span></div>
+  </div>
+ </section>
+
+ 
+ <section class="card" aria-labelledby="q-h">
+  <div class="ch"><div><h3 id="q-h"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></svg>FAQ from the owner</h3><span class="kml km" lang="km">សំណួរ​ចម្លើយ​ពី​ម្ចាស់</span></div><a class="edit" href="#" aria-label="Edit FAQ"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /><path d="m15 5 4 4" /></svg></a></div>
+  <div class="faq">
+   <h4>Can I work on my laptop here?</h4>
+   <p>Yes. Free Wi-Fi, and plugs along the long table upstairs. Quiet hours are 2 to 5 pm.</p>
+   <div class="by"><span class="tag"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>From the owner</span><span class="small">answered 5 Oct</span></div>
+  </div>
+  <p class="small" style="margin:0 0 7px">Coffee shop owners often answer:</p>
+  <div class="chiprow"><span class="chip"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M12 5v14" /></svg>Do you have oat milk?</span><span class="chip"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M12 5v14" /></svg>Is there parking?</span><span class="chip"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M12 5v14" /></svg>Can I book upstairs?</span><span class="chip"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M12 5v14" /></svg>Are pets welcome?</span></div>
+  <div style="margin:14px 0 0"><button class="btn ghost sm" type="button"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M12 5v14" /></svg>Add a question</button></div>
+ </section>
+ </div>
+ </div>
+
+ <div class="col side">
+ 
+ <section class="card o2" aria-labelledby="c-h">
+  <div class="ch"><div><h3 id="c-h"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg>Your contact details</h3><span class="kml km" lang="km">ព័ត៌មាន​ទំនាក់ទំនង​របស់​អ្នក</span></div><a class="edit" href="#" aria-label="Edit contact details"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /><path d="m15 5 4 4" /></svg></a></div>
+  <ul class="cl">
+   <li><span class="ic"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg></span><span class="v"><b>+855 12 000 000</b><small>Phone, main line</small></span></li>
+   <li><span class="ic"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><span class="v"><b>+855 12 000 000</b><small>WhatsApp</small></span></li>
+   <li><span class="ic"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg></span><span class="v"><b>hello@mekongbean.example</b><small>Email</small></span></li>
+  </ul>
+  <p class="priv-note"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg><span>Shown in full here because it's you. Visitors pass our security check first.</span></p>
+ </section>
+
+ 
+ <section class="card o3" aria-labelledby="f-h">
+  <div class="ch"><div><h3 id="f-h"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>What your page shows</h3><span class="kml km" lang="km">អ្វីដែលទំព័ររបស់អ្នកបង្ហាញ</span></div></div>
+  <p class="restore"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" /></svg><span>Untick anything you don't offer. Nothing is deleted, you can turn it back on.</span></p>
+  <ul class="fl">
+   <li><span class="fi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg></span><span class="ft"><b>Contact</b><small>Phone, email, WhatsApp</small></span><span class="cb"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span></li>
+   <li><span class="fi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg></span><span class="ft"><b>Address and directions</b><small>Street + 6 direction fields</small></span><span class="cb"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span></li>
+   <li><span class="fi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg></span><span class="ft"><b>Opening hours</b><small>Daily 6:30 to 21:00</small></span><span class="cb"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span></li>
+   <li><span class="fi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 12h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 14" /><path d="m7 18 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9" /><path d="m2 13 6 6" /></svg></span><span class="ft"><b>Services</b><small>Dine-in, takeaway, catering</small></span><span class="cb"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span></li>
+   <li class="off"><span class="fi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 10a4 4 0 0 1-8 0" /><path d="M3.103 6.034h17.794" /><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z" /></svg></span><span class="ft"><b>Products</b><small>Hidden from your page</small></span><span class="cb off"></span></li>
+   <li class="nudge"><div class="bub"><p><img src="data:image/png;base64,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" alt="">Only services? Tell us which ones.</p><div class="chiprow"><span class="chip"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M12 5v14" /></svg>Coffee workshops</span><span class="chip"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M12 5v14" /></svg>Event space</span><span class="chip"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="M12 5v14" /></svg>Barista classes</span></div></div></li>
+   <li><span class="fi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 11-1.296-1.296a2.4 2.4 0 0 0-3.408 0L11 16" /><path d="M4 8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2" /><circle cx="13" cy="7" r="1" fill="currentColor" /><rect x="8" y="2" width="14" height="14" rx="2" /></svg></span><span class="ft"><b>Photos</b><small>4 photos</small></span><span class="cb"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span></li>
+   <li><span class="fi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" /><path d="M7 11h10" /><path d="M7 15h6" /><path d="M7 7h8" /></svg></span><span class="ft"><b>Announcements</b><small>1 draft</small></span><span class="cb"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span></li>
+   <li><span class="fi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></svg></span><span class="ft"><b>FAQ from the owner</b><small>1 question</small></span><span class="cb"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span></li>
+   <li><span class="fi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="5" height="5" x="3" y="3" rx="1" /><rect width="5" height="5" x="16" y="3" rx="1" /><rect width="5" height="5" x="3" y="16" rx="1" /><path d="M21 16h-3a2 2 0 0 0-2 2v3" /><path d="M21 21v.01" /><path d="M12 7v3a2 2 0 0 1-2 2H7" /><path d="M3 12h.01" /><path d="M12 3h.01" /><path d="M12 16v.01" /><path d="M16 12h1" /><path d="M21 12v.01" /><path d="M12 21v-1" /></svg></span><span class="ft"><b>Payment methods</b><small>KHQR, cash in dollars and riel</small></span><span class="cb"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span></li>
+   <li><span class="fi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6" /><path d="m4 14 6-6 2-3" /><path d="M2 5h12" /><path d="M7 2h1" /><path d="m22 22-5-10-5 10" /><path d="M14 18h6" /></svg></span><span class="ft"><b>Languages spoken</b><small>Khmer, English</small></span><span class="cb"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span></li>
+   <li><span class="fi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" /><path d="M15 5.764v15" /><path d="M9 3.236v15" /></svg></span><span class="ft"><b>Delivery area</b><small class="empty">Empty, the assistant will ask</small></span><span class="cb"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span></li>
+   <li><span class="fi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v3" /><path d="M16 2v3" /><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18" /></svg></span><span class="ft"><b>Booking link</b><small class="empty">Empty, the assistant will ask</small></span><span class="cb"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span></li>
+  </ul>
+  <div class="flsum"><span>12 sections</span><span>11 on your page &middot; 1 hidden</span></div>
+ </section>
+
+ 
+ <section class="card refresh o7" aria-labelledby="r-h">
+  <div class="row"><span class="ri"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" /><path d="M20 2v4" /><path d="M22 4h-4" /><circle cx="4" cy="20" r="2" /></svg></span><div><h3 id="r-h" style="margin:0 0 3px;font-size:17px">Refresh my page</h3><p>Our agents check every source again and add what's new.</p></div></div>
+  <button class="btn wide" type="button"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56" /></svg>Refresh my page</button>
+  <p class="small"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>Takes about a day. We'll message you when it's done.</p>
+ </section>
+
+ 
+ <section class="card private o8" aria-labelledby="p-h">
+  <span class="pill"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>Private</span>
+  <h3 id="p-h" style="margin:10px 0 2px">Only you can see this</h3>
+  <p class="small km" lang="km" style="margin:0 0 4px">មានតែអ្នកទេដែលអាចមើលឃើញ</p>
+  <p class="small" style="margin:0">From your Ministry of Commerce record. Never shown on your page.</p>
+  <dl class="pd">
+   <dt>Registered name</dt><dd>MEKONG BEAN CO., LTD.<small>Private limited company</small></dd>
+   <dt>Directors</dt><dd>Dara C.<small>Director since 2019</small>Sophea K.<small>Director since 2021</small></dd>
+   <dt>Filing date</dt><dd>14 March 2019<small>Last annual filing: 28 Feb 2026</small></dd>
+   <dt>Tax ID</dt><dd><span class="mask">••••1234</span></dd>
+  </dl>
+  <div class="locked"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" /><circle cx="16.5" cy="7.5" r=".5" fill="currentColor" /></svg><span class="lt"><b>Shareholders and full filings</b>Connect your MOC account to see them.</span><button class="btn sm ghost" type="button">Connect</button></div>
+ </section>
+ </div>
+
+ <div class="foot">Mockup v1 &middot; not production &middot; Mekong Bean Coffee is an invented business &middot; all numbers fake</div>
+</main>
+</div>
+</div>
+
+<section class="notes" aria-label="Design notes">
+ <b>Design notes</b>
+ <ol>
+  <li><b>Opens with a yes/no, not a form.</b> The first thing Dara sees is his own 2019 register address. One tap answers it, and it proves we already know his business.</li>
+  <li><b>Everything ticked, one list.</b> He feels in control, rarely unticks. Unticking Products turns straight into "which services?", so the page fills instead of thinning.</li>
+  <li><b>Directions people actually use.</b> Landmark, side door, parking and Khmer directions sit next to the register street, with the pin note on the map.</li>
+  <li><b>Honest agent work.</b> "Try to find it" warns first, takes his own hints, and nothing is published until he says yes.</li>
+  <li><b>Private looks private.</b> The register data sits in a gold hatched panel with a lock, apart from everything that goes public.</li>
+  <li><b>Same house look.</b> Yellow top line, yellow bar before the name, yellow-outline buttons, grey chips, gold lock, Lucide icons. Desktop is the same markup in two columns.</li>
+ </ol>
+</section>
+<script>
+function setView(v){document.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.v===v)});
+ document.querySelector('.stage').setAttribute('data-view',v);}
+document.querySelectorAll('.seg button').forEach(function(b){b.addEventListener('click',function(){setView(b.dataset.v);history.replaceState(null,'','#'+b.dataset.v);});});
+if(location.hash==='#phone')setView('phone');
+</script>
+</body></html>
