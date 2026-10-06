@@ -232,7 +232,9 @@ states:
       slide=document.getElementById('slide'), knob=document.getElementById('knob'), fill=document.getElementById('slideFill'),
       stxt=document.getElementById('slideTxt'), tap=document.getElementById('tapUnlock'),
       hint=document.getElementById('hint'), who=document.getElementById('who'), form=document.getElementById('gateForm'),
-      timer, tsKind='auto', pts=[], dragging=false, x0=0, pos=0;
+      timer, tsKind='auto', pts=[], dragging=false, x0=0, pos=0,
+      // MVP scope (Kim 2026-10-07): no own bot detection; the drag score below is parked for later and switched off.
+      USE_SLIDE_SCORE=false;
   function role(){ return form.querySelector('input[name=role]:checked'); }
   function maxX(){ return slide.clientWidth - knob.offsetWidth - 8; }
   function setPos(px, anim){
@@ -289,6 +291,7 @@ states:
   }
   knob.addEventListener('pointerdown', function(e){
     if(needRole()) return;
+    // Production: turnstile.execute(widgetId) here (execution: 'execute'), so the token is ready by the end of the slide.
     dragging=true; x0=e.clientX-pos; pts=[{x:e.clientX,y:e.clientY,t:performance.now()}];
     knob.setPointerCapture(e.pointerId); slide.classList.add('drag'); hint.textContent='';
   });
@@ -299,8 +302,9 @@ states:
   function release(){
     if(!dragging) return; dragging=false;
     if(pos < maxX()-6){ reset(); return; }
-    var s=score();
-    if(s.human && tsKind!=='click'){ unlock(); } else { setPos(maxX(),true); challenge(); }
+    var human = USE_SLIDE_SCORE ? score().human : true;
+    // MVP: a full slide unlocks unless hidden Turnstile wants an interaction (mockup state "challenge wants a click").
+    if(human && tsKind!=='click'){ unlock(); } else { setPos(maxX(),true); challenge(); }
   }
   knob.addEventListener('pointerup', release);
   knob.addEventListener('pointercancel', function(){ dragging=false; reset(); });
