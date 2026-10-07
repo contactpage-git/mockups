@@ -25,18 +25,20 @@ h1 a{text-decoration:none}
 h1 a:hover{text-decoration:underline}
 h1 a{display:inline-flex;align-items:center;gap:2px}
 h1 .arrow{color:var(--grey);margin-left:-4px}
-.cat{font-size:12px;color:var(--grey);margin:1px 0 0 16px}
+.cat{font-size:11px;font-style:italic;color:var(--grey);margin:-2px 0 0 16px;line-height:1.3} 
 
 .step{margin:0 0 16px}
 .step-t{font-weight:800;font-size:15px;margin:0 0 8px}
-.roles{display:flex;flex-wrap:wrap;gap:6px}
+.roles{display:flex;flex-direction:column;gap:6px;max-width:380px}
 .roles input{position:absolute;opacity:0;width:1px;height:1px}
 
-.roles label{display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 8px;border:0;border-radius:5px;background:#f1f2f3;font:400 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;cursor:pointer;user-select:none}
-.roles label:hover{background:#e6e8ea}
+.roles label{display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;border:1px solid var(--line);border-radius:8px;
+ background:#fff;font:400 15px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;cursor:pointer;user-select:none}
+.roles label::before{content:"";flex:none;width:18px;height:18px;border-radius:50%;border:2px solid #9a9a9a;background:#fff}
+.roles label:hover{border-color:#cfcfcf}
 .roles label .ck{display:none}
-.roles input:checked+label .ck{display:inline-block}
-.roles input:checked+label{background:#fff;box-shadow:inset 0 0 0 1.5px var(--yellow);font-weight:700;padding-left:8px}
+.roles input:checked+label{border-color:var(--yellow);box-shadow:inset 0 0 0 1px var(--yellow);font-weight:600}
+.roles input:checked+label::before{border-color:var(--ink);background:radial-gradient(circle,var(--ink) 0 4px,#fff 4.5px)}
 .roles input:focus-visible+label{outline:2px solid var(--ink);outline-offset:2px}
 .needs .step-t{color:var(--warn)}
 
@@ -72,6 +74,12 @@ h1 .arrow{color:var(--grey);margin-left:-4px}
 .slide.off{background:#f4f4f4}
 .slide.off .knob{background:#d9d9d9;color:#8a8a8a;cursor:not-allowed}
 .slide.wait .track::after{content:"…"}
+.slide.opening .knob,.slide.opening .fill{visibility:hidden}
+.slide.opening .track{padding:0 16px;gap:8px;color:var(--ink)}
+.slide.opening{cursor:progress}
+.sspin{width:16px;height:16px;border:2px solid #d6d6d6;border-top-color:var(--ink);border-radius:50%;animation:sspin .8s linear infinite;flex:none}
+@keyframes sspin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.sspin{animation-duration:2.4s}}
 .under{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:6px 2px 0;font-size:11px;color:#767676}
 .under a{color:#767676;text-decoration:underline;text-decoration-color:#cfcfcf;text-underline-offset:2px;font-size:12px}
 .hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
@@ -80,7 +88,13 @@ h1 .arrow{color:var(--grey);margin-left:-4px}
 .behind{margin:18px 0 0;max-width:380px}
 .behind caption{text-align:left;font-size:12px;color:var(--grey);text-transform:uppercase;letter-spacing:1.2px;font-weight:700;padding:0 0 6px}
 .behind table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.35;color:#6b6b6b}
-.behind td{padding:3px 0;border-bottom:1px solid #f1f1f1}
+.behind td{padding:3px 0}
+
+.behind td.lb{width:100%;background:radial-gradient(circle,#bdbdbd 0 .8px,transparent 1.2px) left bottom 8px/5px 3px repeat-x}
+.behind td.lb span{background:#fff;padding-right:4px}
+.behind td.val{white-space:nowrap;padding-left:4px}
+.behind td.lb{padding-left:4px}
+.behind td.lk{padding-left:6px}
 .behind td{vertical-align:middle}
 .behind td.ic{width:24px;color:#8a8a8a}
 .behind td.ic svg{display:block;width:15px;height:15px}
@@ -98,6 +112,7 @@ h1 .arrow{color:var(--grey);margin-left:-4px}
 .house .lbl{font-size:11px;color:var(--grey-2);letter-spacing:1px;text-transform:uppercase;margin:0 0 6px}
 .house h2{font-size:18px;margin:0 0 4px}
 .house p{margin:0 0 12px;font-size:14px;color:#333}
+.house .ctas-t{margin:0 0 6px;font-size:13px;font-weight:700;color:var(--ink)} 
 .house .ctas{display:flex;flex-wrap:nowrap;gap:8px;align-items:center}
 @media(max-width:340px){.house .ctas{flex-wrap:wrap}}
 
@@ -113,6 +128,15 @@ h1 .arrow{color:var(--grey);margin-left:-4px}
 .house .own{border-top:1px solid var(--line);margin-top:14px;padding-top:8px;font-size:12px;color:var(--grey-2)}
 .house .own .linkbtn{color:var(--grey-2);font-size:12px}
 .house .own.hot .linkbtn:first-of-type{color:var(--ink);text-decoration-color:var(--yellow);text-decoration-thickness:3px}
+
+.house{background:var(--yellow);border:0;box-shadow:0 8px 24px rgba(0,0,0,.14)}
+.house .lbl{color:rgba(22,22,22,.6)}
+.house p{color:var(--ink)}
+.house .cta,.house .cta.pri{background:#fff;border:0}
+.house .cta.pri:hover,.house .cta.sec:hover{background:#fffbea}
+.house .own{border-top-color:rgba(22,22,22,.15);color:rgba(22,22,22,.6)}
+.house .own .linkbtn{color:rgba(22,22,22,.7);text-decoration-color:rgba(22,22,22,.3)}
+.house .own.hot .linkbtn:first-of-type{text-decoration-color:var(--ink);text-decoration-thickness:2px}
 .linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .note{display:none;font-size:12px;color:var(--grey);margin:8px 0 0}
 .foot{margin:22px 0 0;font-size:13px}
@@ -124,10 +148,8 @@ h1 .arrow{color:var(--grey);margin-left:-4px}
 
 body[data-state="fail"] .msg.fail,
 body[data-state="returning"] .msg.returning,
-body[data-state="done"] .msg.done,
 body[data-state="closed"] .msg.closed{display:block}
 body[data-state="returning"] .gate,
-body[data-state="done"] .gate,
 body[data-state="closed"] .gate,
 body[data-state="closed"] .behind,
 body[data-state="closed"] .house .own{display:none}
@@ -145,6 +167,7 @@ body[data-state="closed"] .house .own{display:none}
 .fhelp a{color:var(--grey);text-decoration:underline;text-decoration-color:#d0d0d0;text-underline-offset:3px}
 .fhelp a:hover{color:var(--ink)}
 </style>
+
 <script>if(/[?&]full=1/.test(location.search))document.documentElement.classList.add('full')</script>
 <style>.fullbtn{display:none}@media(min-width:440px){html:not(.full) .fullbtn{display:inline-flex;align-items:center;gap:6px;position:fixed;top:16px;left:min(calc(50% + 209px),calc(100% - 150px));background:#fff;color:#161616;border:1px solid #d5d8dc;border-radius:8px;padding:7px 11px;font:600 13px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.06);z-index:50}html:not(.full) .fullbtn:hover{background:#fffbea}}html.full,html.full body{background:#fff!important}html.full body{padding:0!important}html.full .keyline{display:block!important}html.full .wrap{width:auto!important;max-width:var(--desk,760px)!important;height:auto!important;overflow:visible!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:#fff!important}</style>
 </head>
@@ -161,8 +184,8 @@ body[data-state="closed"] .house .own{display:none}
 </div>
 
 <div class="msg fail" role="status"><strong>The check didn't go through.</strong>Please try again in a minute, or ask our agent on WhatsApp below.</div>
-<div class="msg returning" role="status"><strong>Welcome back.</strong>You were checked before, so the contact details open straight away. (Mockup: in production this screen is skipped.)</div>
-<div class="msg done" role="status"><strong>Opening the contact details…</strong>In production the page reloads here with the real phone, WhatsApp and emails (contact details page, design task D015).</div>
+<div class="msg returning" role="status"><strong>Welcome back.</strong>You were checked before, so the contact details open straight away.</div>
+
 <div class="msg closed" role="status"><strong>This business page is no longer active.</strong>See other <a href="phnom-penh-office-rental-vertical-page.html">office space rentals in Phnom Penh</a>.</div>
 
 <form class="gate" id="gateForm" method="post" action="#" novalidate>
@@ -170,10 +193,11 @@ body[data-state="closed"] .house .own{display:none}
 <div class="step" id="who">
 <p class="step-t" id="who-t">I am…</p>
 <div class="roles" role="radiogroup" aria-labelledby="who-t">
-<input type="radio" name="role" id="r-customer" value="customer"><label for="r-customer"><svg class="ck" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>a customer</label>
+<input type="radio" name="role" id="r-customer" value="customer" checked><label for="r-customer"><svg class="ck" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>a customer</label>
 <input type="radio" name="role" id="r-supplier" value="supplier"><label for="r-supplier"><svg class="ck" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>a supplier</label>
-<input type="radio" name="role" id="r-job_seeker" value="job_seeker"><label for="r-job_seeker"><svg class="ck" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>looking for a job</label>
-<input type="radio" name="role" id="r-works_here" value="works_here"><label for="r-works_here"><svg class="ck" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>the owner or staff</label>
+<input type="radio" name="role" id="r-job_seeker" value="job_seeker"><label for="r-job_seeker"><svg class="ck" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>a job seeker</label>
+<input type="radio" name="role" id="r-owner" value="owner"><label for="r-owner"><svg class="ck" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>the owner</label>
+<input type="radio" name="role" id="r-works_here" value="works_here"><label for="r-works_here"><svg class="ck" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>working here</label>
 </div>
 </div>
 
@@ -204,11 +228,11 @@ body[data-state="closed"] .house .own{display:none}
 
 <div class="behind" aria-label="Locked contact details">
 <table>
-<tr><td class="ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg></td><td class="lb">Phone</td><td class="val">+855 12 ••• •••</td><td class="lk" aria-label="locked"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg></td></tr>
-<tr><td class="ic"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></td><td class="lb">WhatsApp</td><td class="val">+855 12 ••• •••</td><td class="lk" aria-label="locked"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg></td></tr>
-<tr><td class="ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg></td><td class="lb">Email</td><td class="val">i•••@yellow-tower.com</td><td class="lk" aria-label="locked"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg></td></tr>
-<tr><td class="ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg></td><td class="lb">Email</td><td class="val">y•••@gmail.com</td><td class="lk" aria-label="locked"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg></td></tr>
-<tr><td class="ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></svg></td><td class="lb">Community notes</td><td class="val">3</td><td class="lk" aria-label="locked"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg></td></tr>
+<tr><td class="ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg></td><td class="lb"><span>Phone</span></td><td class="val">+855 12 869 ***</td><td class="lk" aria-label="locked"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg></td></tr>
+<tr><td class="ic"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></td><td class="lb"><span>WhatsApp</span></td><td class="val">+855 12 869 ***</td><td class="lk" aria-label="locked"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg></td></tr>
+<tr><td class="ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg></td><td class="lb"><span>Email</span></td><td class="val">i•••@yellow-tower.com</td><td class="lk" aria-label="locked"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg></td></tr>
+<tr><td class="ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg></td><td class="lb"><span>Email</span></td><td class="val">y•••@gmail.com</td><td class="lk" aria-label="locked"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg></td></tr>
+<tr><td class="ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></svg></td><td class="lb"><span>Community notes</span></td><td class="val">3</td><td class="lk" aria-label="locked"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg></td></tr>
 </table>
 </div>
 
@@ -216,20 +240,20 @@ body[data-state="closed"] .house .own{display:none}
 <aside class="house" aria-label="contact.page">
 <p class="lbl">contact.page</p>
 <h2>Get your own .contact.page, free</h2>
-<p>Our AI agent runs it for you, by WhatsApp or email, and brings you new customers. Your name and your branding, not ours. Your numbers stay behind this same check: real customers pass in one tap, scrapers and spam bots don't.</p>
-<div class="ctas">
-<a class="cta pri" href="https://wa.me/newcustomers?text=%5BGATE%7Csignup%5D%20Hi%2C%20sign%20me%20up%20for%20my%20free%20website.%0AMy%20email%3A%20"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Start on WhatsApp</a>
+<p>Our AI agent runs it for you, and keeps your numbers safe from spam bots.</p>
+<p class="ctas-t" id="start-t">Start</p>
+<div class="ctas" role="group" aria-labelledby="start-t">
+<a class="cta pri" href="https://wa.me/newcustomers?text=%5BGATE%7Csignup%5D%20Hi%2C%20sign%20me%20up%20for%20my%20free%20website.%0AMy%20email%3A%20"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>By WhatsApp</a>
 <a class="cta sec" href="mailto:newcustomers@contact.page?subject=%5BGATE%7Csignup%5D%20Sign%20me%20up%20for%20my%20free%20website&amp;body=Business%20name%3A%0ACity%3A%0AOne%20way%20customers%20can%20reach%20you%3A"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>By email</a>
 </div>
-<div class="own"><a class="linkbtn" href="https://wa.me/newcustomers?text=%5BGATE%7Ckh34363%7Cclaim%5D%20Hi%2C%20I%20work%20at%20or%20own%20Yellow%20Tower%20%28kh34363.contact.page%29%20and%20want%20to%20claim%20this%20page.%0AMy%20email%3A%20">Claim</a> · <a class="linkbtn" href="https://wa.me/newcustomers?text=%5BGATE%7Ckh34363%7Cedit%5D%20Hi%2C%20I%20want%20to%20update%20Yellow%20Tower%20%28kh34363.contact.page%29.%0AMy%20email%3A%20">Edit</a> · <a class="linkbtn" href="https://wa.me/newcustomers?text=%5BGATE%7Ckh34363%7Cremove%5D%20Hi%2C%20I%20want%20Yellow%20Tower%20%28kh34363.contact.page%29%20removed.%0AMy%20email%3A%20">Remove</a> · <a class="linkbtn" href="https://wa.me/newcustomers?text=%5BGATE%7Ckh34363%7Creport%5D%20Hi%2C%20I%20want%20to%20report%20a%20problem%20with%20Yellow%20Tower%20%28kh34363.contact.page%29%3A%0AMy%20email%3A%20">Report</a></div>
+<div class="own"><a class="linkbtn" href="https://wa.me/newcustomers?text=%5BGATE%7Ckh34363%7Cclaim%5D%20Hi%2C%20I%20work%20at%20or%20own%20Yellow%20Tower%20%28kh34363.contact.page%29%20and%20want%20to%20claim%20this%20page.%0AMy%20email%3A%20">Claim</a> · <a class="linkbtn" href="https://wa.me/newcustomers?text=%5BGATE%7Ckh34363%7Cedit%5D%20Hi%2C%20I%20want%20to%20update%20Yellow%20Tower%20%28kh34363.contact.page%29.%0AMy%20email%3A%20">Edit</a> · <a class="linkbtn" href="https://wa.me/newcustomers?text=%5BGATE%7Ckh34363%7Cremove%5D%20Hi%2C%20I%20want%20Yellow%20Tower%20%28kh34363.contact.page%29%20removed.%0AMy%20email%3A%20">Remove</a> · <a class="linkbtn" href="https://wa.me/newcustomers?text=%5BGATE%7Ckh34363%7Creport%5D%20Hi%2C%20I%20want%20to%20report%20a%20problem%20with%20Yellow%20Tower%20%28kh34363.contact.page%29%3A%0AMy%20email%3A%20">Report</a> · <a class="linkbtn" href="https://wa.me/newcustomers?text=%5BGATE%7Ckh34363%7Chelp%5D%20Hi%2C%20I%20need%20help%20with%20contact.page%3A%0AMy%20email%3A%20">Help</a></div>
 
 </aside>
 
 
 
-<p class="fhelp">Help: <a href="https://wa.me/newcustomers?text=%5BGATE%7Ckh34363%7Chelp%5D%20Hi%2C%20I%20need%20help%20with%20contact.page%3A%0AMy%20email%3A%20">WhatsApp</a> · <a href="mailto:newcustomers@contact.page?subject=%5BGATE%7Ckh34363%7Chelp%5D%20Help%20with%20contact.page&amp;body=What%20do%20you%20need%20help%20with%3F%0A">Email</a></p>
 <div class="meta">
-sample, not production · Yellow Tower security page · version 16 · 2026-10-07 · older versions in archive/<br>
+Yellow Tower security page · version 25 · 2026-10-07<br>
 after the slide: <a href="yellow-tower-contact-details-page.html">contact details, card (default)</a> · <a href="yellow-tower-contact-details-chat.html">chat version (alternate)</a><br>
 states:
 <button type="button" data-state="first" data-ts="auto" aria-pressed="true">human slide passes</button> ·
@@ -287,14 +311,21 @@ states:
     who.classList.add('needs'); hint.textContent='Pick one of the “I am…” options first.';
     form.querySelector('input[name=role]').focus(); reset(); return true;
   }
+  // Slider turns into spinner + "Opening…" in place: same box, nothing else changes (zero layout shift).
+  function opening(){
+    slide.classList.add('opening'); slide.setAttribute('aria-busy','true');
+    stxt.innerHTML='<span class="sspin" aria-hidden="true"></span>Opening…'; stxt.setAttribute('role','status');
+    knob.setAttribute('aria-valuenow','100'); knob.setAttribute('aria-valuetext','opening'); knob.setAttribute('tabindex','-1');
+  }
+  function unopening(){ slide.classList.remove('opening'); slide.removeAttribute('aria-busy'); stxt.removeAttribute('role'); knob.setAttribute('tabindex','0'); }
   function unlock(){
     if(document.getElementById('company_website').value) return; // honeypot: silent
     document.getElementById('tsToken').value='TURNSTILE-TOKEN';
-    setPos(maxX(),true); stxt.textContent='Unlocked'; knob.setAttribute('aria-valuetext','unlocked');
+    opening();
     // Production: POST role + token + slide_score + honeypot -> server siteverify -> cp_verified -> details.
     // GA4: contact_gate_solved {role, mode: slide|challenge}
-    setState('done');
-    setTimeout(function(){ location.href='yellow-tower-contact-details-page.html?role='+encodeURIComponent(role().value); }, 900);
+    // Min ~600 ms on the spinner so it never flashes; then navigate. A slow network keeps the spinner (old page stays up).
+    setTimeout(function(){ location.href='yellow-tower-contact-details-page.html?role='+encodeURIComponent(role().value); }, 600);
   }
   // Score the drag: humans are a bit slow, uneven and wobbly; scripts are instant, straight and constant.
   function score(){
@@ -339,11 +370,12 @@ states:
   function setState(s, kind, btn){
     body.setAttribute('data-state', s);
     if(btn) document.querySelectorAll('.meta button').forEach(function(b){ b.setAttribute('aria-pressed', b===btn ? 'true':'false'); });
+    if(s!=='done') unopening(); else opening();
     if(s==='first'){ form.reset(); tsKind=kind||'auto'; ts.classList.add('hidden'); clearTimeout(timer); reset(); }
     if(s==='fail'){ ts.classList.remove('hidden'); tsSet('fail'); }
   }
   document.querySelectorAll('.meta button').forEach(function(b){ b.addEventListener('click', function(){ setState(b.dataset.state, b.dataset.ts, b); }); });
-  form.addEventListener('change', function(){ if(role()){ hint.textContent=''; who.classList.remove('needs'); } var r=role(); document.querySelector('.house .own').classList.toggle('hot', !!r && r.value==='works_here'); });
+  form.addEventListener('change', function(){ if(role()){ hint.textContent=''; who.classList.remove('needs'); } var r=role(); document.querySelector('.house .own').classList.toggle('hot', !!r && (r.value==='works_here'||r.value==='owner')); });
   form.addEventListener('submit', function(e){ e.preventDefault(); });
 })();
 </script>
