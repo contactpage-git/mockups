@@ -72,12 +72,6 @@ h1 .arrow{color:var(--grey);margin-left:-4px}
 .slide.off{background:#f4f4f4}
 .slide.off .knob{background:#d9d9d9;color:#8a8a8a;cursor:not-allowed}
 .slide.wait .track::after{content:"…"}
-.slide.opening .knob,.slide.opening .fill{visibility:hidden}
-.slide.opening .track{padding:0 16px;gap:8px;color:var(--ink)}
-.slide.opening{cursor:progress}
-.sspin{width:16px;height:16px;border:2px solid #d6d6d6;border-top-color:var(--ink);border-radius:50%;animation:sspin .8s linear infinite;flex:none}
-@keyframes sspin{to{transform:rotate(360deg)}}
-@media (prefers-reduced-motion:reduce){.sspin{animation-duration:2.4s}}
 .under{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:6px 2px 0;font-size:11px;color:#767676}
 .under a{color:#767676;text-decoration:underline;text-decoration-color:#cfcfcf;text-underline-offset:2px;font-size:12px}
 .hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
@@ -130,8 +124,10 @@ h1 .arrow{color:var(--grey);margin-left:-4px}
 
 body[data-state="fail"] .msg.fail,
 body[data-state="returning"] .msg.returning,
+body[data-state="done"] .msg.done,
 body[data-state="closed"] .msg.closed{display:block}
 body[data-state="returning"] .gate,
+body[data-state="done"] .gate,
 body[data-state="closed"] .gate,
 body[data-state="closed"] .behind,
 body[data-state="closed"] .house .own{display:none}
@@ -163,8 +159,8 @@ body[data-state="closed"] .house .own{display:none}
 </div>
 
 <div class="msg fail" role="status"><strong>The check didn't go through.</strong>Please try again in a minute, or ask our agent on WhatsApp below.</div>
-<div class="msg returning" role="status"><strong>Welcome back.</strong>You were checked before, so the contact details open straight away.</div>
-
+<div class="msg returning" role="status"><strong>Welcome back.</strong>You were checked before, so the contact details open straight away. (Mockup: in production this screen is skipped.)</div>
+<div class="msg done" role="status"><strong>Opening the contact details…</strong>In production the page reloads here with the real phone, WhatsApp and emails (contact details page, design task D015).</div>
 <div class="msg closed" role="status"><strong>This business page is no longer active.</strong>See other <a href="phnom-penh-office-rental-vertical-page.html">office space rentals in Phnom Penh</a>.</div>
 
 <form class="gate" id="gateForm" method="post" action="#" novalidate>
@@ -231,7 +227,7 @@ body[data-state="closed"] .house .own{display:none}
 
 <p class="fhelp">Help: <a href="https://wa.me/newcustomers?text=%5BGATE%7Ckh34363%7Chelp%5D%20Hi%2C%20I%20need%20help%20with%20contact.page%3A%0AMy%20email%3A%20">WhatsApp</a> · <a href="mailto:newcustomers@contact.page?subject=%5BGATE%7Ckh34363%7Chelp%5D%20Help%20with%20contact.page&amp;body=What%20do%20you%20need%20help%20with%3F%0A">Email</a></p>
 <div class="meta">
-Yellow Tower security page · version 18 · 2026-10-07<br>
+sample, not production · Yellow Tower security page · version 17 · 2026-10-07 · older versions in archive/<br>
 after the slide: <a href="yellow-tower-contact-details-page.html">contact details, card (default)</a> · <a href="yellow-tower-contact-details-chat.html">chat version (alternate)</a><br>
 states:
 <button type="button" data-state="first" data-ts="auto" aria-pressed="true">human slide passes</button> ·
@@ -241,7 +237,6 @@ states:
 <button type="button" data-state="closed" aria-pressed="false">closed</button> ·
 <button type="button" data-state="done" aria-pressed="false">after the slide</button>
 </div>
-<p class="vhist" style="font-size:10.5px;line-height:1.7;color:#b0b0b0;margin:2px 0 0"><a style="color:#a0a0a0" href="dev/yellow-tower-security-page-notes.html">Developer notes</a> · earlier: <a style="color:#a0a0a0" href="archive/yellow-tower-security-page-v17.html">v17</a> <a style="color:#a0a0a0" href="archive/yellow-tower-security-page-v16.html">v16</a> <a style="color:#a0a0a0" href="archive/yellow-tower-security-page-v15.html">v15</a> <a style="color:#a0a0a0" href="archive/yellow-tower-security-page-v14.html">v14</a> <a style="color:#a0a0a0" href="archive/yellow-tower-security-page-v13.html">v13</a> <a style="color:#a0a0a0" href="archive/yellow-tower-security-page-v12.html">v12</a> <a style="color:#a0a0a0" href="archive/yellow-tower-security-page-v11.html">v11</a> <a style="color:#a0a0a0" href="archive/yellow-tower-security-page-v10.html">v10</a> <a style="color:#a0a0a0" href="archive/yellow-tower-security-page-v9.html">v9</a> <a style="color:#a0a0a0" href="archive/yellow-tower-security-page-v8.html">v8</a> <a style="color:#a0a0a0" href="archive/yellow-tower-security-page-v7.html">v7</a> <a style="color:#a0a0a0" href="archive/yellow-tower-security-page-v6.html">v6</a> <a style="color:#a0a0a0" href="archive/yellow-tower-security-page-v5.html">v5</a> <a style="color:#a0a0a0" href="archive/yellow-tower-security-page-v4.html">v4</a> <a style="color:#a0a0a0" href="archive/yellow-tower-security-page-v3.html">v3</a> <a style="color:#a0a0a0" href="archive/yellow-tower-security-page-v2.html">v2</a> <a style="color:#a0a0a0" href="archive/yellow-tower-security-page-v1.html">v1</a></p>
 
 </div>
 <script>
@@ -290,21 +285,14 @@ states:
     who.classList.add('needs'); hint.textContent='Pick one of the “I am…” options first.';
     form.querySelector('input[name=role]').focus(); reset(); return true;
   }
-  // Slider turns into spinner + "Opening…" in place: same box, nothing else changes (zero layout shift).
-  function opening(){
-    slide.classList.add('opening'); slide.setAttribute('aria-busy','true');
-    stxt.innerHTML='<span class="sspin" aria-hidden="true"></span>Opening…'; stxt.setAttribute('role','status');
-    knob.setAttribute('aria-valuenow','100'); knob.setAttribute('aria-valuetext','opening'); knob.setAttribute('tabindex','-1');
-  }
-  function unopening(){ slide.classList.remove('opening'); slide.removeAttribute('aria-busy'); stxt.removeAttribute('role'); knob.setAttribute('tabindex','0'); }
   function unlock(){
     if(document.getElementById('company_website').value) return; // honeypot: silent
     document.getElementById('tsToken').value='TURNSTILE-TOKEN';
-    opening();
+    setPos(maxX(),true); stxt.textContent='Unlocked'; knob.setAttribute('aria-valuetext','unlocked');
     // Production: POST role + token + slide_score + honeypot -> server siteverify -> cp_verified -> details.
     // GA4: contact_gate_solved {role, mode: slide|challenge}
-    // Min ~600 ms on the spinner so it never flashes; then navigate. A slow network keeps the spinner (old page stays up).
-    setTimeout(function(){ location.href='yellow-tower-contact-details-page.html?role='+encodeURIComponent(role().value); }, 600);
+    setState('done');
+    setTimeout(function(){ location.href='yellow-tower-contact-details-page.html?role='+encodeURIComponent(role().value); }, 900);
   }
   // Score the drag: humans are a bit slow, uneven and wobbly; scripts are instant, straight and constant.
   function score(){
@@ -349,7 +337,6 @@ states:
   function setState(s, kind, btn){
     body.setAttribute('data-state', s);
     if(btn) document.querySelectorAll('.meta button').forEach(function(b){ b.setAttribute('aria-pressed', b===btn ? 'true':'false'); });
-    if(s!=='done') unopening(); else opening();
     if(s==='first'){ form.reset(); tsKind=kind||'auto'; ts.classList.add('hidden'); clearTimeout(timer); reset(); }
     if(s==='fail'){ ts.classList.remove('hidden'); tsSet('fail'); }
   }
