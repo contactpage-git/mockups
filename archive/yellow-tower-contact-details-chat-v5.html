@@ -106,7 +106,7 @@ a{color:inherit}
 </footer>
 
 
-<script type="application/json" id="cdata">{"id": "kh34363", "name": "Yellow Tower", "category": "Office space", "city": "Phnom Penh", "best": {"kind": "whatsapp", "label": "WhatsApp, main number", "value": "+855 12 869 111", "tel": "+85512869111", "wa": "85512869111", "telegram": "unconfirmed", "confirmed": true, "worked": 4, "failed": 1, "last": "3 days ago"}, "more": [{"kind": "phone", "label": "Phone, main line", "value": "+855 12 869 111", "tel": "+85512869111", "confirmed": true, "worked": 3, "failed": 0}, {"kind": "email", "label": "Email", "value": "info@yellow-tower.com", "confirmed": true, "worked": 2, "failed": 0}, {"kind": "whatsapp", "label": "WhatsApp", "value": "+855 00 000 001 (sample)", "wa": "85500000001", "confirmed": false, "worked": 0, "failed": 0}, {"kind": "email", "label": "Email · reported not working recently", "value": "yellow.tower.co@gmail.com", "confirmed": false, "worked": 0, "failed": 2}], "address": "No. 191, Tonle Sap Road, Sangkat Chroy Changva, Khan Chroy Changva, Phnom Penh 12210", "map": "https://kh34363.contact.page/location/", "hours": [["Opening hours", "Monday to Friday, 8:00–19:00"], ["Viewings", "Monday to Friday, 9:00–17:00"]], "open": {"days": [1, 5], "from": 8, "to": 19, "tz": 7}, "ad": {"wa": "https://wa.me/newcustomers?text=Hi%21%20I%27d%20like%20early%20access%20to%20the%20AI%20page%20helper.%20%28ref%20details%20early-access%29", "mail": "mailto:newcustomers@contact.page?subject=Early%20access%3A%20AI%20page%20helper%20%28ref%20details%20early-access%29&body=Business%20name%3A%0ACity%3A"}}</script>
+<script type="application/json" id="cdata">{"id": "kh34363", "name": "Yellow Tower", "category": "Office space", "city": "Phnom Penh", "best": {"kind": "whatsapp", "label": "WhatsApp, main number", "value": "+855 12 869 111", "tel": "+85512869111", "wa": "85512869111", "telegram": "unconfirmed", "confirmed": true, "worked": 4, "failed": 1, "last": "3 days ago"}, "more": [{"kind": "phone", "label": "Phone, main line", "value": "+855 12 869 111", "tel": "+85512869111", "confirmed": true, "worked": 3, "failed": 0}, {"kind": "email", "label": "Email", "value": "info@yellow-tower.com", "confirmed": true, "worked": 2, "failed": 0}, {"kind": "whatsapp", "label": "WhatsApp", "value": "+855 00 000 001 (sample)", "wa": "85500000001", "confirmed": false, "worked": 0, "failed": 0}, {"kind": "email", "label": "Email · reported not working recently", "value": "yellow.tower.co@gmail.com", "confirmed": false, "worked": 0, "failed": 2}], "address": "No. 191, Tonle Sap Road, Sangkat Chroy Changva, Khan Chroy Changva, Phnom Penh 12210", "map": "https://kh34363.contact.page/location/", "hours": [["Opening hours", "Monday to Friday, 8:00–19:00"], ["Viewings", "Monday to Friday, 9:00–17:00"]], "open": {"days": [1, 5], "from": 8, "to": 19, "tz": 7}, "ad": {"wa": "https://wa.me/newcustomers?text=Hi%21%20Please%20sign%20me%20up%20for%20my%20free%20page.%20%28ref%20kh34363%20signup%29", "mail": "mailto:newcustomers@contact.page?subject=Sign%20me%20up%20for%20my%20free%20page%20%28ref%20kh34363%20signup%29&body=Business%20name%3A%0ACity%3A%0AOne%20way%20customers%20can%20reach%20you%3A"}}</script>
 <script>
 // Mockup behaviour: renders the chat from the data; votes change in-memory state only; nothing is sent.
 (function(){
@@ -151,7 +151,7 @@ a{color:inherit}
   var best=say('<p class="k">Best way · '+esc(D.best.label)+'</p><p class="v">'+esc(D.best.value)+'</p>'+status(D.best)+acts(D.best));
   var lm=say('<p>There are '+D.more.length+' more ways to reach them.</p><button class="lk" type="button" id="loadMore">Load more</button>');
   say('<div class="pin">'+ic('map-pin')+'<span>'+esc(D.address)+' · <a href="'+esc(D.map)+'">map</a></span></div>');
-  add('sys','<b>contact.page</b> · Coming soon: your AI page helper. Keep your.contact.page up to date just by chatting. Sign up early: <a href="'+esc(D.ad.wa)+'">By WhatsApp</a> · <a href="'+esc(D.ad.mail)+'">By email</a>');
+  add('sys','<b>contact.page</b> · Want a page like this for your business? It’s free: our AI agent runs it for you. Start: <a href="'+esc(D.ad.wa)+'">By WhatsApp</a> · <a href="'+esc(D.ad.mail)+'">By email</a>');
 
   var more=false;
   function loadMore(fromChip){
@@ -199,10 +199,5 @@ a{color:inherit}
   window.addEventListener('focus',back);
 })();
 </script>
-<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
-<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
-<div style="text-align:left;margin:8px 0;padding:8px 10px;background:#fafafa;border:1px solid #eee;border-radius:8px"><p style="margin:0 0 4px;font-weight:700;color:#6f6f6f;font-size:12px">Why it is this way (reasons and lessons)</p><ul style="margin:0;padding-left:16px;color:#6f6f6f;font-size:12px;line-height:1.5"><li style="margin:0 0 4px">An experiment (D018): the same contact details as a chat that mirrors our real WhatsApp agent, so visitors and owners learn the flow they later get in WhatsApp. The card version stays the default until Kim picks.</li><li style="margin:0 0 4px">An app shell with no contact values in the HTML: the data comes from the server only after the security check.</li><li style="margin:0 0 4px">Honest: the assistant says it is automated; no typing dots, no fake delays. House ad only, no AdSense.</li></ul></div>
-<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-contact-details-chat-notes.html">Developer notes: what changed and why, every version</a></p>
-</details>
 </body>
 </html>
