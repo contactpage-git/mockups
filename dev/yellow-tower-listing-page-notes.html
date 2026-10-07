@@ -12,7 +12,8 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 <h2>What changed and why (newest first)</h2>
 <p>Each step with the reason behind it: the lessons learned along the way. Open any version to see it as it was.</p>
 <ul class="hist">
-<li><b><a href="../yellow-tower-listing-page.html">v20</a></b> 2026-10-07 (.page Mockups, Kim): no visible notes (footer &quot;sample, not production&quot; text removed). v19 in archive/.</li>
+<li><b><a href="../yellow-tower-listing-page.html">v21</a></b> 2026-10-07 (Page Claude Code): bug fix from v15: five old grey photo placeholders and one stray closing tag were left under the real photos; the stray tag closed the phone frame early, so everything after Photos spilled out of the frame on wide screens. Lesson: when replacing a block, replace up to its own closing tag, then check the page in the phone frame. v20 in archive/.</li>
+<li><b><a href="../archive/yellow-tower-listing-page-v20.html">v20</a></b> 2026-10-07 (.page Mockups, Kim): no visible notes (footer &quot;sample, not production&quot; text removed). v19 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v19.html">v19</a></b> 2026-10-07 (.page Mockups, Kim): masked number shows all but the last 3 digits; &quot;View contact details&quot; = outlined yellow unlock button with the lock, no underline; Grade C note (no grade/premium wording). v18 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v18.html">v18</a></b> 2026-10-07 (.page Mockups): audit fixes: intro 2 lines and glance 1 line so &quot;View contact details&quot; is above the fold at 360x640; no ↓ and no &quot;Manage advertisement&quot;; ad label &quot;Advertisements&quot;; BreadcrumbList JSON-LD; WebP 320/600 with srcset + width/height; descriptive alt texts; every WhatsApp text asks for the email (N25); dev notes for items 4, 8, 10. Also footer Help offers both channels, WhatsApp and the email bot (Kim 2026-10-07, MVP; email preferred longer-term); no other footer links added (Terms / Cookie settings wait for Kim). v17 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v17.html">v17</a></b> 2026-10-07 (.page Mockups): kicker and keyword chips link to the new vertical mockup phnom-penh-office-rental-vertical-page.html (standard mockup set, Kim 2026-10-06: vertical -&gt; listing -&gt; security check -&gt; contact details); nothing else changed. v16 in archive/.</li>
@@ -33,7 +34,7 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 </ul>
 <h2>All notes, summary first, then in page order</h2>
 <ol>
-<li><pre>YELLOW TOWER LISTING PAGE (current: version 20, 2026-10-07; design owner Page Claude Code, v17-v20 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
+<li><pre>YELLOW TOWER LISTING PAGE (current: version 21, 2026-10-07; design owner Page Claude Code, v17-v20 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
 Built from v3 (Page Muse) after the review in CONTACT/kb/listing-page-v3-review-2026-10-06.md.
 
 ORDER, mobile first (rules: mobile first; design-evidence rules 1-3; engine &quot;the page earns its ads&quot;; decisions file):
@@ -67,6 +68,9 @@ One current file per page, older versions in archive/ (Kim 2026-10-06).
 v5 2026-10-06: kicker smaller, grey, italic, regular weight (Kim&#x27;s comment: too big and too clear). Still a link (SEO). v4 in archive/.
 v6 2026-10-06 (Kim: &quot;survival and growth hacking, within AdSense rules&quot;): ad plan below; v5 in archive/.
 v20 2026-10-07 (.page Mockups, Kim): no visible notes (footer &quot;sample, not production&quot; text removed). v19 in archive/.
+v21 2026-10-07 (Page Claude Code): bug fix from v15: five old grey photo placeholders and one stray closing tag were left under
+                the real photos; the stray tag closed the phone frame early, so everything after Photos spilled out of the frame on wide
+                screens. Lesson: when replacing a block, replace up to its own closing tag, then check the page in the phone frame. v20 in archive/.
 v19 2026-10-07 (.page Mockups, Kim): masked number shows all but the last 3 digits; &quot;View contact details&quot; = outlined
                yellow unlock button with the lock, no underline; Grade C note (no grade/premium wording). v18 in archive/.
 v18 2026-10-07 (.page Mockups): audit fixes: intro 2 lines and glance 1 line so &quot;View contact details&quot; is above the fold
@@ -111,6 +115,21 @@ AD PLAN (growth within AdSense policy)
 ADS (item 8): AdSense script async and loaded lazily (after first interaction or when a slot nears the viewport); every
 slot has a fixed reserved height (300x250 -&gt; 250px) so nothing shifts (CLS 0). NO AdSense on the home page or the
 security page. Cloudflare Turnstile ONLY on the security page, nowhere else.</pre></li>
+<li><pre>WHY IT IS THIS WAY (reasons and lessons)
+- The page earns its ads (survival first, Kim 2026-10-05/06): identity, then the first ad, then a gap of plain content, then
+  the contact box. Google counts buttons next to ads as accidental-click bait, which can put the whole AdSense account at risk,
+  so the contact button never sits against an ad. A third ad mid-page, lower ads lazy-loaded: more income within the rules.
+- No jump links: they let people skip past the ads (design-evidence rule 3).
+- No numbers on this page: &quot;View contact details&quot; goes to the security page, the only way to the numbers (C5, D33).
+- No prices and no offers: we don&#x27;t collect prices; they show only when the owner adds them or a synced source keeps them
+  updated (Kim 2026-10-06, N31). No currency anywhere (frozen rule).
+- No website: too many dead sites end in 404 pages (N22). No video (frozen). No Google Maps: our own map page (N32).
+- Owners change everything through our agent on WhatsApp or email, never forms: every block ends in a small grey link that
+  opens the agent with a tagged message (Kim 2026-10-06).
+- Photos: one box size (4:3 crop) with rounded corners, real photos from the owner&#x27;s own site (Kim 2026-10-06).
+- Section headers link to their own subpages; chips are tight and square (Kim&#x27;s chip rule); icons only from the design package.
+- Lessons: v15 left five old photo placeholders and a stray closing tag that pushed everything after Photos out of the phone
+  frame until v21. Replace a block up to its own closing tag, then look at the page in the frame before publishing.</pre></li>
 <li><pre>IDENTITY. Only identity above Ad #1 (design-evidence rule 1). Kicker links to the one existing office rental vertical.
 IF data: kicker, H1 with the frozen yellow line, logo when a real logo file exists (none in the repo yet, so none shown:
 never an &quot;awaiting asset&quot; placeholder), short description. IF no short description: the bridge cascade (engine decision 1).

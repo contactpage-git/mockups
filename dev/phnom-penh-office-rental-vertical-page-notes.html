@@ -51,6 +51,7 @@ OPEN
 - D007 tier design and the Freelancer card variant (D006) are not in this version.
 
 CHANGE LOG
+notes 2026-10-07 (Page Claude Code): &quot;WHY IT IS THIS WAY&quot; added (reasons and lessons, shown under Dev notes on the preview site); no visual change.
 v7 2026-10-07 (.page Mockups, Kim): no visible notes (footer &quot;sample, not production&quot; / set name removed). v6 in archive/.
 v6 2026-10-07 (.page Mockups, Kim): card 1 photo = bright exterior from yellow-tower.com (WebP 320/600); masked numbers show
                all but the last 3 digits; every unlock button = outlined yellow &quot;View contact details&quot; with the lock (no underline,
@@ -80,6 +81,15 @@ ADS (item 8): AdSense script async and loaded lazily (after first interaction or
 slot has a fixed reserved height (300x250 -&gt; 250px) so nothing shifts (CLS 0). NO AdSense on the home page or the
 security page. Cloudflare Turnstile ONLY on the security page, nowhere else.
 {{VERTICAL_URL}} / {{CITY_URL}} = fill before launch (route not decided).</pre></li>
+<li><pre>WHY IT IS THIS WAY (reasons and lessons)
+- The vertical is the traffic page: one city, one category, real businesses, so it can rank for the long-tail search and feed
+  visitors into listings (mini-vertical strategy). Page 1 of the standard set: vertical -&gt; listing -&gt; security -&gt; contact details.
+- Cards are real businesses, every fact sourced; a business reported closed was dropped (Kim 2026-10-07, N33). Ranked by
+  verification count once those counts are stored (N12).
+- Card buttons go straight to each business&#x27;s security page (N17): the visitor wants the contact, the gate is a mini listing.
+- SEO head: title and description differ from the H1 and carry the long-tail words; breadcrumb and item list in JSON-LD.
+- Same rules as the listing: no prices (N31), no website (N22), no ratings (C10), masked numbers only, no jump links.
+- Cards without a real photo get a static map image, never a live map embed (Kim 2026-10-07).</pre></li>
 <li><pre>BREADCRUMB (Kim 2026-10-07: the kicker repeated the H1, weak for SEO). A real nav with links, BreadcrumbList JSON-LD in
 the head mirrors it. Cambodia = the live Cambodia portal today (www.contact.page; becomes cambodia.contact.page only if
 Kim approves that move, site-architecture.md). Phnom Penh: no city page exists yet, so the mockup links the Phnom Penh

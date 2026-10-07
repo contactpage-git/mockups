@@ -217,6 +217,7 @@ span.chip:hover{background:#f1f2f3}
 .fhelp a{color:var(--grey);text-decoration:underline;text-decoration-color:#d0d0d0;text-underline-offset:3px}
 .fhelp a:hover{color:var(--ink)}
 </style>
+
 </head>
 <body>
 <div class="keyline"></div>
@@ -340,8 +341,11 @@ span.chip:hover{background:#f1f2f3}
 
 <p class="fhelp">Help: <a href="https://wa.me/newcustomers?text=%5BVERT%7Cphnom-penh-office-rental%7Chelp%5D%20Hi%2C%20I%20need%20help%20with%20contact.page%3A%0AMy%20email%3A%20">WhatsApp</a> · <a href="mailto:newcustomers@contact.page?subject=%5BVERT%7Cphnom-penh-office-rental%7Chelp%5D%20Help%20with%20contact.page&amp;body=What%20do%20you%20need%20help%20with%3F%0A">Email</a></p>
 <p class="chain"><b>1 vertical</b> &rarr; <a href="yellow-tower-listing-page.html">2 listing</a> &rarr; <a href="yellow-tower-security-page.html">3 security check</a> &rarr; <a href="yellow-tower-contact-details-page.html">4 contact details</a></p>
-<p class="meta">Phnom Penh office rental vertical page · version 7 · 2026-10-07</p>
-<p class="vhist" style="font-size:10.5px;line-height:1.7;color:#b0b0b0;margin:2px 0 0"><a style="color:#a0a0a0" href="dev/phnom-penh-office-rental-vertical-page-notes.html">Developer notes</a></p>
+<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
+<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
+<div style="text-align:left;margin:8px 0;padding:8px 10px;background:#fafafa;border:1px solid #eee;border-radius:8px"><p style="margin:0 0 4px;font-weight:700;color:#6f6f6f;font-size:12px">Why it is this way (reasons and lessons)</p><ul style="margin:0;padding-left:16px;color:#6f6f6f;font-size:12px;line-height:1.5"><li style="margin:0 0 4px">The vertical is the traffic page: one city, one category, real businesses, so it can rank for the long-tail search and feed visitors into listings (mini-vertical strategy). Page 1 of the standard set: vertical -&gt; listing -&gt; security -&gt; contact details.</li><li style="margin:0 0 4px">Cards are real businesses, every fact sourced; a business reported closed was dropped (Kim 2026-10-07, N33). Ranked by verification count once those counts are stored (N12).</li><li style="margin:0 0 4px">Card buttons go straight to each business&#x27;s security page (N17): the visitor wants the contact, the gate is a mini listing.</li><li style="margin:0 0 4px">SEO head: title and description differ from the H1 and carry the long-tail words; breadcrumb and item list in JSON-LD.</li><li style="margin:0 0 4px">Same rules as the listing: no prices (N31), no website (N22), no ratings (C10), masked numbers only, no jump links.</li><li style="margin:0 0 4px">Cards without a real photo get a static map image, never a live map embed (Kim 2026-10-07).</li></ul></div><p class="meta">Phnom Penh office rental vertical page · version 7 · 2026-10-07</p>
+<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/phnom-penh-office-rental-vertical-page-notes.html">Developer notes: what changed and why, every version</a></p>
+</details>
 </footer>
 </div>
 </body>

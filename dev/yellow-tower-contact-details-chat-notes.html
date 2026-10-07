@@ -43,9 +43,15 @@ WhatsApp number and the gmail &quot;not working&quot; status are sample / illust
 server session the security page set), greeting in friendly first-person wording, no questions asked.
 
 CHANGE LOG
+notes 2026-10-07 (Page Claude Code): &quot;WHY IT IS THIS WAY&quot; added (reasons and lessons, shown under Dev notes on the preview site); no visual change.
 v2 2026-10-07 (.page Mockups, Kim): no visible notes (footer &quot;sample, not production&quot; / set name removed).
 v1 2026-10-07 (.page Mockups): first version (Kim): WhatsApp-like chat, app shell + data, inline icon actions, Load more,
                map bubble, quick-reply chips, house ad as a system notice.</pre></li>
+<li><pre>WHY IT IS THIS WAY (reasons and lessons)
+- An experiment (D018): the same contact details as a chat that mirrors our real WhatsApp agent, so visitors and owners learn
+  the flow they later get in WhatsApp. The card version stays the default until Kim picks.
+- An app shell with no contact values in the HTML: the data comes from the server only after the security check.
+- Honest: the assistant says it is automated; no typing dots, no fake delays. House ad only, no AdSense.</pre></li>
 <li><pre>HEADER like a WhatsApp chat: back to the listing, avatar, business name, &quot;contact.page assistant · automated&quot; (AI/bot
 disclosure), and a quiet link to the card version.</pre></li>
 <li><pre>THE CHAT LOG. Rendered by the inline script from the data (production: fetched after siteverify, no-store). role=log +

@@ -52,6 +52,7 @@ OPEN FOR KIM
 - Which channel leads when there are no votes yet (proposal: the one the owner marks main, else phone).
 
 CHANGE LOG
+notes 2026-10-07 (Page Claude Code): &quot;WHY IT IS THIS WAY&quot; added (reasons and lessons, shown under Dev notes on the preview site); no visual change.
 v5 2026-10-07 (.page Mockups, Kim): no visible notes: &quot;Proposal · waits for Kim&quot; label and the footer &quot;sample, not
                production&quot; / set-name text removed (they live in the comments / dev notes). v4 in archive/.
 v4 2026-10-07 (.page Mockups, Kim): confirmed contact lines first with a green tick, unconfirmed lines below, smaller, each
@@ -73,6 +74,13 @@ v1 2026-10-07: first version (.page Mockups).</pre></li>
 ADS (item 8): AdSense script async and loaded lazily (after first interaction or when a slot nears the viewport); every
 slot has a fixed reserved height (300x250 -&gt; 250px) so nothing shifts (CLS 0). NO AdSense on the home page or the
 security page. Cloudflare Turnstile ONLY on the security page, nowhere else.</pre></li>
+<li><pre>WHY IT IS THIS WAY (reasons and lessons)
+- This page is the payoff after the check: the real contact lines, noindex, never cached for everyone (N14).
+- Confirmed lines first, unconfirmed below with a &quot;did it work?&quot; vote: visitors make the data better, and a number that fails
+  jumps the refresh queue. No stars or ratings, only facts about a number (C10).
+- Contact lines are add-only: old ones are archived with their date, never deleted (Kim 2026-10-06 data rule).
+- The role from the security page (&quot;the owner or staff&quot;) turns on the owner path here; owners act through our agent.
+- No AdSense next to contact buttons; our house ad instead. No website row until a link check exists (N22).</pre></li>
 <li><pre>1. HEADER (D015 spec 1). Breadcrumb back to the listing page, H1 &quot;Contact &lt;name&gt;&quot; (no category/area subline: visitors
 already saw it, Kim 2026-10-07),
 Open now / Closed pill from the hours data (Phnom Penh time). Security check (page 3) is one step back in the browser.</pre></li>
