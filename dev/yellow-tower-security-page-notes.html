@@ -24,7 +24,7 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 <li><b><a href="../archive/yellow-tower-security-page-v11.html">v11</a></b> 2026-10-06: chips thinner (24px), 5px corners, 12px regular (Kim: still too fat and round). v10 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-security-page-v10.html">v10</a></b> 2026-10-06: role chips follow the one chip rule (grey fill, no border, 28px, 12.5px; picked = yellow ring + check). v9 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-security-page-v9.html">v9</a></b> 2026-10-06: Claim · Edit · Remove · Report each open our agent on WhatsApp with [GATE|kh34363|action] (Kim). v8 in archive/.</li>
-<li><b><a href="../archive/yellow-tower-security-page-v8.html">v8</a></b> 2026-10-06: one current file, versions in archive/ (Kim). Owner line is only &quot;Claim · Edit · Remove · Report&quot;, smaller and greyer; the separate report link is gone. Lock icons gold (#E0A500, Kim).</li>
+<li><b><a href="../archive/yellow-tower-security-page-v8.html">v8</a></b> 2026-10-06: one current file, versions in archive/ (Kim). Owner line is only &quot;Claim · Edit · Remove · Report&quot;, smaller and greyer; the separate report link is gone. Lock icons gold (#E0A500, Kim). notes 2026-10-07 (Page Claude Code): WHY note gets the landing numbers (17.1% of sessions, 6.3% of Google clicks), why the header keeps category and city, and the open noindex question; no visual change.</li>
 <li><b><a href="../archive/yellow-tower-security-page-v7.html">v7</a></b> 2026-10-06: column back to 760px (the new listing page width; 684px was the old live page). v6 kept.</li>
 <li><b><a href="../archive/yellow-tower-security-page-v6.html">v6</a></b> 2026-10-06: Kim&#x27;s home page rules applied: column 684px with a bordered card on desktop; gate button turns GREEN when ready; picked chip is a yellow outline with a check (no fill); house ad buttons in the yellow-outline style, WhatsApp AND email with tagged prefills [GATE|signup]; &quot;page&quot; instead of &quot;listing&quot; in visitor text. v5 kept.</li>
 <li><b><a href="../archive/yellow-tower-security-page-v5.html">v5</a></b> 2026-10-06: icons from the design package (CONTACT/design/icons: Lucide + the real WhatsApp mark), no emoji; category line smaller; role chips smaller with a check on the picked one; roles Customer, Supplier, Job seeker, I work here, Other; &quot;Behind the check&quot; caption removed; button reads &quot;Unlock contact details&quot;; &quot;I work here&quot; lights up Claim. v4 kept.</li>
@@ -101,6 +101,8 @@ v6 2026-10-06: Kim&#x27;s home page rules applied: column 684px with a bordered 
 v7 2026-10-06: column back to 760px (the new listing page width; 684px was the old live page). v6 kept.
 v8 2026-10-06: one current file, versions in archive/ (Kim). Owner line is only &quot;Claim · Edit · Remove · Report&quot;, smaller and
                greyer; the separate report link is gone. Lock icons gold (#E0A500, Kim).
+notes 2026-10-07 (Page Claude Code): WHY note gets the landing numbers (17.1% of sessions, 6.3% of Google clicks), why the header keeps
+                category and city, and the open noindex question; no visual change.
 v20 2026-10-07 (Page Claude Code, Kim): &quot;I am…&quot; chips: a customer · a supplier (label still on hold) · a job seeker · the owner ·
                 working here (was: looking for a job, the owner or staff). Shorter, and owner vs staff now tell apart (values owner and
                 works_here; both light up Claim). Kim&#x27;s words: &quot;job seeker&quot;, &quot;owner&quot;, &quot;I work here&quot; (as &quot;working here&quot; so it reads
@@ -142,8 +144,17 @@ security page. Cloudflare Turnstile ONLY on the security page, nowhere else.</pr
 <li><pre>WHY IT IS THIS WAY (reasons and lessons)
 - A separate security page, never numbers on the listing: the numbers are the value we protect from scrapers; they live only
   behind this check on a noindex page (Kim 2026-10-03; C5: no raw digits in any public source).
-- It is a mini landing page, not just a check: about 44% of visitors land here straight from Google, and 39% left at the old
-  check (design-evidence E1). So it shows whose details these are and what is behind the lock (masked rows) before asking.
+- It is a landing page in its own right, not just a check. Numbers (design-evidence E1 and E3):
+  17.1% of all Thailand-portal sessions are on security pages (GA4, 9 Jul to 6 Oct 2026, 29,691 different security pages);
+  6.3% of all our Google clicks and 7.7% of impressions go straight to security pages (Search Console, Jun 2025 to Oct 2026);
+  of the visitors who reach this page, about 44% arrive straight from Google or a bookmark, and 39% left at the old check (E1).
+  So it shows whose details these are and what is behind the lock (masked rows) before asking for anything.
+- Why the small header keeps the category and city (&quot;Office Space Rental – Phnom Penh&quot;): a visitor who lands here from Google
+  has not seen the listing, so name + category + city is the minimum to know they are in the right place; they are also the
+  page&#x27;s search words. Description, logo and About stay off (Kim 2026-10-06: &quot;it is NOT the home page&quot;).
+- OPEN FOR KIM: N14 says the security page is noindex. Today Google sends 6.3% of our clicks straight to these pages. The page
+  now holds no contact values (masked only), so it could stay indexed and keep that traffic, while the page shown after the
+  check stays noindex and private. Decision needed before production.
 - No photo puzzles: the old reCAPTCHA showed photo grids to mobile and VPN visitors and drove that drop-off (Kim 2026-10-06:
   &quot;we don&#x27;t want to ask to click photos&quot;; N21).
 - Cloudflare Turnstile: free, never shows photo puzzles, usually passes by itself; the MVP is Turnstile alone, extra server
