@@ -251,7 +251,7 @@ body[data-state="closed"] .house .own{display:none}
 
 <aside class="house" aria-label="contact.page">
 <p class="lbl">contact.page</p>
-<h2>Get your.contact.page for free</h2>
+<h2>Get your own .contact.page, free</h2>
 <p>Our AI agent runs it for you, and keeps your numbers safe from spam bots.</p>
 <p class="ctas-t" id="start-t">Start</p>
 <div class="ctas" role="group" aria-labelledby="start-t">
@@ -264,10 +264,8 @@ body[data-state="closed"] .house .own{display:none}
 
 
 
-<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
-<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
-<div style="text-align:left;margin:8px 0;padding:8px 10px;background:#fafafa;border:1px solid #eee;border-radius:8px"><p style="margin:0 0 4px;font-weight:700;color:#6f6f6f;font-size:12px">Why it is this way (reasons and lessons)</p><ul style="margin:0;padding-left:16px;color:#6f6f6f;font-size:12px;line-height:1.5"><li style="margin:0 0 4px">A separate security page, never numbers on the listing: the numbers are the value we protect from scrapers; they live only behind this check on a noindex page (Kim 2026-10-03; C5: no raw digits in any public source).</li><li style="margin:0 0 4px">It is a landing page in its own right, not just a check. Numbers (design-evidence E1 and E3): 17.1% of all Thailand-portal sessions are on security pages (GA4, 9 Jul to 6 Oct 2026, 29,691 different security pages); 6.3% of all our Google clicks and 7.7% of impressions go straight to security pages (Search Console, Jun 2025 to Oct 2026); of the visitors who reach this page, about 44% arrive straight from Google or a bookmark, and 39% left at the old check (E1). So it shows whose details these are and what is behind the lock (masked rows) before asking for anything.</li><li style="margin:0 0 4px">Why the small header keeps the category and city (&quot;Office Space Rental – Phnom Penh&quot;): a visitor who lands here from Google has not seen the listing, so name + category + city is the minimum to know they are in the right place; they are also the page&#x27;s search words. Description, logo and About stay off (Kim 2026-10-06: &quot;it is NOT the home page&quot;).</li><li style="margin:0 0 4px">OPEN FOR KIM: N14 says the security page is noindex. Today Google sends 6.3% of our clicks straight to these pages. The page now holds no contact values (masked only), so it could stay indexed and keep that traffic, while the page shown after the check stays noindex and private. Decision needed before production.</li><li style="margin:0 0 4px">No photo puzzles: the old reCAPTCHA showed photo grids to mobile and VPN visitors and drove that drop-off (Kim 2026-10-06: &quot;we don&#x27;t want to ask to click photos&quot;; N21).</li><li style="margin:0 0 4px">Cloudflare Turnstile: free, never shows photo puzzles, usually passes by itself; the MVP is Turnstile alone, extra server layers only if the logs show scraping (Kim 2026-10-06; spec kb/contact-gate-bot-protection.md).</li><li style="margin:0 0 4px">A slide to unlock: one familiar gesture instead of a separate check step; Turnstile runs behind it (starts on the drag), so the slide itself is only the UI, never the security. Scoring the drag is parked for later (Kim 2026-10-07).</li><li style="margin:0 0 4px">&quot;I am…&quot; roles: tell us who wants the numbers (customers, suppliers, job seekers, owners, staff), in friendly first-person words, short chips, one universal set for every industry, no &quot;Other&quot; (Kim 2026-10-07: &quot;Who are you?&quot; sounded like a checkpoint; &quot;Other&quot; tells us nothing; per-industry sets are too complex).</li><li style="margin:0 0 4px">Green only on this unlock button (the live gate colour); every other button is a yellow outline; the lock is gold (N24).</li><li style="margin:0 0 4px">No AdSense here: Google does not allow ads on check screens (N14). Our house ad instead: this page is the owner&#x27;s trust point (&quot;real customers pass in one tap, scrapers and spam bots don&#x27;t&quot;), so it sells the free site, with claim/edit/remove.</li><li style="margin:0 0 4px">No website row: too many listed websites are dead and send visitors to 404 pages (N22).</li><li style="margin:0 0 4px">Lessons: we shipped 18 versions in two days by changing one thing at a time on Kim&#x27;s word; the page got better each time it got simpler (v2: &quot;way too much on that page, it is NOT the home page&quot;).</li></ul></div><div class="meta">
-Yellow Tower security page · version 28 · 2026-10-07<br>
+<div class="meta">
+Yellow Tower security page · version 27 · 2026-10-07<br>
 after the slide: <a href="yellow-tower-contact-details-page.html">contact details, card (default)</a> · <a href="yellow-tower-contact-details-chat.html">chat version (alternate)</a><br>
 states:
 <button type="button" data-state="first" data-ts="auto" aria-pressed="true">human slide passes</button> ·
@@ -277,8 +275,6 @@ states:
 <button type="button" data-state="closed" aria-pressed="false">closed</button> ·
 <button type="button" data-state="done" aria-pressed="false">after the slide</button>
 </div>
-<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-security-page-notes.html">Developer notes: what changed and why, every version</a></p>
-</details>
 
 </div>
 <script>
