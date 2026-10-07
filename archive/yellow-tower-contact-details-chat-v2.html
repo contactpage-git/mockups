@@ -141,9 +141,8 @@ a{color:inherit}
   }
   var greet={customer:'You said you’re a customer, so here’s the quickest way to reach them.',
     supplier:'You said you’re a supplier: here’s their main line, and the email works well for offers.',
-    job_seeker:'You said you’re a job seeker: the email is usually best for a CV, and here’s their main line.',
-    owner:'You said you’re the owner: this is what visitors see. Tap “Is this yours?” below to update it.',
-    works_here:'You said you work here: this is what visitors see. Tap “Is this yours?” below to update it.'};
+    job_seeker:'You said you’re looking for a job: the email is usually best for a CV, and here’s their main line.',
+    works_here:'You said you’re the owner or staff: this is what visitors see. Tap “Is this yours?” below to update it.'};
 
   // 1. Greeting, 2. best line, 3. load more, 4. map, 5. house ad
   add('sys','Contact details for '+esc(D.name)+', shown after the security check');
@@ -199,10 +198,5 @@ a{color:inherit}
   window.addEventListener('focus',back);
 })();
 </script>
-<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
-<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
-<div style="text-align:left;margin:8px 0;padding:8px 10px;background:#fafafa;border:1px solid #eee;border-radius:8px"><p style="margin:0 0 4px;font-weight:700;color:#6f6f6f;font-size:12px">Why it is this way (reasons and lessons)</p><ul style="margin:0;padding-left:16px;color:#6f6f6f;font-size:12px;line-height:1.5"><li style="margin:0 0 4px">An experiment (D018): the same contact details as a chat that mirrors our real WhatsApp agent, so visitors and owners learn the flow they later get in WhatsApp. The card version stays the default until Kim picks.</li><li style="margin:0 0 4px">An app shell with no contact values in the HTML: the data comes from the server only after the security check.</li><li style="margin:0 0 4px">Honest: the assistant says it is automated; no typing dots, no fake delays. House ad only, no AdSense.</li></ul></div>
-<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-contact-details-chat-notes.html">Developer notes: what changed and why, every version</a></p>
-</details>
 </body>
 </html>
