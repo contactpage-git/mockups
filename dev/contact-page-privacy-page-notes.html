@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Developer notes: Privacy page (www.contact.page/privacy)</title>
+<style>body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:1040px;margin:32px auto;padding:0 16px;color:#161616}
+h1{font-size:22px;border-left:5px solid #FFC400;padding-left:10px}p{color:#6f6f6f;font-size:14px}a{color:#161616}
+ol{padding-left:28px}li{margin:0 0 14px}li::marker{font-weight:700;color:#8a8a8a}
+pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fafafa;border:1px solid #e9e9e9;border-radius:8px;padding:10px 12px;margin:0}
+h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}ul.hist li{margin:0 0 8px;font-size:14px;line-height:1.5}ul.hist b{display:inline-block;min-width:36px}</style></head>
+<body><p><a href="../index.html">All mockups</a> · <a href="../contact-page-privacy-page.html">Open the mockup</a></p>
+<h1>Developer notes: Privacy page (www.contact.page/privacy)</h1>
+<p>Sample data only; contact values are masked.</p>
+<h2>What changed and why (newest first)</h2>
+<p>Each step with the reason behind it: the lessons learned along the way. Open any version to see it as it was.</p>
+<ul class="hist">
+<li><b><a href="../contact-page-privacy-page.html">v1</a></b> 2026-10-07 (Page Claude Code, Kim): first version. Kim: &quot;put real privacy page in the mockup to link to, same frame, with right text and dev notes&quot;. Text = the new policy (Yellow Tower Co., Ltd.; privacy@contact.page).</li>
+</ul>
+<h2>All notes, summary first, then in page order</h2>
+<ol>
+<li><pre>DEVELOPER SUMMARY: THE PRIVACY PAGE (Kim 2026-10-07)
+1. Replace the whole text of https://www.contact.page/privacy with the text of this page (everything inside .wrap from the H1
+   to the contact block). Plain HTML: headings, paragraphs, lists, links. No scripts, no ads on this page.
+2. &quot;Last updated&quot;: put the release date. Change it every time the text changes.
+3. Every web address is a real link. The Turnstile Privacy Addendum link is REQUIRED by Cloudflare: keep it.
+4. Link this page from the footer of every page: listing subdomains, subpages, the gate, the contact details page, home.
+5. Two facts must stay true, check before release:
+   - Google Analytics data retention is set to 14 months (GA4 Admin &gt; Data retention), or change the number here.
+   - EU/UK/Switzerland: the text promises consent before ad cookies. If the site has no consent banner, Google&#x27;s free one
+     (AdSense &gt; Privacy &amp; messaging) goes live in the same release.
+6. Same column as every page: 430px max on every screen, one column.</pre></li>
+<li><pre>Production: https://www.contact.page/privacy, index, follow, canonical to itself.</pre></li>
+<li><pre>CONTACT.PAGE PRIVACY PAGE (current: version 1, 2026-10-07; design owner Page Claude Code). Older versions: archive/.
+Production route: https://www.contact.page/privacy (replaces today&#x27;s generic log-file and DART-cookie text).
+Text master: CONTACT/pages/privacy/contact-page-privacy-policy.md (change the text there first, then here).
+Linked from the small grey line under every page: &quot;Claim · Edit · Remove · Report · Help · Privacy&quot; (gate) and
+&quot;Help: WhatsApp · Email · Privacy&quot; (other pages).
+
+CHANGE LOG
+v1 2026-10-07 (Page Claude Code, Kim): first version. Kim: &quot;put real privacy page in the mockup to link to, same frame,
+               with right text and dev notes&quot;. Text = the new policy (Yellow Tower Co., Ltd.; privacy@contact.page).</pre></li>
+<li><pre>WHY IT IS THIS WAY (reasons and lessons)
+- Cloudflare Turnstile (the security check on every contact details page) requires our privacy policy to reference its Turnstile Privacy Addendum; the old page mentioned no security check at all.
+- The old page was a generic generator text (log files, DoubleClick DART cookie) with no date and no contact. Kim 2026-10-07: a complete new policy, not a patch.
+- It says what the site really does: server logs, Google Analytics, AdSense, the Turnstile check, the &quot;I am…&quot; choice, the cp_verified cookie (1 year), taps and &quot;did it work&quot; answers, owners&#x27; WhatsApp and email messages. Features not built yet are worded &quot;where offered&quot; or &quot;may&quot;, so the text stays true either way.
+- The free Basic plan does not include the AI agent (that is Plus), so the text never promises the agent to everyone.
+- Plain language, short sections, &quot;the short version&quot; first: most readers only want to know whether we sell their number (we never sell contact lists).
+- Run by Yellow Tower Co., Ltd. (Kim); privacy@contact.page works through the catch-all, so no new mailbox is needed.
+- Not legal advice: a lawyer&#x27;s look is wise before the EU/UK traffic grows.</pre></li>
+<li><pre>BACK LINK: to the home page (www.contact.page). Small, grey; this page has no business name.</pre></li>
+<li><pre>POLICY TEXT: from CONTACT/pages/privacy/contact-page-privacy-policy.md (the text master).</pre></li>
+<li><pre>FOOTER: small, grey, centred, like the owner line on the gate.</pre></li>
+</ol></body></html>
