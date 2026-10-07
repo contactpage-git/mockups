@@ -12,7 +12,8 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 <h2>What changed and why (newest first)</h2>
 <p>Each step with the reason behind it: the lessons learned along the way. Open any version to see it as it was.</p>
 <ul class="hist">
-<li><b>v4</b> 2026-10-07 (Page Claude Code, Kim): house line reads &quot;Start: By WhatsApp · By email&quot; (same words as the security page). v3 in archive/.</li>
+<li><b>v5</b> 2026-10-07 (Page Claude Code, Kim): WhatsApp and email prefills in plain words, ref last: &quot;Hi! I&#x27;d like to update Yellow Tower. (ref kh34363 edit)&quot;. No bracket code at the start, no &quot;My email:&quot; ask, no &quot;I work at or own&quot; (anyone can write; we poll the inbox). Every prefill is listed in CONTACT/kb/prefill-messages.md (N37). v4 in archive/.</li>
+<li><b><a href="../archive/yellow-tower-contact-details-chat-v4.html">v4</a></b> 2026-10-07 (Page Claude Code, Kim): house line reads &quot;Start: By WhatsApp · By email&quot; (same words as the security page). v3 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-contact-details-chat-v3.html">v3</a></b> 2026-10-07 (Page Claude Code, Kim): role greetings for the new security-page chips (a job seeker, the owner, working here). notes 2026-10-07 (Page Claude Code): &quot;WHY IT IS THIS WAY&quot; added (reasons and lessons, shown under Dev notes on the preview site); no visual change.</li>
 <li><b><a href="../archive/yellow-tower-contact-details-chat-v2.html">v2</a></b> 2026-10-07 (.page Mockups, Kim): no visible notes (footer &quot;sample, not production&quot; / set name removed).</li>
 <li><b>v1</b> 2026-10-07 (.page Mockups): first version (Kim): WhatsApp-like chat, app shell + data, inline icon actions, Load more, map bubble, quick-reply chips, house ad as a system notice.</li>
@@ -45,6 +46,7 @@ WhatsApp number and the gmail &quot;not working&quot; status are sample / illust
 server session the security page set), greeting in friendly first-person wording, no questions asked.
 
 CHANGE LOG
+v5 2026-10-07 (Page Claude Code, Kim): WhatsApp and email prefills in plain words, ref last: &quot;Hi! I&#x27;d like to update Yellow Tower. (ref kh34363 edit)&quot;. No bracket code at the start, no &quot;My email:&quot; ask, no &quot;I work at or own&quot; (anyone can write; we poll the inbox). Every prefill is listed in CONTACT/kb/prefill-messages.md (N37). v4 in archive/.
 v4 2026-10-07 (Page Claude Code, Kim): house line reads &quot;Start: By WhatsApp · By email&quot; (same words as the security page). v3 in archive/.
 v3 2026-10-07 (Page Claude Code, Kim): role greetings for the new security-page chips (a job seeker, the owner, working here).
 notes 2026-10-07 (Page Claude Code): &quot;WHY IT IS THIS WAY&quot; added (reasons and lessons, shown under Dev notes on the preview site); no visual change.
@@ -61,7 +63,7 @@ disclosure), and a quiet link to the card version.</pre></li>
 <li><pre>THE CHAT LOG. Rendered by the inline script from the data (production: fetched after siteverify, no-store). role=log +
 aria-live=polite so screen readers hear new messages.</pre></li>
 <li><pre>QUICK REPLIES (= WhatsApp reply buttons later). &quot;Ask Google AI Mode&quot; opens a new tab (noopener nofollow); &quot;Is this
-yours?&quot; = WhatsApp to our agent with [GATE|kh34363|claim], prefill asks for the owner&#x27;s email (N25).</pre></li>
+yours?&quot; = WhatsApp to our agent with &quot;(ref kh34363 claim)&quot;, no email ask (N37).</pre></li>
 <li><pre>FOOTER (Kim 2026-10-07, MVP): Help by WhatsApp and email; owner actions stay WhatsApp deep links.</pre></li>
 <li><pre>MOCKUP DATA = the shape of GET /api/contact-details/kh34363 (production: fetched, Cache-Control: no-store; never inline).
 Values as on the card version; sample / illustrative where marked.</pre></li>
