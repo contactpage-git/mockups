@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Internal: page.me ads editor</title>
+<style>
+:root{--yellow:#FFC400;--ink:#161616;--grey:#6f6f6f;--line:#e9e9e9}
+body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:900px;margin:32px auto;padding:0 16px;color:var(--ink);background:#fff}
+h1{font-size:22px;border-left:5px solid var(--yellow);padding-left:10px}
+p.sub{color:var(--grey);font-size:14px}
+.toolbar{position:sticky;top:0;background:#fff;padding:12px 0;border-bottom:1px solid var(--line);margin-bottom:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;z-index:5}
+button{font:600 14px -apple-system,Segoe UI,Roboto,Arial,sans-serif;border:1px solid #ddd;background:#fff;border-radius:8px;padding:8px 14px;cursor:pointer}
+button.pri{background:var(--ink);color:#fff;border-color:var(--ink)}
+button.go-submit{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+button.danger{color:#c00;border-color:#ecc}
+button.small{padding:5px 10px;font-size:13px}
+.count{font-size:14px;color:var(--grey);margin-left:auto}
+.stylebar{display:flex;gap:8px;align-items:center;font-size:14px;color:var(--grey);margin-bottom:16px;flex-wrap:wrap}
+.stylebar button[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+/* style variants */
+.ad{border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 12px;background:#fafafa;transition:all .2s}
+.ad .row1{display:flex;gap:10px;align-items:baseline;margin-bottom:8px}
+.ad .n{font-weight:700;color:#8a8a8a;min-width:28px}
+.ad .lbl{font-weight:700;font-size:15px;flex:1}
+.ad textarea{width:100%;box-sizing:border-box;font:14px/1.5 -apple-system,Segoe UI,Roboto,Arial,sans-serif;border:1px solid #ddd;border-radius:8px;padding:8px 10px;resize:vertical;min-height:52px;background:#fff}
+.ad textarea.comment{min-height:36px;font-size:13px;color:#555;background:#fffbe8;border-color:#f0df9e}
+.ad .clbl{font-size:12px;color:var(--grey);margin:8px 0 4px}
+.ad .meta{font-size:12px;color:#8a8a8a;margin:6px 0 8px}
+.ad .actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+a.wa{display:inline-block;font-size:14px;background:#25D366;color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-weight:600}
+a.wa:hover{background:#1eb856}
+.link{font-size:12px;color:#8a8a8a;word-break:break-all;margin-top:6px}
+.saved{font-size:13px;color:#1a7f37;display:none}
+/* variant: house (yellow, like security page) */
+body[data-style="house"] .ad{background:#fff;border-left:5px solid var(--yellow);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+body[data-style="house"] .ad .lbl{color:var(--ink)}
+body[data-style="house"] a.wa{background:var(--yellow);color:var(--ink)}
+body[data-style="house"] a.wa:hover{background:#f0b800}
+/* variant: chat (WhatsApp bubble) */
+body[data-style="chat"] .ad{background:#e7ffdb;border-color:#c8e6c0;border-radius:18px}
+body[data-style="chat"] .ad textarea{background:#fff}
+body[data-style="chat"] .ad .lbl{font-size:13px;color:#075E54}
+/* variant: minimal */
+body[data-style="minimal"] .ad{background:#fff;border:none;border-bottom:1px solid var(--line);border-radius:0;padding:12px 4px}
+body[data-style="minimal"] a.wa{background:#fff;color:#25D366;border:2px solid #25D366}
+a{color:var(--ink)}
+.deleted-note{font-size:14px;color:var(--grey);text-align:center;padding:20px}
+#submitPanel{display:none;border:2px solid var(--yellow);border-radius:12px;padding:18px;margin:20px 0;background:#fffbe8}
+#submitPanel h2{font-size:17px;margin:0 0 8px}
+#submitPanel pre{white-space:pre-wrap;word-wrap:break-word;font:13px/1.6 -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;max-height:400px;overflow:auto}
+.diff-add{color:#1a7f37}.diff-del{color:#c00;text-decoration:line-through}.diff-edit{color:#895600}
+</style></head>
+<body data-style="default">
+<p><a href="index.html">All mockups</a></p>
+<h1>Internal: page.me ads editor</h1>
+<p class="sub">Edit any prefilled message &mdash; the WhatsApp link updates live. Add a comment per ad. Delete the duds. Pick a style to preview. When done, <b>Submit</b> and paste the result to Page Muse &mdash; it lands in the wiki and the mockups.</p>
+<div class="toolbar">
+<button class="pri" id="addBtn">+ Add ad</button>
+<button id="resetBtn">Reset</button>
+<button class="go-submit" id="submitBtn">Submit changes &#8594;</button>
+<span class="saved" id="savedTick">&#10003; saved</span>
+<span class="count" id="count"></span>
+</div>
+<div class="stylebar">Style:
+<button data-s="default" aria-pressed="true">Default</button>
+<button data-s="house" aria-pressed="false">House (yellow)</button>
+<button data-s="chat" aria-pressed="false">Chat bubble</button>
+<button data-s="minimal" aria-pressed="false">Minimal</button>
+</div>
+<div id="submitPanel">
+<h2>Submit to Page Muse</h2>
+<p class="sub">Copy everything below and paste it to Page Muse in chat. It will apply the changes to the mockups and the wiki.</p>
+<pre id="submitText"></pre>
+<button class="pri" id="copySubmit">Copy for Page Muse</button>
+<button class="small" id="closeSubmit">Close</button>
+</div>
+<div id="list"></div>
+<script>
+var DEFAULTS = [{"label": "Get started / @page.me / Reach new customers", "msg": "Hi! Please sign me up for my free website. (ref home signup)", "on": "home-page"}, {"label": "WhatsApp", "msg": "Hi! Please find my business on contact.page, or create my website. (ref home find)", "on": "home-page"}, {"label": "Hire on WhatsApp", "msg": "Hi! I'd like to hire the contact.page agent on WhatsApp (Plus). (ref home plus)", "on": "home-page"}, {"label": "Ask us", "msg": "Hi! I want a featured spot for my business. (ref home featured)", "on": "home-page"}, {"label": "By WhatsApp", "msg": "Hi! I'd like early access to the AI page helper. (ref gate early-access)", "on": "security-page"}, {"label": "Claim / Claim it / Claim this page", "msg": "Hi! I'd like to claim Yellow Tower. (ref kh34363 claim)", "on": "security-page, listing-page, contact-details-page, contact-details-chat"}, {"label": "Edit", "msg": "Hi! I'd like to update Yellow Tower. (ref kh34363 edit)", "on": "security-page"}, {"label": "Remove", "msg": "Hi! I'd like Yellow Tower removed. (ref kh34363 remove)", "on": "security-page"}, {"label": "Report / Report this page", "msg": "Hi! I'd like to report a problem with Yellow Tower. (ref kh34363 report)", "on": "security-page, listing-page"}, {"label": "Help / WhatsApp", "msg": "Hi! I need help with contact.page. (ref kh34363 help)", "on": "security-page, listing-page, contact-details-page, contact-details-chat"}, {"label": "Edit or add contact details", "msg": "Hi! I'd like to update or add contact details for Yellow Tower. (ref kh34363 edit)", "on": "listing-page, contact-details-page, contact-details-chat"}, {"label": "Update address", "msg": "Hi! I'd like to update the address of Yellow Tower. (ref kh34363 update-address)", "on": "listing-page"}, {"label": "Add a question", "msg": "Hi! I'd like to add a FAQ to Yellow Tower. (ref kh34363 add-faq)", "on": "listing-page"}, {"label": "Add photos", "msg": "Hi! I'd like to add photos to Yellow Tower. (ref kh34363 add-photos)", "on": "listing-page"}, {"label": "Edit description", "msg": "Hi! I'd like to update the description of Yellow Tower. (ref kh34363 edit)", "on": "listing-page"}, {"label": "Add or update products", "msg": "Hi! I'd like to add or update offerings on Yellow Tower. (ref kh34363 update-offerings)", "on": "listing-page"}, {"label": "Update facts", "msg": "Hi! I'd like to update the facts on Yellow Tower. (ref kh34363 update-facts)", "on": "listing-page"}, {"label": "Update hours", "msg": "Hi! I'd like to update the opening hours of Yellow Tower. (ref kh34363 update-hours)", "on": "listing-page"}, {"label": "Add or manage your business", "msg": "Hi! I'd like to add or manage my business on contact.page. (ref kh34363 manage)", "on": "listing-page"}, {"label": "Confirm it", "msg": "Hi! The unconfirmed WhatsApp number on Yellow Tower is mine. I'd like to confirm it. (ref kh34363 confirm)", "on": "contact-details-page"}, {"label": "Confirm it", "msg": "Hi! The email yellow.tower.co@gmail.com on Yellow Tower is mine. I'd like to confirm it. (ref kh34363 confirm)", "on": "contact-details-page"}, {"label": "add", "msg": "Hi! I'd like to add a contact channel for Yellow Tower. (ref kh34363 add-channel)", "on": "contact-details-page"}, {"label": "@newcustomers (AI)", "msg": "Hi! I can't reach Yellow Tower. (ref kh34363 help)", "on": "contact-details-page"}, {"label": "add", "msg": "Hi! I'd like to add the landmark for Yellow Tower. (ref kh34363 add-landmark)", "on": "contact-details-page"}, {"label": "add", "msg": "Hi! I'd like to add the floor for Yellow Tower. (ref kh34363 add-floor)", "on": "contact-details-page"}, {"label": "add", "msg": "Hi! I'd like to add the entrance for Yellow Tower. (ref kh34363 add-entrance)", "on": "contact-details-page"}, {"label": "add", "msg": "Hi! I'd like to add the directions in Khmer for Yellow Tower. (ref kh34363 add-directions)", "on": "contact-details-page"}, {"label": "add", "msg": "Hi! I'd like to add the map pin note for Yellow Tower. (ref kh34363 add-pin)", "on": "contact-details-page"}, {"label": "add", "msg": "Hi! I'd like to add the languages for Yellow Tower. (ref kh34363 add-languages)", "on": "contact-details-page"}, {"label": "add", "msg": "Hi! I'd like to add the booking link for Yellow Tower. (ref kh34363 add-booking)", "on": "contact-details-page"}, {"label": "By WhatsApp", "msg": "Hi! I'd like early access to the AI page helper. (ref details early-access)", "on": "contact-details-page"}, {"label": "Report this page", "msg": "Hi! I'd like to report a problem with the contact details of Yellow Tower. (ref kh34363 report)", "on": "contact-details-page, contact-details-chat"}, {"label": "WhatsApp", "msg": "Hi! I have a question about privacy on contact.page. (ref privacy help)", "on": "privacy-page"}, {"label": "Start on WhatsApp", "msg": "Hi! I rent out office space in Phnom Penh and want my free site. (ref phnom-penh-office-rental add)", "on": "office-rental-vertical-page"}, {"label": "WhatsApp", "msg": "Hi! I need help with contact.page. (ref phnom-penh-office-rental help)", "on": "office-rental-vertical-page"}];
+var KEY = 'pageme-ads-v2';
+function load(){ try{ var s = localStorage.getItem(KEY); if(s){ var d = JSON.parse(s); if(d && d.ads) return d; } }catch(e){} return {ads: JSON.parse(JSON.stringify(DEFAULTS)), style:'default'}; }
+function save(){ localStorage.setItem(KEY, JSON.stringify({ads:ads, style:currentStyle})); var t=document.getElementById('savedTick'); t.style.display='inline'; clearTimeout(t._h); t._h=setTimeout(function(){t.style.display='none'},1200); }
+var state = load();
+var ads = state.ads;
+var currentStyle = state.style || 'default';
+function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function waLink(msg){ return 'https://wa.me/page.me?text=' + encodeURIComponent(msg); }
+function applyStyle(){ document.body.setAttribute('data-style', currentStyle); document.querySelectorAll('.stylebar button').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-s')===currentStyle ? 'true':'false'); }); }
+function render(){
+  applyStyle();
+  var list = document.getElementById('list'); list.innerHTML = '';
+  document.getElementById('count').textContent = ads.length + ' ads';
+  if(!ads.length){ list.innerHTML = '<div class="deleted-note">All deleted. <button class="small" onclick="resetAll()">Reset to defaults</button></div>'; return; }
+  ads.forEach(function(ad, i){
+    var d = document.createElement('div'); d.className = 'ad';
+    d.innerHTML =
+      '<div class="row1"><span class="n">'+(i+1)+'</span><span class="lbl">'+esc(ad.label)+'</span></div>'+
+      '<textarea data-msg="'+i+'" rows="2" placeholder="Prefilled WhatsApp message">'+esc(ad.msg)+'</textarea>'+
+      '<div class="clbl">Comment (goes to Page Muse with the submit):</div>'+
+      '<textarea class="comment" data-cmt="'+i+'" rows="1" placeholder="e.g. too wordy, merge with #3&hellip;">'+esc(ad.comment||'')+'</textarea>'+
+      '<div class="meta">on: '+esc(ad.on||'')+'</div>'+
+      '<div class="actions">'+
+        '<a class="wa" data-go="'+i+'" href="'+waLink(ad.msg)+'" target="_blank" rel="noopener">Open in WhatsApp &#8599;</a>'+
+        '<button class="small" data-copy="'+i+'">Copy link</button>'+
+        '<button class="small danger" data-del="'+i+'">Delete</button>'+
+      '</div>'+
+      '<div class="link" data-link="'+i+'">'+esc(waLink(ad.msg))+'</div>';
+    list.appendChild(d);
+  });
+  list.querySelectorAll('[data-msg]').forEach(function(ta){
+    ta.addEventListener('input', function(){
+      var i = +ta.getAttribute('data-msg'); ads[i].msg = ta.value;
+      var link = waLink(ta.value);
+      list.querySelector('[data-go="'+i+'"]').href = link;
+      list.querySelector('[data-link="'+i+'"]').textContent = link;
+      save();
+    });
+  });
+  list.querySelectorAll('[data-cmt]').forEach(function(ta){
+    ta.addEventListener('input', function(){ ads[+ta.getAttribute('data-cmt')].comment = ta.value; save(); });
+  });
+  list.querySelectorAll('[data-del]').forEach(function(b){
+    b.addEventListener('click', function(){ if(confirm('Delete this ad?')){ ads.splice(+b.getAttribute('data-del'),1); save(); render(); } });
+  });
+  list.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var i = +b.getAttribute('data-copy');
+      navigator.clipboard.writeText(waLink(ads[i].msg)).then(function(){ b.textContent='Copied!'; setTimeout(function(){b.textContent='Copy link'},1200); });
+    });
+  });
+}
+document.querySelectorAll('.stylebar button').forEach(function(b){
+  b.addEventListener('click', function(){ currentStyle = b.getAttribute('data-s'); save(); applyStyle(); });
+});
+document.getElementById('addBtn').addEventListener('click', function(){
+  ads.unshift({label:'(new)', msg:'Hi! ', on:'new', comment:''}); save(); render();
+  var f = document.querySelector('#list textarea'); if(f) f.focus();
+});
+function resetAll(){ ads = JSON.parse(JSON.stringify(DEFAULTS)); save(); render(); }
+document.getElementById('resetBtn').addEventListener('click', function(){ if(confirm('Reset all ads to defaults? Your edits will be lost.')) resetAll(); });
+document.getElementById('submitBtn').addEventListener('click', function(){
+  var lines = ['ADS UPDATE from Kim (page.me ads editor)', ''];
+  var nEdit=0, nDel=0, nAdd=0;
+  var defMap = {}; DEFAULTS.forEach(function(d){ defMap[d.msg] = d; });
+  var curMsgs = {};
+  ads.forEach(function(ad, i){
+    curMsgs[ad.msg] = true;
+    var orig = defMap[ad.msg];
+    if(!orig){ nAdd++; lines.push('NEW #'+(i+1)+' ['+ad.label+']: "'+ad.msg+'"'); }
+    else if(ad.comment){ nEdit++; lines.push('KEEP #'+(i+1)+' ['+ad.label+'] comment: '+ad.comment); }
+  });
+  DEFAULTS.forEach(function(d){
+    if(!curMsgs[d.msg]){ nDel++; lines.push('DELETE ['+d.label+']: "'+d.msg+'"'); }
+  });
+  // edited messages (msg changed but traceable via label+on)
+  ads.forEach(function(ad, i){
+    if(ad._editedFrom){ nEdit++; lines.push('EDIT #'+(i+1)+' ['+ad.label+']: was "'+ad._editedFrom+'" -> now "'+ad.msg+'"'); }
+  });
+  lines.push('');
+  lines.push('Summary: '+nAdd+' new, '+nDel+' deleted, '+nEdit+' edited/commented. Apply to mockups + wiki.');
+  document.getElementById('submitText').textContent = lines.join('\n');
+  document.getElementById('submitPanel').style.display = 'block';
+  document.getElementById('submitPanel').scrollIntoView();
+});
+document.getElementById('closeSubmit').addEventListener('click', function(){ document.getElementById('submitPanel').style.display='none'; });
+document.getElementById('copySubmit').addEventListener('click', function(){
+  var t = document.getElementById('submitText').textContent;
+  navigator.clipboard.writeText(t).then(function(){ document.getElementById('copySubmit').textContent='Copied! Paste it to Page Muse.'; setTimeout(function(){document.getElementById('copySubmit').textContent='Copy for Page Muse'},2000); });
+});
+// track edits: when msg changes, remember original
+var _orig = {};
+document.getElementById('list').addEventListener('focusin', function(e){
+  if(e.target.hasAttribute('data-msg')){ var i=+e.target.getAttribute('data-msg'); if(!(i in _orig)) _orig[i]=ads[i].msg; }
+});
+document.getElementById('list').addEventListener('focusout', function(e){
+  if(e.target.hasAttribute('data-msg')){ var i=+e.target.getAttribute('data-msg'); if(_orig[i]!==undefined && _orig[i]!==ads[i].msg){ ads[i]._editedFrom=_orig[i]; } delete _orig[i]; save(); }
+});
+render();
+</script>
+</body></html>
