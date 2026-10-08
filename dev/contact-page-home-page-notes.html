@@ -1,32 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow"><title>Developer notes: Contact.page home page</title>
+<meta name="robots" content="noindex,nofollow"><title>Developer notes: Home page (www.contact.page)</title>
 <style>body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:1040px;margin:32px auto;padding:0 16px;color:#161616}
 h1{font-size:22px;border-left:5px solid #FFC400;padding-left:10px}p{color:#6f6f6f;font-size:14px}a{color:#161616}
 ol{padding-left:28px}li{margin:0 0 14px}li::marker{font-weight:700;color:#8a8a8a}
 pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fafafa;border:1px solid #e9e9e9;border-radius:8px;padding:10px 12px;margin:0}
 h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}ul.hist li{margin:0 0 8px;font-size:14px;line-height:1.5}ul.hist b{display:inline-block;min-width:36px}</style></head>
-<body><p><a href="../index.html">All mockups</a> &middot; <a href="../contact-page-home-page.html">Open the mockup</a></p>
-<h1>Developer notes: Contact.page home page</h1>
-<p>Home page mockup for contact.page (contact-page-home-page.html). Source: Claude's design conversation (CONTACT/pages/home/index.html), added to mockups as D014.</p>
-<h2>What changed and why (newest first)</h2>
-<p>Each step with the reason behind it.</p>
-<ul class="hist">
-<li><b>v2</b> 2026-10-07 (Page Muse, Kim): WhatsApp handle <b>@newcustomers &rarr; @page.me</b> across all 8 links (header CTA, hero @handle, Reach new customers CTA, find/create, Plus &ldquo;Hire on WhatsApp&rdquo;, Featured &ldquo;Ask us&rdquo;). All prefilled <tt>?text=</tt> message data preserved &mdash; only the username portion of each wa.me link changed. Dev comment updated. Same change applied to all house-ad links in 6 sibling mockups (43 links: security, listing, contact-details, contact-details-chat, privacy, phnom-penh vertical).</li>
-<li><b>v1</b> 2026-10-07 (Page Muse): Initial add. Claude's home page design (D014) copied from CONTACT/pages/home/index.html into mockups repo as contact-page-home-page.html, registered as item 0 in index.</li>
-</ul>
+<body><p><a href="../index.html">All mockups</a> · <a href="../contact-page-home-page.html">Open the mockup</a></p>
+<h1>Developer notes: Home page (www.contact.page)</h1>
+<p>Sample data only; contact values are masked.</p>
 <h2>All notes, summary first, then in page order</h2>
 <ol>
-<li><pre>WHATSAPP HANDLE: @page.me (Kim 2026-10-07, claimed live in WhatsApp the same evening)
-
-OUR REASON, in full:
-1. The domain-suffix assumption was wrong. The team believed &quot;.me is a real TLD, WhatsApp will block it&quot; (same wall as @contact.page). Kim tested it live &mdash; WhatsApp accepted @page.me with no block. Lesson: platform rules get tested in the dialog, never asserted from memory.
-2. It reads like a premium domain name. Short, ownable, memorable &mdash; an asset, not just a username. (Note: page.me the domain belongs to LinkedIn; the handle is independent of that.)
-3. &quot;Page me!&quot; is commandable and alive. Six characters plus the dot. It is what you shout across the shop, and it doubles as the site's CTA language without changing a word.
-4. The roundtable ran 24 rounds on this. @atservice (Grok/Z.ai pick, &quot;I am Page, at your service&quot;) survived every kill test and was the reasoned winner. Kim chose @page.me anyway &mdash; gut over rubrics, his call, his account. The &quot;pague-me = pay me&quot; scam-DM worry (Z.ai) was dropped: never observed in the wild.
-5. Email stays newcustomers@contact.page for now (separate decision; MX records).</pre></li>
-<li><pre>HOME PAGE SOURCE: CONTACT/pages/home/index.html (Claude design conversation). The mockup is a copy; the design chat is the authority on presentation (design-sync skill). Do not restyle from the wiki alone.</pre></li>
-<li><pre>LINK CONTRACT: all WhatsApp links use wa.me/&lt;handle&gt; with tagged prefilled ?text= messages ([HOME|signup], [HOME|find], ref home plus, ref home featured). Test on a phone before launch; if WhatsApp does not open the chat, use the number instead.</pre></li>
-</ol>
-</body>
-</html>
+<li><pre>Audit 2026-10-07 (.page Mockups): Caveat web font dropped (system font for the hand notes, no Google Fonts request); logo PNG embedded once via CSS; phone preview roles = &quot;I am…&quot; with the current labels (a customer, a supplier [business label on hold], looking for a job, the owner or staff). DEVELOPER: no AdSense and no Turnstile on the home page.</pre></li>
+<li><pre>Fill before launch: {{BUSINESS_COUNT}} = real total from the database, refreshed daily; {{PRIVACY_URL}}, {{TERMS_URL}}, {{COUNTRIES_URL}}. Sign-up = WhatsApp with tagged prefilled messages ([HOME|signup], [HOME|find]) that ask for the email; MVP replies go by email. Links use the handle (wa.me/page.me): test on a phone before launch; if WhatsApp does not open the chat, use the number instead. Redirect your./yourname./yourcompany.contact.page to https://contact.page/. Layout: listing column width (760px, the new listing design). Chats: edit chat-examples.js, then run build_home.py.</pre></li>
+<li><pre>top: the page</pre></li>
+<li><pre>right: yellow pages</pre></li>
+<li><pre>bottom: search</pre></li>
+<li><pre>left: page ai</pre></li>
+<li><pre>Prices: Kim decides; replace PRICE_PLUS and PRICE_FEATURED.</pre></li>
+</ol></body></html>
