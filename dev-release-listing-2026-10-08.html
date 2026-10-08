@@ -81,6 +81,13 @@ body{background:#D3D3D3}.cpf-wrap{max-width:430px;margin:0 auto}
 <main class="devnote">
 <h1>Developer note</h1>
 <p>Before release: xx52287-yellow-tower.contact.page. The footer above is the final layout (check it at 360 and 390 wide).</p>
+<h2>Why</h2>
+<ul>
+<li>Address in the footer is plain text, not a link: "Address" in the section links already opens /map, and two links to the same page are clutter. It also keeps the phone as the one tappable thing in the card.</li>
+<li>Masked phone is an underlined link to /contact-details: the stars and lock show the number is locked, so landing on the security page is no surprise.</li>
+<li>No Call button in the footer: it promised a phone call but opened the security page.</li>
+<li>Report sits next to Privacy: both are trust and safety links, not page actions.</li>
+</ul>
 <h2>Above the footer</h2>
 <ul>
 <li>Chips under the address: Contact, Address, Images, Profile. Each opens its own page in the same tab: /contact-details, /map, /galleries, /profile. No jumps down the page, no new tab, no Videos (we don't serve videos).</li>
