@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All features · contact.page (internal)</title>
+
+<style>
+:root{--yellow:#FFC400;--ink:#161616;--grey:#6f6f6f;--grey-2:#9a9a9a;--line:#e9e9e9;--desk:430px}
+*{box-sizing:border-box}html,body{margin:0;background:#fff;color:var(--ink)}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.45;font-size:14px}
+.keyline{height:4px;background:var(--yellow)}
+.wrap{max-width:430px;margin:0 auto;padding:0 16px 36px;background:#fff}
+.back{display:inline-block;margin:14px 0 0;font-size:13px;color:var(--grey);text-decoration:none}
+h1{font-size:22px;margin:8px 0 2px}
+.sub{font-size:12px;color:var(--grey);margin:0 0 6px}
+.legend{font-size:12px;color:var(--grey);margin:0 0 8px;line-height:2}
+h2{font-size:15px;margin:22px 0 4px;padding-top:10px;border-top:1px solid var(--line)}
+ul.f{list-style:none;margin:0;padding:0}
+ul.f li{padding:8px 0;border-bottom:1px solid #f3f3f3}
+.t{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.t b{font-size:14px}
+ul.f p{margin:2px 0 0;color:#333}
+ul.f p.src{font-size:11px;color:var(--grey-2)}
+.st{flex:none;font-size:10.5px;font-weight:700;border-radius:5px;padding:2px 6px;white-space:nowrap}
+.st.live{background:#e7f6ec;color:#14532d}.st.next{background:#fff6d6;color:#7a5600}
+.st.mock{background:#eef1f5;color:#3b4a5c}.st.plan{background:#f4f4f4;color:#777}
+.meta{margin-top:26px;color:#b5b5b5;font-size:12px}
+@media(min-width:440px){html,body{background:#eceef0}body{padding:16px 0}.keyline{display:none}
+ .wrap{width:390px;max-width:390px;height:min(844px,calc(100vh - 32px));overflow-y:auto;border:1px solid #d5d8dc;border-radius:24px;
+ background:linear-gradient(var(--yellow),var(--yellow)) top/100% 4px no-repeat local,#fff;box-shadow:0 10px 30px rgba(0,0,0,.08)}}
+</style>
+<script>if(/[?&]full=1/.test(location.search))document.documentElement.classList.add('full')</script>
+<style>.fullbtn{display:none}@media(min-width:440px){html:not(.full) .fullbtn{display:inline-flex;align-items:center;gap:6px;position:fixed;top:16px;left:min(calc(50% + 209px),calc(100% - 150px));background:#fff;color:#161616;border:1px solid #d5d8dc;border-radius:8px;padding:7px 11px;font:600 13px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.06);z-index:50}html:not(.full) .fullbtn:hover{background:#fffbea}}html.full,html.full body{background:#fff!important}html.full body{padding:0!important}html.full .keyline{display:block!important}html.full .wrap{width:auto!important;max-width:var(--desk,760px)!important;height:auto!important;overflow:visible!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:#fff!important}</style>
+</head>
+<body>
+<div class="keyline"></div>
+<div class="wrap">
+<a class="back" href="https://www.contact.page/">‹ contact.page</a>
+<h1>All features</h1>
+<p class="sub">Internal, just for us. 55 features, 8 October 2026.</p>
+<p class="legend"><span class="st live">Live</span> 12 · <span class="st next">Next release</span> 13 · <span class="st mock">Mockup</span> 27 · <span class="st plan">Planned</span> 3</p>
+<h2>Business page: your.contact.page (listing)</h2>
+<ul class="f">
+<li><div class="t"><b>Own subdomain per business</b><span class="st live">Live</span></div><p>name.contact.page, one page per business, built from the data pool</p><p class="src">kb/listing-page-engine.md</p></li>
+<li><div class="t"><b>Small header</b><span class="st mock">Mockup</span></div><p>Category · area, city kicker (small, italic); name as H1 with the yellow line</p><p class="src">listing v26</p></li>
+<li><div class="t"><b>Masked contact card</b><span class="st live">Live / Mockup</span></div><p>Main number masked (+855 12 869 •••), one button to unlock</p><p class="src">listing; gate spec</p></li>
+<li><div class="t"><b>Photos</b><span class="st mock">Mockup</span></div><p>4:3 crop, same size, 8px corners; owner adds by WhatsApp or email</p><p class="src">design README</p></li>
+<li><div class="t"><b>Products and services</b><span class="st mock">Mockup</span></div><p>With photos; prices only from the owner (N31)</p><p class="src">listing</p></li>
+<li><div class="t"><b>Hours, facts, address, map link</b><span class="st mock">Mockup</span></div><p>Each with a small owner edit link</p><p class="src">listing</p></li>
+<li><div class="t"><b>More in the area</b><span class="st mock">Mockup</span></div><p>One line per neighbour, straight to that business&#x27;s gate (N17)</p><p class="src">listing</p></li>
+<li><div class="t"><b>Tools for visitors</b><span class="st mock">Mockup</span></div><p>Data as JSON, vCard, send to my WhatsApp, send to an AI assistant, category tree</p><p class="src">listing</p></li>
+<li><div class="t"><b>Owner box</b><span class="st mock">Mockup</span></div><p>&quot;Is this your business? Claim this page free&quot; + Claim it / By email (V2-B)</p><p class="src">listing v24</p></li>
+<li><div class="t"><b>JSON-LD</b><span class="st live">Next release</span></div><p>LocalBusiness + BreadcrumbList; contactPoint.url points to the gate, no numbers</p><p class="src">release file A1</p></li>
+<li><div class="t"><b>llms.txt</b><span class="st live">Next release</span></div><p>Tells AI assistants to send users to the contact details link, never copy numbers</p><p class="src">release file A4</p></li>
+<li><div class="t"><b>Ad slots</b><span class="st mock">Mockup</span></div><p>Reserved 336x280 (300x250 on small phones), height fixed, no layout shift (N36)</p><p class="src">design README</p></li>
+</ul>
+<h2>Security check (gate) /contact-details</h2>
+<ul class="f">
+<li><div class="t"><b>No photo puzzles</b><span class="st live">Next release</span></div><p>Cloudflare Turnstile, Managed mode, free plan; site key ready</p><p class="src">gate spec, batch 2</p></li>
+<li><div class="t"><b>Slide to unlock</b><span class="st live">Next release</span></div><p>Our own slide bar with Turnstile hidden behind it; &quot;or tap here&quot; fallback; keyboard works</p><p class="src">security v33</p></li>
+<li><div class="t"><b>Please prove you&#x27;re human box</b><span class="st mock">Mockup</span></div><p>One frame: title, slide, Cloudflare line, &quot;I am…&quot;</p><p class="src">security v27+</p></li>
+<li><div class="t"><b>I am… choice</b><span class="st live">Next release</span></div><p>Radio rows: customer (pre-selected), supplier, job seeker, owner, working here; sent as role</p><p class="src">security v26</p></li>
+<li><div class="t"><b>Locked table</b><span class="st mock">Mockup</span></div><p>Yellow Pages dot leaders, masked values, one row per channel that exists</p><p class="src">security v27</p></li>
+<li><div class="t"><b>Returning visitors skip it</b><span class="st live">Live</span></div><p>cp_verified cookie, 1 year</p><p class="src">gate spec G11</p></li>
+<li><div class="t"><b>Honeypot</b><span class="st live">Next release</span></div><p>Hidden field company_website; filled = no details</p><p class="src">release file B2</p></li>
+<li><div class="t"><b>No ads on the gate</b><span class="st live">Live</span></div><p>No AdSense script on this template</p><p class="src">gate spec G6</p></li>
+<li><div class="t"><b>Indexing</b><span class="st live">Next release</span></div><p>Indexed, self canonical, meta description without numbers</p><p class="src">gate spec</p></li>
+<li><div class="t"><b>Phone width forever</b><span class="st mock">Mockup</span></div><p>430px column on every screen (N35, N36)</p><p class="src">design README</p></li>
+<li><div class="t"><b>Phase 2 layers</b><span class="st plan">Planned</span></div><p>Signed page token, datacenter check, rate limits, logging: only if scraping shows up</p><p class="src">gate spec phase 2</p></li>
+</ul>
+<h2>Contact details page (after the check)</h2>
+<ul class="f">
+<li><div class="t"><b>Best way to reach them</b><span class="st mock">Mockup</span></div><p>One big card: icon, value, one action, vote status</p><p class="src">contact details v15</p></li>
+<li><div class="t"><b>Other ways</b><span class="st mock">Mockup</span></div><p>Confirmed lines first (green tick), unconfirmed below with &quot;Did it work? Yes / No&quot;</p><p class="src">contact details</p></li>
+<li><div class="t"><b>Confirm it</b><span class="st mock">Mockup</span></div><p>&quot;Is this yours? Confirm it&quot; opens our agent (ref kh… confirm)</p><p class="src">contact details</p></li>
+<li><div class="t"><b>WhatsApp check panel</b><span class="st mock">Mockup</span></div><p>Unconfirmed number: slide-out panel, then &quot;Did WhatsApp work?&quot;</p><p class="src">contact details</p></li>
+<li><div class="t"><b>Address and directions</b><span class="st mock">Mockup</span></div><p>Street, landmark, floor, entrance, Khmer directions, map pin note</p><p class="src">contact details</p></li>
+<li><div class="t"><b>Hours, languages, booking link</b><span class="st mock">Mockup</span></div><p>Owner-screen fields</p><p class="src">contact details</p></li>
+<li><div class="t"><b>Community notes</b><span class="st mock">Mockup</span></div><p>How reaching them went, with source tags</p><p class="src">contact details</p></li>
+<li><div class="t"><b>AI help</b><span class="st mock">Mockup</span></div><p>One button to Google AI Mode with a prefilled question</p><p class="src">contact details v4+</p></li>
+<li><div class="t"><b>Chat version</b><span class="st mock">Mockup</span></div><p>WhatsApp-like alternate layout (D018 experiment)</p><p class="src">contact details chat v6</p></li>
+<li><div class="t"><b>No caching of values</b><span class="st live">Next release</span></div><p>Response with numbers: private, no-store, noindex</p><p class="src">release file B3</p></li>
+</ul>
+<h2>Owner side and sign-up</h2>
+<ul class="f">
+<li><div class="t"><b>Plans</b><span class="st mock">Mockup</span></div><p>Basic free always; Plus (AI agent, alerts, verified badge, no ads); Featured (featured spot, own domain later)</p><p class="src">home page</p></li>
+<li><div class="t"><b>AI page helper teaser</b><span class="st mock">Mockup</span></div><p>&quot;Coming soon: your AI page helper&quot; + Sign up early by WhatsApp or email (unit EA)</p><p class="src">security v33</p></li>
+<li><div class="t"><b>Owner actions</b><span class="st mock">Mockup</span></div><p>Claim · Edit · Remove · Report · Help: each opens our agent with a prefill</p><p class="src">all pages</p></li>
+<li><div class="t"><b>Friendly prefills</b><span class="st mock">Mockup</span></div><p>&quot;Hi! I&#x27;d like to update Yellow Tower. (ref kh34363 edit)&quot;; 59 texts in one list (N37)</p><p class="src">kb/prefill-messages.md</p></li>
+<li><div class="t"><b>Inbox reads the ref</b><span class="st live">Live (bot)</span></div><p>Worker reads the last (ref page action); early-access = sign-up list</p><p class="src">CONTACT/bot/README.md</p></li>
+<li><div class="t"><b>WhatsApp handle</b><span class="st plan">Planned</span></div><p>@page.me (N38); email newcustomers@contact.page</p><p class="src">N38, task A026</p></li>
+<li><div class="t"><b>Owner screen</b><span class="st mock">Mockup</span></div><p>Page Bot&#x27;s owner screen with the contact detail fields</p><p class="src">kb/mockups/owner-screen</p></li>
+</ul>
+<h2>Protection, privacy and data</h2>
+<ul class="f">
+<li><div class="t"><b>No contact values in the source</b><span class="st live">Next release</span></div><p>No phone, WhatsApp or email in JSON-LD, meta, data attributes or links</p><p class="src">release file A</p></li>
+<li><div class="t"><b>Leak audit</b><span class="st live">Live (tool)</span></div><p>leak_audit.py: one listing per template, &quot;leaks&quot;: 0; re-run scheduled 2026-11-07</p><p class="src">ops/contact-leak-audit</p></li>
+<li><div class="t"><b>Privacy page</b><span class="st live">Next release</span></div><p>New full policy: Turnstile addendum, I am…, cookie, ads, owners; Yellow Tower Co., Ltd.; privacy@</p><p class="src">privacy page v3</p></li>
+<li><div class="t"><b>Privacy link everywhere</b><span class="st mock">Mockup</span></div><p>Small grey line under every page ends with Privacy</p><p class="src">all pages</p></li>
+<li><div class="t"><b>EU/UK consent banner</b><span class="st plan">Planned</span></div><p>Google&#x27;s free banner if we have none (open point)</p><p class="src">privacy policy</p></li>
+</ul>
+<h2>Ads and revenue</h2>
+<ul class="f">
+<li><div class="t"><b>Vignette, anchor, side rails</b><span class="st live">Live</span></div><p>Auto ads on; in-page Auto ads off; vignette is the top earner</p><p class="src">monetization, revenue-model</p></li>
+<li><div class="t"><b>In-content slots</b><span class="st mock">Mockup</span></div><p>336x280 large rectangle reserved; never next to a button or contact value</p><p class="src">N36</p></li>
+<li><div class="t"><b>Plain same-site links</b><span class="st live">Live</span></div><p>Unlock and section links stay real links, so vignettes keep showing</p><p class="src">essential release 2</p></li>
+</ul>
+<h2>Analytics</h2>
+<ul class="f">
+<li><div class="t"><b>Gate events</b><span class="st live">Next release</span></div><p>contact_gate_view, contact_gate_solved (key), contact_details_shown, contact_item_click (key)</p><p class="src">release file B4</p></li>
+<li><div class="t"><b>Entry tag</b><span class="st live">Next release</span></div><p>?from=listing-button / listing-row / subpage / neighbour / home / jsonld, sent as entry</p><p class="src">release file B4</p></li>
+<li><div class="t"><b>Role data</b><span class="st live">Next release</span></div><p>role on contact_gate_solved (I am…)</p><p class="src">release file B4</p></li>
+</ul>
+<h2>Design system and preview site (for us)</h2>
+<ul class="f">
+<li><div class="t"><b>Design package</b><span class="st live">Live</span></div><p>tokens.css, Lucide + Simple Icons, chips, photos, buttons, gold lock</p><p class="src">CONTACT/design</p></li>
+<li><div class="t"><b>Preview site</b><span class="st live">Live</span></div><p>contactpage-git.github.io/mockups: one current page each, Dev notes, version history</p><p class="src">publish_mockups.py</p></li>
+<li><div class="t"><b>Phone frame + Open full page</b><span class="st live">Live</span></div><p>Thin 1px frame; button opens the desktop view</p><p class="src">preview site</p></li>
+<li><div class="t"><b>Developer view</b><span class="st live">Live</span></div><p>Numbered notes from the HTML comments</p><p class="src">devview.py</p></li>
+</ul>
+<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
+<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
+<div class="meta">contact.page feature list · version 1 · 2026-10-08</div>
+<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/features-notes.html">Developer notes: what changed and why, every version</a></p>
+</details>
+</div>
+<a class="fullbtn" href="?full=1" target="_blank" rel="noopener">Open full page &#8599;</a>
+</body>
+</html>
