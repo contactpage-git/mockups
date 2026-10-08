@@ -12,7 +12,8 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 <h2>What changed and why (newest first)</h2>
 <p>Each step with the reason behind it: the lessons learned along the way. Open any version to see it as it was.</p>
 <ul class="hist">
-<li><b><a href="../yellow-tower-listing-page.html">v42</a></b> 2026-10-08 (.page Mockups, Kim via Page Bot): shared mail body (4 links + Gmail) fields in four groups, filled from the page where it has data (masked), empty otherwise: 1) WhatsApp (page mask), Mobile (only if different: here the same, so left out), Email (mask), Website, Google Maps link; 2) Facebook, Instagram, TikTok, LinkedIn, YouTube; 3) chat apps by country (CP_CHAT_APPS in a script; KH = Telegram only); 4) Name, Address, Opening hours, Other. Ticks, free text and attach line unchanged. v41 in archive/.</li>
+<li><b><a href="../yellow-tower-listing-page.html">v43</a></b> 2026-10-08 (.page Mockups, Kim via Page Bot): email mask in the mail bodies is now the first 2 characters, then ***, then @domain (e.g. ye***@gmail.com); filled at publish from {{YT_EMAIL_MASKED_URL}}. v42 in archive/.</li>
+<li><b><a href="../archive/yellow-tower-listing-page-v42.html">v42</a></b> 2026-10-08 (.page Mockups, Kim via Page Bot): shared mail body (4 links + Gmail) fields in four groups, filled from the page where it has data (masked), empty otherwise: 1) WhatsApp (page mask), Mobile (only if different: here the same, so left out), Email (mask), Website, Google Maps link; 2) Facebook, Instagram, TikTok, LinkedIn, YouTube; 3) chat apps by country (CP_CHAT_APPS in a script; KH = Telegram only); 4) Name, Address, Opening hours, Other. Ticks, free text and attach line unchanged. v41 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v41.html">v41</a></b> 2026-10-08 (.page Mockups, Kim via Page Bot): ONE shared body for Suggest edits, Claim this website, Create a new website and Sign up for early access (and the Gmail fallback): all six tick lines always present, the clicked one pre-ticked [x]; then WhatsApp FIRST (the page&#x27;s masked number labelled WhatsApp, never Phone/Mobile; empty &quot;WhatsApp:&quot; if no number), Google Maps link, Facebook, Instagram, Name, Address, Website, Telegram, LinkedIn, TikTok, Other mobile, Email, Other; &quot;Anything else...&quot;; the attach line. Subjects unchanged. Report a problem keeps its own template. Same on email-links-test.html. v40 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v40.html">v40</a></b> 2026-10-08 (.page Mockups, Kim): footer rebuilt from the REAL live footer (kh34363.contact.page, cp-vcard): same Arial 13.5px, colours, white bordered card on grey, small logo, name and category, and the live icons (pin, phone, Home, Contact Info, Images, Profile). Layout only changed: address + Call on one line, the four section links with icons in one row, then the five mail links as small text. Same block on email-links-test.html. v39 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v39.html">v39</a></b> 2026-10-08 (.page Mockups, Kim via Page Bot, from his image of the live footer): one centred footer block, reused on email-links-test.html: logo, name, category; the address on ONE line (short form, full address in the title, ellipsis if a phone is very narrow) with Call beside it; Home · Contact Info · Images · Profile; then the five mail links. v38 in archive/.</li>
@@ -55,7 +56,7 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 </ul>
 <h2>All notes, summary first, then in page order</h2>
 <ol>
-<li><pre>YELLOW TOWER LISTING PAGE (current: version 42, 2026-10-08; design owner Page Claude Code, v17-v20 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
+<li><pre>YELLOW TOWER LISTING PAGE (current: version 43, 2026-10-08; design owner Page Claude Code, v17-v20 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
 Built from v3 (Page Muse) after the review in CONTACT/kb/listing-page-v3-review-2026-10-06.md.
 
 ORDER, mobile first (rules: mobile first; design-evidence rules 1-3; engine &quot;the page earns its ads&quot;; decisions file):
@@ -94,6 +95,8 @@ v5 2026-10-06: kicker smaller, grey, italic, regular weight (Kim&#x27;s comment:
 v6 2026-10-06 (Kim: &quot;survival and growth hacking, within AdSense rules&quot;): ad plan below; v5 in archive/.
 v20 2026-10-07 (.page Mockups, Kim): no visible notes (footer &quot;sample, not production&quot; text removed). v19 in archive/.
 v26 2026-10-07 (Page Claude Code, Kim): WhatsApp and email prefills in plain words, ref last: &quot;Hi! I&#x27;d like to update Yellow Tower. (ref kh34363 edit)&quot;. No bracket code at the start, no &quot;My email:&quot; ask, no &quot;I work at or own&quot; (anyone can write; we poll the inbox). Every prefill is listed in CONTACT/kb/prefill-messages.md (N37). v25 in archive/.
+v43 2026-10-08 (.page Mockups, Kim via Page Bot): email mask in the mail bodies is now the first 2 characters, then ***,
+                then @domain (e.g. ye***@gmail.com); filled at publish from {{YT_EMAIL_MASKED_URL}}. v42 in archive/.
 v42 2026-10-08 (.page Mockups, Kim via Page Bot): shared mail body (4 links + Gmail) fields in four groups, filled from the
                 page where it has data (masked), empty otherwise: 1) WhatsApp (page mask), Mobile (only if different: here the
                 same, so left out), Email (mask), Website, Google Maps link; 2) Facebook, Instagram, TikTok, LinkedIn, YouTube;
@@ -351,12 +354,13 @@ Mobile; an empty &quot;WhatsApp:&quot; if the page has no number), Google Maps l
 Website (empty: this page shows no website), Telegram, LinkedIn, TikTok, Other mobile, Email, Other;
 &quot;Anything else you want to change or add:&quot;; the attach line. Report a problem keeps its own template.
 v42 (Kim via Page Bot): the details block is now four groups (blank line between): 1) WhatsApp: &lt;page mask&gt; (the
-page&#x27;s phone/mobile; &quot;Mobile:&quot; only if a different number), Email: &lt;mask: all but the last 3 characters before the @,
+page&#x27;s phone/mobile; &quot;Mobile:&quot; only if a different number), Email: &lt;mask (v43): first 2 characters + *** + @domain,
 {{YT_EMAIL_MASKED_URL}} at publish&gt;, Website, Google Maps link; 2) Facebook, Instagram, TikTok, LinkedIn, YouTube;
 3) chat apps by country = cpChatApps(country) from CP_CHAT_APPS (Telegram always; TH/JP/TW Line, VN Zalo, KR
 KakaoTalk, CN WeChat, PH/MM Viber, any other country Viber + Signal; KH Telegram only); 4) Name, Address, Opening
 hours (from the Hours table), Other. Filled where the page has data, empty otherwise (no website, no map link,
 no socials on this page).
+v43 LENGTHS after fill: edit mailto 1411, Gmail 1440, claim 1403, create 1402, early 1392.
 v42 LENGTHS after fill: edit mailto 1421, Gmail 1450, claim 1413, create 1412, early 1402 (all under 2,000).
 v41 LENGTHS after fill: edit mailto 1280, Gmail 1309, claim 1272, create 1271, early 1261 (all under 2,000).
 (v37) LENGTHS after fill: Suggest edits mailto 1270, Gmail 1299, Claim 598, Create 531, Early access 420 (all under 2,000).</pre></li>
