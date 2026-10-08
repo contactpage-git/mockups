@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Only the good stuff reaches your customers</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--y:#f5c518;--yb:#fffbea;--ink:#161616;--g1:#757575;--g2:#b5b5b5;--g3:#d6d6d6;--g4:#f1f2f3}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:#fff;color:var(--ink);font-family:Arial,Helvetica,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
+#holder{position:relative;width:360px;height:620px;transform-origin:0 0}
+#fit{width:360px;height:620px;position:relative}
+#stage{position:absolute;inset:0;overflow:hidden;background:linear-gradient(#fff,#fafafa);border-radius:14px}
+.net{position:absolute;left:0;right:0;top:6px;text-align:center;font-size:11px;color:var(--g1);letter-spacing:.04em}
+.net svg{vertical-align:middle;margin-right:4px}
+#funnel{position:absolute;left:0;top:0;width:360px;height:320px;transform-origin:180px 60px;pointer-events:none}
+.item{position:absolute;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:9px;background:#fff;border:1px solid var(--g3);display:flex;align-items:center;justify-content:center;color:#444;will-change:transform,opacity;opacity:0}
+.item svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.item .bd{position:absolute;right:-6px;bottom:-6px;width:15px;height:15px;border-radius:50%;font:700 10px/15px Arial;text-align:center;opacity:0}
+.item .bd.no{background:#9a9a9a;color:#fff}
+.item .bd.ok{background:var(--y);color:#161616}
+#world{position:absolute;inset:0;perspective:760px}
+#page{position:absolute;left:95px;top:150px;width:170px;height:292px;transform-style:preserve-3d;transform-origin:50% 50%;background:#fff;border:1.5px solid var(--g3);border-radius:14px;box-shadow:0 14px 30px rgba(0,0,0,.10);padding:10px;overflow:hidden}
+.ph{height:34px;display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--g4);padding-bottom:8px;margin-bottom:8px}
+.logo{width:22px;height:22px;border-radius:6px;background:var(--y);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px}
+.ph b{font-size:13px}
+.ph i{display:block;font-style:normal;font-size:9px;color:var(--g1)}
+.slot{position:relative;height:38px;margin-bottom:5px;border-radius:9px;border:1.5px dashed var(--g3)}
+.slot.tall{height:46px}
+.slot .fill{position:absolute;inset:-1.5px;border-radius:9px;background:var(--yb);border:1.5px solid var(--y);display:flex;align-items:center;gap:8px;padding:0 9px;opacity:0;transform:scale(.7)}
+.slot .fill svg{width:20px;height:20px;flex:none;fill:none;stroke:#161616;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bars{flex:1}.bars span{display:block;height:5px;border-radius:3px;background:#d9c46a;margin:3px 0}.bars span:nth-child(2){width:65%}
+.ph1{width:26px;height:26px;border-radius:6px;background:#e6d68a}
+.ph1+.ph1{background:#d9c46a}
+#end{position:absolute;left:0;right:0;top:340px;text-align:center;padding:0 26px;opacity:0}
+#end h2{font-size:21px;line-height:1.25}
+#end p{margin-top:10px;font-size:13px;line-height:1.45;color:var(--g1)}
+.mark{margin-top:22px;display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:17px}
+.mark .logo{width:26px;height:26px;border-radius:7px}
+#ctl{position:absolute;left:0;right:0;bottom:8px;display:flex;justify-content:center;gap:8px;align-items:center}
+button{font:600 13px Arial;border:1px solid var(--g3);background:#fff;color:var(--ink);border-radius:8px;padding:8px 14px;cursor:pointer}
+button:hover,button:focus-visible{background:var(--yb);border-color:var(--y);outline:none}
+#steps{display:none;gap:6px}
+.rm #steps{display:flex}.rm #replay{display:none}
+#steps button{width:34px;padding:8px 0}
+#steps button.on{background:var(--y);border-color:var(--y)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+<symbol id="i-web" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></symbol>
+<symbol id="i-social" viewBox="0 0 24 24"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="5" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></symbol>
+<symbol id="i-bubble" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.8 7L3 21l2-5.6A8 8 0 1 1 21 12z"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+<symbol id="i-sign" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="9" rx="1.5"/><path d="M8 12v9M16 12v9M6 8h12"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 22l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></symbol>
+<symbol id="i-quote" viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5H3v8h4M14 21c3 0 7-1 7-8V5h-7v8h4"/></symbol>
+</defs>
+</svg>
+
+<div id="fit"><div id="holder">
+<div id="stage" role="img" aria-label="Animation: web data rains into a funnel. Bad items are filtered out, good items land on a listing page. Only the good stuff reaches your customers.">
+  <div class="net" id="net"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-web"/></svg>internet</div>
+  <svg id="funnel" viewBox="0 0 360 320" aria-hidden="true">
+    <path id="fbody" d="M40 70 H320 L222 250 V290 H138 V250 Z" fill="rgba(245,197,24,.07)" stroke="#b5b5b5" stroke-width="2" stroke-linejoin="round"/>
+    <g id="sieve" stroke="#9a9a9a" stroke-width="1.4">
+      <line x1="109" y1="175" x2="251" y2="175" stroke-width="3" stroke="#757575"/>
+      <path d="M118 175v9M130 175v9M142 175v9M154 175v9M166 175v9M178 175v9M190 175v9M202 175v9M214 175v9M226 175v9M238 175v9" stroke-dasharray="1 0"/>
+    </g>
+    <path d="M138 250h84" stroke="#e3e3e3" stroke-width="1.5"/>
+  </svg>
+  <div id="world"><div id="page" aria-hidden="true">
+    <div class="ph"><div class="logo">Y</div><div><b>Yellow Tower</b><i>contact.page</i></div></div>
+    <div class="slot tall" data-k="photo"><div class="fill"><div class="ph1"></div><div class="ph1"></div><div class="ph1"></div></div></div>
+    <div class="slot" data-k="phone"><div class="fill"><svg><use href="#i-phone"/></svg><div class="bars"><span></span><span></span></div></div></div>
+    <div class="slot" data-k="hours"><div class="fill"><svg><use href="#i-clock"/></svg><div class="bars"><span></span><span></span></div></div></div>
+    <div class="slot" data-k="note"><div class="fill"><svg><use href="#i-heart"/></svg><div class="bars"><span></span><span></span></div></div></div>
+    <div class="slot" data-k="owner"><div class="fill"><svg><use href="#i-quote"/></svg><div class="bars"><span></span><span></span></div></div></div>
+  </div></div>
+  <div id="items"></div>
+  <div id="end"><h2>Only the good stuff reaches your customers.</h2><p>No star ratings. No unfair reviews.<br>Just why your business is good.</p><div class="mark"><span class="logo">c</span>contact.page</div></div>
+</div>
+<div id="ctl"><button id="replay" type="button">&#8635; Replay</button><div id="steps"><button type="button">1</button><button type="button">2</button><button type="button">3</button><button type="button">4</button><button type="button">5</button></div></div>
+</div></div>
+
+<script>
+(function(){
+var $=function(s,r){return (r||document).querySelector(s)};
+var page=$('#page'),funnel=$('#funnel'),net=$('#net'),end=$('#end'),itemsEl=$('#items'),holder=$('#holder'),fit=$('#fit');
+var DUR=30;
+function cl(x){return x<0?0:x>1?1:x}
+function eio(x){x=cl(x);return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2}
+function eo(x){x=cl(x);return 1-(1-x)*(1-x)}
+function seg(t,a,b){return cl((t-a)/(b-a))}
+function lerp(a,b,u){return a+(b-a)*u}
+
+/* items: [spawn, startX, icon, good?, slot, endX at sieve] */
+var SY=175,NECK=270;
+var S=[
+ [7.6,90,'pin',0],[8.0,250,'mail',0],[8.4,160,'phone',1,'phone'],[8.8,120,'bubble',0],[9.2,230,'photo',0],
+ [9.6,70,'web',0],[10.2,200,'photo',1,'photo'],[10.6,285,'phone',0],[11.0,135,'social',0],[11.4,240,'pin',0],
+ [11.9,100,'sign',0],[12.4,175,'clock',1,'hours'],[12.9,260,'bubble',0],[13.3,60,'mail',0],[13.8,215,'heart',1,'note'],
+ [14.3,130,'phone',0],[14.8,285,'photo',0],[15.3,80,'social',0],[15.7,170,'quote',1,'owner'],[16.1,250,'web',0]
+];
+var items=S.map(function(d,i){
+  var el=document.createElement('div');el.className='item';
+  el.innerHTML='<svg><use href="#i-'+d[2]+'"/></svg><span class="bd '+(d[3]?'ok':'no')+'">'+(d[3]?'&#10003;':'&#215;')+'</span>';
+  itemsEl.appendChild(el);
+  return {el:el,bd:el.lastChild,t0:d[0],x0:d[1],good:d[3],slot:d[4],dir:(i%2?1:-1),xs:d[3]?170+((i*37)%40)-20:lerp(d[1],180,.35),tx:0,ty:0};
+});
+var slots={};[].forEach.call(document.querySelectorAll('.slot'),function(s){slots[s.dataset.k]={el:s,fill:s.firstChild,t:0}});
+var ARR={};
+var FALL=1.7,GOB=1.4,BAD=1.1;
+
+/* page pose over time */
+function pose(t){
+  var tilt=eio(seg(t,3.5,6.2)),back=eio(seg(t,21,23.2)),sh=eio(seg(t,24.2,25.4));
+  var a=68*tilt*(1-back);
+  var ty=lerp(0,128,tilt)*(1-back)-95*sh;
+  var sc=1-.4*sh;
+  return 'translateY('+ty+'px) scale('+sc+') rotateX('+a+'deg)';
+}
+function slotsPass(t){
+  for(var k in slots){var s=slots[k];var u=ARR[k]===undefined?0:seg(t,ARR[k],ARR[k]+.45);
+    var o=eo(u),sc=u<1?lerp(.7,1.06,eo(u)):1;if(u>=1){sc=1+.06*Math.max(0,1-seg(t,ARR[k]+.45,ARR[k]+.8))}
+    s.fill.style.opacity=o;s.fill.style.transform='scale('+sc+')';}
+}
+function itemPass(t){
+  items.forEach(function(it){
+    var el=it.el,lt=t-it.t0,o=0,x,y,r=0,sc=1,grey=0,bd=0;
+    if(lt<0||t<7.0){el.style.opacity=0;return}
+    var u=cl(lt/FALL);
+    var wob=Math.sin(lt*3+it.x0)*6*(1-u);
+    x=lerp(it.x0,it.xs,eo(u))+wob;y=lerp(24,SY-18,u*u*(3-2*u)*.55+u*.45);
+    o=eo(lt/.4);
+    if(lt>=FALL){
+      var v=lt-FALL;
+      if(!it.good){
+        var w=cl(v/BAD);
+        x=it.xs+it.dir*(150*eo(w))+it.dir*10;
+        y=SY-18-Math.sin(Math.min(w*1.6,1)*Math.PI)*34+w*w*300;
+        r=it.dir*260*w;grey=1;bd=eo(v/.2);o=1-seg(v,BAD*.55,BAD);sc=1-.25*w;
+      }else{
+        var g=cl(v/GOB),e=eio(g);
+        var gx=it.xs,gy=SY-18,mx=180,my=NECK,tx=it.tx,ty=it.ty;
+        var a1=1-e,b1=e;
+        x=a1*a1*gx+2*a1*b1*mx+b1*b1*tx;y=a1*a1*gy+2*a1*b1*my+b1*b1*ty;
+        sc=1-.3*e;bd=1-seg(v,GOB*.6,GOB*.9);
+        o=1-seg(v,GOB*.85,GOB);
+        el.style.boxShadow='0 0 0 2px #f5c518,0 0 14px 3px rgba(245,197,24,.7)';
+      }
+    }else{el.style.boxShadow='none'}
+    if(!it.good||lt<FALL){if(!it.good||lt<FALL)el.style.boxShadow=(it.good&&lt>FALL-.5)?'0 0 0 2px #f5c518,0 0 14px 3px rgba(245,197,24,.7)':'none'}
+    el.style.opacity=o;
+    el.style.transform='translate('+x+'px,'+y+'px) rotate('+r+'deg) scale('+sc+')';
+    el.style.filter=grey?'grayscale(1) opacity('+(1-.5*grey)+')':'none';
+    it.bd.style.opacity=bd;
+  });
+}
+function render(t){
+  t=Math.max(0,Math.min(DUR,t));
+  page.style.transform=pose(t);
+  var f=eo(seg(t,5.8,7.2)),fo=1-eio(seg(t,20.2,21.2));
+  funnel.style.opacity=f*fo;funnel.style.transform='scale('+lerp(.7,1,f)+')';
+  net.style.opacity=f*fo;
+  end.style.opacity=eo(seg(t,24.6,25.8))*(1-eio(seg(t,29.3,30)));
+  itemPass(t);slotsPass(t);
+}
+
+/* measure landing spots on the flat page */
+function measure(){
+  page.style.transform=pose(19.5);
+  var sr=$('#stage').getBoundingClientRect(),k=sr.width/360;
+  items.forEach(function(it){
+    if(!it.slot)return;
+    var r=slots[it.slot].el.getBoundingClientRect();
+    it.tx=(r.left+r.width/2-sr.left)/k;it.ty=(r.top+r.height/2-sr.top)/k;
+    ARR[it.slot]=it.t0+FALL+GOB;
+  });
+}
+
+/* scale to fit */
+function fitStage(){
+  var w=window.innerWidth,h=window.innerHeight;
+  var k=Math.min(w/360,(h-6)/620,1.5);
+  holder.style.transform='scale('+k+')';
+  fit.style.width=360*k+'px';fit.style.height=620*k+'px';
+}
+window.addEventListener('resize',function(){fitStage()});
+fitStage();measure();
+
+var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var raf=0,start=0,loopTimer=0;
+function loop(now){
+  if(!start)start=now;
+  var t=(now-start)/1000;
+  if(t>=DUR){start=now;t=0}
+  render(t);raf=requestAnimationFrame(loop);
+}
+function play(){cancelAnimationFrame(raf);start=0;raf=requestAnimationFrame(loop)}
+$('#replay').addEventListener('click',play);
+
+/* static step-by-step: 1 page tilts, 2 funnel + rain, 3 filter, 4 landing, 5 end card */
+var STEP=[2.5,7.9,12.6,19.4,27];
+function showStep(i){
+  render(STEP[i]);
+  [].forEach.call(document.querySelectorAll('#steps button'),function(b,j){b.classList.toggle('on',j===i)});
+}
+if(rm){
+  document.documentElement.classList.add('rm');
+  [].forEach.call(document.querySelectorAll('#steps button'),function(b,i){b.addEventListener('click',function(){showStep(i)});b.setAttribute('aria-label','Step '+(i+1))});
+  showStep(0);
+}else{play()}
+})();
+</script>
+</body>
+</html>
