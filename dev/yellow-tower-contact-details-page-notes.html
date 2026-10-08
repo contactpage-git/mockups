@@ -12,7 +12,8 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 <h2>What changed and why (newest first)</h2>
 <p>Each step with the reason behind it: the lessons learned along the way. Open any version to see it as it was.</p>
 <ul class="hist">
-<li><b><a href="../yellow-tower-contact-details-page.html">v16</a></b> 2026-10-08 (.page Mockups, Kim): WhatsApp handle @page.me replaces @newcustomers (Kim 2026-10-07, handle-brain.md; ported from the live site, Muse); email stays newcustomers@contact.page. Community notes section ported from the live v16 (Muse, Kim 2026-10-08), sample notes now read as samples; &quot;Phone, main line&quot; -&gt; &quot;Mobile&quot; and empty row in the Cambodia channel order (channel schema 2026-10-07: mobile is not assumed WhatsApp). v15 in archive/.</li>
+<li><b><a href="../yellow-tower-contact-details-page.html">v17</a></b> 2026-10-08 (Page Claude Code, Kim, from his markup of v16): channels are small boxes (2 per row, 3 with room) instead of the big best-way card and the rows: no H1, no &quot;Best way to reach them&quot;, no kind line; our trust data (Confirmed, worked / didn&#x27;t, last confirmed, votes) sits behind each box; tap anywhere on a box and it opens in focus (grows out of the box, tap outside / X / Esc snaps it back), with Open and Copy; long emails are cut with an ellipsis in the box and shown in full inside; map is the first box (wide); hours is a box; the &quot;How to find them&quot; and &quot;When to reach them&quot; sections are now inside the map and hours boxes; the bottom slide-out for an unconfirmed WhatsApp number is replaced by that box&#x27;s focus view; community notes start right under the boxes, merged into one list with Helpful votes. v16 in archive/.</li>
+<li><b><a href="../archive/yellow-tower-contact-details-page-v16.html">v16</a></b> 2026-10-08 (.page Mockups, Kim): WhatsApp handle @page.me replaces @newcustomers (Kim 2026-10-07, handle-brain.md; ported from the live site, Muse); email stays newcustomers@contact.page. Community notes section ported from the live v16 (Muse, Kim 2026-10-08), sample notes now read as samples; &quot;Phone, main line&quot; -&gt; &quot;Mobile&quot; and empty row in the Cambodia channel order (channel schema 2026-10-07: mobile is not assumed WhatsApp). v15 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-contact-details-page-v15.html">v15</a></b> 2026-10-07 (Page Claude Code, Kim): house ad is a pre-launch teaser and sign-up (Kim): heading &quot;Coming soon: your AI page helper&quot;, one line &quot;Keep your.contact.page up to date just by chatting. Be one of the first.&quot;, &quot;Sign up early&quot; above By WhatsApp / By email; prefill &quot;Hi! I&#x27;d like early access to the AI page helper. (ref &lt;page&gt; early-access)&quot;. Replaces the Basic sign-up box (V2-F). Gives owners the context for an email-first launch (D018). v14 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-contact-details-page-v14.html">v14</a></b> 2026-10-07 (Page Claude Code, Kim): WhatsApp and email prefills in plain words, ref last: &quot;Hi! I&#x27;d like to update Yellow Tower. (ref kh34363 edit)&quot;. No bracket code at the start, no &quot;My email:&quot; ask, no &quot;I work at or own&quot; (anyone can write; we poll the inbox). Every prefill is listed in CONTACT/kb/prefill-messages.md (N37). v13 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-contact-details-page-v13.html">v13</a></b> 2026-10-07 (Page Claude Code, Kim via the chief session): house ad line &quot;Every way to reach you, behind the same check you just passed.&quot; (ads.md unit V2-F; V2-F as written). It proves the free Basic promise (every contact channel, protected from spam bots); no Plus features. v12 in archive/.</li>
@@ -31,7 +32,7 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 </ul>
 <h2>All notes, summary first, then in page order</h2>
 <ol>
-<li><pre>YELLOW TOWER CONTACT DETAILS PAGE (current: version 16, 2026-10-07; v1-v5 .page Mockups). Design task D015. Route in production:
+<li><pre>YELLOW TOWER CONTACT DETAILS PAGE (current: version 17, 2026-10-08; v1-v5 .page Mockups). Design task D015. Route in production:
 kh34363.contact.page/contact-details after the check (the security page and this page share the route; the server shows
 this page once cp_verified is set). Page 4 of the standard mockup set (Kim 2026-10-06):
 1 phnom-penh-office-rental-vertical-page.html -&gt; 2 yellow-tower-listing-page.html -&gt; 3 yellow-tower-security-page.html -&gt; 4 this page.
@@ -43,8 +44,8 @@ BUILT FROM
 - Owner layers 1-7: CONTACT/kb/data-pool-design-2026-10-06.md. Placement on this page = PROPOSAL waiting for Kim
   (design-state.md, question 1): here only a small &quot;Owner? Sign in&quot; box that lists them and links to the owner screen.
 
-ORDER, mobile first: header (back link, H1, subline, open pill) -&gt; role line (the owner or staff) -&gt; best way card with votes -&gt;
-other ways (+ earlier contact lines, archived) -&gt; agent row -&gt; how to find them -&gt; when to reach them -&gt; community notes -&gt;
+ORDER, mobile first (v17): header (back link, open pill) -&gt; role line (the owner or staff) -&gt; channel boxes (map first, then
+channels, hours, add) -&gt; agent row (+ earlier contact lines, archived) -&gt; community notes (Helpful votes) -&gt;
 footer: owner box (proposal), house ad, AI help (Google AI Mode), help, edit / claim / report, set chain, sample line.
 
 RULES APPLIED
@@ -63,6 +64,7 @@ OPEN FOR KIM
 - Which channel leads when there are no votes yet (proposal: the one the owner marks main, else phone).
 
 CHANGE LOG
+v17 2026-10-08 (Page Claude Code, Kim, from his markup of v16): channels are small boxes (2 per row, 3 with room) instead of the big best-way card and the rows: no H1, no &quot;Best way to reach them&quot;, no kind line; our trust data (Confirmed, worked / didn&#x27;t, last confirmed, votes) sits behind each box; tap anywhere on a box and it opens in focus (grows out of the box, tap outside / X / Esc snaps it back), with Open and Copy; long emails are cut with an ellipsis in the box and shown in full inside; map is the first box (wide); hours is a box; the &quot;How to find them&quot; and &quot;When to reach them&quot; sections are now inside the map and hours boxes; the bottom slide-out for an unconfirmed WhatsApp number is replaced by that box&#x27;s focus view; community notes start right under the boxes, merged into one list with Helpful votes. v16 in archive/.
 v16 2026-10-08 (.page Mockups, Kim): WhatsApp handle @page.me replaces @newcustomers (Kim 2026-10-07, handle-brain.md; ported from the live site, Muse); email stays newcustomers@contact.page. Community notes section ported from the live v16 (Muse, Kim 2026-10-08), sample notes now read as samples; &quot;Phone, main line&quot; -&gt; &quot;Mobile&quot; and empty row in the Cambodia channel order (channel schema 2026-10-07: mobile is not assumed WhatsApp). v15 in archive/.
 v15 2026-10-07 (Page Claude Code, Kim): house ad is a pre-launch teaser and sign-up (Kim): heading &quot;Coming soon: your AI page helper&quot;, one line &quot;Keep your.contact.page up to date just by chatting. Be one of the first.&quot;, &quot;Sign up early&quot; above By WhatsApp / By email; prefill &quot;Hi! I&#x27;d like early access to the AI page helper. (ref &lt;page&gt; early-access)&quot;. Replaces the Basic sign-up box (V2-F). Gives owners the context for an email-first launch (D018). v14 in archive/.
 v14 2026-10-07 (Page Claude Code, Kim): WhatsApp and email prefills in plain words, ref last: &quot;Hi! I&#x27;d like to update Yellow Tower. (ref kh34363 edit)&quot;. No bracket code at the start, no &quot;My email:&quot; ask, no &quot;I work at or own&quot; (anyone can write; we poll the inbox). Every prefill is listed in CONTACT/kb/prefill-messages.md (N37). v13 in archive/.
@@ -108,45 +110,23 @@ security page. Cloudflare Turnstile ONLY on the security page, nowhere else.</pr
 already saw it, Kim 2026-10-07),
 Open now / Closed pill from the hours data (Phnom Penh time). Security check (page 3) is one step back in the browser.</pre></li>
 <li><pre>ROLE LINE. The security page sends ?role=; &quot;the owner or staff&quot; (works_here) adds a claim line (security page comment, block 2).</pre></li>
-<li><pre>2. BEST WAY TO REACH THEM (D015 spec 2, the &quot;vibe bar&quot;). One big card: icon, value, one action, the vote status line and
-two one-tap buttons. The best channel = most net &quot;worked&quot; votes, then the most recent confirmation.
-FULL VALUES (Kim 2026-10-07): this is the page after the unlock, so every value shows in full; masked/locked rows belong
-only before the unlock. The repo keeps no raw phone digits (wiki_check), so phone numbers are placeholders here
-({{YT_PHONE}} etc.) that publish-mockups.sh fills in the public copy from a box-side file. Sources: Yellow Tower&#x27;s own
-values (yellow-tower.com + kh34363.contact.page, kb/listing-page-engine.md); the archived number is an obvious sample.
-Vote counts are illustrative sample data. Votes change in-memory state only.</pre></li>
-<li><pre>3. OTHER WAYS (D015 spec 3). Compact rows: icon, label, value, tiny vote count, action. Order by net &quot;worked&quot; votes.
-A channel reported not working recently drops to the bottom in grey, never hidden. Empty channels: ONE quiet row.
-Same field set and order as the owner screen&#x27;s &quot;Your contact details&quot; (CONTACT/kb/mockups/owner-screen-2026-10-06.html):
-Phone (main line), WhatsApp, Email; extra emails as extra rows. No website row (N22: open whether it shows after a
-link check passes; not shown until Kim decides).
-DATA RULE (Kim 2026-10-06, data-pool-design layer 6): contact lines are add-only. A new number is a new row; an old one
-is archived with its date, never edited or deleted (&quot;Earlier contact lines&quot; below; the archived line is sample data).
-VERIFIED VS UNVERIFIED (Kim 2026-10-07, v4): confirmed lines first, each with a green tick; unconfirmed lines below,
-smaller, each with a &quot;Did it work? Yes / No&quot; vote and &quot;Is this yours? Confirm it&quot; = WhatsApp to our agent with
-&quot;(ref kh34363 confirm)&quot;, no email ask (N37). Confirmed = owner-confirmed OR enough net &quot;worked&quot;
-votes (threshold open). The unconfirmed WhatsApp number is SAMPLE data ({{SAMPLE_UNCONF_WA}}, filled at publish with an
-obvious +855 00 ... (sample) value); the gmail row&#x27;s &quot;not working&quot; status is illustrative.
-WHATSAPP ON AN UNCONFIRMED NUMBER (Kim 2026-10-07): tapping it opens a slide-out panel (bottom sheet) with &quot;Open WhatsApp&quot;
-(new tab); when the visitor comes back (visibilitychange / focus) the panel asks &quot;Did WhatsApp work?&quot; Yes / No, and the
-vote counts toward confirming the number. Confirmed numbers open WhatsApp directly, no panel.
-OPEN (design-state D017, waits for Kim&#x27;s go): one pattern for every number row (call, WhatsApp, Telegram, copy;
-unconfirmed channels use the vote slide-out) and one card shape instead of the chat-bubble cards.</pre></li>
+<li><pre>2. CHANNEL BOXES (Kim 2026-10-08, v17, from his markup of v16): dropped the H1 &quot;Contact Yellow Tower&quot; and the &quot;Best way to
+reach them&quot; label, the &quot;WhatsApp · main number&quot; kind line and the big hero card. Every channel is now a small box, 2 per row on
+a phone (3 where there is room): icon, label, value (an email is cut with an ellipsis when long). Our own data (Confirmed tick,
+worked / didn&#x27;t counts, last confirmed, the It worked / Didn&#x27;t work votes) sits BEHIND the box. Tap anywhere on a box and it
+opens in focus, in the middle of the screen over a dimmed page: Open + Copy, then the trust facts and votes. Tap outside,
+the X, or Esc snaps it back. It grows out of the box and returns to it (not a slide-out sheet; the old bottom sheet for an
+unconfirmed WhatsApp number is gone: that flow now lives in the box&#x27;s own focus view, and on coming back from WhatsApp the
+&quot;Did it work?&quot; vote lights up). The map is the first box (wide): address on top, the full address fields inside. Hours is a box
+too (opening hours, viewings, languages, booking link). Unconfirmed channels have a dashed border; the first box (most net
+&quot;worked&quot; votes) gets a yellow ring, with no label. DATA RULES unchanged: contact lines are add-only (earlier lines below,
+archived), profile fields overwrite, values are full after the unlock, vote counts are sample data, votes are in-memory only.
+Placeholders ({{YT_PHONE}} etc.) are filled at publish.</pre></li>
 <li><pre>4. HOUSE AGENT ROW (D015 spec 4). Styled apart from the business&#x27;s own channels; AI disclosed in the label (start-here).</pre></li>
-<li><pre>5. ADDRESS AND DIRECTIONS. Same fields and order as the owner screen (layer 6): Street address, Landmark, Floor, Entrance,
-Parking, Directions in Khmer, Map pin note. Profile fields: they overwrite in place (no history). IF empty: a quiet
-&quot;No X yet · add&quot; (block builder: missing data shown, never hidden, never invented). Street address from the listing;
-Parking from the owner&#x27;s FAQ answer on the listing (&quot;Is parking included? Yes.&quot;). &quot;Open in map&quot; = our own map page (N32).</pre></li>
-<li><pre>6. WHEN TO REACH THEM + BEFORE YOU CONTACT. Owner-screen sections &quot;Opening hours&quot;, &quot;Languages spoken&quot;, &quot;Booking link&quot;
-(same names). Hours from the listing. Announcements and FAQ from the owner live on the listing page; an announcement,
-when one is posted, also shows here as one line under the hours (none posted: hidden, owner screen rule 7a).</pre></li>
-<li><pre>7. COMMUNITY NOTES (D015 spec 5): &quot;How reaching them went&quot;. Plain list with hairlines: text, source tag (person / AI agent
-/ owner), date. No chat bubbles, avatars or typing dots (honest UI). Composer: textarea, quick chips, Post; notes are
-checked before they show. The three notes are illustrative sample data (security page shows &quot;Community notes 3&quot;).
-Notes use inbox_items route=contact_note (agent-channels.md). Below, collapsed: &quot;Possibly related, unverified&quot;.</pre></li>
-<li><pre>COMMUNITY NOTES (Muse on the live site 2026-10-08, Kim; ported into the wiki 2026-10-08 by .page Mockups). Tips about
-the place itself (getting there, where to go inside), separate from &quot;How reaching them went&quot;. Notes are checked
-before they show. The three notes are SAMPLES and read as samples (no invented-looking real facts or sources).</pre></li>
+<li><pre>7. COMMUNITY NOTES (Kim 2026-10-08, v17): one list, starting right under the boxes: &quot;how reaching them went&quot; and tips about
+the place, merged. Each note has a Helpful vote (in-memory here; one vote each, tap again to take it back). Most helpful first.
+Plain list, source tag (person / AI agent / owner), date; no chat bubbles or avatars. Notes are checked before they show.
+All six notes are SAMPLE data and read as samples.</pre></li>
 <li><pre>10. OWNER ENTRY. PROPOSAL, waits for Kim (design-state question 1): the owner&#x27;s side is Page Bot&#x27;s owner screen
 (CONTACT/kb/mockups/owner-screen-2026-10-06.html, owner layers from kb/data-pool-design-2026-10-06.md). It is linked,
 not copied: the visitor page and the owner screen use the same fields; the owner sees full values and the layers,
@@ -164,6 +144,5 @@ to contact them, and when are they open?&quot; built server-side from the listin
 <li><pre>FOOTER HELP (Kim 2026-10-07, MVP): both channels, WhatsApp and the email bot (email preferred longer-term for a
 business feel and record keeping). Claim / Edit / Remove / Report stay WhatsApp deep links. No other footer links
 yet: Terms and Cookie settings wait for Kim.</pre></li>
-<li><pre>SLIDE-OUT PANEL for WhatsApp on an unconfirmed number (Kim 2026-10-07). Step 1: open WhatsApp (new tab). Step 2, after
-the visitor returns: &quot;Did WhatsApp work?&quot; Yes / No; the vote lands on that row. Esc or the backdrop closes it.</pre></li>
+<li><pre>FOCUS VIEW: one shared dim layer and card, built by the script below; a box&#x27;s detail block moves in on open and back on close.</pre></li>
 </ol></body></html>
