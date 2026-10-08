@@ -12,7 +12,8 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 <h2>What changed and why (newest first)</h2>
 <p>Each step with the reason behind it: the lessons learned along the way. Open any version to see it as it was.</p>
 <ul class="hist">
-<li><b><a href="../yellow-tower-listing-page.html">v28</a></b> 2026-10-08 (.page Mockups, Kim): quiet profile-completion meter under the Need help card (thin bar + &quot;Profile 88% complete&quot;, computed from 8 fields) with &quot;Is this yours? Complete it&quot; (WhatsApp @page.me, ref kh34363 complete); each contact channel in the contact box gets a 5-segment certainty meter + Low/Medium/High (votes, sources, owner confirmation; mobile never assumed to be WhatsApp). Scoring only in the dev notes below. v27 in archive/.</li>
+<li><b><a href="../yellow-tower-listing-page.html">v29</a></b> 2026-10-08 (.page Mockups, Kim): section anchor chips back: one slim, non-sticky row &quot;On this page&quot; (Location, FAQ, Photos, About, Products, Hours) under the completion meter, Ad #1 well above it. v28 in archive/.</li>
+<li><b><a href="../archive/yellow-tower-listing-page-v28.html">v28</a></b> 2026-10-08 (.page Mockups, Kim): quiet profile-completion meter under the Need help card (thin bar + &quot;Profile 88% complete&quot;, computed from 8 fields) with &quot;Is this yours? Complete it&quot; (WhatsApp @page.me, ref kh34363 complete); each contact channel in the contact box gets a 5-segment certainty meter + Low/Medium/High (votes, sources, owner confirmation; mobile never assumed to be WhatsApp). Scoring only in the dev notes below. v27 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v27.html">v27</a></b> 2026-10-08 (.page Mockups, Kim): WhatsApp handle @page.me replaces @newcustomers (Kim 2026-10-07, handle-brain.md; ported from the live site, Muse); email stays hello@contact.page. v26 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v26.html">v26</a></b> 2026-10-07 (Page Claude Code, Kim): WhatsApp and email prefills in plain words, ref last: &quot;Hi! I&#x27;d like to update Yellow Tower. (ref kh34363 edit)&quot;. No bracket code at the start, no &quot;My email:&quot; ask, no &quot;I work at or own&quot; (anyone can write; we poll the inbox). Every prefill is listed in CONTACT/kb/prefill-messages.md (N37). v25 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v25.html">v25</a></b> 2026-10-07 (Page Claude Code, Kim): phone width on every screen (column max 430px, was 760; N36). Ad slots reserved for 336x280 (large rectangle), 300x250 inside on small phones. Auto ads (side rails, anchor, vignette) still fill desktop space. v24 in archive/. Also: footer help line ends with &quot; · Privacy&quot; (www.contact.page/privacy, Kim).</li>
@@ -41,7 +42,7 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 </ul>
 <h2>All notes, summary first, then in page order</h2>
 <ol>
-<li><pre>YELLOW TOWER LISTING PAGE (current: version 28, 2026-10-08; design owner Page Claude Code, v17-v20 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
+<li><pre>YELLOW TOWER LISTING PAGE (current: version 29, 2026-10-08; design owner Page Claude Code, v17-v20 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
 Built from v3 (Page Muse) after the review in CONTACT/kb/listing-page-v3-review-2026-10-06.md.
 
 ORDER, mobile first (rules: mobile first; design-evidence rules 1-3; engine &quot;the page earns its ads&quot;; decisions file):
@@ -51,7 +52,8 @@ ORDER, mobile first (rules: mobile first; design-evidence rules 1-3; engine &quo
  -&gt; footer: green category box (frozen, option A), page chips, Tools, owner box, Report this page.
 
 RULES APPLIED (newest Kim word wins; conflicts page rows in brackets)
-- No jump links anywhere: the &quot;…&quot; link and the in-page footer anchors of v3 are gone (design-evidence rule 3).
+- Jump links: one exception since v29 (Kim 2026-10-08): the slim &quot;On this page&quot; anchor chip row under the Need help card.
+  Still no &quot;more ↓&quot; or &quot;…&quot; links in text (design-evidence rule 3 otherwise stands).
 - Contact box after Ad #1 AND a gap of real content (engine 2026-10-05). The gap is the at-a-glance card, no links.
 - No contact values in source: masked number only; JSON-LD without telephone, email or priceCurrency (D6, D7, C5).
 - No website anywhere on this page, not even in &quot;unlocks&quot; (N22). No video (frozen rule). No map embed, no Google Maps link (D8).
@@ -76,6 +78,8 @@ v5 2026-10-06: kicker smaller, grey, italic, regular weight (Kim&#x27;s comment:
 v6 2026-10-06 (Kim: &quot;survival and growth hacking, within AdSense rules&quot;): ad plan below; v5 in archive/.
 v20 2026-10-07 (.page Mockups, Kim): no visible notes (footer &quot;sample, not production&quot; text removed). v19 in archive/.
 v26 2026-10-07 (Page Claude Code, Kim): WhatsApp and email prefills in plain words, ref last: &quot;Hi! I&#x27;d like to update Yellow Tower. (ref kh34363 edit)&quot;. No bracket code at the start, no &quot;My email:&quot; ask, no &quot;I work at or own&quot; (anyone can write; we poll the inbox). Every prefill is listed in CONTACT/kb/prefill-messages.md (N37). v25 in archive/.
+v29 2026-10-08 (.page Mockups, Kim): section anchor chips back: one slim, non-sticky row &quot;On this page&quot; (Location, FAQ,
+                Photos, About, Products, Hours) under the completion meter, Ad #1 well above it. v28 in archive/.
 v28 2026-10-08 (.page Mockups, Kim): quiet profile-completion meter under the Need help card (thin bar + &quot;Profile 88% complete&quot;,
                 computed from 8 fields) with &quot;Is this yours? Complete it&quot; (WhatsApp @page.me, ref kh34363 complete); each contact
                 channel in the contact box gets a 5-segment certainty meter + Low/Medium/High (votes, sources, owner confirmation;
@@ -137,7 +141,9 @@ security page. Cloudflare Turnstile ONLY on the security page, nowhere else.</pr
 - The page earns its ads (survival first, Kim 2026-10-05/06): identity, then the first ad, then a gap of plain content, then
   the contact box. Google counts buttons next to ads as accidental-click bait, which can put the whole AdSense account at risk,
   so the contact button never sits against an ad. A third ad mid-page, lower ads lazy-loaded: more income within the rules.
-- No jump links: they let people skip past the ads (design-evidence rule 3).
+- Jump links were cut on 2026-09-25 and in v4 (kb/listing-page-engine.md &quot;Anchor chips removed&quot;; design-evidence rule 3):
+  they let people skip scrolling, and with it the ad slots. Kim brought the anchor chips back on 2026-10-08 (v29) as a slim
+  row well below Ad #1; measure whether Ad #mid viewability drops.
 - No numbers on this page: &quot;View contact details&quot; goes to the security page, the only way to the numbers (C5, D33).
 - For AI assistants and bots: the JSON-LD has no number, only contactPoint.url = the contact-details page, so an assistant
   answering &quot;how do I call Yellow Tower?&quot; gives its user that link to unlock (Kim 2026-09-21, kb/agent-back-channel.md).
@@ -198,6 +204,16 @@ Production renders it server-side from the record; the inline script recomputes 
 and the box has a fixed height, so no layout shift. Owner nudge &quot;Is this yours? Complete it&quot; opens @page.me with a
 plain prefill naming what is missing, ref last (N37): &quot;(ref kh34363 complete)&quot;. At 100% the nudge line stays, without
 a missing list.</pre></li>
+<li><pre>ANCHOR CHIPS (v29, Kim 2026-10-08: &quot;put the chips back&quot;). Not visible, dev notes only.
+HISTORY: v2 had top &quot;on this page&quot; chips; removed 2026-09-25 (kb/listing-page-engine.md &quot;Anchor chips removed&quot;: people
+skip scrolling and with it the ad slots), moved to a footer &quot;On this page&quot; list in v3, cut entirely in v4 (design-evidence
+rule 3, &quot;No jump links&quot;). Kim reversed it for this row only, on .page Analytic&#x27;s AdSense reading.
+RULES: one slim horizontal row of in-page anchors, same chip style as every chip row (Kim 2026-10-06), never wraps (scrolls
+sideways on narrow phones), not sticky, fixed 24px height (no layout shift). Placed under the Need help card and the
+completion meter: the contact box and help card sit between it and Ad #1 (clear gap), and no ad sits right after it.
+Only sections that render on this page, in page order; a section left out (no data) drops its chip. Contact is not a
+chip (the contact box is right above). Targets are the section headings&#x27; ids.
+MEASURE: log jump_chip_click {section}; compare Ad #mid viewability and page RPM for 5 weekdays before/after.</pre></li>
 <li><pre>LOCATION (D24, D8): label left, content right on wide screens; stacks on phones. Address one part per line.
 &quot;Open in map&quot; goes to our own map page for this business (location/, Kim 2026-10-06: the block needs a map link);
 never a map embed, never a Google Maps link. The route has to ship with the page.
