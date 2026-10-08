@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Email links test</title>
+<title>Developer note: listing release 2026-10-08</title>
 <style>
 html,body{margin:0;background:#D3D3D3}
 /* LIVE FOOTER (v40): copied from the live cp-vcard footer (kh34363.contact.page): Arial 13.5px, #212121 on #D3D3D3, white
@@ -54,6 +54,10 @@ html,body{margin:0;background:#D3D3D3}
 .cpf .cpf-t{color:#8f8f8f}
 .cpf .cpf-sec a{color:#8f8f8f}.cpf .cpf-sec .dt{color:#b5b5b5}.cpf .cpf-sec .cur{color:#6f6f6f}
 .cpf .cpf-sec a,.cpf .cpf-sec .cur{display:inline-flex;align-items:center}.cpf .cpf-sec svg{width:14px;height:14px;fill:#9a9a9a;margin-right:4px}.cpf .cpf-sec .cur svg{fill:#8a8a8a}
+.devnote{max-width:640px;margin:0 auto;padding:28px 20px 56px;background:#fff;font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#222;text-align:left}
+.devnote h1{font-size:22px;margin:0 0 4px}.devnote h2{font-size:17px;margin:26px 0 8px}.devnote p{margin:0 0 10px;color:#555}
+.devnote ul{margin:0 0 6px;padding-left:20px}.devnote li{margin:0 0 8px}
+body{background:#D3D3D3}.cpf-wrap{max-width:430px;margin:0 auto}
 </style>
 </head>
 <body>
@@ -74,6 +78,37 @@ html,body{margin:0;background:#D3D3D3}
 </div>
 </footer>
 <p class="counts" id="counts"></p>
+<main class="devnote">
+<h1>Developer note</h1>
+<p>Before release: xx52287-yellow-tower.contact.page. The footer above is the final layout (check it at 360 and 390 wide).</p>
+<h2>Above the footer</h2>
+<ul>
+<li>Chips under the address: Contact, Address, Images, Profile. Each opens its own page in the same tab: /contact-details, /map, /galleries, /profile. No jumps down the page, no new tab, no Videos (we don't serve videos).</li>
+<li>"Open Map" at least 150px below the ad.</li>
+<li>Always at least 150px between any ad and any link or button, before and after. No links on the photo thumbnails.</li>
+<li>Header ad: the responsive code (display:block, data-ad-format auto, full-width-responsive), not the fixed 300x250. Keep a reserved space so the page doesn't jump.</li>
+<li>All links to our own pages and portals open in the same tab. Only outside links (WhatsApp, maps, the business website, share) may open a new tab.</li>
+</ul>
+<h2>Footer (copy the layout above)</h2>
+<ul>
+<li>White card, faded: small logo at 55% opacity, grey name not bold, category.</li>
+<li>Centred: phone icon + the masked number exactly as the page shows it + lock icon, links to /contact-details.</li>
+<li>Address in a light outlined box, pin + plain text, centred, not a link.</li>
+<li>Section links with small icons: Home · Contact · Address · Images · Profile (same tab). The current page is plain text, not a link.</li>
+<li>Outside the card on the grey: Edit · Claim · Upgrade · Start your.contact.page</li>
+<li>Then the share icons with "Report · Privacy" at the right end. Remove the "#" in the Facebook share link and use https on all share links.</li>
+<li>No Call button and no copyright line in the footer.</li>
+<li>The same mail line (Edit · Claim · Upgrade · Start your.contact.page) also near the top of the contact details page, under the business name.</li>
+</ul>
+<h2>Mail links</h2>
+<ul>
+<li>Edit, Claim and Report go to the listing's code@contact.page (e.g. xx52287@contact.page). Upgrade and Start your.contact.page go to hello@contact.page.</li>
+<li>Subject like "Edit: Yellow Tower (ref xx52287 edit)", with action edit / claim / upgrade / report / create. The same "(ref xx52287 edit)" is the last line of the email.</li>
+<li>Copy the email text from the links above (the counts under the footer show each link's length). Fill in each listing's own name, masked WhatsApp, masked email and full address. Use the same mask as the page. Never a full number or email.</li>
+<li>Line breaks %0A. Each link under 1,800 characters; if it's longer (long local-script address), shorten the address to street and city. Never drop the ref line. No new tab.</li>
+</ul>
+</main>
+
 <script>
 /* MAIL TEMPLATE CHAT APPS (v42, Kim; developer config, never shown): group 3 of the shared mail body lists Telegram
    always, plus the apps for the page's country. Any country not listed gets Viber + Signal. KH = Telegram only. */
