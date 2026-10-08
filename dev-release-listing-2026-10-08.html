@@ -27,9 +27,13 @@ html,body{margin:0;background:#D3D3D3}
 .cpf .footer_links a{display:flex;align-items:center;gap:4px}
 .counts{max-width:430px;margin:12px auto;font:12px/1.6 Arial,sans-serif;color:#212121}
 @media screen and (max-width:360px){.cpf{padding-left:8px;padding-right:8px}}
+.devnote{max-width:640px;margin:0 auto;padding:28px 20px 56px;background:#fff;font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#222;text-align:left}
+.devnote h1{font-size:22px;margin:0 0 4px}.devnote h2{font-size:17px;margin:26px 0 8px}.devnote p{margin:0 0 10px;color:#555}
+.devnote ul{margin:0 0 6px;padding-left:20px}.devnote li{margin:0 0 8px}
+body{background:#D3D3D3}.cpf-wrap{max-width:430px;margin:0 auto}
 .cpf{padding-bottom:32px;padding-left:16px;padding-right:16px}
 .cpf .cpf-ph{margin:.8em 0 0;text-align:center;font-size:12.5px}
-.cpf .cpf-ph a{display:inline-flex;align-items:center;justify-content:center;gap:6px;color:#8f8f8f;text-decoration:none}.cpf .cpf-ph a:hover,.cpf .cpf-ph a:focus-visible{text-decoration:underline}
+.cpf .cpf-ph a{display:inline-flex;align-items:center;justify-content:center;gap:6px;color:#757575;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#757575}
 .cpf .cpf-ph svg{width:13px;height:13px;flex:none}.cpf .cpf-ph .ph{fill:#b5b5b5}.cpf .cpf-ph .lk{fill:none;stroke:#b5b5b5;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .cpf .cpf-info{display:flex;align-items:center;justify-content:center;border:1px solid #d0d0d0;border-radius:12px;padding:11px 12px;margin:.6em 0 0;text-align:center}
 .cpf .cpf-addr{display:inline-flex;align-items:center;justify-content:center;gap:6px;max-width:100%;min-width:0}
@@ -54,10 +58,6 @@ html,body{margin:0;background:#D3D3D3}
 .cpf .cpf-t{color:#8f8f8f}
 .cpf .cpf-sec a{color:#8f8f8f}.cpf .cpf-sec .dt{color:#b5b5b5}.cpf .cpf-sec .cur{color:#6f6f6f}
 .cpf .cpf-sec a,.cpf .cpf-sec .cur{display:inline-flex;align-items:center}.cpf .cpf-sec svg{width:14px;height:14px;fill:#9a9a9a;margin-right:4px}.cpf .cpf-sec .cur svg{fill:#8a8a8a}
-.devnote{max-width:640px;margin:0 auto;padding:28px 20px 56px;background:#fff;font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#222;text-align:left}
-.devnote h1{font-size:22px;margin:0 0 4px}.devnote h2{font-size:17px;margin:26px 0 8px}.devnote p{margin:0 0 10px;color:#555}
-.devnote ul{margin:0 0 6px;padding-left:20px}.devnote li{margin:0 0 8px}
-body{background:#D3D3D3}.cpf-wrap{max-width:430px;margin:0 auto}
 </style>
 </head>
 <body>
@@ -93,6 +93,7 @@ body{background:#D3D3D3}.cpf-wrap{max-width:430px;margin:0 auto}
 <ul>
 <li>White card, faded: small logo at 55% opacity, grey name not bold, category.</li>
 <li>Centred: phone icon + the masked number exactly as the page shows it + lock icon, links to /contact-details.</li>
+<li>Masked phone: underlined link to /contact-details; address is plain text.</li>
 <li>Address in a light outlined box, pin + plain text, centred, not a link.</li>
 <li>Section links with small icons: Home · Contact · Address · Images · Profile (same tab). The current page is plain text, not a link.</li>
 <li>Outside the card on the grey: Edit · Claim · Upgrade · Start your.contact.page</li>
