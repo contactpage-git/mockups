@@ -70,14 +70,14 @@ footer{background:#fafafa;border-top:1px solid var(--line);margin:0;color:var(--
 <div class="tog" role="group" aria-label="Billing period"><button type="button" class="on" data-p="m">Monthly</button><button type="button" data-p="y">Yearly <em>2 months free</em></button></div>
 <label class="pick" data-plan="basic"><input type="radio" name="plan"><span><b>Basic</b> · Free<br><span class="mute">Your website at your.contact.page, every contact channel, small ads.</span></span></label>
 <label class="pick on" data-plan="plus"><input type="radio" name="plan" checked><span><b>Plus</b> · <span class="pm">$9 / month</span><span class="py" hidden>$90 / year</span><br><span class="mute">Your website + an AI assistant that keeps it updated. No ads, alerts, weekly report, verified badge.</span></span></label>
-<p class="small mute">Subscription, renews automatically until you cancel. Prices exclude tax.</p>
+<p class="small mute">One payment for the period you choose. Nothing renews automatically. Prices exclude tax.</p>
 <button type="button" class="cta solid full" id="toPay">Continue</button>
 <button type="button" class="back">Back</button></div>
 
 <div class="st" data-s="4"><h2>Checkout</h2>
 <div class="co"><div class="h"><span>Secure checkout by our payment partner</span><span>&#128274;</span></div><div class="b">
 <div class="r"><span>contact.page Plus · <span class="bl">monthly</span></span><span class="am">$9.00</span></div>
-<div class="r mute"><span>Renews</span><span class="rn">every month until you cancel</span></div>
+<div class="r mute"><span>Covers</span><span class="rn">covers 1 month, no renewal</span></div>
 <div class="r mute"><span>Tax</span><span>added at checkout</span></div>
 <div class="r t"><span>Due today</span><span><span class="am">$9.00</span> + tax</span></div>
 <p class="small mute" style="margin:10px 0 0">Tax is worked out for your country and shown before you pay.</p>
@@ -89,7 +89,7 @@ footer{background:#fafafa;border-top:1px solid var(--line);margin:0;color:var(--
 <button type="button" class="back">Back</button></div>
 
 <div class="st" data-s="5"><div class="done"><div class="ok">✓</div><h2 style="margin-top:12px">You're all set</h2>
-<p class="mute" id="dn">Your Plus subscription is active. Your receipt is on its way by email.</p>
+<p class="mute" id="dn">Your Plus plan is active. Your receipt is on its way by email.</p>
 <p>Next: say hi to your AI assistant on WhatsApp <a href="https://wa.me/page.me">@page.me</a> and it starts updating your website.</p>
 <p><a class="cta" href="home-with-pricing.html">Back to contact.page</a></p></div></div>
 </div>
@@ -101,7 +101,7 @@ if(/plan=basic/.test(q))plan='basic';if(/billing=yearly/.test(q))y=true;
 function $(x){return document.querySelectorAll(x)}
 function go(n){s=n;[].forEach.call($('.st'),function(e){e.classList.toggle('on',+e.getAttribute('data-s')===n)});[].forEach.call($('.steps i'),function(e,i){e.classList.toggle('on',i<n)});window.scrollTo(0,0);}
 function bill(){[].forEach.call($('.tog button'),function(x){x.classList.toggle('on',(x.getAttribute('data-p')==='y')===y)});[].forEach.call($('.pm'),function(e){e.hidden=y});[].forEach.call($('.py'),function(e){e.hidden=!y});
-[].forEach.call($('.am'),function(e){e.textContent=y?'$90.00':'$9.00'});$('.bl')[0].textContent=y?'yearly':'monthly';$('.rn')[0].textContent=y?'every year until you cancel':'every month until you cancel';}
+[].forEach.call($('.am'),function(e){e.textContent=y?'$90.00':'$9.00'});$('.bl')[0].textContent=y?'yearly':'monthly';$('.rn')[0].textContent=y?'covers 1 year, no renewal':'covers 1 month, no renewal';}
 function pick(p){plan=p;[].forEach.call($('.pick'),function(e){var on=e.getAttribute('data-plan')===p;e.classList.toggle('on',on);e.querySelector('input').checked=on;});}
 [].forEach.call($('.nx'),function(b){b.onclick=function(){if(!b.classList.contains('off'))go(s+1)}});
 [].forEach.call($('.back'),function(b){b.onclick=function(){go(s===4?3:s-1)}});
