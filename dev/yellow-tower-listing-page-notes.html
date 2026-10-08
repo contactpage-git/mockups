@@ -12,7 +12,8 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 <h2>What changed and why (newest first)</h2>
 <p>Each step with the reason behind it: the lessons learned along the way. Open any version to see it as it was.</p>
 <ul class="hist">
-<li><b><a href="../yellow-tower-listing-page.html">v36</a></b> 2026-10-08 (.page Mockups, Kim via Page Bot): &quot;My listing: &lt;url&gt;&quot; line deleted from the mailto and Gmail bodies; no &quot;listing&quot; left in any public text of the mail or the Suggest edits area (copy rule: &quot;website&quot;). mailto 944, Gmail 973 characters. v35 in archive/.</li>
+<li><b><a href="../yellow-tower-listing-page.html">v37</a></b> 2026-10-08 (.page Mockups, Kim via Page Bot; .forge review): mail bodies use the page&#x27;s own phone mask (publish-time fill); subjects in ref format &quot;(ref kh34363 edit|claim|create|early)&quot;; Suggest edits body with tick lines, contact field order and the AI tick line, no &quot;menu&quot;; footer gets a last row of four mailto links (Suggest edits, Claim this website, Create a new website, Sign up for early access); every link and button now 150px+ from every ad (Ad #1 margin, Ad #mid 150px above and below). Lengths: 1270 / 1299 / 598 / 531 / 420. v36 in archive/.</li>
+<li><b><a href="../archive/yellow-tower-listing-page-v36.html">v36</a></b> 2026-10-08 (.page Mockups, Kim via Page Bot): &quot;My listing: &lt;url&gt;&quot; line deleted from the mailto and Gmail bodies; no &quot;listing&quot; left in any public text of the mail or the Suggest edits area (copy rule: &quot;website&quot;). mailto 944, Gmail 973 characters. v35 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v35.html">v35</a></b> 2026-10-08 (.page Mockups, Page Bot add-on): mail greeting &quot;Hi contact.page,&quot;; &quot;Use Gmail instead&quot; link (Gmail compose, same subject and body, 1040 characters) and &quot;or email hello@contact.page&quot; with a small Copy button under Suggest edits (mailto now 1011 characters); still 150px clear of Ad #2. v34 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v34.html">v34</a></b> 2026-10-08 (.page Mockups, Kim via Page Bot): &quot;Suggest edits&quot; button at the bottom, just above the footer, 150px clear of Ad #2: a plain mailto to hello@contact.page (same tab, no target), subject &quot;Edit request: Yellow Tower (kh34363)&quot;, body with the listing URL, current fields, empty fields to add, and the attach/reply line (%0D%0A breaks; link 996 characters, under 2,000). v33 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v33.html">v33</a></b> 2026-10-08 (.page Mockups, Kim via .page Analytic): footer is one compact block, stacked and centred: small logo (72px, about half the live 150px) with name + category; address as plain text, then Call; then Home · Contact Info · Images · Profile in one row. Green category box, page chips, Tools and the owner box are gone (claim stays in &quot;Is this yours? Complete it&quot; near the top). 150px clear of Ad #2 above; bottom padding for the anchor ad.</li>
@@ -49,7 +50,7 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 </ul>
 <h2>All notes, summary first, then in page order</h2>
 <ol>
-<li><pre>YELLOW TOWER LISTING PAGE (current: version 36, 2026-10-08; design owner Page Claude Code, v17-v20 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
+<li><pre>YELLOW TOWER LISTING PAGE (current: version 37, 2026-10-08; design owner Page Claude Code, v17-v20 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
 Built from v3 (Page Muse) after the review in CONTACT/kb/listing-page-v3-review-2026-10-06.md.
 
 ORDER, mobile first (rules: mobile first; design-evidence rules 1-3; engine &quot;the page earns its ads&quot;; decisions file):
@@ -88,6 +89,11 @@ v5 2026-10-06: kicker smaller, grey, italic, regular weight (Kim&#x27;s comment:
 v6 2026-10-06 (Kim: &quot;survival and growth hacking, within AdSense rules&quot;): ad plan below; v5 in archive/.
 v20 2026-10-07 (.page Mockups, Kim): no visible notes (footer &quot;sample, not production&quot; text removed). v19 in archive/.
 v26 2026-10-07 (Page Claude Code, Kim): WhatsApp and email prefills in plain words, ref last: &quot;Hi! I&#x27;d like to update Yellow Tower. (ref kh34363 edit)&quot;. No bracket code at the start, no &quot;My email:&quot; ask, no &quot;I work at or own&quot; (anyone can write; we poll the inbox). Every prefill is listed in CONTACT/kb/prefill-messages.md (N37). v25 in archive/.
+v37 2026-10-08 (.page Mockups, Kim via Page Bot; .forge review): mail bodies use the page&#x27;s own phone mask (publish-time
+                fill); subjects in ref format &quot;(ref kh34363 edit|claim|create|early)&quot;; Suggest edits body with tick lines, contact
+                field order and the AI tick line, no &quot;menu&quot;; footer gets a last row of four mailto links (Suggest edits, Claim this
+                website, Create a new website, Sign up for early access); every link and button now 150px+ from every ad
+                (Ad #1 margin, Ad #mid 150px above and below). Lengths: 1270 / 1299 / 598 / 531 / 420. v36 in archive/.
 v36 2026-10-08 (.page Mockups, Kim via Page Bot): &quot;My listing: &lt;url&gt;&quot; line deleted from the mailto and Gmail bodies; no
                 &quot;listing&quot; left in any public text of the mail or the Suggest edits area (copy rule: &quot;website&quot;). mailto 944,
                 Gmail 973 characters. v35 in archive/.
@@ -294,6 +300,22 @@ v35 (Page Bot add-on): greeting &quot;Hi contact.page,&quot;; under the button a
 view=cm, to/su/body encoded the same way, same tab, 1040 characters) and a plain line &quot;or email hello@contact.page&quot;
 with a tiny Copy button (clipboard; the label turns &quot;Copied&quot; for 1.5s, fixed width so nothing shifts). All three sit
 together at the bottom, 150px clear of Ad #2.</pre></li>
+<li><pre>MAIL LINKS (v37, Kim via Page Bot; .forge review). Not visible, dev notes only.
+PHONE: the mail bodies carry exactly the page&#x27;s own mask (+855 12 869 ***, same as the contact box) via the publish-time
+placeholder {{YT_PHONE_MASKED_URL}} (URL-encoded mask in the box-only values file); no full number in the repo or mails.
+SUBJECTS in ref format (list_prefills.py reads the ref): &quot;Edit request / Claim / Create / Early access: Yellow Tower
+(ref kh34363 edit|claim|create|early)&quot;. Suggest edits = the button above the footer (with &quot;Use Gmail instead&quot; and the
+copy line, Suggest edits only) and again in the footer&#x27;s last row with Claim this website, Create a new website and
+Sign up for early access, each its own mailto to hello@contact.page, same tab.
+BODIES: Suggest edits = three tick lines ([ ] This is my business, I want to edit it / [ ] Something else is wrong with
+this page / [ ] I want to create a new website), current fields (Name, Address, Phone mask), empty fields in the contact
+order (WhatsApp, Google Maps link, Facebook, Instagram, Telegram, LinkedIn, TikTok, Other mobile, Email, Other), the AI
+tick line, &quot;Anything else you want to change or add:&quot;, then &quot;You can attach photos, a logo, a price list or a brochure.
+Our agent will update your website and reply to you as soon as possible.&quot; Claim = proof of ownership (role, a business
+document or a photo at the premises, the contact to verify by). Create = business name, category, city, then WhatsApp,
+Google Maps, Facebook, Instagram, other. Early access = name, business, what you want. Each has the AI tick line
+&quot;[ ] Interested in an AI assistant that works for my business&quot;. Never &quot;menu&quot; or &quot;listing&quot; (B2B wording).
+LENGTHS after fill: Suggest edits mailto 1270, Gmail 1299, Claim 598, Create 531, Early access 420 (all under 2,000).</pre></li>
 <li><pre>COMPACT FOOTER (v33, Kim via .page Analytic; replaces the green category box, page chips, Tools and owner box).
 Stacked and centred: top = small logo (72px, about half the live footer&#x27;s 150px; the owner&#x27;s logo from the live
 listing, 144px WebP for 2x) + name + category; middle = address as plain text (no link), then Call (goes to the gate,
