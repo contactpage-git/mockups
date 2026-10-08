@@ -12,7 +12,8 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 <h2>What changed and why (newest first)</h2>
 <p>Each step with the reason behind it: the lessons learned along the way. Open any version to see it as it was.</p>
 <ul class="hist">
-<li><b><a href="../yellow-tower-listing-page.html">v27</a></b> 2026-10-08 (.page Mockups, Kim): WhatsApp handle @page.me replaces @newcustomers (Kim 2026-10-07, handle-brain.md; ported from the live site, Muse); email stays hello@contact.page. v26 in archive/.</li>
+<li><b><a href="../yellow-tower-listing-page.html">v28</a></b> 2026-10-08 (.page Mockups, Kim): quiet profile-completion meter under the Need help card (thin bar + &quot;Profile 88% complete&quot;, computed from 8 fields) with &quot;Is this yours? Complete it&quot; (WhatsApp @page.me, ref kh34363 complete); each contact channel in the contact box gets a 5-segment certainty meter + Low/Medium/High (votes, sources, owner confirmation; mobile never assumed to be WhatsApp). Scoring only in the dev notes below. v27 in archive/.</li>
+<li><b><a href="../archive/yellow-tower-listing-page-v27.html">v27</a></b> 2026-10-08 (.page Mockups, Kim): WhatsApp handle @page.me replaces @newcustomers (Kim 2026-10-07, handle-brain.md; ported from the live site, Muse); email stays hello@contact.page. v26 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v26.html">v26</a></b> 2026-10-07 (Page Claude Code, Kim): WhatsApp and email prefills in plain words, ref last: &quot;Hi! I&#x27;d like to update Yellow Tower. (ref kh34363 edit)&quot;. No bracket code at the start, no &quot;My email:&quot; ask, no &quot;I work at or own&quot; (anyone can write; we poll the inbox). Every prefill is listed in CONTACT/kb/prefill-messages.md (N37). v25 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v25.html">v25</a></b> 2026-10-07 (Page Claude Code, Kim): phone width on every screen (column max 430px, was 760; N36). Ad slots reserved for 336x280 (large rectangle), 300x250 inside on small phones. Auto ads (side rails, anchor, vignette) still fill desktop space. v24 in archive/. Also: footer help line ends with &quot; · Privacy&quot; (www.contact.page/privacy, Kim).</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v24.html">v24</a></b> 2026-10-07 (Page Claude Code; chief session relaying Kim): owner box uses house-ad copy v2, unit V2-B (&quot;Is this your business? Claim this page free. Update it by WhatsApp or email.&quot; + Claim it, plus By email). v23 in archive/.</li>
@@ -40,7 +41,7 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 </ul>
 <h2>All notes, summary first, then in page order</h2>
 <ol>
-<li><pre>YELLOW TOWER LISTING PAGE (current: version 27, 2026-10-07; design owner Page Claude Code, v17-v20 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
+<li><pre>YELLOW TOWER LISTING PAGE (current: version 28, 2026-10-08; design owner Page Claude Code, v17-v20 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
 Built from v3 (Page Muse) after the review in CONTACT/kb/listing-page-v3-review-2026-10-06.md.
 
 ORDER, mobile first (rules: mobile first; design-evidence rules 1-3; engine &quot;the page earns its ads&quot;; decisions file):
@@ -75,6 +76,10 @@ v5 2026-10-06: kicker smaller, grey, italic, regular weight (Kim&#x27;s comment:
 v6 2026-10-06 (Kim: &quot;survival and growth hacking, within AdSense rules&quot;): ad plan below; v5 in archive/.
 v20 2026-10-07 (.page Mockups, Kim): no visible notes (footer &quot;sample, not production&quot; text removed). v19 in archive/.
 v26 2026-10-07 (Page Claude Code, Kim): WhatsApp and email prefills in plain words, ref last: &quot;Hi! I&#x27;d like to update Yellow Tower. (ref kh34363 edit)&quot;. No bracket code at the start, no &quot;My email:&quot; ask, no &quot;I work at or own&quot; (anyone can write; we poll the inbox). Every prefill is listed in CONTACT/kb/prefill-messages.md (N37). v25 in archive/.
+v28 2026-10-08 (.page Mockups, Kim): quiet profile-completion meter under the Need help card (thin bar + &quot;Profile 88% complete&quot;,
+                computed from 8 fields) with &quot;Is this yours? Complete it&quot; (WhatsApp @page.me, ref kh34363 complete); each contact
+                channel in the contact box gets a 5-segment certainty meter + Low/Medium/High (votes, sources, owner confirmation;
+                mobile never assumed to be WhatsApp). Scoring only in the dev notes below. v27 in archive/.
 v27 2026-10-08 (.page Mockups, Kim): WhatsApp handle @page.me replaces @newcustomers (Kim 2026-10-07, handle-brain.md; ported from the live site, Muse); email stays hello@contact.page. v26 in archive/.
 v25 2026-10-07 (Page Claude Code, Kim): phone width on every screen (column max 430px, was 760; N36). Ad slots reserved for 336x280 (large rectangle), 300x250 inside on small phones. Auto ads (side rails, anchor, vignette) still fill desktop space. v24 in archive/. Also: footer help line ends with &quot; · Privacy&quot; (www.contact.page/privacy, Kim).
 v24 2026-10-07 (Page Claude Code; chief session relaying Kim): owner box uses house-ad copy v2, unit V2-B (&quot;Is this your business? Claim this page free. Update it by WhatsApp or email.&quot; + Claim it, plus By email). v23 in archive/.
@@ -168,9 +173,31 @@ values file; other businesses&#x27; numbers come from their live &lt;id&gt;.cont
 UNLOCK BUTTON (Kim 2026-10-07): every unlock button is the outlined yellow &quot;View contact details&quot; with the gold lock:
 white fill, 2px yellow border, weight 600, no underline (.btn.unlock).
 GRADE (Kim 2026-10-07): Yellow Tower is Grade C; no grade/premium wording; lead with real strengths.</pre></li>
+<li><pre>CERTAINTY METER (v28, Kim 2026-10-08; replaces the check marks on contact channels). Not visible, dev notes only:
+One line per channel the record has (types only, never values: the values stay behind the gate). Each line gets 0-5 points:
+  +2 the owner confirmed this exact channel (a confirmed mobile does NOT confirm WhatsApp on it),
+  +1 two or more independent sources list this exact channel (owner site, Google profile, Facebook page, our crawl),
+  +1 visitor votes: &quot;worked&quot; minus &quot;didn&#x27;t work&quot; is 3 or more,
+  +1 last seen working (a vote or our own check) within 90 days,
+  -2 more &quot;didn&#x27;t work&quot; than &quot;worked&quot; votes in the last 30 days (floor 0).
+Filled segments = points. Word: 0-1 Low, 2-3 Medium, 4-5 High. Colour: High green, Medium gold, Low grey.
+MOBILE IS NOT WHATSAPP (channel schema, 2026-10-08): the WhatsApp line scores only on WhatsApp-specific signals (owner says
+WhatsApp, a source lists WhatsApp, a &quot;WhatsApp worked&quot; vote); never inferred from a mobile number.
+Production renders the lines server-side from the record (no extra request); the inline script recomputes the same
+result from the data-* inputs, so nothing changes size after load (word column fixed at 52px).
+Line order follows the country channel order (Cambodia: WhatsApp, mobile, Messenger, landline, then email).
+Mockup inputs are samples: Mobile owner+3 sources+4 worked+seen 12 days = 5 High; WhatsApp 2 sources+3 worked+seen 20 days
+= 3 Medium; Email 1 source (owner site), no votes, seen 60 days = 1 Low.</pre></li>
 <li><pre>NEED HELP (D3): narrower, tucked under the contact box (overlap 12px, lower stacking, faint shadow), yellow AI badge.
 The AI choices sit IN the card (v3&#x27;s separate AI box and any jump to it are gone: no jump links). Each pick opens the
 assistant with the public brief (no contact values; the full record only after the gate). Logs ai_handoff_pick.</pre></li>
+<li><pre>PROFILE COMPLETION (v28, Kim 2026-10-08). Not visible, dev notes only: quiet, under the Need help card (well away from
+every ad slot, so the nudge link never sits near an ad). Thin 3px bar + &quot;Profile N% complete&quot;; N = filled fields / 8,
+equal weight: name, about, hours, photos, address, map, channels, logo. Yellow Tower: 7 of 8 (no logo file yet) = 88%.
+Production renders it server-side from the record; the inline script recomputes from the page itself (no extra request)
+and the box has a fixed height, so no layout shift. Owner nudge &quot;Is this yours? Complete it&quot; opens @page.me with a
+plain prefill naming what is missing, ref last (N37): &quot;(ref kh34363 complete)&quot;. At 100% the nudge line stays, without
+a missing list.</pre></li>
 <li><pre>LOCATION (D24, D8): label left, content right on wide screens; stacks on phones. Address one part per line.
 &quot;Open in map&quot; goes to our own map page for this business (location/, Kim 2026-10-06: the block needs a map link);
 never a map embed, never a Google Maps link. The route has to ship with the page.
