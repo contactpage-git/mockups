@@ -91,7 +91,7 @@ section{padding:26px 0;border-bottom:1px solid #f3f4f6}h2{font-size:22px;margin:
 @keyframes mv{0%,30%{left:0}34%,63%{left:calc(50% - 6px)}67%,97%{left:calc(100% - 12px)}100%{left:0}}
 @media(prefers-reduced-motion:reduce){.tl .sc{animation:none;opacity:1;grid-area:auto;padding-bottom:16px}.line{display:none}.who{animation:none}}
 .rot{display:inline-block;text-align:center;transition:opacity .7s ease}.rot.fade{opacity:0}
-.waw{position:relative;width:230px;max-width:100%;margin:0 auto;padding-top:34px}
+.waw{position:relative;width:100%;max-width:380px;margin:0 auto;padding-top:34px}
 .note{position:absolute;top:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-style:italic;font-weight:600;font-size:15px;line-height:1;color:#b45309;white-space:nowrap;display:flex;align-items:flex-end;gap:2px}
 .note .ar{width:22px;height:26px;display:block;flex:0 0 auto}.nl{left:4px}.nr{right:4px;flex-direction:row-reverse}
 .wheelw{text-align:center}.wheel{width:100%;max-width:340px;height:auto;display:block;margin:0 auto}.wcap{font-size:14px;color:#374151;max-width:460px;margin:6px auto 0}
@@ -102,12 +102,18 @@ section{padding:26px 0;border-bottom:1px solid #f3f4f6}h2{font-size:22px;margin:
 .plan .cta{text-align:center;padding:7px 10px;font-size:13px}
 @media(max-width:600px){.plans{grid-template-columns:1fr}}
 .hd{font-size:16px;color:#374151;margin:0 0 14px}.hd a{color:var(--ink);font-weight:700;text-decoration:none;border-bottom:2px solid var(--y)}.ic{width:17px;height:17px;vertical-align:-3px;margin:0 3px 0 1px}
-.wa{max-width:230px!important;font-size:11.5px!important;border-radius:18px!important}
-.wa .wah{padding:6px 9px;gap:7px}.wa .wah b{font-size:12px}.wa .wah small{font-size:10px}.wa .av{width:22px;height:22px;font-size:11px}
-.wa .wab{height:360px;padding:7px;gap:4px;overflow-y:auto;justify-content:flex-start;scrollbar-width:thin}.wa .wab>:first-child{margin-top:auto}.wa .m{padding:4px 7px;border-radius:7px}.wa .m small{font-size:9px}.wa .day{font-size:9px}
-.wa .qr span{font-size:10px;padding:0 7px}.wa .cnav{padding:4px;gap:4px}.wa .cnav i{width:6px;height:6px}.wa .cnav b{font-size:16px}.wa .more{font-size:11px;padding:5px}
+.wa{max-width:380px!important;font-size:14.5px!important;border-radius:22px!important}
+.wa .wah{padding:9px 12px;gap:9px}.wa .wah b{font-size:15px}.wa .wah small{font-size:12px}.wa .av{width:22px;height:22px;font-size:11px}
+.wa .wab{height:400px;padding:10px;gap:6px;overflow-y:auto;justify-content:flex-start;scrollbar-width:thin}.wa .wab>:first-child{margin-top:auto}.wa .m{padding:7px 10px;border-radius:10px}.wa .m small{font-size:11px}.wa .day{font-size:11px}
+.wa .qr span{font-size:12px;padding:1px 9px}.wa .cnav{padding:4px;gap:4px}.wa .cnav i{width:6px;height:6px}.wa .cnav b{font-size:16px}.wa .more{font-size:11px;padding:5px}
 .faq details{border-bottom:1px solid var(--line);padding:8px 0;font-size:14px}.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:10px}.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:"+";font-weight:700;color:var(--o)}.faq details[open] summary:after{content:"–"}.faq details p{margin:6px 0 2px;color:#374151}
 .end{text-align:center;padding:30px 0}
+@media(max-width:480px){.wa .wab{height:min(440px,62vh)}}
+.sugw{background:#fff;border-top:1px solid #e5e7eb;padding:8px 8px 10px}.sugw .hint{font-size:11px;color:var(--mute);margin:0 0 6px;text-align:center}.sug{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.sug button{font:inherit;font-size:13px;font-weight:600;border:1.5px solid #25d366;background:#fff;color:#047857;border-radius:99px;padding:5px 12px;cursor:pointer}.sug button:hover{background:#f0fdf4}.sug button.did{color:#6b7280;border-color:#d1d5db}
+.m.typing{display:flex;gap:4px;padding:10px 12px;align-self:flex-start}.typing span{width:6px;height:6px;border-radius:50%;background:#9ca3af;animation:bl 1s infinite}.typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}@keyframes bl{0%,60%,100%{opacity:.3}30%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.typing span{animation:none}}
+.can{display:grid;gap:8px}.cn{display:flex;gap:12px;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:12px;padding:10px 12px}.cn b{display:block;font-size:15px}.cn span{font-size:13px;color:#4b5563}.cn button{flex:0 0 auto;font:inherit;font-weight:800;background:#fff;border:2px solid var(--y);border-radius:10px;padding:7px 12px;cursor:pointer}.cn button:hover{background:#fffbea}.cs{font-size:14px;color:#4b5563;margin:-6px 0 12px}
 footer{background:#fafafa;border-top:1px solid var(--line);margin:0;color:var(--mute);font-size:12px;padding:16px 0;text-align:center}.fl{line-height:2}.fl a{color:#374151;text-decoration:underline;text-underline-offset:2px}.fl span{color:#c4c8cd;margin:0 4px}.about{font-size:11px;color:#9ca3af;margin-top:6px}
 @media(min-width:600px){.hero h1{font-size:40px}.era{grid-template-columns:1fr 1fr 1fr}}
 </style>
@@ -118,20 +124,22 @@ footer{background:#fafafa;border-top:1px solid var(--line);margin:0;color:var(--
 
 <div class="w hero">
 <div>
-<h1>Get <span class="yr">your</span>.contact.page for free and reach new customers.</h1>
-<p class="hd">Hire our AI agent to run your site for you. Basic is free. Start on <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><a href="https://wa.me/page.me?text=Hi%21%20Please%20sign%20me%20up%20for%20my%20free%20website.%20%28ref%20home%20signup%29">@page.me</a> (WhatsApp) or by <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="#161616" stroke-width="1.8"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="#161616" stroke-width="1.8" stroke-linejoin="round"/></svg><a href="mailto:newcustomers@contact.page?subject=Sign%20me%20up%20for%20my%20free%20website%20%28ref%20home%20signup%29&body=Business%20name%3A%0ACity%20and%20country%3A%0AWhat%20you%20do%3A%0APhone%20or%20WhatsApp%3A%0A">email</a>.</p>
+<h1>Hire an AI agent to run <span class="yr">your</span>.contact.page for you.</h1>
+<p class="hd">Start on <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><a href="https://wa.me/page.me?text=Hi%21%20Please%20sign%20me%20up%20for%20my%20free%20website.%20%28ref%20home%20signup%29">@page.me</a> (WhatsApp) or by <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="#161616" stroke-width="1.8"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="#161616" stroke-width="1.8" stroke-linejoin="round"/></svg><a href="mailto:newcustomers@contact.page?subject=Sign%20me%20up%20for%20my%20free%20website%20%28ref%20home%20signup%29&body=Business%20name%3A%0ACity%20and%20country%3A%0AWhat%20you%20do%3A%0APhone%20or%20WhatsApp%3A%0A">email</a>.</p>
 <a class="cta" href="https://wa.me/page.me?text=Hi%21%20Please%20sign%20me%20up%20for%20my%20free%20website.%20%28ref%20home%20signup%29">Reach new customers</a>
 
 </div>
 <div class="waw"><div class="note nl">our assistant<svg viewBox="0 0 22 26" class="ar" aria-hidden="true"><path d="M3 3 C 14 4, 17 12, 15 23" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round"/><path d="M11 19 L15 24 L19 19" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="note nr">you<svg viewBox="0 0 22 26" class="ar" aria-hidden="true"><path d="M19 3 C 8 4, 5 12, 7 23" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round"/><path d="M3 19 L7 24 L11 19" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="wa" aria-label="What running your site from WhatsApp looks like">
 <div class="wah"><span class="av2 lgimg" aria-hidden="true"></span><div><b class="wm">contact<i>.page</i></b><br><small>works for you, day and night</small></div></div>
 <div class="wab" id="chat"></div>
+<div class="sugw"><div class="hint">Tap a reply to try it</div><div class="sug" id="sug"></div></div>
 </div></div>
 </div>
 
 <div class="count"><b id="ctr" data-base="11256852">11,256,852</b><div>local business websites worldwide · find or create yours by <a href="mailto:newcustomers@contact.page?subject=Find%20or%20create%20my%20website%20%28ref%20home%20find%29&body=Business%20name%3A%0ACity%20and%20country%3A%0AWebsite%20or%20Google%20Maps%20link%20%28if%20any%29%3A%0APhone%20or%20WhatsApp%3A%0A">email</a> or <a href="https://wa.me/page.me?text=Hi%21%20Please%20find%20my%20business%20on%20contact.page%2C%20or%20create%20my%20website.%20%28ref%20home%20find%29">WhatsApp</a></div></div>
 
 <div class="w">
+<section id="can"><h2>What it can do for you</h2><p class="cs">Tap Try it and watch it happen in the phone. These are examples.</p><div class="can" id="canlist"></div></section>
 <section><h2>At your service, since the first page</h2>
 <div class="wheelw"><svg class="wheel" viewBox="0 0 340 340" role="img" aria-label="A cycle: the page carried messages, the Yellow Pages brought sellers and customers together, then we searched online, and now Page, your AI assistant, carries the messages again.">
 <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#161616"/></marker></defs>
@@ -209,38 +217,38 @@ footer{background:#fafafa;border-top:1px solid var(--line);margin:0;color:var(--
 <script>/* inlined from chat-examples.js by build_home.py, edit that file */
 /* Example WhatsApp chats between an owner and the contact.page assistant.
    Used by the home page loop and by examples.html. Add new chats at the end:
-   each chat has a title t, a day d, a start time h, and messages m: [who, text, quickReplies?], who = "bot" or "me". */
+   each chat has a title t, a short label k and one line s (the "What it can do" list), a day d, a start time h, and messages m: [who, text, quickReplies?], who = "bot" or "me". */
 window.CP_CHATS = [
- {t:"Update your site by chat", d:"Mon 6 Oct", h:"09:12", m:[
+ {t:"Update your site by chat", k:"Update my site", s:"Send a message and your page changes.", d:"Mon 6 Oct", h:"09:12", m:[
   ["me","Change my description to: Fresh bread every morning from 6 am."],
   ["bot","Done. your.contact.page now says: “Fresh bread every morning from 6 am.”"]]},
- {t:"A new customer", d:"Tue 7 Oct", h:"14:03", m:[
+ {t:"A new customer", k:"New customers", s:"I tell you when someone asks about you.", d:"Tue 7 Oct", h:"14:03", m:[
   ["bot","A new customer asked about you. WhatsApp: +•• ••• ••• 214 · ref A11. Tell me later if this was a good customer?"],
   ["me","Yes, big order for Friday 👍"],
   ["bot","Great, noted for A11. Thanks!"]]},
- {t:"Your weekly numbers", d:"Mon 13 Oct", h:"08:30", m:[
+ {t:"Your weekly numbers", k:"Weekly numbers", s:"How many found you and opened your details.", d:"Mon 13 Oct", h:"08:30", m:[
   ["bot","Last week 11 AI assistants (like ChatGPT) found your business and 108 people opened your contact details. Did anyone contact you from your.contact.page?"],
   ["me","3 new calls this week"],
   ["bot","Nice. I'll keep your page fresh so more find you."]]},
- {t:"Promotions by voice", d:"Wed 15 Oct", h:"10:41", m:[
+ {t:"Promotions by voice", k:"Promote by voice", s:"Send a voice message, I publish it as news.", d:"Wed 15 Oct", h:"10:41", m:[
   ["bot","Any promotion this week to publish as news? Tip: just send a voice message."],
   ["me","🎤 Voice message · 0:14"],
   ["bot","Thanks! I heard: new product “Sourdough loaf”, baked daily. Published as news on your site now."]]},
- {t:"A guided update", d:"Fri 17 Oct", h:"16:20", m:[
+ {t:"A guided update", k:"Guided update", s:"Two minutes, and I walk you through it.", d:"Fri 17 Oct", h:"16:20", m:[
   ["bot","Shall I guide you through updating your contact.page website? It takes 2 minutes.",["Yes","No","Remind me next week"]],
   ["me","Remind me next week"],
   ["bot","Will do. Talk next week!"]]},
- {t:"Your logo", d:"Mon 20 Oct", h:"11:05", m:[
+ {t:"Your logo", k:"My logo", s:"Send a photo of your sign, I clean it up.", d:"Mon 20 Oct", h:"11:05", m:[
   ["bot","If you have a logo, send it here. A photo of your sign, your business card or the top of a receipt is fine. I'll clean it up and ask before I use it."],
   ["me","📷 Photo"],
   ["bot","Here's the cleaned-up logo. Use it on your site?",["Yes","Try again"]],
   ["me","Yes"],
   ["bot","Done. Your logo is on your site."]]},
- {t:"Your About text, two languages", d:"Wed 22 Oct", h:"09:48", m:[
+ {t:"Your About text, two languages", k:"Two languages", s:"Your About text, kept in both languages.", d:"Wed 22 Oct", h:"09:48", m:[
   ["bot","Is this About text right?\nEN: “Family bakery since 1998, fresh bread daily.”\nID: “Toko roti keluarga sejak 1998, roti segar setiap hari.”\nSend a voice message, or copy, edit and send it back.",["Looks good"]],
   ["me","Change 1998 to 1996"],
   ["bot","Updated in both languages."]]},
- {t:"A new testimonial", d:"Sat 25 Oct", h:"19:32", m:[
+ {t:"A new testimonial", k:"Testimonials", s:"Customer reviews, tidied up and approved by them.", d:"Sat 25 Oct", h:"19:32", m:[
   ["bot","A customer left you a testimonial. I tidied it a little for clarity and sent it back to them to approve. Once they say yes, it goes on your site: “Best bread in town, always warm in the morning.”"],
   ["me","❤️"]]}
 ];
@@ -258,19 +266,38 @@ window.CP_ONBOARD = [
 ];
 </script>
 <script>
-function cpChat(boxId,C){var box=document.getElementById(boxId);if(!box||!C||!C.length)return;
-var ci=0,mi=0,stick=true;
-box.addEventListener('scroll',function(){stick=box.scrollHeight-box.scrollTop-box.clientHeight<30;});
-function tm(c,k){var p=(c.h||'09:00').split(':'),m=+p[0]*60+(+p[1])+k*2;return ('0'+Math.floor(m/60)%24).slice(-2)+':'+('0'+m%60).slice(-2);}
-function bubble(c,k){var x=c.m[k],d=document.createElement('div');d.className='m'+(x[0]==='me'?' me':'');d.appendChild(document.createTextNode(x[1]));
-if(x[2]){var q=document.createElement('div');q.className='qr';x[2].forEach(function(o){var b=document.createElement('span');b.textContent=o;q.appendChild(b);});d.appendChild(q);}
-var t=document.createElement('small');t.textContent=tm(c,k)+(x[0]==='me'?' ✓✓':'');d.appendChild(t);return d;}
-function put(el){box.appendChild(el);if(stick)box.scrollTop=box.scrollHeight;}
-function step(){if(ci>=C.length){setTimeout(function(){box.innerHTML='';ci=0;mi=0;stick=true;step();},8000);return;}
-var c=C[ci];if(mi===0){var d=document.createElement('div');d.className='day';d.textContent=c.d||'';put(d);}
-put(bubble(c,mi++));if(mi>=c.m.length){ci++;mi=0;setTimeout(step,2600);}else setTimeout(step,1700);}
-step();}
-cpChat('chat',window.CP_CHATS);cpChat('chat2',window.CP_ONBOARD);
+/* Phone chat, tap to try (Kim 2026-10-08): no autoplay. The visitor taps a reply; the assistant answers; "Try it" buttons play an example. */
+(function(){
+var C=window.CP_CHATS||[],box=document.getElementById('chat'),sug=document.getElementById('sug');if(!box||!sug)return;
+var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,busy=false,done={},n=0;
+function pad(v){return('0'+v).slice(-2)}
+function clock(){n++;var m=9*60+40+n*2;return pad(Math.floor(m/60)%24)+':'+pad(m%60)}
+function bubble(who,text,qr){var d=document.createElement('div');d.className='m'+(who==='me'?' me':'');d.appendChild(document.createTextNode(text));
+if(qr){var q=document.createElement('div');q.className='qr';qr.forEach(function(o){var b=document.createElement('span');b.textContent=o;q.appendChild(b);});d.appendChild(q);}
+var t=document.createElement('small');t.textContent=clock()+(who==='me'?' \u2713\u2713':'');d.appendChild(t);return d;}
+function put(el){box.appendChild(el);box.scrollTop=box.scrollHeight;}
+function wait(ms,f){if(calm)f();else setTimeout(f,ms);}
+function typing(f){var d=document.createElement('div');d.className='m typing';d.innerHTML='<span></span><span></span><span></span>';put(d);wait(900,function(){box.removeChild(d);f();});}
+function day(t){var d=document.createElement('div');d.className='day';d.textContent=t;put(d);}
+function chips(list){sug.innerHTML='';list.forEach(function(o){var b=document.createElement('button');b.type='button';b.textContent=o.l;if(o.did)b.className='did';b.onclick=o.f;sug.appendChild(b);});}
+function seq(m,i,f){if(i>=m.length)return f();var x=m[i];
+if(x[0]==='me'){wait(500,function(){put(bubble('me',x[1]));seq(m,i+1,f);});}
+else typing(function(){put(bubble('bot',x[1],x[2]));wait(350,function(){seq(m,i+1,f);});});}
+function menu(){chips(C.map(function(c,i){return{l:(done[i]?'\u2713 ':'')+c.k,did:!!done[i],f:function(){play(i)}};}));}
+function play(i){if(busy)return;busy=true;sug.innerHTML='';var c=C[i];day(c.d||'');seq(c.m,0,function(){done[i]=1;busy=false;menu();});}
+function ask(f){if(busy)return;busy=true;sug.innerHTML='';put(bubble('me','What can you do?'));
+typing(function(){put(bubble('bot','I run your website for you, from WhatsApp or email. For example:\n'+C.map(function(c){return'\u2022 '+c.k;}).join('\n')+'\nTap one to see it.'));busy=false;menu();});}
+window.cpTry=function(i){var ph=box.closest('.waw')||box;if(ph.scrollIntoView)ph.scrollIntoView({behavior:calm?'auto':'smooth',block:'center'});if(busy)return;wait(calm?0:350,function(){play(i)});};
+day('Today');put(bubble('bot','Hi! I am the contact.page assistant. I can run your website for you, right here in WhatsApp.'));
+chips([{l:'What can you do?',f:ask}]);
+var L=document.getElementById('canlist');if(L)C.forEach(function(c,i){var r=document.createElement('div');r.className='cn';r.innerHTML='<div><b></b><span></span></div><button type="button">Try it</button>';
+r.querySelector('b').textContent=c.k;r.querySelector('span').textContent=c.s||c.t;r.querySelector('button').onclick=function(){window.cpTry(i)};L.appendChild(r);});
+})();
+/* "How it works" sign-up chat: shown in full, no animation. */
+(function(){var C=window.CP_ONBOARD,box=document.getElementById('chat2');if(!box||!C)return;var c=C[0],t=10*60;
+var d=document.createElement('div');d.className='day';d.textContent=c.d||'';box.appendChild(d);
+c.m.forEach(function(x){var b=document.createElement('div');b.className='m'+(x[0]==='me'?' me':'');b.style.animation='none';b.appendChild(document.createTextNode(x[1]));
+var s=document.createElement('small');t+=2;s.textContent=('0'+Math.floor(t/60)).slice(-2)+':'+('0'+t%60).slice(-2)+(x[0]==='me'?' \u2713\u2713':'');b.appendChild(s);box.appendChild(b);});})();
 </script>
 <script>
 (function(){var el=document.getElementById('ctr'),b=parseInt((el.getAttribute('data-base')||'').replace(/\D/g,''),10);if(!isNaN(b))el.textContent=b.toLocaleString('en-US');})();
