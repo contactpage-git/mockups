@@ -104,14 +104,15 @@ section{padding:26px 0;border-bottom:1px solid #f3f4f6}h2{font-size:22px;margin:
 .hd{font-size:16px;color:#374151;margin:0 0 14px}.hd a{color:var(--ink);font-weight:700;text-decoration:none;border-bottom:1px solid #9ca3af}.hd{text-wrap:balance}.nw{white-space:nowrap}.ic{width:17px;height:17px;vertical-align:-3px;margin:0 3px 0 1px}
 .wa{max-width:380px!important;font-size:14.5px!important;border-radius:22px!important}
 .wa .wah{padding:9px 12px;gap:9px}.wa .wah b{font-size:15px}.wa .wah small{font-size:12px}.wa .av{width:22px;height:22px;font-size:11px}
-.wa .wab{height:400px;padding:10px;gap:6px;overflow-y:auto;justify-content:flex-start;scrollbar-width:thin}.wa .m{padding:7px 10px;border-radius:10px}.wa .m small{font-size:11px}.wa .day{font-size:11px}
+.wa .wab{height:360px;padding:10px;gap:6px;overflow-y:auto;justify-content:flex-start;scrollbar-width:thin}.wa .m{padding:7px 10px;border-radius:10px}.wa .m small{font-size:11px}.wa .day{font-size:11px}
 .wa .qr span{font-size:12px;padding:1px 9px}.wa .cnav{padding:4px;gap:4px}.wa .cnav i{width:6px;height:6px}.wa .cnav b{font-size:16px}.wa .more{font-size:11px;padding:5px}
 .faq details{border-bottom:1px solid var(--line);padding:8px 0;font-size:14px}.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:10px}.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:"+";font-weight:700;color:var(--o)}.faq details[open] summary:after{content:"–"}.faq details p{margin:6px 0 2px;color:#374151}
 .end{text-align:center;padding:30px 0}
 @media(max-width:480px){.wa .wab{height:min(440px,62vh)}}
 .m .nm{display:block;font-size:11px;font-weight:700;color:#b45309;margin-bottom:2px}.m.me .nm{color:#047857}
-.sugw{background:#fff;border-top:1px solid #e5e7eb;padding:8px 8px 10px}.sugw .hint{font-size:11px;color:var(--mute);margin:0 0 6px;text-align:center}.sug{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
-.sug button{font:inherit;font-size:13px;font-weight:600;border:1.5px solid #25d366;background:#fff;color:#047857;border-radius:99px;padding:5px 12px;cursor:pointer}.sug button:hover{background:#f0fdf4}.sug button.did{color:#6b7280;border-color:#d1d5db}
+.sugw{display:flex;align-items:flex-start;gap:6px;background:#fff;border-bottom:1px solid #e5e7eb;padding:8px}.sugw .try{font-size:11px;font-weight:700;color:var(--mute);padding:3px 0;text-transform:uppercase;letter-spacing:.04em}.sug{display:flex;flex-wrap:wrap;gap:4px;flex:1}
+.sug button{flex:1 1 auto;font:inherit;font-size:11px;font-weight:600;line-height:1.2;border:1px solid #cfd4da;background:#fff;color:#374151;border-radius:99px;padding:3px 8px;cursor:pointer;white-space:nowrap}.sug button:hover{border-color:#25d366;color:#047857}.sug button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+
 .m.typing{display:flex;gap:4px;padding:10px 12px;align-self:flex-start}.typing span{width:6px;height:6px;border-radius:50%;background:#9ca3af;animation:bl 1s infinite}.typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}@keyframes bl{0%,60%,100%{opacity:.3}30%{opacity:1}}
 @media(prefers-reduced-motion:reduce){.typing span{animation:none}}
 .can{display:grid;gap:8px}.cn{display:flex;gap:12px;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:12px;padding:10px 12px}.cn b{display:block;font-size:15px}.cn span{font-size:13px;color:#4b5563}.cn button{flex:0 0 auto;font:inherit;font-weight:800;background:#fff;border:2px solid var(--y);border-radius:10px;padding:7px 12px;cursor:pointer}.cn button:hover{background:#fffbea}.cs{font-size:14px;color:#4b5563;margin:-6px 0 12px}
@@ -135,9 +136,8 @@ footer{background:#fafafa;border-top:1px solid var(--line);margin:0;color:var(--
 
 </div>
 <div class="waw"><div class="wa" aria-label="What running your site from WhatsApp looks like">
-<div class="wah"><span class="av2 lgimg" aria-hidden="true"></span><div><b class="wm">contact<i>.page</i></b><br><small>works for you, day and night</small></div></div>
+<div class="sugw"><span class="try">Try</span><div class="sug" id="sug"></div></div>
 <div class="wab" id="chat"></div>
-<div class="sugw"><div class="hint">Tap a reply to try it</div><div class="sug" id="sug"></div></div>
 </div></div>
 </div>
 
@@ -224,30 +224,28 @@ window.CP_ONBOARD = [
 ];
 </script>
 <script>
-/* Phone chat, tap to try (Kim 2026-10-08): no autoplay. The visitor taps a reply; the assistant answers; "Try it" buttons play an example. */
+/* Phone chat, tap to try (Kim 2026-10-08): no autoplay, no header, no greeting. Small chips on top; tapping one clears the chat
+   and plays that example from its first message. The first example shows on load. */
 (function(){
 var C=window.CP_CHATS||[],box=document.getElementById('chat'),sug=document.getElementById('sug');if(!box||!sug)return;
-var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,busy=false,done={},n=0;
+var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,tok=0,n=0,btns=[];
 function pad(v){return('0'+v).slice(-2)}
 function clock(){n++;var m=9*60+40+n*2;return pad(Math.floor(m/60)%24)+':'+pad(m%60)}
-function bubble(who,text,qr){var d=document.createElement('div');d.className='m'+(who==='me'?' me':'');var nm=document.createElement('b');nm.className='nm';nm.textContent=who==='me'?'You':'Page, AI assistant';d.appendChild(nm);d.appendChild(document.createTextNode(text));
+function bubble(who,text,qr){var d=document.createElement('div');d.className='m'+(who==='me'?' me':'');var nm=document.createElement('b');nm.className='nm';nm.textContent=who==='me'?'You':'Page';d.appendChild(nm);d.appendChild(document.createTextNode(text));
 if(qr){var q=document.createElement('div');q.className='qr';qr.forEach(function(o){var b=document.createElement('span');b.textContent=o;q.appendChild(b);});d.appendChild(q);}
 var t=document.createElement('small');t.textContent=clock()+(who==='me'?' \u2713\u2713':'');d.appendChild(t);return d;}
 function put(el){box.appendChild(el);box.scrollTop=box.scrollHeight;}
 function wait(ms,f){if(calm)f();else setTimeout(f,ms);}
-function typing(f){var d=document.createElement('div');d.className='m typing';d.innerHTML='<span></span><span></span><span></span>';put(d);wait(900,function(){box.removeChild(d);f();});}
-function day(t){var d=document.createElement('div');d.className='day';d.textContent=t;put(d);}
-function chips(list){sug.innerHTML='';list.forEach(function(o){var b=document.createElement('button');b.type='button';b.textContent=o.l;if(o.did)b.className='did';b.onclick=o.f;sug.appendChild(b);});}
-function seq(m,i,f){if(i>=m.length)return f();var x=m[i];
-if(x[0]==='me'){wait(500,function(){put(bubble('me',x[1]));seq(m,i+1,f);});}
-else typing(function(){put(bubble('bot',x[1],x[2]));wait(350,function(){seq(m,i+1,f);});});}
-function menu(){chips(C.map(function(c,i){return{l:(done[i]?'\u2713 ':'')+c.k,did:!!done[i],f:function(){play(i)}};}));}
-function play(i){if(busy)return;busy=true;sug.innerHTML='';var c=C[i];day(c.d||'');seq(c.m,0,function(){done[i]=1;busy=false;menu();});}
-function ask(f){if(busy)return;busy=true;sug.innerHTML='';put(bubble('me','What can you do?'));
-typing(function(){put(bubble('bot','I run your website for you, from WhatsApp or email. For example:\n'+C.map(function(c){return'\u2022 '+c.k;}).join('\n')+'\nTap one to see it.'));busy=false;menu();});}
-window.cpTry=function(i){var ph=box.closest('.waw')||box;if(ph.scrollIntoView)ph.scrollIntoView({behavior:calm?'auto':'smooth',block:'center'});if(busy)return;wait(calm?0:350,function(){play(i)});};
-day('Today');put(bubble('bot','Hi! I am the contact.page assistant. I can run your website for you, right here in WhatsApp.'));
-chips([{l:'What can you do?',f:ask}]);
+function typing(k,f){var d=document.createElement('div');d.className='m typing';d.innerHTML='<span></span><span></span><span></span>';put(d);wait(800,function(){if(k!==tok)return;box.removeChild(d);f();});}
+function seq(k,m,i){if(k!==tok||i>=m.length)return;var x=m[i];
+if(x[0]==='me')wait(450,function(){if(k!==tok)return;put(bubble('me',x[1]));seq(k,m,i+1);});
+else typing(k,function(){put(bubble('bot',x[1],x[2]));wait(300,function(){seq(k,m,i+1);});});}
+function mark(i){btns.forEach(function(b,j){b.className=j===i?'on':'';});}
+function play(i,instant){tok++;var k=tok;box.innerHTML='';box.scrollTop=0;n=0;mark(i);var m=C[i].m;
+if(instant){m.forEach(function(x){box.appendChild(bubble(x[0],x[1],x[2]));});}else seq(k,m,0);}
+window.cpTry=function(i){var ph=box.closest('.waw')||box;if(ph.scrollIntoView)ph.scrollIntoView({behavior:calm?'auto':'smooth',block:'center'});wait(calm?0:350,function(){play(i)});};
+C.forEach(function(c,i){var b=document.createElement('button');b.type='button';b.textContent=c.k;b.onclick=function(){play(i)};sug.appendChild(b);btns.push(b);});
+if(C.length)play(0,true);
 var L=document.getElementById('canlist');if(L)C.forEach(function(c,i){var r=document.createElement('div');r.className='cn';r.innerHTML='<div><b></b><span></span></div><button type="button">Try it</button>';
 r.querySelector('b').textContent=c.k;r.querySelector('span').textContent=c.s||c.t;r.querySelector('button').onclick=function(){window.cpTry(i)};L.appendChild(r);});
 })();
