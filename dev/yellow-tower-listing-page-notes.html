@@ -12,7 +12,8 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 <h2>What changed and why (newest first)</h2>
 <p>Each step with the reason behind it: the lessons learned along the way. Open any version to see it as it was.</p>
 <ul class="hist">
-<li><b><a href="../yellow-tower-listing-page.html">v29</a></b> 2026-10-08 (.page Mockups, Kim): section anchor chips back: one slim, non-sticky row &quot;On this page&quot; (Location, FAQ, Photos, About, Products, Hours) under the completion meter, Ad #1 well above it. v28 in archive/.</li>
+<li><b><a href="../yellow-tower-listing-page.html">v30</a></b> 2026-10-08 (.page Mockups, Kim, layout from .page Analytic): header-ad layout. Name, then &quot;Advertisements&quot; + Ad #1 (IW_Manual_Header, responsive, min-height 280px reserved), a fixed 150px empty gap, the short description, then one chip row to sub-pages (About, Products, Hours, Map, Photos). The at-a-glance line and the v29 in-page anchor row are gone (the gap is the dead zone now). Contact box unchanged (outlined yellow unlock rule). v29 in archive/.</li>
+<li><b><a href="../archive/yellow-tower-listing-page-v29.html">v29</a></b> 2026-10-08 (.page Mockups, Kim): section anchor chips back: one slim, non-sticky row &quot;On this page&quot; (Location, FAQ, Photos, About, Products, Hours) under the completion meter, Ad #1 well above it. v28 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v28.html">v28</a></b> 2026-10-08 (.page Mockups, Kim): quiet profile-completion meter under the Need help card (thin bar + &quot;Profile 88% complete&quot;, computed from 8 fields) with &quot;Is this yours? Complete it&quot; (WhatsApp @page.me, ref kh34363 complete); each contact channel in the contact box gets a 5-segment certainty meter + Low/Medium/High (votes, sources, owner confirmation; mobile never assumed to be WhatsApp). Scoring only in the dev notes below. v27 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v27.html">v27</a></b> 2026-10-08 (.page Mockups, Kim): WhatsApp handle @page.me replaces @newcustomers (Kim 2026-10-07, handle-brain.md; ported from the live site, Muse); email stays hello@contact.page. v26 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v26.html">v26</a></b> 2026-10-07 (Page Claude Code, Kim): WhatsApp and email prefills in plain words, ref last: &quot;Hi! I&#x27;d like to update Yellow Tower. (ref kh34363 edit)&quot;. No bracket code at the start, no &quot;My email:&quot; ask, no &quot;I work at or own&quot; (anyone can write; we poll the inbox). Every prefill is listed in CONTACT/kb/prefill-messages.md (N37). v25 in archive/.</li>
@@ -42,19 +43,20 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 </ul>
 <h2>All notes, summary first, then in page order</h2>
 <ol>
-<li><pre>YELLOW TOWER LISTING PAGE (current: version 29, 2026-10-08; design owner Page Claude Code, v17-v20 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
+<li><pre>YELLOW TOWER LISTING PAGE (current: version 30, 2026-10-08; design owner Page Claude Code, v17-v20 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
 Built from v3 (Page Muse) after the review in CONTACT/kb/listing-page-v3-review-2026-10-06.md.
 
 ORDER, mobile first (rules: mobile first; design-evidence rules 1-3; engine &quot;the page earns its ads&quot;; decisions file):
- identity (kicker, H1 with the frozen yellow line, short description ending in a plain ↓)
- -&gt; Ad #1 -&gt; at a glance (dead zone: nothing clickable) -&gt; contact box -&gt; Need help card -&gt; Location -&gt; FAQ -&gt; Photos
+ identity (kicker, H1 with the frozen yellow line) -&gt; &quot;Advertisements&quot; + Ad #1 (IW_Manual_Header, min 280px reserved)
+ -&gt; 150px empty gap (nothing clickable) -&gt; short description -&gt; sub-page chips -&gt; contact box -&gt; Need help card -&gt; Location -&gt; FAQ -&gt; Photos
  -&gt; About -&gt; Offerings -&gt; Facts -&gt; Related categories -&gt; Hours -&gt; More in the area -&gt; Ad #2
  -&gt; footer: green category box (frozen, option A), page chips, Tools, owner box, Report this page.
 
 RULES APPLIED (newest Kim word wins; conflicts page rows in brackets)
-- Jump links: one exception since v29 (Kim 2026-10-08): the slim &quot;On this page&quot; anchor chip row under the Need help card.
-  Still no &quot;more ↓&quot; or &quot;…&quot; links in text (design-evidence rule 3 otherwise stands).
-- Contact box after Ad #1 AND a gap of real content (engine 2026-10-05). The gap is the at-a-glance card, no links.
+- Header-ad layout (v30, Kim 2026-10-08, from .page Analytic): name, then the header ad (min 280px reserved), a fixed
+  150px empty gap, the short description, then one chip row linking to sub-pages (About, Products, Hours, Map, Photos),
+  at least 150px below the ad. No in-page jump links (the v29 anchor row is replaced by this sub-page row).
+- Contact box after Ad #1 AND a gap (engine 2026-10-05). Since v30 the gap is a fixed 150px empty space, then description and chips.
 - No contact values in source: masked number only; JSON-LD without telephone, email or priceCurrency (D6, D7, C5).
 - No website anywhere on this page, not even in &quot;unlocks&quot; (N22). No video (frozen rule). No map embed, no Google Maps link (D8).
 - Links only to routes that exist: the lock button goes to the security page mockup (production /contact-details);
@@ -78,6 +80,10 @@ v5 2026-10-06: kicker smaller, grey, italic, regular weight (Kim&#x27;s comment:
 v6 2026-10-06 (Kim: &quot;survival and growth hacking, within AdSense rules&quot;): ad plan below; v5 in archive/.
 v20 2026-10-07 (.page Mockups, Kim): no visible notes (footer &quot;sample, not production&quot; text removed). v19 in archive/.
 v26 2026-10-07 (Page Claude Code, Kim): WhatsApp and email prefills in plain words, ref last: &quot;Hi! I&#x27;d like to update Yellow Tower. (ref kh34363 edit)&quot;. No bracket code at the start, no &quot;My email:&quot; ask, no &quot;I work at or own&quot; (anyone can write; we poll the inbox). Every prefill is listed in CONTACT/kb/prefill-messages.md (N37). v25 in archive/.
+v30 2026-10-08 (.page Mockups, Kim, layout from .page Analytic): header-ad layout. Name, then &quot;Advertisements&quot; + Ad #1
+                (IW_Manual_Header, responsive, min-height 280px reserved), a fixed 150px empty gap, the short description, then
+                one chip row to sub-pages (About, Products, Hours, Map, Photos). The at-a-glance line and the v29 in-page anchor
+                row are gone (the gap is the dead zone now). Contact box unchanged (outlined yellow unlock rule). v29 in archive/.
 v29 2026-10-08 (.page Mockups, Kim): section anchor chips back: one slim, non-sticky row &quot;On this page&quot; (Location, FAQ,
                 Photos, About, Products, Hours) under the completion meter, Ad #1 well above it. v28 in archive/.
 v28 2026-10-08 (.page Mockups, Kim): quiet profile-completion meter under the Need help card (thin bar + &quot;Profile 88% complete&quot;,
@@ -141,9 +147,9 @@ security page. Cloudflare Turnstile ONLY on the security page, nowhere else.</pr
 - The page earns its ads (survival first, Kim 2026-10-05/06): identity, then the first ad, then a gap of plain content, then
   the contact box. Google counts buttons next to ads as accidental-click bait, which can put the whole AdSense account at risk,
   so the contact button never sits against an ad. A third ad mid-page, lower ads lazy-loaded: more income within the rules.
-- Jump links were cut on 2026-09-25 and in v4 (kb/listing-page-engine.md &quot;Anchor chips removed&quot;; design-evidence rule 3):
-  they let people skip scrolling, and with it the ad slots. Kim brought the anchor chips back on 2026-10-08 (v29) as a slim
-  row well below Ad #1; measure whether Ad #mid viewability drops.
+- Header ad first, then a fixed 150px empty gap (v30, .page Analytic for Kim): the IW_Manual_Header unit is the top earner,
+  and nothing clickable within 150px of it keeps accidental clicks away. The box reserves its height before the ad loads,
+  so nothing below it jumps. Chips go to sub-pages (no in-page jump links: those let people skip the ads, 2026-09-25).
 - No numbers on this page: &quot;View contact details&quot; goes to the security page, the only way to the numbers (C5, D33).
 - For AI assistants and bots: the JSON-LD has no number, only contactPoint.url = the contact-details page, so an assistant
   answering &quot;how do I call Yellow Tower?&quot; gives its user that link to unlock (Kim 2026-09-21, kb/agent-back-channel.md).
@@ -160,19 +166,23 @@ security page. Cloudflare Turnstile ONLY on the security page, nowhere else.</pr
 IF data: kicker, H1 with the frozen yellow line, logo when a real logo file exists (none in the repo yet, so none shown:
 never an &quot;awaiting asset&quot; placeholder), short description. IF no short description: the bridge cascade (engine decision 1).
 Intro max 2 lines on a 360px phone, no ↓ (audit 2026-10-07: &quot;View contact details&quot; above the fold at 360x640). Description editing lives only under About (D31).</pre></li>
-<li><pre>AD #1, 300x250 fixed on every screen, height reserved, never collapses (D5).
-Label &quot;Advertisements&quot;; no &quot;Manage advertisement&quot; link and no ↓ above it (audit 2026-10-07).
-DEVELOPER (item 8): AdSense async + lazy, slot height fixed at 250px (no layout shift).</pre></li>
-<li><pre>AT A GLANCE: the dead zone between the ad and the contact button (engine 2026-10-05). Plain text, nothing to tap.
-Rows only when the record has them: today&#x27;s hours, area, channel types. No price row: prices come only from the owner (Kim 2026-10-06) (never values,
-never &quot;website&quot;, N22). IF fewer than two rows: left out. ONE line only (audit 2026-10-07; area is already in the kicker).</pre></li>
+<li><pre>HEADER AD (v30, Kim 2026-10-08; layout from .page Analytic). Only the name above it (design-evidence rule 1).
+&quot;Advertisements&quot; label above the box; the box is the live IW_Manual_Header unit (ad slot 2140649070), responsive,
+min-height 280px reserved before the ad loads (CLS 0; a taller fill reserves its own height at render, the 150px gap
+moves down with it and stays 150px). AdSense async + lazy. No &quot;Manage advertisement&quot; link, no ↓.</pre></li>
+<li><pre>150PX GAP (v30): fixed, empty, nothing clickable (replaces the one-line at-a-glance dead zone; its hours and channel
+types live in the Hours block and the contact box). Then the short description (max 2 lines on a 360px phone).</pre></li>
+<li><pre>SUB-PAGE CHIPS (v30): real links to this business&#x27;s own sub-pages (N28), never in-page anchors; at least 150px below
+the ad (gap + description). Only sub-pages that exist for the record, in this order: About, Products, Hours, Map
+(our own map page, location/; never Google Maps), Photos. One slim row; scrolls sideways if it ever overflows.</pre></li>
 <li><pre>CONTACT BOX (mother box, D2, D33, D35). Masked number only. The lock button goes to the separate security page
 (production /contact-details; here the security page mockup). Two ragged lines of tiny grey unlock copy, the ↓ is not
 a link. &quot;Website&quot; and &quot;Social&quot; dropped from the copy (N22; social profiles are not verified for this business).
 &quot;Edit or add contact details&quot; centred below, for owners. No WhatsApp or email chips, no divider below (D2).
 DEVELOPER (item 4, A/B test): exclude the unlock button from AdSense vignettes with data-google-interstitial=&quot;false&quot;
 on this link (variant B) vs the default (variant A); compare contact_gate_solved rate and vignette revenue per 1,000
-views before deciding. Above the fold at 360x640 with a clear gap to the ad (glance line + box header between).</pre></li>
+views before deciding. Since v30 (header-ad layout) the box sits below the 150px gap, description and chips, so it is
+no longer above the fold at 360x640 (Kim&#x27;s call, layout from .page Analytic).</pre></li>
 <li><pre>MASKED NUMBERS (Kim 2026-10-07): show all but the last 3 digits (&quot;+855 12 869 ***&quot;), never more hidden. The repo holds
 no raw phone digits, so masks are placeholders ({{YT_PHONE_MASKED}}, {{MASK_KH...}}) filled at publish from the box-only
 values file; other businesses&#x27; numbers come from their live &lt;id&gt;.contact.page listings.
@@ -204,16 +214,6 @@ Production renders it server-side from the record; the inline script recomputes 
 and the box has a fixed height, so no layout shift. Owner nudge &quot;Is this yours? Complete it&quot; opens @page.me with a
 plain prefill naming what is missing, ref last (N37): &quot;(ref kh34363 complete)&quot;. At 100% the nudge line stays, without
 a missing list.</pre></li>
-<li><pre>ANCHOR CHIPS (v29, Kim 2026-10-08: &quot;put the chips back&quot;). Not visible, dev notes only.
-HISTORY: v2 had top &quot;on this page&quot; chips; removed 2026-09-25 (kb/listing-page-engine.md &quot;Anchor chips removed&quot;: people
-skip scrolling and with it the ad slots), moved to a footer &quot;On this page&quot; list in v3, cut entirely in v4 (design-evidence
-rule 3, &quot;No jump links&quot;). Kim reversed it for this row only, on .page Analytic&#x27;s AdSense reading.
-RULES: one slim horizontal row of in-page anchors, same chip style as every chip row (Kim 2026-10-06), never wraps (scrolls
-sideways on narrow phones), not sticky, fixed 24px height (no layout shift). Placed under the Need help card and the
-completion meter: the contact box and help card sit between it and Ad #1 (clear gap), and no ad sits right after it.
-Only sections that render on this page, in page order; a section left out (no data) drops its chip. Contact is not a
-chip (the contact box is right above). Targets are the section headings&#x27; ids.
-MEASURE: log jump_chip_click {section}; compare Ad #mid viewability and page RPM for 5 weekdays before/after.</pre></li>
 <li><pre>LOCATION (D24, D8): label left, content right on wide screens; stacks on phones. Address one part per line.
 &quot;Open in map&quot; goes to our own map page for this business (location/, Kim 2026-10-06: the block needs a map link);
 never a map embed, never a Google Maps link. The route has to ship with the page.
