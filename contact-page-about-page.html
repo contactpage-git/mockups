@@ -22,6 +22,9 @@ a{color:inherit}.page{max-width:760px;margin:0 auto;background:#fff}.w{padding:0
 .scene-unused{background:#0f172a;color:#e2e8f0;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;font-size:14px;margin:6px 0 0}
 footer{background:#fafafa;border-top:1px solid var(--line);margin:0;color:var(--mute);font-size:12px;padding:16px 0;text-align:center}.fl{line-height:2}.fl a{color:#374151;text-decoration:underline;text-underline-offset:2px}.fl span{color:#c4c8cd;margin:0 4px}.about{font-size:11px;color:#9ca3af;margin-top:6px}
 h1{font-size:32px;line-height:1.15;margin:0 0 12px}h2{font-size:20px;margin:26px 0 10px}.lead{font-size:17px;color:#374151}.hist{padding-left:20px}.hist li{margin:0 0 10px}main{padding:22px 0 30px}
+.flow{display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin:6px 0 14px}.st{flex:1 1 0;text-align:center;font-size:14px}.st svg{display:block;margin:0 auto 6px}.st b{display:block}.st small{color:var(--mute);font-size:12px}.flow .ar{flex:0 0 18px;align-self:flex-start;margin-top:22px;height:20px;background:no-repeat center/18px 12px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 12'%3E%3Cpath d='M0 6h15M10 1l5 5-5 5' fill='none' stroke='%23161616' stroke-width='2'/%3E%3C/svg%3E")}.lead.sm{font-size:15px}
+@media(max-width:480px){.flow{flex-direction:column;align-items:center;gap:2px}.st{flex:none}.flow .ar{margin:0;transform:rotate(90deg);height:18px}}
+
 </style>
 </head>
 <body>
@@ -39,12 +42,15 @@ h1{font-size:32px;line-height:1.15;margin:0 0 12px}h2{font-size:20px;margin:26px
 <li><b>Our founders go way back:</b> putting local businesses on the map since before smartphones.</li>
 </ul>
 <p class="lead"><b>Now the page works for you.</b> The same job, done by AI: your site, your customers, no typing.</p>
+<h2>At your service, since the first page</h2>
+<div class="flow"><div class="st"><svg viewBox="-34 -34 68 68" width="64" height="64" aria-hidden="true"><circle r="30" fill="#fff" stroke="#161616" stroke-width="2.5"/><path d="M-13 -6 h26 v16 h-26 z M-13 -6 l13 10 l13 -10" fill="#fff" stroke="#161616" stroke-width="2.2" stroke-linejoin="round"/></svg><b>The page</b><small>historical</small></div><span class="ar" aria-hidden="true"></span><div class="st"><svg viewBox="-34 -34 68 68" width="64" height="64" aria-hidden="true"><circle r="30" fill="#fff" stroke="#161616" stroke-width="2.5"/><path d="M-15 -10 l14 -3 v22 l-14 3 z M1 -13 l14 3 v22 l-14 -3 z" fill="#FFC400" stroke="#161616" stroke-width="2" stroke-linejoin="round"/></svg><b>Yellow Pages</b><small>directories</small></div><span class="ar" aria-hidden="true"></span><div class="st"><svg viewBox="-34 -34 68 68" width="64" height="64" aria-hidden="true"><circle r="30" fill="#fff" stroke="#161616" stroke-width="2.5"/><rect x="-20" y="-8" width="40" height="16" rx="8" fill="#fff" stroke="#161616" stroke-width="2"/><circle cx="-12" cy="0" r="3.5" fill="none" stroke="#161616" stroke-width="1.6"/><path d="M-9.5 2.5 l3 3" stroke="#161616" stroke-width="1.6"/><rect x="-4" y="-4" width="1.8" height="8" fill="#161616"><animate attributeName="x" values="-4;10;10" keyTimes="0;0.7;1" dur="1.6s" repeatCount="indefinite"/></rect></svg><b>Search</b><small>online</small></div><span class="ar" aria-hidden="true"></span><div class="st now"><svg viewBox="-34 -34 68 68" width="64" height="64" aria-hidden="true"><circle r="30" fill="#FFC400" stroke="#161616" stroke-width="2.5"/><rect x="-12" y="-9" width="24" height="18" rx="6" fill="#fff" stroke="#161616" stroke-width="2"/><circle cx="-5" cy="0" r="2.2" fill="#161616"/><circle cx="5" cy="0" r="2.2" fill="#161616"/><path d="M0 -9 v-5" stroke="#161616" stroke-width="2"/><circle cx="0" cy="-15" r="2" fill="#161616"/></svg><b>Page AI</b><small>now</small></div></div>
+<p class="lead sm">A page carried messages for the house. The Yellow Pages brought sellers and customers together. Then we searched. Now Page, your AI assistant, carries the messages again: <b>always at your service</b>.</p>
 </main>
 <footer><div class="w"><div class="fl"><a href="/">Home</a></div><div class="about">Contact Page is a brand of Yellow Tower Company Limited, Phnom Penh.</div></div></footer>
 </div>
 <div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
 <details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
-<p class="meta" style="text-align:center;font-size:11px;color:#9ca3af">Mockup · About page · version 1 · 2026-10-08</p>
+<p class="meta" style="text-align:center;font-size:11px;color:#9ca3af">Mockup · About page · version 2 · 2026-10-08</p>
 <p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/contact-page-about-page-notes.html">Developer notes: what changed and why, every version</a></p>
 </details>
 </body>
