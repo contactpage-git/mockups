@@ -48,7 +48,7 @@ ul.tr ul{list-style:none;margin:0 0 0 10px;padding:0 0 0 12px;border-left:1px so
 .hint{flex:1 1 100%;font-size:12px;color:#9a9a9a;margin:-2px 0 0 28px}
 .find{font-size:12.5px;color:#757575;text-decoration:underline;text-decoration-color:#cfcfcf;text-underline-offset:3px;background:none;border:0;cursor:pointer;padding:2px 0;font-family:Arial}
 .fb{display:none;flex:1 1 100%;margin:2px 0 6px 28px;border:1px dashed #d0d0d0;border-radius:8px;padding:8px 10px;font-size:12.5px}
-.fb.on{display:block}.fb .fbs{margin:2px 0 8px;color:#9a9a9a;font-size:12px}.fbo{border-top:1px solid var(--line);padding-top:8px;margin-top:8px}.fbo>span{display:block;font-weight:700;margin-bottom:4px;font-size:12.5px}.fbo .btn{margin:2px 4px 2px 0}.fb textarea{width:100%;font:13px Arial;border:1px solid #d0d0d0;border-radius:6px;padding:6px;margin:6px 0}
+.fb.on{display:block}.fb textarea{width:100%;font:13px Arial;border:1px solid #d0d0d0;border-radius:6px;padding:6px;margin:6px 0}
 .add{font-size:12.5px;color:#757575;border:1px dashed #d0d0d0;background:#fff;border-radius:6px;padding:3px 9px;cursor:pointer;margin:2px 0 6px 28px;font-family:Arial}
 .add:hover{background:#fffbea;border-color:var(--yellow)}
 .show{display:inline-flex;gap:5px;align-items:center;font-size:12px;color:var(--grey);margin-left:auto}
@@ -72,24 +72,22 @@ ul.tr ul{margin:0 0 0 11px;padding-left:12px}
 .hintrow .show{margin-left:0;font-size:12.5px}
 .open>.h .car::before{content:"\25BE"}
 .car{pointer-events:none}
-.sq{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0 0}
-.sqb{aspect-ratio:1/1;border:1px solid var(--line);border-radius:12px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font:600 13px/1.25 Arial;color:var(--ink);cursor:pointer;padding:8px;text-align:center}
-.sqb svg{color:var(--ink)}.sqb:hover{background:#fffbea}.sqb[aria-expanded=true]{border-color:var(--yellow);background:#fffbea;box-shadow:inset 0 0 0 1px var(--yellow)}
-.sqp{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0 0;font-size:14px}.sqp p{margin:0 0 8px}.sqp p:last-child{margin:0}
 </style>
 </head>
 <body>
 <div class="w">
 <a class="crumb" href="yellow-tower-contact-details-page.html?role=owner">&#8592; Contact details</a>
 <h1>Yellow Tower: owner page</h1>
-<div class="sq" id="sq" role="group" aria-label="Quick boxes">
-<button type="button" class="sqb" data-p="refresh" aria-expanded="false"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M8 16H3v5"/></svg><span>Refresh</span></button>
-<button type="button" class="sqb" data-p="prog" aria-expanded="false"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg><span><b id="pcn">0/0</b> filled</span></button>
-<button type="button" class="sqb" data-p="how" aria-expanded="false"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span>How it works</span></button>
+<p class="sub">Everything your page can hold. Only you see this page.</p>
+
+<div class="card">
+<p><b>Refresh my page</b></p>
+<p>Our agents check every source again and write to you when done. It takes about a day.</p>
+<a class="btn sm" id="refresh" href="#">Refresh my page</a>
+<p class="s">Tip: open a branch, type in the boxes, then tap "Send my changes" at the bottom.</p>
 </div>
-<div class="sqp" id="p-refresh" hidden><p>Our agents check every source again and write to you when done. It takes about a day.</p><a class="btn sm" id="refresh" href="#">Refresh my page</a></div>
-<div class="sqp" id="p-prog" hidden><b id="pc">0 of 0 fields filled</b><div class="bar"><i id="pb"></i></div><p>Empty fields are fine. Fill what you know, we help with the rest.</p></div>
-<div class="sqp" id="p-how" hidden><p>Tap a row to open it, type, then tap "Send my changes" at the bottom. Nothing goes on your page until we have checked it.</p></div>
+
+<div class="card"><b id="pc">0 of 0 fields filled</b><div class="bar"><i id="pb"></i></div><span class="cnt">Empty fields are fine. Fill what you know, we help with the rest.</span></div>
 
 <div class="tb">
 <input type="search" id="q" placeholder="Search a field, e.g. phone, hours, parking" aria-label="Search fields">
@@ -175,7 +173,7 @@ function leaf(path,n,idx,top){
   return '<li class="n leaf'+(e?' e':'')+'" data-p="'+esc(path)+'" data-l="'+esc(L)+'" data-id="'+id+'"><div class="h" tabindex="0" role="button" aria-expanded="false"><button class="car" tabindex="-1" aria-hidden="true"></button><span class="k">'+esc(L)+'</span><span class="dot'+(e?'':' f')+'"></span></div>'+
    '<div class="body"><div class="val">'+tag(n.v)+'</div><div class="val"><input id="'+id+'" value="'+esc(val||"")+'" '+(ro?'readonly':'')+' placeholder="'+(ro?'We fill this':'')+'" aria-label="'+esc(L)+'"></div>'+
    (n.h?'<div class="hint">'+esc(n.h)+'</div>':'')+
-   (e&&!ro&&!VIS?'<div class="val"><button class="find" type="button" data-find="'+id+'">Try to find it</button></div><div class="fb" id="fb'+id+'"><b>Try to find it</b><p class="fbs">Pick one. You stay in charge: nothing is saved until you press Send.</p>'+(n.v==="X"?'':'<div class="fbo"><span>1. Ask an AI, then paste the answer here</span><a class="btn sm" target="_blank" rel="noopener nofollow" href="https://www.google.com/search?udm=50&amp;hl=en&amp;q='+encodeURIComponent(NAME+", Phnom Penh: what is the "+L.toLowerCase()+"? Reply with only the answer in one short line, then where you found it. If you cannot find it, say so.")+'">Ask Google AI</a> <button class="btn sm" type="button" data-copy="'+id+'">Copy a prompt for my own AI</button><textarea rows="2" placeholder="Paste the answer here" aria-label="Answer from your AI"></textarea><button class="btn sm" type="button" data-use="'+id+'">Use this answer</button></div>')+'<div class="fbo"><span>'+(n.v==="X"?'Ask us':'2. Or ask us')+'</span>We will research this field. There is no guarantee we find it. Add your own sources if you like:<textarea rows="2" placeholder="Websites, registers, people to ask"></textarea><a class="btn sm" data-go="'+id+'" href="#">Ask us to look</a></div></div>':'')+'</div></li>';
+   (e&&!ro&&!VIS?'<div class="val"><button class="find" type="button" data-find="'+id+'">Try to find it</button></div><div class="fb" id="fb'+id+'">We will research this field. There is no guarantee we find it. Add your own sources if you like:<textarea rows="2" placeholder="Websites, registers, people to ask"></textarea><a class="btn sm" data-go="'+id+'" href="#">Ask us to look</a></div>':'')+'</div></li>';
 }
 function branch(L,p,inner,top,hint,showtick){
   return '<li class="n'+(top?' top':'')+'" data-p="'+esc(p)+'" data-l="'+esc(L)+'"><div class="h" tabindex="0" role="button" aria-expanded="false"><button class="car" tabindex="-1" aria-hidden="true"></button><span class="k">'+esc(L)+'</span></div><ul class="kids">'+(hint?'<li class="hintrow">'+esc(hint)+'</li>':'')+(showtick?'<li class="hintrow"><label class="show"><input type="checkbox" checked data-show> Show on my page</label></li>':'')+inner+'</ul></li>';
@@ -202,7 +200,7 @@ tree.innerHTML=T.map(function(n){return (CAP[n.k]?'<li class="cap">'+CAP[n.k]+'<
 function recount(){
   var all=tree.querySelectorAll('.leaf:not(.ro)'),f=0,n=0;
   [].forEach.call(tree.querySelectorAll('.leaf'),function(li){var v=li.querySelector('input');if(v.readOnly&&!v.value)return;n++;if(v.value)f++});
-  document.getElementById('pc').textContent=f+' of '+n+' fields filled';document.getElementById('pcn').textContent=f+'/'+n;
+  document.getElementById('pc').textContent=f+' of '+n+' fields filled';
   document.getElementById('pb').style.width=(n?100*f/n:0)+'%';
   [].forEach.call(tree.querySelectorAll('.n:not(.leaf)'),function(nd){var ls=nd.querySelectorAll('.leaf'),k=0,m=0;[].forEach.call(ls,function(li){var v=li.querySelector('input');if(v.readOnly&&!v.value)return;m++;if(v.value)k++});var c=nd.querySelector(':scope>.h .cnt');if(c)c.textContent=k+'/'+m});
 }
@@ -226,9 +224,6 @@ tree.addEventListener('input',function(e){var li=e.target.closest('.leaf');if(!l
 tree.addEventListener('click',function(e){
   var t=e.target;
   var hh=t.closest('.h');if(hh&&!t.closest('label,input,a')){var nd=hh.parentNode;nd.classList.toggle('open');hh.setAttribute('aria-expanded',nd.classList.contains('open'));return}
-  var cp=t.closest('[data-copy]');if(cp){var li0=cp.closest('.leaf'),txt="I need to fill in one detail on my business page.\nBusiness: "+NAME+", Phnom Penh.\nDetail: "+li0.dataset.l+" ("+(li0.querySelector('.hint')?li0.querySelector('.hint').textContent:'')+").\nPlease search and reply with only the answer in one short line, then the source link. If you cannot find it, say so. Do not guess.";
-    var done=function(){cp.textContent='Copied. Paste it into your AI'};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){window.prompt('Copy this:',txt)})}else{window.prompt('Copy this:',txt)}return}
-  var us=t.closest('[data-use]');if(us){var li1=us.closest('.leaf'),ta1=us.parentNode.querySelector('textarea'),v1=ta1.value.trim();if(v1){var inp=li1.querySelector('input');inp.value=v1;inp.dispatchEvent(new Event('input',{bubbles:true}));document.getElementById('fb'+us.dataset.use).classList.remove('on');inp.focus()}return}
   var f=t.closest('[data-find]');if(f){document.getElementById('fb'+f.dataset.find).classList.toggle('on');return}
   var go=t.closest('[data-go]');if(go){e.preventDefault();var li=go.closest('.leaf'),ta=go.closest('.fb').querySelector('textarea').value;
     location.href="mailto:"+CODE+"@contact.page?subject="+encodeURIComponent("Find: "+store[li.dataset.id].path+" for "+NAME+" (ref "+CODE+" find)")+"&body="+encodeURIComponent("Hi contact.page,\r\n\r\nPlease try to find: "+store[li.dataset.id].path+"\r\n\r\nMy own sources: "+ta+"\r\n\r\nI know there is no guarantee.\r\n\r\n(ref "+CODE+" find)");return}
@@ -252,22 +247,17 @@ document.getElementById('q').addEventListener('input',function(){
   });
 });
 document.getElementById('refresh').href="mailto:"+CODE+"@contact.page?subject="+encodeURIComponent("Refresh: "+NAME+" (ref "+CODE+" refresh)")+"&body="+encodeURIComponent("Hi contact.page,\r\n\r\nPlease check every source again for "+NAME+" and write to me when you are done. I know it takes about a day.\r\n\r\n(ref "+CODE+" refresh)");
-document.getElementById('sq').addEventListener('click',function(e){var b=e.target.closest('.sqb');if(!b)return;var open=b.getAttribute('aria-expanded')==='true';[].forEach.call(document.querySelectorAll('.sqb'),function(x){x.setAttribute('aria-expanded','false')});[].forEach.call(document.querySelectorAll('.sqp'),function(x){x.hidden=true});if(!open){b.setAttribute('aria-expanded','true');document.getElementById('p-'+b.dataset.p).hidden=false}});
 if(VIS){
   document.title="Help improve Yellow Tower · contact.page";
   document.querySelector('h1').textContent="Help improve Yellow Tower";
+  document.querySelector('.sub').textContent="You know something we don't? Add it or fix it here.";
   document.querySelector('.crumb').href="yellow-tower-contact-details-page.html?role=customer";
-  document.querySelector('[data-p="refresh"]').style.display='none';document.querySelector('[data-p="prog"]').style.display='none';
-  document.getElementById('sq').style.gridTemplateColumns='1fr';document.querySelector('[data-p="how"]').style.aspectRatio='auto';document.querySelector('[data-p="how"]').style.padding='14px';
-  document.getElementById('p-how').innerHTML='<p>Type what you know in any box, then tap Send. We check every suggestion before anything goes on the page, and we only publish facts that are true and useful. You do not need an account.</p>';
+  var c=document.querySelectorAll('.card');
+  c[0].innerHTML='<p><b>How it works</b></p><p>Type what you know in any box, then tap Send. We check every suggestion before anything goes on the page, and we only publish facts that are true and useful. You do not need an account.</p><p class="s">You work somewhere or own something too? You will see the same page for your business one day.</p>';
+  c[1].style.display='none';
   document.getElementById('send').querySelector('.btn').textContent='Send my suggestions';
 }
 recount();chg();
 </script>
-<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
-<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
-
-<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-owner-page-notes.html">Developer notes: what changed and why, every version</a></p>
-</details>
 </body>
 </html>
