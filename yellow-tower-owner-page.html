@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow"><meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yellow Tower owner page · contact.page</title>
+
+<style>
+:root{--yellow:#FFC400;--ink:#161616;--grey:#6f6f6f;--line:#e9e9e9;--chip:#f1f2f3}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font:15px/1.5 Arial,Helvetica,sans-serif;border-top:4px solid var(--yellow)}
+.w{max-width:430px;margin:0 auto;padding:0 16px 120px}
+.crumb{display:inline-flex;align-items:center;gap:2px;margin:16px 0 6px;font-size:14px;font-weight:600;text-decoration:none;color:var(--ink)}
+h1{font-size:23px;line-height:1.2;margin:4px 0 2px}
+.sub{color:var(--grey);font-size:14px;margin:0 0 10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:var(--ink);border:2px solid var(--yellow);font:600 14px Arial;border-radius:10px;padding:9px 14px;cursor:pointer;text-decoration:none}
+.btn:hover{background:#fffbea}.btn.sm{padding:5px 10px;font-size:13px;border-width:1.5px}
+.card{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}
+.card p{margin:0 0 8px;font-size:14px}.card .s{font-size:12.5px;color:var(--grey);margin:6px 0 0}
+.bar{height:6px;border-radius:3px;background:var(--chip);overflow:hidden;margin:6px 0 2px}.bar i{display:block;height:100%;width:0;background:var(--yellow)}
+.tb{position:sticky;top:0;background:#fff;z-index:6;padding:8px 0;border-bottom:1px solid var(--line);margin-top:6px}
+.tb input[type=search]{width:100%;font:14px Arial;border:1px solid #d0d0d0;border-radius:8px;padding:8px 10px}
+.tb .r{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-top:7px;font-size:12.5px}
+.tb button.t{font:600 12.5px Arial;border:1px solid #d0d0d0;background:#fff;border-radius:6px;padding:4px 9px;cursor:pointer}
+.tb button.t:hover{background:#fffbea;border-color:var(--yellow)}
+.tb label{color:var(--grey);display:inline-flex;gap:5px;align-items:center}
+ul.tr{list-style:none;margin:8px 0 0;padding:0}
+ul.tr ul{list-style:none;margin:0 0 0 10px;padding:0 0 0 12px;border-left:1px solid var(--line)}
+.n{margin:0}
+.h{display:flex;align-items:center;gap:6px;padding:6px 0;min-height:36px;flex-wrap:wrap}
+.car{width:22px;height:22px;flex:none;border:0;background:none;cursor:pointer;font-size:12px;color:var(--grey);padding:0}
+.car::before{content:"\25B8"}.open>.h .car::before{content:"\25BE"}
+.sp{width:22px;flex:none}
+.k{font:13px ui-monospace,Menlo,Consolas,monospace;font-weight:700}
+.top>.h .k{font-size:14px}
+.brace{color:var(--grey);font:12px ui-monospace,Menlo,monospace}
+.cnt{font-size:11.5px;color:var(--grey)}
+.tag{font-size:10.5px;border-radius:4px;padding:1px 6px;background:var(--chip);color:#555;white-space:nowrap}
+.tag.x{background:#fff;border:1px solid #bbb;color:#555}.tag.g{color:#7a5a00;background:#fffbea}.tag.r{background:#fff;border:1px dashed #cfcfcf;color:#8a8a8a}
+.dot{width:8px;height:8px;border-radius:50%;background:#d6d6d6;flex:none}.dot.f{background:var(--yellow)}
+.kids{display:none}.open>.kids{display:block}
+.val{flex:1 1 100%;margin:0 0 4px 28px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.val input,.val textarea{flex:1;min-width:150px;font:14px Arial;border:1px solid #d0d0d0;border-radius:6px;padding:6px 8px;background:#fff}
+.val input:focus,.val textarea:focus{outline:2px solid var(--yellow);border-color:var(--yellow)}
+.val input[readonly]{background:#f6f6f6;color:#777;border-style:dashed}
+.val.ch input,.val.ch textarea{background:#fffbea;border-color:var(--yellow)}
+.hint{flex:1 1 100%;font-size:12px;color:#9a9a9a;margin:-2px 0 0 28px}
+.find{font-size:12.5px;color:#757575;text-decoration:underline;text-decoration-color:#cfcfcf;text-underline-offset:3px;background:none;border:0;cursor:pointer;padding:2px 0;font-family:Arial}
+.fb{display:none;flex:1 1 100%;margin:2px 0 6px 28px;border:1px dashed #d0d0d0;border-radius:8px;padding:8px 10px;font-size:12.5px}
+.fb.on{display:block}.fb textarea{width:100%;font:13px Arial;border:1px solid #d0d0d0;border-radius:6px;padding:6px;margin:6px 0}
+.add{font-size:12.5px;color:#757575;border:1px dashed #d0d0d0;background:#fff;border-radius:6px;padding:3px 9px;cursor:pointer;margin:2px 0 6px 28px;font-family:Arial}
+.add:hover{background:#fffbea;border-color:var(--yellow)}
+.show{display:inline-flex;gap:5px;align-items:center;font-size:12px;color:var(--grey);margin-left:auto}
+.hid>.h .k,.hid>.h .brace{opacity:.45}
+.hide-empty .n.leaf.e{display:none}
+.nomatch{display:none}.q .nomatch{display:none}
+.send{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px 16px;display:none;z-index:8}
+.send.on{display:block}.send .in{max-width:430px;margin:0 auto;display:flex;gap:10px;align-items:center}
+.send .in span{flex:1;font-size:13px}
+.send .btn{background:var(--yellow);border-color:var(--yellow)}
+.warn{color:#8a5a00;font-size:12px}
+</style>
+</head>
+<body>
+<div class="w">
+<a class="crumb" href="yellow-tower-contact-details-page.html?role=owner">&#8592; Contact details</a>
+<h1>Yellow Tower: owner page</h1>
+<p class="sub">Everything your page can hold. Only you see this page.</p>
+
+<div class="card">
+<p><b>Refresh my page</b></p>
+<p>Our agents check every source again and write to you when done. It takes about a day.</p>
+<a class="btn sm" id="refresh" href="#">Refresh my page</a>
+<p class="s">Tip: open a branch, type in the boxes, then tap "Send my changes" at the bottom.</p>
+</div>
+
+<div class="card"><b id="pc">0 of 0 fields filled</b><div class="bar"><i id="pb"></i></div><span class="cnt">Empty fields are fine. Fill what you know, we help with the rest.</span></div>
+
+<div class="tb">
+<input type="search" id="q" placeholder="Search a field, e.g. phone, hours, parking" aria-label="Search fields">
+<div class="r"><button class="t" id="ea" type="button">Expand all</button><button class="t" id="ca" type="button">Collapse all</button><label><input type="checkbox" id="oe"> Only empty</label></div>
+</div>
+<ul class="tr" id="tree"></ul>
+</div>
+
+<div class="send" id="send"><div class="in"><span id="sc"></span><a class="btn" id="sb" href="#">Send</a></div></div>
+
+<script>
+var CODE="kh34363",NAME="Yellow Tower",VIS=/[?&]as=visitor/.test(location.search);
+/* helpers: vis P public, G behind the check, X only you, R we fill (read-only) */
+function S(k,vis,hint,val){return{k:k,t:"s",v:vis,h:hint||"",val:val||""}}
+function A(k,vis,hint,vals){return{k:k,t:"a",v:vis,h:hint||"",vals:vals||[]}}
+function O(k,vis,hint){var c=[].slice.call(arguments,3);return{k:k,t:"o",v:vis,h:hint||"",c:c}}
+function L(k,vis,hint){var c=[].slice.call(arguments,3);return{k:k,t:"l",v:vis,h:hint||"",c:c}}
+var T=[
+S("identifier","R","Your page code","kh34363"),
+S("schemaVersion","R","Which schema version your record follows","2.1"),
+S("portal","R","The portal your page lives on"),
+S("providerType","P","business or freelancer","business"),
+S("name","P","Your business name as you publish it","Yellow Tower - Office Space"),
+S("legalName","P","Registered name, often longer, e.g. ... Co., Ltd."),
+A("alternateName","P","Other spellings or former names"),
+S("slogan","P","One line, e.g. what you promise"),
+S("description","P","Your own words about the business"),
+S("disambiguatingDescription","P","Short version, max 160 characters, in English"),
+L("translations","P","Short description in another language",S("lang","P","km, th, id, ms ..."),S("text","P","Max 160 characters")),
+S("primaryCategory","P","Your main category","Office Rental Services"),
+A("categories","P","All categories that fit"),
+S("logo","P","Link to your logo image"),
+L("image","P","Photos, the first is the main one",S("contentUrl","P","Link to the photo"),S("caption","P","What is in the photo"),S("width","P","Pixels"),S("height","P","Pixels"),S("creditText","P","Who took it"),S("license","P","Your own photo? Say so")),
+L("subjectOf","P","Albums, catalogues, brochures, price lists",S("name","P","Album or file name, max 40 characters"),A("imageIds","P","Which photos belong to the album"),S("contentUrl","P","Link to a PDF"),S("encodingFormat","P","e.g. application/pdf")),
+A("telephone","G","Digits with country code; first is the main one",["+855 12 869 111"]),
+A("whatsapp","G","Digits; first is the main one",["+855 12 869 111"]),
+S("messenger","G","Your Messenger link"),
+A("email","G","First is the main one"),
+L("contactPoint","G","A department, e.g. Sales or Billing",S("contactType","G","Sales, billing, support ..."),A("availableLanguage","P","English, Khmer, Chinese ...")),
+S("url","P","Your own website"),
+A("sameAs","P","Facebook, Instagram, LinkedIn, Telegram ... one link each"),
+O("address","P","Where you are",S("streetAddress","P","One line, number and street","No. 191, Tonle Sap Road"),S("district","P","Khan, kecamatan ...","Chroy Changva"),S("addressLocality","P","City","Phnom Penh"),S("addressRegion","P","Province or state"),S("postalCode","P","","12210"),S("addressCountry","P","Two letters","KH")),
+O("geo","P","Map pin",S("latitude","P","A number, e.g. 11.5646"),S("longitude","P","A number, e.g. 104.9283")),
+A("areaServed","P","Areas you serve"),
+S("timeZone","P","e.g. Asia/Phnom_Penh"),
+O("directions","P","Help people find the door",S("landmark","P","e.g. opposite the market"),S("floor","P",""),S("entrance","P",""),S("parking","P",""),S("mapPinNote","P","e.g. pin is on the main door"),O("local","P","Directions in your local language",S("lang","P","km, th ..."),S("text","P",""))),
+L("openingHoursSpecification","P","One line per day group",A("dayOfWeek","P","Monday ... Sunday"),S("opens","P","HH:MM, 24 hours"),S("closes","P","HH:MM, 24 hours")),
+L("makesOffer","P","What you sell or rent. Prices only from you",S("availability","P","In stock, out of stock ..."),O("itemOffered","P","The thing",S("type","P","Product or Service"),S("name","P",""),S("description","P",""),A("image","P","Photo links"),S("category","P",""),L("additionalProperty","P","Features",S("name","P","e.g. Air conditioning"),S("value","P","e.g. yes")),S("sku","P","Your own code"),S("brand","P","")),S("businessFunction","P","Lease, sell ..."),S("price","P","A number"),S("priceCurrency","P","USD, KHR ..."),O("priceSpecification","P","From-prices, ranges, per unit",S("price","P",""),S("minPrice","P",""),S("maxPrice","P",""),S("unitText","P","per month, per m2"),S("priceType","P","list or from"))),
+A("paymentAccepted","P","Cash, bank transfer, QR wallet ..."),
+A("currenciesAccepted","P","USD, KHR ..."),
+S("priceRange","P","Hospitality only; leave empty for offices"),
+A("brand","P","Brands you own"),
+S("foundingDate","P","YYYY, or YYYY-MM-DD"),
+L("employees","P","Owner or director only: name and title, no direct lines",S("name","P",""),S("jobTitle","P","")),
+S("registrationNumber","P","Your company registration number"),
+S("registrationStatus","P","Status in the official register"),
+A("isicV4","P","Activity codes from the register"),
+A("certifications","P","ISO 9001 ..."),
+S("vatID","P","Company VAT number, not a personal id"),
+L("announcements","P","News, offers, closures, new stock",S("kind","P","news, offer, closure ..."),S("text","P",""),S("datePosted","P","YYYY-MM-DD"),S("expires","P","YYYY-MM-DD")),
+L("ownerFaq","P","Questions from you, in your words",S("q","P","The question"),S("a","P","Your answer"),S("lang","P","en, km ...")),
+S("verifiedAt","R","The day we last verified you"),
+S("nextCheckAt","R","When we check you again"),
+S("taxID","X","Never public, never in search"),
+O("_registry","X","Your own register record: only you see it (owner-pass)",S("source_id","R","e.g. moc-kh"),S("registryId","R","The register's company id"),S("registeredOn","X",""),L("directors","X","Current and former",S("name","X",""),S("role","X",""),S("from","X",""),S("to","X","")),L("nameHistory","X","",S("name","X",""),S("from","X",""),S("to","X","")),L("addressHistory","X","",S("address","X",""),S("from","X",""),S("to","X","")),L("filings","X","Kind and date only, no amounts",S("kind","X",""),S("date","X",""),S("url","X","")),S("employeeCount","X","A number")),
+O("_verification","R","How we checked you: we fill this",S("status","R",""),S("verified_at","R",""),S("verified_by","R",""),S("source","R",""),L("evidence","R","",S("type","R",""),S("url","R",""),S("checked_at","R",""))),
+O("_provenance","R","Where each fact came from: we fill this",S("source_id","R",""),S("collected_by","R",""),S("collected_at","R",""),S("method","R",""),S("verification","R",""),S("updated_at","R","")),
+O("_media_license","R","Photo licences: we fill this")
+];
+function strip(a){return a.filter(function(n){return n.v!=="X"&&n.v!=="R"}).map(function(n){if(n.c)n.c=strip(n.c);return n})}
+if(VIS)T=strip(T);
+var VL={P:["Public",""],G:["Behind the check","g"],X:["Only you","x"],R:["We fill","r"]};
+var uid=0,store={},changes={},total=0,tree=document.getElementById('tree');
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
+function tag(v){return '<span class="tag '+VL[v][1]+'">'+VL[v][0]+'</span>'}
+function leaf(path,n,idx){
+  var id='f'+(uid++),val=idx==null?n.val:n.vals[idx],ro=n.v==="R";
+  store[id]={path:path,orig:val||""};total++;
+  var e=!val;
+  var h='<li class="n leaf'+(e?' e':'')+'" data-p="'+esc(path)+'" data-id="'+id+'"><div class="h"><span class="sp"></span><span class="dot'+(e?'':' f')+'"></span><span class="k">'+esc(idx==null?n.k:n.k+'['+idx+']')+'</span>'+tag(n.v)+'</div>'+
+   '<div class="val"><input id="'+id+'" value="'+esc(val||"")+'" '+(ro?'readonly':'')+' placeholder="'+(ro?'We fill this':'')+'" aria-label="'+esc(path)+'"></div>'+
+   (n.h?'<div class="hint">'+esc(n.h)+'</div>':'')+
+   (e&&!ro&&!VIS?'<div class="val" style="margin-top:0"><button class="find" type="button" data-find="'+id+'">Try to find it</button></div><div class="fb" id="fb'+id+'">We will research this field. There is no guarantee we find it. Add your own sources if you like:<textarea rows="2" placeholder="Websites, registers, people to ask"></textarea><a class="btn sm" data-go="'+id+'" href="#">Ask us to look</a></div>':'')+'</li>';
+  return h;
+}
+function node(n,path,top){
+  var p=path?path+'.'+n.k:n.k;
+  if(n.t==="s")return leaf(p,n);
+  if(n.t==="a"){
+    var h='<li class="n top-'+top+(top?' top':'')+'" data-p="'+esc(p)+'"><div class="h"><button class="car" aria-label="Open or close"></button><span class="k">'+n.k+'</span><span class="brace">[ ]</span>'+tag(n.v)+'<span class="cnt"></span></div><ul class="kids">';
+    var vals=n.vals.length?n.vals:[""];
+    vals.forEach(function(v,i){h+=leaf(p+'['+i+']',{k:n.k,v:n.v,h:i?'':n.h,vals:vals},i)});
+    return h+'<li><button class="add" type="button" data-addarr="'+esc(p)+'" data-v="'+n.v+'" data-k="'+n.k+'">+ Add another</button></li></ul></li>';
+  }
+  var br=n.t==="l"?"[ { } ]":"{ }";
+  var h='<li class="n '+(top?'top':'')+'" data-p="'+esc(p)+'"><div class="h"><button class="car" aria-label="Open or close"></button><span class="k">'+n.k+'</span><span class="brace">'+br+'</span>'+tag(n.v)+'<span class="cnt"></span>'+(top&&!VIS?'<label class="show"><input type="checkbox" checked data-show> Show on my page</label>':'')+'</div>'+(n.h?'<div class="hint">'+esc(n.h)+'</div>':'')+'<ul class="kids">';
+  if(n.t==="l"){h+='<li class="n" data-p="'+esc(p)+'[0]"><div class="h"><button class="car" aria-label="Open or close"></button><span class="k">[0]</span><span class="brace">{ }</span><span class="cnt"></span></div><ul class="kids">';
+    n.c.forEach(function(c){h+=node(c,p+'[0]',false)});h+='</ul></li>';}
+  else n.c.forEach(function(c){h+=node(c,p,false)});
+  return h+'</ul></li>';
+}
+tree.innerHTML=T.map(function(n){return node(n,"",true)}).join('');
+function recount(){
+  var all=tree.querySelectorAll('.leaf:not(.ro)'),f=0,n=0;
+  [].forEach.call(tree.querySelectorAll('.leaf'),function(li){var v=li.querySelector('input');if(v.readOnly&&!v.value)return;n++;if(v.value)f++});
+  document.getElementById('pc').textContent=f+' of '+n+' fields filled';
+  document.getElementById('pb').style.width=(n?100*f/n:0)+'%';
+  [].forEach.call(tree.querySelectorAll('.n:not(.leaf)'),function(nd){var ls=nd.querySelectorAll('.leaf'),k=0,m=0;[].forEach.call(ls,function(li){var v=li.querySelector('input');if(v.readOnly&&!v.value)return;m++;if(v.value)k++});var c=nd.querySelector(':scope>.h .cnt');if(c)c.textContent=k+'/'+m});
+}
+function chg(){
+  var keys=Object.keys(changes),b=document.getElementById('send');
+  b.classList.toggle('on',keys.length>0);
+  document.getElementById('sc').textContent=keys.length+(VIS?' suggestion':' change')+(keys.length>1?'s':'')+' ready';
+  var L=["Hi contact.page,","",VIS?"I know something about "+NAME+". Please check these details and add them if they are right:":"Please update my page "+NAME+" with:"];
+  keys.forEach(function(k){L.push(k+": "+changes[k])});
+  var hid=[].map.call(tree.querySelectorAll('li.top.hid'),function(x){return x.dataset.p});
+  if(hid.length)L.push("","Hide these sections (do not delete): "+hid.join(", "));
+  L.push("",VIS?"I am a customer or visitor. Please reply to this email if you need more from me.":"I am the owner or staff. Please reply to this email.","(ref "+CODE+(VIS?" suggest":" owner")+")");
+  var body=L.join("\r\n\r\n").replace(/(\r\n){4,}/g,"\r\n\r\n");
+  var href="mailto:"+CODE+"@contact.page?subject="+encodeURIComponent((VIS?"Suggestion: ":"Owner update: ")+NAME+" (ref "+CODE+(VIS?" suggest":" owner")+")")+"&body="+encodeURIComponent(body);
+  var sb=document.getElementById('sb');sb.href=href;
+  document.getElementById('sc').innerHTML+=href.length>1800?' <span class="warn">Long: send in two parts.</span>':'';
+}
+tree.addEventListener('input',function(e){var li=e.target.closest('.leaf');if(!li)return;var st=store[li.dataset.id],v=e.target.value;
+  if(v!==st.orig){changes[st.path]=v}else delete changes[st.path];
+  li.querySelector('.val').classList.toggle('ch',v!==st.orig);li.classList.toggle('e',!v);li.querySelector('.dot').classList.toggle('f',!!v);recount();chg()});
+tree.addEventListener('click',function(e){
+  var t=e.target;
+  var car=t.closest('.car');if(car){car.closest('.n').classList.toggle('open');return}
+  var f=t.closest('[data-find]');if(f){document.getElementById('fb'+f.dataset.find).classList.toggle('on');return}
+  var go=t.closest('[data-go]');if(go){e.preventDefault();var li=go.closest('.leaf'),ta=go.closest('.fb').querySelector('textarea').value;
+    location.href="mailto:"+CODE+"@contact.page?subject="+encodeURIComponent("Find: "+store[li.dataset.id].path+" for "+NAME+" (ref "+CODE+" find)")+"&body="+encodeURIComponent("Hi contact.page,\r\n\r\nPlease try to find: "+store[li.dataset.id].path+"\r\n\r\nMy own sources: "+ta+"\r\n\r\nI know there is no guarantee.\r\n\r\n(ref "+CODE+" find)");return}
+  var ad=t.closest('[data-addarr]');if(ad){var ul=ad.closest('.kids'),n=ul.querySelectorAll(':scope>.leaf').length;
+    var tmp=document.createElement('ul');tmp.innerHTML=leaf(ad.dataset.addarr+'['+n+']',{k:ad.dataset.k,v:ad.dataset.v,h:'',vals:[""]},0);
+    var li=tmp.firstChild;li.querySelector('.k').textContent=ad.dataset.k+'['+n+']';ul.insertBefore(li,ad.parentNode);li.querySelector('input').focus();recount();return}
+  if(t.matches('[data-show]')){t.closest('li.top').classList.toggle('hid',!t.checked);chg()}
+});
+document.getElementById('ea').onclick=function(){[].forEach.call(tree.querySelectorAll('.n:not(.leaf)'),function(n){n.classList.add('open')})};
+document.getElementById('ca').onclick=function(){[].forEach.call(tree.querySelectorAll('.n:not(.leaf)'),function(n){n.classList.remove('open')})};
+document.getElementById('oe').onchange=function(){tree.classList.toggle('hide-empty',this.checked)};
+document.getElementById('q').addEventListener('input',function(){
+  var q=this.value.trim().toLowerCase();
+  [].forEach.call(tree.querySelectorAll('li.n'),function(n){n.style.display=''});
+  if(!q)return;
+  [].forEach.call(tree.querySelectorAll('li.n'),function(n){n.dataset.m=n.dataset.p.toLowerCase().indexOf(q)>-1?1:0});
+  [].forEach.call(tree.querySelectorAll('li.n'),function(n){
+    var hit=n.dataset.m==="1"||n.querySelector('li.n[data-m="1"]');
+    var anc=false;for(var p=n.parentNode.closest('li.n');p;p=p.parentNode.closest&&p.parentNode.closest('li.n')){if(p.dataset.m==="1")anc=true}
+    if(!hit&&!anc)n.style.display='none';else if(hit&&!n.classList.contains('leaf'))n.classList.add('open');
+  });
+});
+document.getElementById('refresh').href="mailto:"+CODE+"@contact.page?subject="+encodeURIComponent("Refresh: "+NAME+" (ref "+CODE+" refresh)")+"&body="+encodeURIComponent("Hi contact.page,\r\n\r\nPlease check every source again for "+NAME+" and write to me when you are done. I know it takes about a day.\r\n\r\n(ref "+CODE+" refresh)");
+if(VIS){
+  document.title="Help improve Yellow Tower · contact.page";
+  document.querySelector('h1').textContent="Help improve Yellow Tower";
+  document.querySelector('.sub').textContent="You know something we don't? Add it or fix it here.";
+  document.querySelector('.crumb').href="yellow-tower-contact-details-page.html?role=customer";
+  var c=document.querySelectorAll('.card');
+  c[0].innerHTML='<p><b>How it works</b></p><p>Type what you know in any box, then tap Send. We check every suggestion before anything goes on the page, and we only publish facts that are true and useful. You do not need an account.</p><p class="s">You work somewhere or own something too? You will see the same page for your business one day.</p>';
+  c[1].style.display='none';
+  document.getElementById('send').querySelector('.btn').textContent='Send my suggestions';
+}
+recount();chg();
+</script>
+<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
+<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
+
+<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-owner-page-notes.html">Developer notes: what changed and why, every version</a></p>
+</details>
+</body>
+</html>
