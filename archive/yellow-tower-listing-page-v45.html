@@ -262,13 +262,6 @@ span.chip:hover{background:#f1f2f3}
 .cpf .cpf-t{color:#8f8f8f}
 .cpf .cpf-sec a{color:#8f8f8f;text-decoration-color:#cfcfcf}.cpf .cpf-sec .dt{color:#b5b5b5}.cpf .cpf-sec .cur{color:#6f6f6f}
 .cpf .cpf-sec a,.cpf .cpf-sec .cur{display:inline-flex;align-items:center}.cpf .cpf-sec svg{width:12px;height:12px;fill:#9a9a9a;margin-right:4px}.cpf .cpf-sec .cur svg{fill:#8a8a8a}
-.slide{position:relative;width:100%;height:52px;border-radius:999px;background:#f1f1f1;border:1px solid #e2e2e2;user-select:none;-webkit-user-select:none;touch-action:none;overflow:hidden;margin-top:6px}
-.slide .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--yellow-soft);border-radius:999px}
-.slide .track{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:0 16px 0 58px;font-size:14px;font-weight:600;color:#6b6b6b;pointer-events:none}
-.slide .knob{position:absolute;left:4px;top:4px;width:44px;height:44px;border-radius:50%;background:var(--yellow);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:grab;box-shadow:0 1px 4px rgba(0,0,0,.2);transition:left .25s}
-.slide .knob:focus-visible{outline:2px solid var(--ink);outline-offset:2px}.slide.drag .knob{transition:none;cursor:grabbing}
-.slide.opening .knob,.slide.opening .fill{visibility:hidden}.slide.opening .track{padding:0 16px;color:var(--ink)}
-.lunder{margin:6px 0 0;text-align:center;font-size:12px}.lunder a{color:#757575;text-decoration:underline;text-decoration-color:#cfcfcf;text-underline-offset:3px}
 </style>
 
 <script>if(/[?&]full=1/.test(location.search))document.documentElement.classList.add('full')</script>
@@ -305,9 +298,7 @@ span.chip:hover{background:#f1f2f3}
 <p class="masked">+855 12 869 ***</p>
 
 <p class="unlock">Unlock WhatsApp, phone, email and notes ↓</p>
-
-<div class="slide" id="lslide"><div class="fill" id="lfill"></div><div class="track" id="ltxt">Slide to unlock contact details</div><div class="knob" id="lknob" role="slider" tabindex="0" aria-label="Slide to unlock contact details" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="locked"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div>
-<p class="lunder"><a href="yellow-tower-contact-details-page.html" id="ltap">or tap here</a></p>
+<a class="btn wide unlock" href="yellow-tower-security-page.html"><svg class="lockic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>View contact details</a>
 
 <ul class="chans" aria-label="Contact channels and how certain we are">
 <li data-owner="0" data-src="2" data-up="3" data-down="0" data-seen="20"><span class="cn">WhatsApp</span><span class="cm" data-l="Medium" role="img" aria-label="Certainty: Medium"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="cw">Medium</span></li>
@@ -364,12 +355,12 @@ span.chip:hover{background:#f1f2f3}
 <section class="sec" aria-labelledby="p-h">
 <h2 id="p-h"><a class="hlink" href="https://kh34363.contact.page/photos/">Photos<svg class="hchev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg></a></h2>
 <div class="photos">
-<img src="assets/yellow-tower-photo-1-600.webp" srcset="assets/yellow-tower-photo-1-320.webp 320w, assets/yellow-tower-photo-1-600.webp 600w" sizes="(max-width: 440px) 46vw, 360px" width="600" height="451" alt="Meeting room with an oval table and glass walls" loading="lazy" decoding="async">
-<img src="assets/yellow-tower-photo-2-600.webp" srcset="assets/yellow-tower-photo-2-320.webp 320w, assets/yellow-tower-photo-2-600.webp 600w" sizes="(max-width: 440px) 46vw, 360px" width="600" height="451" alt="Open-plan office with wooden desks and garden views" loading="lazy" decoding="async">
-<img src="assets/yellow-tower-photo-3-600.webp" srcset="assets/yellow-tower-photo-3-320.webp 320w, assets/yellow-tower-photo-3-600.webp 600w" sizes="(max-width: 440px) 46vw, 360px" width="600" height="451" alt="People working at shared desks by curved windows framed with plants" loading="lazy" decoding="async">
-<img src="assets/yellow-tower-photo-4-600.webp" srcset="assets/yellow-tower-photo-4-320.webp 320w, assets/yellow-tower-photo-4-600.webp 600w" sizes="(max-width: 440px) 46vw, 360px" width="600" height="451" alt="Private office with two desks beside a planted window wall" loading="lazy" decoding="async">
-<img src="assets/yellow-tower-photo-5-600.webp" srcset="assets/yellow-tower-photo-5-320.webp 320w, assets/yellow-tower-photo-5-600.webp 600w" sizes="(max-width: 440px) 46vw, 360px" width="600" height="451" alt="Terrace with a round table, plants and a view over Phnom Penh" loading="lazy" decoding="async">
-<img src="assets/yellow-tower-photo-6-600.webp" srcset="assets/yellow-tower-photo-6-320.webp 320w, assets/yellow-tower-photo-6-600.webp 600w" sizes="(max-width: 440px) 46vw, 360px" width="600" height="557" alt="Yellow Tower from outside: seven stories wrapped in greenery" loading="lazy" decoding="async">
+<img src="../assets/yellow-tower-photo-1-600.webp" srcset="assets/yellow-tower-photo-1-320.webp 320w, assets/yellow-tower-photo-1-600.webp 600w" sizes="(max-width: 440px) 46vw, 360px" width="600" height="451" alt="Meeting room with an oval table and glass walls" loading="lazy" decoding="async">
+<img src="../assets/yellow-tower-photo-2-600.webp" srcset="assets/yellow-tower-photo-2-320.webp 320w, assets/yellow-tower-photo-2-600.webp 600w" sizes="(max-width: 440px) 46vw, 360px" width="600" height="451" alt="Open-plan office with wooden desks and garden views" loading="lazy" decoding="async">
+<img src="../assets/yellow-tower-photo-3-600.webp" srcset="assets/yellow-tower-photo-3-320.webp 320w, assets/yellow-tower-photo-3-600.webp 600w" sizes="(max-width: 440px) 46vw, 360px" width="600" height="451" alt="People working at shared desks by curved windows framed with plants" loading="lazy" decoding="async">
+<img src="../assets/yellow-tower-photo-4-600.webp" srcset="assets/yellow-tower-photo-4-320.webp 320w, assets/yellow-tower-photo-4-600.webp 600w" sizes="(max-width: 440px) 46vw, 360px" width="600" height="451" alt="Private office with two desks beside a planted window wall" loading="lazy" decoding="async">
+<img src="../assets/yellow-tower-photo-5-600.webp" srcset="assets/yellow-tower-photo-5-320.webp 320w, assets/yellow-tower-photo-5-600.webp 600w" sizes="(max-width: 440px) 46vw, 360px" width="600" height="451" alt="Terrace with a round table, plants and a view over Phnom Penh" loading="lazy" decoding="async">
+<img src="../assets/yellow-tower-photo-6-600.webp" srcset="assets/yellow-tower-photo-6-320.webp 320w, assets/yellow-tower-photo-6-600.webp 600w" sizes="(max-width: 440px) 46vw, 360px" width="600" height="557" alt="Yellow Tower from outside: seven stories wrapped in greenery" loading="lazy" decoding="async">
 </div>
 <p class="muted"><a href="https://kh34363.contact.page/photos/">View all photos</a></p>
 <p class="upd"><a class="small-act" href="https://wa.me/page.me?text=Hi%21%20I%27d%20like%20to%20add%20photos%20to%20Yellow%20Tower.%20%28ref%20kh34363%20add-photos%29">Add photos</a></p>
@@ -389,10 +380,10 @@ span.chip:hover{background:#f1f2f3}
 <section class="sec" aria-labelledby="o-h">
 <h2 id="o-h"><a class="hlink" href="https://kh34363.contact.page/products/">Products and services<svg class="hchev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg></a></h2>
 <div class="prods">
-<figure class="prod"><img src="assets/yellow-tower-photo-7-600.webp" srcset="assets/yellow-tower-photo-7-320.webp 320w, assets/yellow-tower-photo-7-600.webp 600w" sizes="(max-width: 440px) 46vw, 240px" width="600" height="451" alt="Office space for rent: meeting room with a long wooden table" loading="lazy" decoding="async"><figcaption>Office space for rent</figcaption></figure>
-<figure class="prod"><img src="assets/yellow-tower-photo-8-600.webp" srcset="assets/yellow-tower-photo-8-320.webp 320w, assets/yellow-tower-photo-8-600.webp 600w" sizes="(max-width: 440px) 46vw, 240px" width="600" height="383" alt="Co-working space: shared desks under a wooden staircase" loading="lazy" decoding="async"><figcaption>Co-working space</figcaption></figure>
-<figure class="prod"><img src="assets/yellow-tower-photo-9-600.webp" srcset="assets/yellow-tower-photo-9-320.webp 320w, assets/yellow-tower-photo-9-600.webp 600w" sizes="(max-width: 440px) 46vw, 240px" width="600" height="600" alt="Private office, 450 m², 3rd floor: open floor with rows of desks" loading="lazy" decoding="async"><figcaption>Private office, 450 m², 3rd floor</figcaption></figure>
-<figure class="prod"><img src="assets/yellow-tower-photo-10-600.webp" srcset="assets/yellow-tower-photo-10-320.webp 320w, assets/yellow-tower-photo-10-600.webp 600w" sizes="(max-width: 440px) 46vw, 240px" width="600" height="451" alt="Private office, 500 m², 1st floor: office with a desk by the window" loading="lazy" decoding="async"><figcaption>Private office, 500 m², 1st floor</figcaption></figure>
+<figure class="prod"><img src="../assets/yellow-tower-photo-7-600.webp" srcset="assets/yellow-tower-photo-7-320.webp 320w, assets/yellow-tower-photo-7-600.webp 600w" sizes="(max-width: 440px) 46vw, 240px" width="600" height="451" alt="Office space for rent: meeting room with a long wooden table" loading="lazy" decoding="async"><figcaption>Office space for rent</figcaption></figure>
+<figure class="prod"><img src="../assets/yellow-tower-photo-8-600.webp" srcset="assets/yellow-tower-photo-8-320.webp 320w, assets/yellow-tower-photo-8-600.webp 600w" sizes="(max-width: 440px) 46vw, 240px" width="600" height="383" alt="Co-working space: shared desks under a wooden staircase" loading="lazy" decoding="async"><figcaption>Co-working space</figcaption></figure>
+<figure class="prod"><img src="../assets/yellow-tower-photo-9-600.webp" srcset="assets/yellow-tower-photo-9-320.webp 320w, assets/yellow-tower-photo-9-600.webp 600w" sizes="(max-width: 440px) 46vw, 240px" width="600" height="600" alt="Private office, 450 m², 3rd floor: open floor with rows of desks" loading="lazy" decoding="async"><figcaption>Private office, 450 m², 3rd floor</figcaption></figure>
+<figure class="prod"><img src="../assets/yellow-tower-photo-10-600.webp" srcset="assets/yellow-tower-photo-10-320.webp 320w, assets/yellow-tower-photo-10-600.webp 600w" sizes="(max-width: 440px) 46vw, 240px" width="600" height="451" alt="Private office, 500 m², 1st floor: office with a desk by the window" loading="lazy" decoding="async"><figcaption>Private office, 500 m², 1st floor</figcaption></figure>
 </div>
 <p class="upd"><a class="small-act" href="https://wa.me/page.me?text=Hi%21%20I%27d%20like%20to%20add%20or%20update%20offerings%20on%20Yellow%20Tower.%20%28ref%20kh34363%20update-offerings%29">Add or update products</a></p>
 </section>
@@ -470,7 +461,7 @@ span.chip:hover{background:#f1f2f3}
 
 <div class="cpf">
 <div class="footer__card">
-<div class="footer__logo"><img src="assets/yellow-tower-logo-144.webp" width="75" height="75" alt="Yellow Tower" loading="lazy" decoding="async"></div>
+<div class="footer__logo"><img src="../assets/yellow-tower-logo-144.webp" width="75" height="75" alt="Yellow Tower" loading="lazy" decoding="async"></div>
 <h3 class="footer__listing-name">Yellow Tower - Office Space</h3>
 <p class="footer__listing-category">Office Rental Services</p>
 <p class="cpf-ph"><a href="https://kh34363.contact.page/contact-details" aria-label="Contact details (number masked)"><svg class="ph" aria-hidden="true" viewBox="0 0 24 24"><path d="M6.54 5c.06.89.21 1.76.45 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79h1.51m9.86 12.02c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75l1.2-1.19M7.5 3H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.49c0-.55-.45-1-1-1-1.24 0-2.45-.2-3.57-.57-.1-.04-.21-.05-.31-.05-.26 0-.51.1-.71.29l-2.2 2.2c-2.83-1.45-5.15-3.76-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1z"/></svg>+855 12 869 ***<svg class="lk" aria-hidden="true" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a></p>
@@ -488,11 +479,7 @@ span.chip:hover{background:#f1f2f3}
 <p class="fhelp">Help: <a href="https://wa.me/page.me?text=Hi%21%20I%20need%20help%20with%20contact.page.%20%28ref%20kh34363%20help%29">WhatsApp</a> · <a href="mailto:hello@contact.page?subject=Help%20with%20contact.page%20%28ref%20kh34363%20help%29&amp;body=What%20do%20you%20need%20help%20with%3F%0A">Email</a> · <a href="contact-page-privacy-page.html">Privacy</a></p>
 <div class="report"><a class="small-act" href="https://wa.me/page.me?text=Hi%21%20I%27d%20like%20to%20report%20a%20problem%20with%20Yellow%20Tower.%20%28ref%20kh34363%20report%29">Report this page</a></div>
 
-<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
-<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
-<div style="text-align:left;margin:8px 0;padding:8px 10px;background:#fafafa;border:1px solid #eee;border-radius:8px"><p style="margin:0 0 4px;font-weight:700;color:#6f6f6f;font-size:12px">Why it is this way (reasons and lessons)</p><ul style="margin:0;padding-left:16px;color:#6f6f6f;font-size:12px;line-height:1.5"><li style="margin:0 0 4px">The page earns its ads (survival first, Kim 2026-10-05/06): identity, then the first ad, then a gap of plain content, then the contact box. Google counts buttons next to ads as accidental-click bait, which can put the whole AdSense account at risk, so the contact button never sits against an ad. A third ad mid-page, lower ads lazy-loaded: more income within the rules.</li><li style="margin:0 0 4px">Header ad first, then a fixed 150px empty gap (v30, .page Analytic for Kim): the IW_Manual_Header unit is the top earner, and nothing clickable within 150px of it keeps accidental clicks away. The box reserves its height before the ad loads, so nothing below it jumps. Chips go to sub-pages (no in-page jump links: those let people skip the ads, 2026-09-25).</li><li style="margin:0 0 4px">No numbers on this page: &quot;View contact details&quot; goes to the security page, the only way to the numbers (C5, D33).</li><li style="margin:0 0 4px">For AI assistants and bots: the JSON-LD has no number, only contactPoint.url = the contact-details page, so an assistant answering &quot;how do I call Yellow Tower?&quot; gives its user that link to unlock (Kim 2026-09-21, kb/agent-back-channel.md).</li><li style="margin:0 0 4px">No prices and no offers: we don&#x27;t collect prices; they show only when the owner adds them or a synced source keeps them updated (Kim 2026-10-06, N31). No currency anywhere (frozen rule).</li><li style="margin:0 0 4px">No website: too many dead sites end in 404 pages (N22). No video (frozen). No Google Maps: our own map page (N32).</li><li style="margin:0 0 4px">Owners change everything through our agent on WhatsApp or email, never forms: every block ends in a small grey link that opens the agent with a tagged message (Kim 2026-10-06).</li><li style="margin:0 0 4px">Photos: one box size (4:3 crop) with rounded corners, real photos from the owner&#x27;s own site (Kim 2026-10-06).</li><li style="margin:0 0 4px">Section headers link to their own subpages; chips are tight and square (Kim&#x27;s chip rule); icons only from the design package.</li><li style="margin:0 0 4px">Lessons: v15 left five old photo placeholders and a stray closing tag that pushed everything after Photos out of the phone frame until v21. Replace a block up to its own closing tag, then look at the page in the frame before publishing.</li></ul></div><p class="meta">Yellow Tower listing page · version 46 · 2026-10-09</p>
-<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-listing-page-notes.html">Developer notes: what changed and why, every version</a></p>
-</details>
+<p class="meta">Yellow Tower listing page · version 45 · 2026-10-08</p>
 </footer>
 </div>
 
@@ -551,20 +538,6 @@ span.chip:hover{background:#f1f2f3}
    always, plus the apps for the page's country. Any country not listed gets Viber + Signal. KH = Telegram only. */
 var CP_CHAT_APPS={always:["Telegram"],KH:[],TH:["Line"],VN:["Zalo"],JP:["Line"],TW:["Line"],KR:["KakaoTalk"],CN:["WeChat"],PH:["Viber"],MM:["Viber"],other:["Viber","Signal"]};
 function cpChatApps(cc){return CP_CHAT_APPS.always.concat(CP_CHAT_APPS.hasOwnProperty(cc)&&cc!=="always"?CP_CHAT_APPS[cc]:CP_CHAT_APPS.other);}
-</script>
-<script>
-/* Listing slider (v46): drag the knob to the end, or press Enter/Space/Right arrow on it; then "Checking" and on to the contact details page. */
-(function(){
-  var sl=document.getElementById('lslide'),kn=document.getElementById('lknob'),fl=document.getElementById('lfill'),tx=document.getElementById('ltxt'),x0=0,drag=false,pos=0,done=false;
-  function mx(){return sl.clientWidth-kn.offsetWidth-8}
-  function set(p,anim){pos=Math.max(0,Math.min(mx(),p));kn.style.transition=anim?'':'none';kn.style.left=(4+pos)+'px';fl.style.width=(pos+48)+'px';kn.setAttribute('aria-valuenow',Math.round(pos/mx()*100))}
-  function go(){if(done)return;done=true;sl.classList.add('opening');sl.setAttribute('aria-busy','true');tx.textContent='Checking…';kn.setAttribute('tabindex','-1');setTimeout(function(){location.href='yellow-tower-contact-details-page.html'},600)}
-  kn.addEventListener('pointerdown',function(e){if(done)return;drag=true;x0=e.clientX-pos;kn.setPointerCapture(e.pointerId);sl.classList.add('drag')});
-  kn.addEventListener('pointermove',function(e){if(drag)set(e.clientX-x0,false)});
-  function rel(){if(!drag)return;drag=false;sl.classList.remove('drag');if(pos>=mx()*.9){set(mx(),true);go()}else{set(0,true);fl.style.width='0'}}
-  kn.addEventListener('pointerup',rel);kn.addEventListener('pointercancel',rel);
-  kn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '||e.key==='ArrowRight'||e.key==='End'){e.preventDefault();set(mx(),true);go()}});
-})();
 </script>
 <a class="fullbtn" href="?full=1" target="_blank" rel="noopener">Open full page &#8599;</a>
 </body>
