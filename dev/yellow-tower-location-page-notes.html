@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><title>Developer notes: Listing sub-page: Map (location)</title>
+<style>body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:1040px;margin:32px auto;padding:0 16px;color:#161616}
+h1{font-size:22px;border-left:5px solid #FFC400;padding-left:10px}p{color:#6f6f6f;font-size:14px}a{color:#161616}
+ol{padding-left:28px}li{margin:0 0 14px}li::marker{font-weight:700;color:#8a8a8a}
+pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fafafa;border:1px solid #e9e9e9;border-radius:8px;padding:10px 12px;margin:0}
+h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}ul.hist li{margin:0 0 8px;font-size:14px;line-height:1.5}ul.hist b{display:inline-block;min-width:36px}</style></head>
+<body><p><a href="../index.html">All mockups</a> · <a href="../yellow-tower-location-page.html">Open the mockup</a></p>
+<h1>Developer notes: Listing sub-page: Map (location)</h1>
+<p>Sample data only; contact values are masked.</p>
+<h2>What changed and why (newest first)</h2>
+<p>Each step with the reason behind it: the lessons learned along the way. Open any version to see it as it was.</p>
+<ul class="hist">
+<li><b><a href="../yellow-tower-location-page.html">v1</a></b> 2026-10-09 (Page Claude Code, Kim): first version of the Map sub-page.</li>
+</ul>
+<h2>All notes, summary first, then in page order</h2>
+<ol>
+<li><pre>YELLOW TOWER MAP SUB-PAGE (current: version 1, 2026-10-09; Page Claude Code, design desk). Route in production: kh34363.contact.page/location/ . Built by
+CONTACT/design/tools/build_subpages.py from the listing page&#x27;s own section, so a change on the listing shows here after a rebuild.
+Kim 2026-10-09: &quot;Open map is a full page of the map section. Let us make all sub sections correctly, a mockup for each.&quot;
+Sub-pages: about, products, hours, map (location), photos, faq; the contact details page is page 4 of the set. Every sub-page: back arrow to the
+listing, the six sub-page chips (this one marked), one section in full, the small &quot;update&quot; or &quot;add&quot; link of that section, Dev notes at the end.
+Not here: no ads in this mockup, no contact values (they stay behind the gate), no embedded map (a static picture, links to the map apps).
+CHANGE LOG
+v1 2026-10-09 (Page Claude Code, Kim): first version of the Map sub-page.</pre></li>
+<li><pre>WHY IT IS THIS WAY
+- Each sub-page is the full version of one section of the listing, one topic per page, so Google and people get a clear page for &quot;Map&quot; (SEO: own URL, own title, link back).
+- The six sub-page chips repeat on every sub-page so a visitor can move sideways without going back (design-state &quot;sub-page chips&quot;).
+- Map: a free static picture (kb/static-map-images.md) plus links to Google Maps and Directions (Kim 2026-10-09); never an embedded map (listing-page-design-decisions).</pre></li>
+</ol></body></html>
