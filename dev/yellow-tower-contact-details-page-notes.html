@@ -12,7 +12,8 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 <h2>What changed and why (newest first)</h2>
 <p>Each step with the reason behind it: the lessons learned along the way. Open any version to see it as it was.</p>
 <ul class="hist">
-<li><b><a href="../yellow-tower-contact-details-page.html">v49</a></b> 2026-10-09 (Page Claude Code, Kim): the expand icon is smaller (9px) and lighter (pale grey, thinner line); every box has the same height (118px) except the full-width ones (map), so the grid is even.</li>
+<li><b><a href="../yellow-tower-contact-details-page.html">v50</a></b> 2026-10-09 (Page Claude Code, Kim): &quot;Possibly related, unverified (0)&quot; is no longer a line under the notes; it is a row inside the Other box. The house ad no longer says &quot;Anyone can upgrade it.&quot;</li>
+<li><b><a href="../archive/yellow-tower-contact-details-page-v49.html">v49</a></b> 2026-10-09 (Page Claude Code, Kim): the expand icon is smaller (9px) and lighter (pale grey, thinner line); every box has the same height (118px) except the full-width ones (map), so the grid is even.</li>
 <li><b><a href="../archive/yellow-tower-contact-details-page-v48.html">v48</a></b> 2026-10-09 (Page Claude Code, Kim: &quot;need next on expand cards, always, for all, even numbers, a small but clear chip hanging under the card, next and previous&quot;): every open card has two small chips hanging under it, &quot;‹ Previous&quot; and &quot;Next ›&quot;; they step through all the cards of the page in order (WhatsApp, Mobile, Email, Hours, map, Add more, Other, Post a note, the notes) and wrap around. Part of the one card behaviour (dev notes: ONE CARD CLASS).</li>
 <li><b><a href="../archive/yellow-tower-contact-details-page-v47.html">v47</a></b> 2026-10-09 (Page Claude Code, Kim): &quot;+ Add a channel / No Messenger or landline yet&quot; is just &quot;Add more&quot;; &quot;Need more? Try a deeper AI search&quot; comes right after it and its icon is the yellow AI chip; the archive box is just &quot;Other&quot; (centred, no &quot;3 lines&quot;); the long line under Community notes is dropped (the Post a note box already says it); note texts are italic in the boxes and in the open card.</li>
 <li><b><a href="../archive/yellow-tower-contact-details-page-v46.html">v46</a></b> 2026-10-09 (Page Claude Code, chief&#x27;s request): the card look is now defined once in CSS variables and one card class (see &quot;ONE CARD CLASS&quot; in the dev notes); the same block is in design/tokens.css. No visible change.</li>
@@ -64,7 +65,7 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 </ul>
 <h2>All notes, summary first, then in page order</h2>
 <ol>
-<li><pre>YELLOW TOWER CONTACT DETAILS PAGE (current: version 49, 2026-10-09; v1-v5 .page Mockups). Design task D015. Route in production:
+<li><pre>YELLOW TOWER CONTACT DETAILS PAGE (current: version 50, 2026-10-09; v1-v5 .page Mockups). Design task D015. Route in production:
 kh34363.contact.page/contact-details after the check (the security page and this page share the route; the server shows
 this page once cp_verified is set). Page 4 of the standard mockup set (Kim 2026-10-06):
 1 phnom-penh-office-rental-vertical-page.html -&gt; 2 yellow-tower-listing-page.html -&gt; 3 yellow-tower-security-page.html -&gt; 4 this page.
@@ -96,6 +97,7 @@ OPEN FOR KIM
 - Which channel leads when there are no votes yet (proposal: the one the owner marks main, else phone).
 
 CHANGE LOG
+v50 2026-10-09 (Page Claude Code, Kim): &quot;Possibly related, unverified (0)&quot; is no longer a line under the notes; it is a row inside the Other box. The house ad no longer says &quot;Anyone can upgrade it.&quot;
 v49 2026-10-09 (Page Claude Code, Kim): the expand icon is smaller (9px) and lighter (pale grey, thinner line); every box has the same height (118px) except the full-width ones (map), so the grid is even.
 v48 2026-10-09 (Page Claude Code, Kim: &quot;need next on expand cards, always, for all, even numbers, a small but clear chip hanging under the card, next and previous&quot;): every open card has two small chips hanging under it, &quot;‹ Previous&quot; and &quot;Next ›&quot;; they step through all the cards of the page in order (WhatsApp, Mobile, Email, Hours, map, Add more, Other, Post a note, the notes) and wrap around. Part of the one card behaviour (dev notes: ONE CARD CLASS).
 v47 2026-10-09 (Page Claude Code, Kim): &quot;+ Add a channel / No Messenger or landline yet&quot; is just &quot;Add more&quot;; &quot;Need more? Try a deeper AI search&quot; comes right after it and its icon is the yellow AI chip; the archive box is just &quot;Other&quot; (centred, no &quot;3 lines&quot;); the long line under Community notes is dropped (the Post a note box already says it); note texts are italic in the boxes and in the open card.
@@ -206,6 +208,7 @@ Keep under 1,800 characters (mailto limit, same as the footer mails).</pre></li>
 the place, merged. Each note has a Helpful vote (in-memory here; one vote each, tap again to take it back). Most helpful first.
 Plain list, source tag (person / AI agent / owner), date; no chat bubbles or avatars. Notes are checked before they show.
 All six notes are SAMPLE data and read as samples.</pre></li>
+<li><pre>&quot;Possibly related, unverified (0)&quot; moved into the Other box (Kim 2026-10-09, v50).</pre></li>
 <li><pre>OWNER ENTRY REMOVED (Kim 2026-10-09, v36): the box &quot;Own or work at Yellow Tower? Sign in to see your owner screen ...&quot; with its 7 points is gone from this page; the points live in Help and FAQ on the owner page. Owners reach the owner page from the banner at the top (owner or works_here) or from the security page; the owner page asks for sign-in first.</pre></li>
 <li><pre>8. HOUSE AD (audit 2026-10-07): replaces the AdSense slot. Ours, labelled &quot;contact.page&quot;: get your own free site
 (same box as the security page). Placed in the footer after the owner box; the AI help button sits below it (Kim 2026-10-07).
