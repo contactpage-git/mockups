@@ -89,34 +89,27 @@ ul.tr ul{margin:0 0 0 11px;padding-left:12px}
 #fcard .sqp{border:0;padding:0;margin:0}
 .sqb[aria-expanded=true]{border-color:var(--line);background:#fff;box-shadow:none}
 @media(prefers-reduced-motion:reduce){#fcard,#fshade{transition:none}}
-.sq{grid-template-columns:repeat(3,minmax(0,1fr))}.sqb{min-width:0;overflow:hidden}.sqb .sts{gap:2px;line-height:1.3}.sqb .dpill{font-size:10px;padding:2px 6px}
-.sqb span{font-size:13px}.sqb .sts{font-style:normal;font-size:11px;color:var(--grey);display:flex;gap:4px;align-items:center;flex-wrap:wrap;justify-content:center}.sqb .sts em{font-style:normal}
-.pubb.chg{border-color:var(--yellow);background:#fffbea}
-.xrow{margin:12px 0 0;font-size:12px;color:#9a9a9a}.xrow .lk{border:0;background:none;padding:0;font:12px Arial;color:#757575;text-decoration:underline;text-decoration-color:#d6d6d6;text-underline-offset:3px;cursor:pointer}.xrow label{display:inline-flex;gap:4px;align-items:center}
-#fcard input[type=search]{width:100%;font:15px Arial;border:1px solid #d0d0d0;border-radius:8px;padding:9px 10px}
-#fcard .dn{margin:8px 0 10px}
-#fcard .btn.pub{width:100%}
 </style>
 </head>
 <body>
 <div class="w">
 <a class="crumb" href="yellow-tower-contact-details-page.html?role=owner">&#8592; Contact details</a>
 <h1>Yellow Tower: owner page</h1>
+<div class="drbar"><div class="dr"><span class="dpill" id="dp">Draft</span><span class="dc" id="sc">No changes yet</span><a class="btn pub" id="sb" href="#" aria-disabled="true">Publish</a></div>
+<div class="dn" id="dn">Subject to review. Nothing goes live until we have checked it.</div></div>
 <div class="sq" id="sq" role="group" aria-label="Quick boxes">
-<button type="button" class="sqb pubb" data-p="publish" data-t="Publish"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg><span>Publish</span><i class="sts"><em class="dpill" id="bdp">Draft</em> <em id="bsc">No changes</em></i></button>
-<button type="button" class="sqb" data-p="search" data-t="Search"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span id="bsq">Search</span></button>
-<button type="button" class="sqb" data-p="prog" data-t="Progress"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg><span><b id="pcn">0/0</b> filled</span></button>
-<button type="button" class="sqb" data-p="refresh" data-t="Refresh"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M8 16H3v5"/></svg><span>Refresh</span></button>
-<button type="button" class="sqb" data-p="how" data-t="How it works"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span>How it works</span></button>
+<button type="button" class="sqb" data-p="refresh" aria-expanded="false"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M8 16H3v5"/></svg><span>Refresh</span></button>
+<button type="button" class="sqb" data-p="prog" aria-expanded="false"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg><span><b id="pcn">0/0</b> filled</span></button>
+<button type="button" class="sqb" data-p="how" aria-expanded="false"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span>How it works</span></button>
 </div>
-<div id="sqh" hidden>
-<div class="sqp" id="p-publish"><p><span class="dpill" id="dp">Draft</span> <span class="dc" id="sc">No changes yet</span></p><p class="dn" id="dn">Subject to review. Nothing goes live until we have checked it.</p><a class="btn pub" id="sb" href="#" aria-disabled="true">Publish</a></div>
-<div class="sqp" id="p-search"><input type="search" id="q" placeholder="e.g. phone, hours, parking" aria-label="Search fields"><p class="dn">The list filters as you type. Press Enter or close this card to see it.</p></div>
-<div class="sqp" id="p-prog"><b id="pc">0 of 0 fields filled</b><div class="bar"><i id="pb"></i></div><p>Empty fields are fine. Fill what you know, we help with the rest.</p></div>
-<div class="sqp" id="p-refresh"><p>Our agents check every source again and write to you when done. It takes about a day.</p><a class="btn sm" id="refresh" href="#">Refresh my page</a></div>
-<div class="sqp" id="p-how"><p>Tap a row to open it and type. Your changes make a draft. Tap Publish when you are ready: nothing goes on your page until we have checked it.</p></div>
+<div class="sqp" id="p-refresh" hidden><p>Our agents check every source again and write to you when done. It takes about a day.</p><a class="btn sm" id="refresh" href="#">Refresh my page</a></div>
+<div class="sqp" id="p-prog" hidden><b id="pc">0 of 0 fields filled</b><div class="bar"><i id="pb"></i></div><p>Empty fields are fine. Fill what you know, we help with the rest.</p></div>
+<div class="sqp" id="p-how" hidden><p>Tap a row to open it, type, then tap "Send my changes" at the bottom. Nothing goes on your page until we have checked it.</p></div>
+
+<div class="tb">
+<input type="search" id="q" placeholder="Search a field, e.g. phone, hours, parking" aria-label="Search fields">
+<div class="r"><button class="t" id="ea" type="button">Expand all</button><button class="t" id="ca" type="button">Collapse all</button><label><input type="checkbox" id="oe"> Only empty</label></div>
 </div>
-<p class="xrow"><button class="lk" id="ea" type="button">Expand all</button> &middot; <button class="lk" id="ca" type="button">Collapse all</button> &middot; <label><input type="checkbox" id="oe"> Only empty</label></p>
 <ul class="tr" id="tree"></ul>
 </div>
 
@@ -215,10 +208,10 @@ function node(n,path,top){
   else n.c.forEach(function(c){inner+=node(c,p,false)});
   return branch(L,p,inner,top,n.h,tick);
 }
-/* PRIORITY ORDER: mirrors "x-priority" in CONTACT/schemas/master-listing.schema.json (the schema is the single source, architect session edc6466) EXCEPT Kim's later word 2026-10-09: WhatsApp, email and the short description are top priority; the chief was asked to put the same order into x-priority, then this list is re-copied. Kim 2026-10-09: the five fields every page needs come first, then most useful first, owner-only private fields, and the fields we fill ourselves last. This list is the first draft of the schema priority column. */
-var ORDER=["name","whatsapp","telephone","email","disambiguatingDescription","primaryCategory","address","openingHoursSpecification","url","description","image","logo","sameAs","messenger","areaServed","categories","makesOffer","directions","geo","contactPoint","paymentAccepted","currenciesAccepted","announcements","ownerFaq","slogan","foundingDate","alternateName","legalName","translations","subjectOf","brand","providerType","priceRange","timeZone","registrationNumber","registrationStatus","vatID","certifications","isicV4","employees","taxID","_registry","hiddenSections","identifier","schemaVersion","portal","verifiedAt","nextCheckAt","_verification","_provenance","_media_license","_trade_attributes"];
+/* PRIORITY ORDER: mirrors "x-priority" in CONTACT/schemas/master-listing.schema.json (the schema is the single source, 2026-10-09, architect session edc6466; re-copy when it changes). Kim 2026-10-09: the five fields every page needs come first, then most useful first, owner-only private fields, and the fields we fill ourselves last. This list is the first draft of the schema priority column. */
+var ORDER=["name","primaryCategory","telephone","address","openingHoursSpecification","whatsapp","email","url","description","image","logo","sameAs","messenger","areaServed","categories","makesOffer","directions","disambiguatingDescription","geo","contactPoint","paymentAccepted","currenciesAccepted","announcements","ownerFaq","slogan","foundingDate","alternateName","legalName","translations","subjectOf","brand","providerType","priceRange","timeZone","registrationNumber","registrationStatus","vatID","certifications","isicV4","employees","taxID","_registry","hiddenSections","identifier","schemaVersion","portal","verifiedAt","nextCheckAt","_verification","_provenance","_media_license","_trade_attributes"];
 T.sort(function(x,y){var i=ORDER.indexOf(x.k),j=ORDER.indexOf(y.k);return (i<0?99:i)-(j<0?99:j)});
-var CAP={employees:"Only you see these",identifier:"We fill these"};
+var CAP={name:"Start with these five",whatsapp:"Then, most useful first",employees:"Only you see these",identifier:"We fill these"};
 tree.innerHTML=T.map(function(n){return (CAP[n.k]?'<li class="cap">'+CAP[n.k]+'</li>':'')+node(n,"",true)}).join('');
 function recount(){
   var all=tree.querySelectorAll('.leaf:not(.ro)'),f=0,n=0;
@@ -279,12 +272,12 @@ document.getElementById('refresh').href="mailto:"+CODE+"@contact.page?subject="+
   document.body.appendChild(sh);document.body.appendChild(cd);
   var cur=null,home=null,from=null;
   function open(btn){var p=document.getElementById('p-'+btn.dataset.p);if(!p)return;cur=btn;home=p.parentNode;from=btn.getBoundingClientRect();
-    document.getElementById('fct').textContent=btn.dataset.t||'';
+    document.getElementById('fct').textContent=btn.querySelector('span').textContent.replace(/^\d+\/\d+ /,'Progress: ').replace(/^Progress: filled$/,'Progress');
     var body=cd.querySelector('.fbd');body.appendChild(p);p.hidden=false;
     sh.classList.add('on');cd.classList.add('on');
     var r=cd.getBoundingClientRect(),dx=from.left+from.width/2-(r.left+r.width/2),dy=from.top+from.height/2-(r.top+r.height/2),k=Math.max(.3,from.width/r.width);
     cd.style.transition='none';cd.style.transform='translate('+dx+'px,'+dy+'px) scale('+k+')';cd.style.opacity='0';cd.getBoundingClientRect();
-    cd.style.transition='';cd.style.transform='';cd.style.opacity='1';var qi=cd.querySelector('input[type=search]');(qi||cd.querySelector('.fx')).focus();}
+    cd.style.transition='';cd.style.transform='';cd.style.opacity='1';cd.querySelector('.fx').focus();}
   function close(){if(!cur)return;var p=cd.querySelector('.sqp');if(p){p.hidden=true;home.appendChild(p)}cd.classList.remove('on');sh.classList.remove('on');cd.style.opacity='';var b=cur;cur=null;b.focus();}
   document.getElementById('sq').addEventListener('click',function(e){var b=e.target.closest('.sqb');if(b)open(b)});
   sh.addEventListener('click',close);cd.querySelector('.fx').addEventListener('click',close);
@@ -294,22 +287,13 @@ if(VIS){
   document.title="Help improve Yellow Tower · contact.page";
   document.querySelector('h1').textContent="Help improve Yellow Tower";
   document.querySelector('.crumb').href="yellow-tower-contact-details-page.html?role=customer";
-  ['refresh','prog'].forEach(function(k){document.querySelector('[data-p="'+k+'"]').style.display='none'});
-  document.getElementById('sq').style.gridTemplateColumns='repeat(3,minmax(0,1fr))';
-  document.getElementById('p-how').innerHTML='<p>Type what you know in any box. Tap Send for review when you are ready. We check every suggestion before anything goes on the page, and we only publish facts that are true and useful. You do not need an account.</p>';
-  document.querySelector('[data-p="publish"] span').textContent='Send for review';document.querySelector('[data-p="publish"]').dataset.t='Send for review';
+  document.querySelector('[data-p="refresh"]').style.display='none';document.querySelector('[data-p="prog"]').style.display='none';
+  document.getElementById('sq').style.gridTemplateColumns='1fr';document.querySelector('[data-p="how"]').style.aspectRatio='auto';document.querySelector('[data-p="how"]').style.padding='14px';
+  document.getElementById('p-how').innerHTML='<p>Type what you know in any box, then tap Send. We check every suggestion before anything goes on the page, and we only publish facts that are true and useful. You do not need an account.</p>';
   document.getElementById('sb').textContent='Send for review';document.getElementById('dn').textContent='We check every suggestion before it goes on the page.';
 }
 document.getElementById('sb').addEventListener('click',function(e){if(this.getAttribute('aria-disabled')==='true'){e.preventDefault();return}var self=this;setTimeout(function(){sent=true;changes={};[].forEach.call(document.querySelectorAll('.val.ch'),function(v){v.classList.remove('ch')});[].forEach.call(document.querySelectorAll('.leaf input'),function(i){var st=store[i.id];if(st)st.orig=i.value});chg()},400)});
-var _chg=chg;chg=function(){_chg();document.getElementById('bdp').textContent=document.getElementById('dp').textContent;var c=document.getElementById('sc').textContent;document.getElementById('bsc').textContent=c.replace(' in your draft','').replace('No changes yet','No changes').replace(/Sent for review\. We reply by email\./,'Sent');document.querySelector('.pubb').classList.toggle('chg',document.getElementById('dp').classList.contains('chg'))};
-document.getElementById('q').addEventListener('input',function(){var v=this.value.trim();document.getElementById('bsq').textContent=v?'\u201c'+v+'\u201d':'Search'});
-document.getElementById('q').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();document.querySelector('#fcard .fx').click()}});
 recount();chg();
 </script>
-<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
-<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
-
-<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-owner-page-notes.html">Developer notes: what changed and why, every version</a></p>
-</details>
 </body>
 </html>
