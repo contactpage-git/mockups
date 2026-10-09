@@ -67,7 +67,6 @@ ul.tr ul{list-style:none;margin:0 0 0 10px;padding:0 0 0 12px;border-left:1px so
 ul.tr ul{margin:0 0 0 11px;padding-left:12px}
 .body{display:none;padding:6px 0 8px 28px}.open>.body{display:block}
 .body .val{margin:0 0 6px;flex:1 1 100%}.body .hint{margin:0 0 6px}.body .tag{align-self:flex-start}
-.cap{font-size:12px;color:#9a9a9a;text-transform:uppercase;letter-spacing:.04em;padding:16px 0 4px}.cap:first-child{padding-top:4px}
 .hintrow{font-size:12px;color:#9a9a9a;padding:6px 0 4px 28px}
 .hintrow .show{margin-left:0;font-size:12.5px}
 .open>.h .car::before{content:"\25BE"}
@@ -192,11 +191,7 @@ function node(n,path,top){
   else n.c.forEach(function(c){inner+=node(c,p,false)});
   return branch(L,p,inner,top,n.h,tick);
 }
-/* PRIORITY ORDER (Kim 2026-10-09): the five fields every page needs come first, then most useful first, owner-only private fields, and the fields we fill ourselves last. This list is the first draft of the schema priority column. */
-var ORDER=["name","primaryCategory","telephone","address","openingHoursSpecification","description","image","whatsapp","email","url","logo","makesOffer","sameAs","categories","messenger","areaServed","directions","disambiguatingDescription","slogan","geo","contactPoint","paymentAccepted","currenciesAccepted","announcements","ownerFaq","foundingDate","alternateName","legalName","translations","subjectOf","brand","employees","timeZone","providerType","priceRange","registrationNumber","registrationStatus","vatID","certifications","isicV4","taxID","_registry","identifier","schemaVersion","portal","verifiedAt","nextCheckAt","_verification","_provenance","_media_license"];
-T.sort(function(x,y){var i=ORDER.indexOf(x.k),j=ORDER.indexOf(y.k);return (i<0?99:i)-(j<0?99:j)});
-var CAP={name:"Start with these five",description:"Then, most useful first",taxID:"Only you see these",identifier:"We fill these"};
-tree.innerHTML=T.map(function(n){return (CAP[n.k]?'<li class="cap">'+CAP[n.k]+'</li>':'')+node(n,"",true)}).join('');
+tree.innerHTML=T.map(function(n){return node(n,"",true)}).join('');
 function recount(){
   var all=tree.querySelectorAll('.leaf:not(.ro)'),f=0,n=0;
   [].forEach.call(tree.querySelectorAll('.leaf'),function(li){var v=li.querySelector('input');if(v.readOnly&&!v.value)return;n++;if(v.value)f++});
@@ -259,10 +254,5 @@ if(VIS){
 }
 recount();chg();
 </script>
-<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
-<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
-
-<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-owner-page-notes.html">Developer notes: what changed and why, every version</a></p>
-</details>
 </body>
 </html>
