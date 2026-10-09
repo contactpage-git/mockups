@@ -17,7 +17,7 @@ a{color:var(--ink);text-underline-offset:3px}
 svg{flex:none}
 .lockic{color:var(--gold)}
 .keyline{height:4px;background:var(--yellow)}
-:root{--desk:430px} 
+:root{--desk:430px;--card-border:1px solid var(--line);--card-radius:14px;--card-shadow:0 2px 8px rgba(0,0,0,.05);--card-pad:12px;--card-btn-pad:4px 10px;--card-btn-font:12.5px;--icon-btn:28px} 
 .wrap{max-width:430px;margin:0 auto;padding:0 16px 36px;position:relative;background:#fff}
 .src{position:absolute;top:10px;right:16px;color:#d4d4d4;line-height:0}
 
@@ -268,7 +268,7 @@ body[data-role="works_here"] .rolemsg,body[data-role="owner"] .rolemsg{display:b
 .sr{position:absolute;left:-9999px}
 
 .bxs{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin:14px 0 0}
-.bx{position:relative;border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff;cursor:pointer;min-width:0;display:flex;flex-direction:column;gap:2px;box-shadow:0 2px 8px rgba(0,0,0,.05);-webkit-tap-highlight-color:transparent;transition:transform .12s ease,box-shadow .12s ease}
+.bx{position:relative;border:var(--card-border);border-radius:var(--card-radius);padding:var(--card-pad);background:#fff;cursor:pointer;min-width:0;display:flex;flex-direction:column;gap:2px;box-shadow:var(--card-shadow);-webkit-tap-highlight-color:transparent;transition:transform .12s ease,box-shadow .12s ease}
 .bx:hover{box-shadow:0 4px 14px rgba(0,0,0,.1)}.bx:active{transform:scale(.98)}.bx:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .bx::after{content:"";position:absolute;top:9px;right:9px;width:13px;height:13px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%238a8a8a%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%2215%203%2021%203%2021%209%22%2F%3E%3Cpolyline%20points%3D%229%2021%203%2021%203%2015%22%2F%3E%3Cline%20x1%3D%2221%22%20x2%3D%2214%22%20y1%3D%223%22%20y2%3D%2210%22%2F%3E%3Cline%20x1%3D%223%22%20x2%3D%2210%22%20y1%3D%2221%22%20y2%3D%2214%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;opacity:.9;pointer-events:none}.bx:hover::after{opacity:1}
 .bxl{position:relative;border:1px dashed var(--line);border-radius:14px;padding:12px;background:#fff;min-width:0;display:flex;flex-direction:column;gap:2px;align-items:center;justify-content:center;text-align:center;color:var(--grey);text-decoration:none;-webkit-tap-highlight-color:transparent}.bxl .ic{height:26px;display:flex;align-items:center;color:var(--ink)}.bxl .lb{font-size:12px;color:var(--grey);margin-top:6px}.bxl .v{font-size:12px;font-weight:600;color:var(--grey-2)}.bxl:hover{background:#fffbea}
@@ -326,12 +326,12 @@ body[data-role="works_here"] .rolemsg,body[data-role="owner"] .rolemsg{display:b
 
 
 .fcard{overflow:visible!important}
-.bx,.bxl{box-shadow:0 2px 8px rgba(0,0,0,.05)!important}
+.bx,.bxl{box-shadow:var(--card-shadow)!important}
 .bxl{border-style:solid!important}
 .bxd .xa{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.bxd .xa .btn{flex:0 0 auto!important;width:auto!important;padding:4px 10px;font-size:12.5px;gap:5px;border-width:1.5px;border-radius:8px;font-weight:700}
+.bxd .xa .btn{flex:0 0 auto!important;width:auto!important;padding:var(--card-btn-pad);font-size:var(--card-btn-font);gap:5px;border-width:1.5px;border-radius:8px;font-weight:700}
 .bxd .xa .btn svg{width:14px;height:14px}
-.ib{width:28px;height:28px;border:1px solid var(--line);border-radius:8px;background:#fff;display:inline-flex;align-items:center;justify-content:center;color:#444;text-decoration:none;cursor:pointer;padding:0}.ib:hover{background:#f7f7f7}.ib.done{color:#1a7f37;border-color:#1a7f37}
+.ib{width:var(--icon-btn);height:var(--icon-btn);border:1px solid var(--line);border-radius:8px;background:#fff;display:inline-flex;align-items:center;justify-content:center;color:#444;text-decoration:none;cursor:pointer;padding:0}.ib:hover{background:#f7f7f7}.ib.done{color:#1a7f37;border-color:#1a7f37}
 .bxd .xs{font-size:11px;font-style:italic;color:var(--grey);margin:8px 0 8px}
 .bxd .xs a{color:var(--grey)}
 .try{display:flex;gap:10px;align-items:center;font-size:12px;color:var(--grey);margin:8px 0 0}.try a{color:#444;text-decoration:underline;text-decoration-color:#cfcfcf;text-underline-offset:3px}
@@ -365,6 +365,7 @@ table.hours{width:100%;border-collapse:collapse;font-size:14px}.hours td{padding
 
 
 <div class="rolemsg ownerbanner"><b>For owner and staff of Yellow Tower</b><span>Edit every field of your page and see your own record. Only you can open it.</span><a class="btn sm pri" href="yellow-tower-owner-page.html">Open the owner page</a><small>Not yours? <a href="https://wa.me/page.me?text=Hi%21%20I%27d%20like%20to%20claim%20Yellow%20Tower.%20%28ref%20kh34363%20claim%29">Claim this page</a></small></div>
+
 
 
 <div class="bxs" id="bxs">
