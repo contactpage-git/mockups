@@ -82,13 +82,6 @@ ul.tr ul{margin:0 0 0 11px;padding-left:12px}
 .dc{flex:1;font-size:13px;color:var(--grey)}
 .btn.pub{background:var(--yellow);border-color:var(--yellow);padding:7px 16px}.btn.pub[aria-disabled=true]{background:#fff;border-color:#e0e0e0;color:#b5b5b5;cursor:default}
 .dn{font-size:12px;color:#9a9a9a;margin:5px 0 8px}
-#fshade{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}#fshade.on{opacity:1;pointer-events:auto}
-#fcard{position:fixed;left:50%;top:50%;width:min(360px,calc(100vw - 32px));margin:0;translate:-50% -50%;background:#fff;border-radius:14px;box-shadow:0 14px 40px rgba(0,0,0,.25);padding:14px 16px 16px;z-index:21;opacity:0;pointer-events:none;transition:transform .22s ease,opacity .18s}#fcard.on{pointer-events:auto}
-#fcard .fh{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}#fcard .fh b{font-size:16px}
-#fcard .fx{border:0;background:#f1f2f3;border-radius:50%;width:30px;height:30px;font-size:20px;line-height:1;cursor:pointer}
-#fcard .sqp{border:0;padding:0;margin:0}
-.sqb[aria-expanded=true]{border-color:var(--line);background:#fff;box-shadow:none}
-@media(prefers-reduced-motion:reduce){#fcard,#fshade{transition:none}}
 </style>
 </head>
 <body>
@@ -266,23 +259,7 @@ document.getElementById('q').addEventListener('input',function(){
   });
 });
 document.getElementById('refresh').href="mailto:"+CODE+"@contact.page?subject="+encodeURIComponent("Refresh: "+NAME+" (ref "+CODE+" refresh)")+"&body="+encodeURIComponent("Hi contact.page,\r\n\r\nPlease check every source again for "+NAME+" and write to me when you are done. I know it takes about a day.\r\n\r\n(ref "+CODE+" refresh)");
-(function(){ /* FOCUS CARD, same pattern as the channel boxes on the contact details page: the box grows into a card over a dimmed page; tap outside, X or Esc shrinks it back. */
-  var sh=document.createElement('div');sh.id='fshade';var cd=document.createElement('div');cd.id='fcard';cd.setAttribute('role','dialog');cd.setAttribute('aria-modal','true');
-  cd.innerHTML='<div class="fh"><b id="fct"></b><button type="button" class="fx" aria-label="Close">&#215;</button></div><div class="fbd"></div>';
-  document.body.appendChild(sh);document.body.appendChild(cd);
-  var cur=null,home=null,from=null;
-  function open(btn){var p=document.getElementById('p-'+btn.dataset.p);if(!p)return;cur=btn;home=p.parentNode;from=btn.getBoundingClientRect();
-    document.getElementById('fct').textContent=btn.querySelector('span').textContent.replace(/^\d+\/\d+ /,'Progress: ').replace(/^Progress: filled$/,'Progress');
-    var body=cd.querySelector('.fbd');body.appendChild(p);p.hidden=false;
-    sh.classList.add('on');cd.classList.add('on');
-    var r=cd.getBoundingClientRect(),dx=from.left+from.width/2-(r.left+r.width/2),dy=from.top+from.height/2-(r.top+r.height/2),k=Math.max(.3,from.width/r.width);
-    cd.style.transition='none';cd.style.transform='translate('+dx+'px,'+dy+'px) scale('+k+')';cd.style.opacity='0';cd.getBoundingClientRect();
-    cd.style.transition='';cd.style.transform='';cd.style.opacity='1';cd.querySelector('.fx').focus();}
-  function close(){if(!cur)return;var p=cd.querySelector('.sqp');if(p){p.hidden=true;home.appendChild(p)}cd.classList.remove('on');sh.classList.remove('on');cd.style.opacity='';var b=cur;cur=null;b.focus();}
-  document.getElementById('sq').addEventListener('click',function(e){var b=e.target.closest('.sqb');if(b)open(b)});
-  sh.addEventListener('click',close);cd.querySelector('.fx').addEventListener('click',close);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
-})();
+document.getElementById('sq').addEventListener('click',function(e){var b=e.target.closest('.sqb');if(!b)return;var open=b.getAttribute('aria-expanded')==='true';[].forEach.call(document.querySelectorAll('.sqb'),function(x){x.setAttribute('aria-expanded','false')});[].forEach.call(document.querySelectorAll('.sqp'),function(x){x.hidden=true});if(!open){b.setAttribute('aria-expanded','true');document.getElementById('p-'+b.dataset.p).hidden=false}});
 if(VIS){
   document.title="Help improve Yellow Tower · contact.page";
   document.querySelector('h1').textContent="Help improve Yellow Tower";
@@ -295,10 +272,5 @@ if(VIS){
 document.getElementById('sb').addEventListener('click',function(e){if(this.getAttribute('aria-disabled')==='true'){e.preventDefault();return}var self=this;setTimeout(function(){sent=true;changes={};[].forEach.call(document.querySelectorAll('.val.ch'),function(v){v.classList.remove('ch')});[].forEach.call(document.querySelectorAll('.leaf input'),function(i){var st=store[i.id];if(st)st.orig=i.value});chg()},400)});
 recount();chg();
 </script>
-<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
-<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
-
-<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-owner-page-notes.html">Developer notes: what changed and why, every version</a></p>
-</details>
 </body>
 </html>
