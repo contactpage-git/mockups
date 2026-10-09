@@ -98,45 +98,25 @@ ul.tr ul{margin:0 0 0 11px;padding-left:12px}
 #fcard .btn.pub{width:100%}
 .chl{list-style:none;margin:8px 0 10px;padding:0;max-height:240px;overflow:auto}.chl li{display:flex;gap:10px;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--line);font-size:13px}.chl .cl{min-width:0;overflow-wrap:anywhere}.chl .cl b{font-size:12px;color:var(--grey);font-weight:600}.chl .undo{flex:none;font:600 12.5px Arial;color:#161616;text-decoration:underline;border:0;background:none;cursor:pointer}
 .sqb{position:relative}.sqb::after{content:"";position:absolute;top:9px;right:9px;width:13px;height:13px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%238a8a8a%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%2215%203%2021%203%2021%209%22%2F%3E%3Cpolyline%20points%3D%229%2021%203%2021%203%2015%22%2F%3E%3Cline%20x1%3D%2221%22%20x2%3D%2214%22%20y1%3D%223%22%20y2%3D%2210%22%2F%3E%3Cline%20x1%3D%223%22%20x2%3D%2210%22%20y1%3D%2221%22%20y2%3D%2214%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;opacity:.9}
-.locked .w>*:not(#gate):not(.crumb){display:none!important}.locked .send{display:none}
-body:not(.locked) #gate{display:none}
-.gate{margin-top:6px}.gate .gs{color:#444;font-size:14px;margin:6px 0 16px}.gfm{display:flex;flex-direction:column;gap:8px}.gfm label{font-size:13px;font-weight:600}
-.gfm input{font:16px Arial;border:1px solid #d0d0d0;border-radius:8px;padding:10px 12px}.gfm .btn{align-self:flex-start;margin-top:4px}
-.gsent{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:14px}.gsent p{margin:4px 0 10px;font-size:14px}
-.gate .gf{font-size:12px;font-style:italic;color:#757575;margin-top:14px}.gate .gf a{color:#757575}
-.faq details{border-bottom:1px solid var(--line);padding:8px 0}.faq summary{cursor:pointer;font-weight:600;font-size:14px}.faq details p,.faq details ol{margin:6px 0 2px;font-size:13px;color:#333}.faq ol{padding-left:18px}
-#fcard{max-height:82vh;overflow:auto}
 </style>
 </head>
-<body class="locked">
+<body>
 <div class="w">
 <a class="crumb" href="yellow-tower-contact-details-page.html?role=owner">&#8592; Contact details</a>
-<div id="gate" class="gate"><h1>Sign in to Yellow Tower</h1>
-<p class="gs">Owners and staff only. We send a one-time link to the email on your page.</p>
-<form id="gf" class="gfm"><label for="gid">Your email</label><input id="gid" type="email" autocomplete="username" required placeholder="you@example.com"><button class="btn pub" type="submit">Send me a link</button></form>
-<div id="gsent" class="gsent" hidden><b>Check your email.</b><p>Open the link we sent. It brings you back here.</p><button class="btn pub" type="button" id="genter">Open the owner page (mockup)</button></div>
-<p class="gf">Only works for the email we have for Yellow Tower. Not yours? <a href="https://wa.me/page.me?text=Hi%21%20I%27d%20like%20to%20claim%20Yellow%20Tower.%20%28ref%20kh34363%20claim%29">Claim this page</a></p></div>
-<h1 id="oh">Yellow Tower: owner page</h1>
+<h1>Yellow Tower: owner page</h1>
 <div class="sq" id="sq" role="group" aria-label="Quick boxes">
 <button type="button" class="sqb pubb" data-p="publish" data-t="Publish"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg><span>Publish</span><i class="sts"><em class="dpill" id="bdp">Draft</em> <em id="bsc">No changes</em></i></button>
 <button type="button" class="sqb" data-p="search" data-t="Search"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span id="bsq">Search</span></button>
 <button type="button" class="sqb" data-p="prog" data-t="Progress"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg><span><b id="pcn">0/0</b> filled</span></button>
 <button type="button" class="sqb" data-p="refresh" data-t="Refresh"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M8 16H3v5"/></svg><span>Refresh</span></button>
-<button type="button" class="sqb" data-p="how" data-t="Help and FAQ"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span>Help</span></button>
+<button type="button" class="sqb" data-p="how" data-t="How it works"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span>How it works</span></button>
 </div>
 <div id="sqh" hidden>
 <div class="sqp" id="p-publish"><p><span class="dpill" id="dp">Draft</span> <span class="dc" id="sc">No changes yet</span></p><p class="dn" id="dn">Subject to review. Nothing goes live until we have checked it.</p><ul class="chl" id="chl"></ul><a class="btn pub" id="sb" href="#" aria-disabled="true">Publish</a></div>
 <div class="sqp" id="p-search"><input type="search" id="q" placeholder="e.g. phone, hours, parking" aria-label="Search fields"><p class="dn">The list filters as you type. Press Enter or close this card to see it.</p></div>
 <div class="sqp" id="p-prog"><b id="pc">0 of 0 fields filled</b><div class="bar"><i id="pb"></i></div><p>Empty fields are fine. Fill what you know, we help with the rest.</p></div>
 <div class="sqp" id="p-refresh"><p>Our agents check every source again and write to you when done. It takes about a day.</p><a class="btn sm" id="refresh" href="#">Refresh my page</a></div>
-<div class="sqp faq" id="p-how"><details open><summary>What you can do here</summary><ol><li>Your own register record, only you see it</li><li>Refresh: our agents check every source again, about a day</li><li>Every field your page can hold, with ideas for your trade</li><li>"Try to find it" on any empty field, with your own sources</li><li>Your other registered companies, if any (coming later)</li><li>A one-question-at-a-time interview: announcements, your own FAQ, directions</li><li>One checklist of sections, all ticked; untick to hide, never deleted</li></ol></details>
-<details><summary>How do I change something?</summary><p>Tap a row, type, and your change goes into the draft. Tap Publish when you are ready. We check it before it goes on your page.</p></details>
-<details><summary>What do Public, Behind the check, Only you and We fill mean?</summary><p>Public: shown on your page. Behind the check: shown only after a visitor passes the security check. Only you: never public. We fill: our agents fill it, you can read it.</p></details>
-<details><summary>Can I hide a section?</summary><p>Yes. Untick "Show on my page" inside the section. It is hidden, never deleted, and you can tick it again.</p></details>
-<details><summary>Can I change a phone number or email?</summary><p>Add the new one. The old one is kept as an earlier line with its date, not deleted.</p></details>
-<details><summary>Who sees my register record?</summary><p>Only you, after sign-in.</p></details>
-<details><summary>What does "Try to find it" do?</summary><p>You can ask an AI and paste the answer, or ask us to research it. There is no guarantee we find it. Nothing is saved until you publish.</p></details>
-<details><summary>I need more help</summary><p><a href="mailto:kh34363@contact.page?subject=Owner%20help%20%28ref%20kh34363%20owner-help%29&amp;body=Hi%20contact.page%2C%0D%0A%0D%0AI%20need%20help%20with%20my%20page.%0D%0A%0D%0A%28ref%20kh34363%20owner-help%29">Email us</a>. We usually reply within a few hours, always within one business day.</p></details></div>
+<div class="sqp" id="p-how"><p>Tap a row to open it and type. Your changes make a draft. Tap Publish when you are ready: nothing goes on your page until we have checked it.</p></div>
 </div>
 <p class="xrow"><button class="lk" id="ea" type="button">Expand all</button> &middot; <button class="lk" id="ca" type="button">Collapse all</button> &middot; <label><input type="checkbox" id="oe"> Only empty</label></p>
 <ul class="tr" id="tree"></ul>
@@ -328,18 +308,7 @@ document.addEventListener('click',function(e){var u=e.target.closest('[data-undo
 var _chg=chg;chg=function(){_chg();drawList();document.getElementById('bdp').textContent=document.getElementById('dp').textContent;var c=document.getElementById('sc').textContent;document.getElementById('bsc').textContent=c.replace(' in your draft','').replace('No changes yet','No changes').replace(/Sent for review\. We reply by email\./,'Sent');document.querySelector('.pubb').classList.toggle('chg',document.getElementById('dp').classList.contains('chg'))};
 document.getElementById('q').addEventListener('input',function(){var v=this.value.trim();document.getElementById('bsq').textContent=v?'\u201c'+v+'\u201d':'Search'});
 document.getElementById('q').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();document.querySelector('#fcard .fx').click()}});
-/* SIGN-IN FIRST (Kim 2026-10-09: "the sign in must happen when anyone goes to the owner page"). Mockup only: any email or number works; production sends a one-time link to the email on the record, or a code by WhatsApp, and the owner-pass cookie opens this page. The visitor suggestion view (?as=visitor) needs no sign-in. */
-(function(){var K='cp_owner_signed',ok=false;try{ok=sessionStorage.getItem(K)==='1'}catch(e){}
-  function open(){document.body.classList.remove('locked');try{sessionStorage.setItem(K,'1')}catch(e){}}
-  if(VIS||ok){document.body.classList.remove('locked');return}
-  document.getElementById('gf').addEventListener('submit',function(e){e.preventDefault();this.hidden=true;document.getElementById('gsent').hidden=false});
-  document.getElementById('genter').addEventListener('click',open)})();
 recount();chg();
 </script>
-<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
-<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
-
-<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-owner-page-notes.html">Developer notes: what changed and why, every version</a></p>
-</details>
 </body>
 </html>
