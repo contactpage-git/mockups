@@ -106,7 +106,6 @@ body:not(.locked) #gate{display:none}
 .gate .gf{font-size:12px;font-style:italic;color:#757575;margin-top:14px}.gate .gf a{color:#757575}
 .faq details{border-bottom:1px solid var(--line);padding:8px 0}.faq summary{cursor:pointer;font-weight:600;font-size:14px}.faq details p,.faq details ol{margin:6px 0 2px;font-size:13px;color:#333}.faq ol{padding-left:18px}
 #fcard{max-height:none;overflow:visible}
-.fnav{position:fixed;z-index:22;display:none;justify-content:space-between;gap:8px}.fnav.on{display:flex}.fnav button{font:600 12px Arial,sans-serif;color:#161616;background:#fff;border:1px solid #e9e9e9;border-radius:999px;padding:5px 12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.18)}.fnav button:hover{background:#fffbea;border-color:#FFC400}
 </style>
 </head>
 <body class="locked">
@@ -307,11 +306,8 @@ document.getElementById('refresh').href="mailto:"+CODE+"@contact.page?subject="+
     sh.classList.add('on');cd.classList.add('on');
     var r=cd.getBoundingClientRect(),dx=from.left+from.width/2-(r.left+r.width/2),dy=from.top+from.height/2-(r.top+r.height/2),k=Math.max(.3,from.width/r.width);
     cd.style.transition='none';cd.style.transform='translate('+dx+'px,'+dy+'px) scale('+k+')';cd.style.opacity='0';cd.getBoundingClientRect();
-    cd.style.transition='';cd.style.transform='';cd.style.opacity='1';var qi=cd.querySelector('input[type=search]');(qi||cd.querySelector('.fx')).focus();setTimeout(function(){place();nv.classList.add('on')},240);}
-  var nv=document.createElement('div');nv.className='fnav';nv.innerHTML='<button type="button" data-d="-1">&#8249; Previous</button><button type="button" data-d="1">Next &#8250;</button>';document.body.appendChild(nv);
-  function place(){var r=cd.getBoundingClientRect();nv.style.left=r.left+'px';nv.style.width=r.width+'px';nv.style.top=(r.bottom+8)+'px'}
-  nv.addEventListener('click',function(e){var b=e.target.closest('button');if(!b||!cur)return;var l=[].slice.call(document.querySelectorAll('.sqb')).filter(function(x){return x.style.display!=='none'}),i=l.indexOf(cur),nx=l[(i+ +b.dataset.d+l.length)%l.length];close();open(nx);});
-  function close(){if(!cur)return;var p=cd.querySelector('.sqp');if(p){p.hidden=true;home.appendChild(p)}cd.classList.remove('on');sh.classList.remove('on');cd.style.opacity='';nv.classList.remove('on');var b=cur;cur=null;b.focus();}
+    cd.style.transition='';cd.style.transform='';cd.style.opacity='1';var qi=cd.querySelector('input[type=search]');(qi||cd.querySelector('.fx')).focus();}
+  function close(){if(!cur)return;var p=cd.querySelector('.sqp');if(p){p.hidden=true;home.appendChild(p)}cd.classList.remove('on');sh.classList.remove('on');cd.style.opacity='';var b=cur;cur=null;b.focus();}
   document.getElementById('sq').addEventListener('click',function(e){var b=e.target.closest('.sqb');if(b)open(b)});
   sh.addEventListener('click',close);cd.querySelector('.fx').addEventListener('click',close);
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
@@ -340,10 +336,5 @@ document.getElementById('q').addEventListener('keydown',function(e){if(e.key==='
   document.getElementById('genter').addEventListener('click',open)})();
 recount();chg();
 </script>
-<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
-<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
-
-<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-owner-page-notes.html">Developer notes: what changed and why, every version</a></p>
-</details>
 </body>
 </html>
