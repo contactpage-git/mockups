@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow"><meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yellow Tower fill-in · contact.page</title>
+
+<style>
+:root{--yellow:#FFC400;--ink:#161616;--grey:#6f6f6f;--line:#e9e9e9;--chip:#f1f2f3}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font:15px/1.5 Arial,Helvetica,sans-serif;border-top:4px solid var(--yellow)}
+.w{max-width:430px;margin:0 auto;padding:0 16px 120px}
+.crumb{display:inline-flex;align-items:center;gap:2px;margin:16px 0 6px;font-size:14px;font-weight:600;text-decoration:none;color:var(--ink)}
+h1{font-size:23px;line-height:1.2;margin:4px 0 2px}
+.sub{color:var(--grey);font-size:14px;margin:0 0 10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:var(--ink);border:2px solid var(--yellow);font:600 13px Arial;border-radius:10px;padding:7px 12px;cursor:pointer;text-decoration:none}
+.btn:hover{background:#fffbea}.btn.sm{padding:4px 9px;font-size:12.5px;border-width:1.5px}
+.card{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}
+.card p{margin:0 0 8px;font-size:14px}.card .s{font-size:12.5px;color:var(--grey);margin:6px 0 0}
+.bar{height:6px;border-radius:3px;background:var(--chip);overflow:hidden;margin:6px 0 2px}.bar i{display:block;height:100%;width:0;background:var(--yellow)}
+.tb{position:sticky;top:70px;background:#fff;z-index:6;padding:8px 0;border-bottom:1px solid var(--line);margin-top:6px}
+.tb input[type=search]{width:100%;font:14px Arial;border:1px solid #d0d0d0;border-radius:8px;padding:8px 10px}
+.tb .r{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-top:7px;font-size:12.5px}
+.tb button.t{font:600 12.5px Arial;border:1px solid #d0d0d0;background:#fff;border-radius:6px;padding:4px 9px;cursor:pointer}
+.tb button.t:hover{background:#fffbea;border-color:var(--yellow)}
+.tb label{color:var(--grey);display:inline-flex;gap:5px;align-items:center}
+ul.tr{list-style:none;margin:8px 0 0;padding:0}
+ul.tr ul{list-style:none;margin:0 0 0 10px;padding:0 0 0 12px;border-left:1px solid var(--line)}
+.n{margin:0}
+.h{display:flex;align-items:center;gap:6px;padding:6px 0;min-height:36px;flex-wrap:wrap}
+.car{width:22px;height:22px;flex:none;border:0;background:none;cursor:pointer;font-size:12px;color:var(--grey);padding:0}
+.car::before{content:"\25B8"}.open>.h .car::before{content:"\25BE"}
+.sp{width:22px;flex:none}
+.k{font:13px ui-monospace,Menlo,Consolas,monospace;font-weight:700}
+.top>.h .k{font-size:14px}
+.brace{color:var(--grey);font:12px ui-monospace,Menlo,monospace}
+.cnt{font-size:11.5px;color:var(--grey)}
+.tag{font-size:10.5px;border-radius:4px;padding:1px 6px;background:var(--chip);color:#555;white-space:nowrap}
+.tag.x{background:#fff;border:1px solid #bbb;color:#555}.tag.g{color:#7a5a00;background:#fffbea}.tag.r{background:#fff;border:1px dashed #cfcfcf;color:#8a8a8a}
+.dot{width:8px;height:8px;border-radius:50%;background:#d6d6d6;flex:none}.dot.f{background:var(--yellow)}
+.kids{display:none}.open>.kids{display:block}
+.val{flex:1 1 100%;margin:0 0 4px 28px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.val input,.val textarea{flex:1;min-width:150px;font:14px Arial;border:1px solid #d0d0d0;border-radius:6px;padding:6px 8px;background:#fff}
+.val input:focus,.val textarea:focus{outline:2px solid var(--yellow);border-color:var(--yellow)}
+.val input[readonly]{background:#f6f6f6;color:#777;border-style:dashed}
+.val.ch input,.val.ch textarea{background:#fffbea;border-color:var(--yellow)}
+.hint{flex:1 1 100%;font-size:12px;color:#9a9a9a;margin:-2px 0 0 28px}
+.find{font-size:12.5px;color:#757575;text-decoration:underline;text-decoration-color:#cfcfcf;text-underline-offset:3px;background:none;border:0;cursor:pointer;padding:2px 0;font-family:Arial}
+.fb{display:none;flex:1 1 100%;margin:2px 0 6px 28px;border:1px dashed #d0d0d0;border-radius:8px;padding:8px 10px;font-size:12.5px}
+.fb.on{display:block}.fb .fbs{margin:2px 0 8px;color:#9a9a9a;font-size:12px}.fbo{border-top:1px solid var(--line);padding-top:8px;margin-top:8px}.fbo>span{display:block;font-weight:700;margin-bottom:4px;font-size:12.5px}.fbo .btn{margin:2px 4px 2px 0}.fb textarea{width:100%;font:13px Arial;border:1px solid #d0d0d0;border-radius:6px;padding:6px;margin:6px 0}
+.add{font-size:12.5px;color:#757575;border:1px dashed #d0d0d0;background:#fff;border-radius:6px;padding:3px 9px;cursor:pointer;margin:2px 0 6px 28px;font-family:Arial}
+.add:hover{background:#fffbea;border-color:var(--yellow)}
+.show{display:inline-flex;gap:5px;align-items:center;font-size:12px;color:var(--grey);margin-left:auto}
+.hid>.h .k,.hid>.h .brace{opacity:.45}
+.hide-empty .n.leaf.e{display:none}
+.nomatch{display:none}.q .nomatch{display:none}
+.send{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px 16px;display:none;z-index:8}
+.send.on{display:block}.send .in{max-width:430px;margin:0 auto;display:flex;gap:10px;align-items:center}
+.send .in span{flex:1;font-size:13px}
+.send .btn{background:var(--yellow);border-color:var(--yellow)}
+.warn{color:#8a5a00;font-size:12px}
+.tr .h{cursor:pointer;padding:9px 0;min-height:42px;border-bottom:1px solid var(--line);flex-wrap:nowrap}
+.tr .h:focus-visible{outline:2px solid var(--yellow);outline-offset:-2px}
+.tr .k,.top>.h .k{font:600 15px Arial,Helvetica,sans-serif}
+.tr .dot{margin-left:auto}
+ul.tr ul{margin:0 0 0 11px;padding-left:12px}
+.body{display:none;padding:6px 0 8px 28px}.open>.body{display:block}
+.body .val{margin:0 0 6px;flex:1 1 100%}.body .hint{margin:0 0 6px}.body .tag{align-self:flex-start}
+.cap{font-size:12px;color:#9a9a9a;text-transform:uppercase;letter-spacing:.04em;padding:16px 0 4px}.cap:first-child{padding-top:4px}
+.hintrow{font-size:12px;color:#9a9a9a;padding:6px 0 4px 28px}
+.hintrow .show{margin-left:0;font-size:12.5px}
+.open>.h .car::before{content:"\25BE"}
+.car{pointer-events:none}
+.sq{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0 0}
+.sqb{aspect-ratio:1/1;border:1px solid var(--line);border-radius:12px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font:600 13px/1.25 Arial;color:var(--ink);cursor:pointer;padding:8px;text-align:center}
+.sqb svg{color:var(--ink)}.sqb:hover{background:#fffbea}.sqb[aria-expanded=true]{border-color:var(--yellow);background:#fffbea;box-shadow:inset 0 0 0 1px var(--yellow)}
+.sqp{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0 0;font-size:14px}.sqp p{margin:0 0 8px}.sqp p:last-child{margin:0}
+.drbar{position:sticky;top:0;background:#fff;z-index:7;padding:8px 0 2px;margin-top:4px;border-bottom:1px solid var(--line)}
+.drbar .dn{margin:5px 0 8px}.dr{display:flex;align-items:center;gap:10px}
+.dpill{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:5px;padding:3px 8px;background:var(--chip);color:#555;white-space:nowrap}.dpill.chg{background:#fffbea;box-shadow:inset 0 0 0 1px var(--yellow);color:var(--ink)}
+.dc{flex:1;font-size:13px;color:var(--grey)}
+.btn.pub{background:var(--yellow);border-color:var(--yellow);padding:6px 14px}.btn.pub[aria-disabled=true]{background:#fff;border-color:#e0e0e0;color:#b5b5b5;cursor:default}
+.dn{font-size:12px;color:#9a9a9a;margin:5px 0 8px}
+#fshade{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}#fshade.on{opacity:1;pointer-events:auto}
+#fcard{position:fixed;left:50%;top:50%;width:min(360px,calc(100vw - 32px));margin:0;translate:-50% -50%;background:#fff;border-radius:14px;box-shadow:0 14px 40px rgba(0,0,0,.25);padding:14px 16px 16px;z-index:21;opacity:0;pointer-events:none;transition:transform .22s ease,opacity .18s}#fcard.on{pointer-events:auto}
+#fcard .fh{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}#fcard .fh b{font-size:16px}
+#fcard .fx{border:0;background:#f1f2f3;border-radius:50%;width:30px;height:30px;font-size:20px;line-height:1;cursor:pointer}
+#fcard .sqp{border:0;padding:0;margin:0}
+.sqb[aria-expanded=true]{border-color:var(--line);background:#fff;box-shadow:none}
+@media(prefers-reduced-motion:reduce){#fcard,#fshade{transition:none}}
+.sq{grid-template-columns:repeat(3,minmax(0,1fr))}.sqb{min-width:0;overflow:hidden}.sqb .sts{gap:2px;line-height:1.3}.sqb .dpill{font-size:10px;padding:2px 6px}
+.sqb span{font-size:13px}.sqb .sts{font-style:normal;font-size:11px;color:var(--grey);display:flex;gap:4px;align-items:center;flex-wrap:wrap;justify-content:center}.sqb .sts em{font-style:normal}
+.pubb.chg{border-color:var(--yellow);background:#fffbea}
+.xrow{margin:12px 0 0;font-size:12px;color:#9a9a9a}.xrow .lk{border:0;background:none;padding:0;font:12px Arial;color:#757575;text-decoration:underline;text-decoration-color:#d6d6d6;text-underline-offset:3px;cursor:pointer}.xrow label{display:inline-flex;gap:4px;align-items:center}
+#fcard input[type=search]{width:100%;font:15px Arial;border:1px solid #d0d0d0;border-radius:8px;padding:9px 10px}
+#fcard .dn{margin:8px 0 10px}
+#fcard .btn.pub{width:100%}
+.chl{list-style:none;margin:8px 0 10px;padding:0;max-height:240px;overflow:auto}.chl li{display:flex;gap:10px;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--line);font-size:13px}.chl .cl{min-width:0;overflow-wrap:anywhere}.chl .cl b{font-size:12px;color:var(--grey);font-weight:600}.chl .undo{flex:none;font:600 12.5px Arial;color:#161616;text-decoration:underline;border:0;background:none;cursor:pointer}
+.sqb{position:relative;box-shadow:0 2px 8px rgba(0,0,0,.05)}.sqb::after{content:"";position:absolute;top:10px;right:10px;width:9px;height:9px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23c9c9c9%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%2215%203%2021%203%2021%209%22%2F%3E%3Cpolyline%20points%3D%229%2021%203%2021%203%2015%22%2F%3E%3Cline%20x1%3D%2221%22%20x2%3D%2214%22%20y1%3D%223%22%20y2%3D%2210%22%2F%3E%3Cline%20x1%3D%223%22%20x2%3D%2210%22%20y1%3D%2221%22%20y2%3D%2214%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;opacity:.9}
+.locked .w>*:not(#gate):not(.crumb){display:none!important}.locked .send{display:none}
+body:not(.locked) #gate{display:none}
+.gate{margin-top:6px}.gate .gs{color:#444;font-size:14px;margin:6px 0 16px}.gfm{display:flex;flex-direction:column;gap:8px}.gfm label{font-size:13px;font-weight:600}
+.gfm input{font:16px Arial;border:1px solid #d0d0d0;border-radius:8px;padding:10px 12px}.gfm .btn{align-self:flex-start;margin-top:4px}
+.gsent{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:14px}.gsent p{margin:4px 0 10px;font-size:14px}
+.gate .gf{font-size:12px;font-style:italic;color:#757575;margin-top:14px}.gate .gf a{color:#757575}
+.faq details{border-bottom:1px solid var(--line);padding:8px 0}.faq summary{cursor:pointer;font-weight:600;font-size:14px}.faq details p,.faq details ol{margin:6px 0 2px;font-size:13px;color:#333}.faq ol{padding-left:18px}
+#fcard{max-height:none;overflow:visible}
+.fnav{position:fixed;z-index:22;display:none;justify-content:space-between;gap:8px}.fnav.on{display:flex}.fnav button{font:400 11px Arial,sans-serif;color:#555;background:#fff;border:1px solid #e9e9e9;border-radius:999px;padding:5px 12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.18)}.fnav button:hover{background:#fffbea;border-color:#FFC400}
+.arl2{margin:6px 0 4px;padding-left:20px;font-size:13px;color:#333}.arl2 li{margin:4px 0}
+
+.sq{grid-template-columns:repeat(2,minmax(0,1fr))}.sqb[data-p=refresh]{display:none}
+details.more{flex:1 1 100%;margin:2px 0 6px;font-size:12.5px}details.more summary{cursor:pointer;color:#757575;text-decoration:underline;text-decoration-color:#d6d6d6;text-underline-offset:3px;width:max-content}
+details.more .mr{margin:6px 0 0;color:#333;overflow-wrap:anywhere}details.more .mr b{display:block;font-size:11.5px;color:#757575;font-weight:600}
+details.more code{font:12.5px ui-monospace,Menlo,Consolas,monospace;background:var(--chip);border-radius:4px;padding:1px 5px;margin:0 3px 0 0;display:inline-block}
+.bdg{font-size:10.5px;border-radius:4px;padding:1px 6px;font-weight:700;white-space:nowrap}.bdg.c{background:#fff;border:1px solid #bbb;color:#555}.bdg.n{background:var(--yellow);color:var(--ink)}
+.card{margin:10px 0}
+</style>
+</head>
+<body>
+<div class="w">
+<a class="crumb" href="yellow-tower-contact-details-page.html?role=owner">&#8592; Contact details</a>
+<div id="gate" class="gate"><h1>Sign in to Yellow Tower</h1>
+<p class="gs">Owners and staff only. We send a one-time link to the email on your page.</p>
+<form id="gf" class="gfm"><label for="gid">Your email</label><input id="gid" type="email" autocomplete="username" required placeholder="you@example.com"><button class="btn pub" type="submit">Send me a link</button></form>
+<div id="gsent" class="gsent" hidden><b>Check your email.</b><p>Open the link we sent. It brings you back here.</p><button class="btn pub" type="button" id="genter">Open the owner page (mockup)</button></div>
+<p class="gf">Only works for the email we have for Yellow Tower. Not yours? <a href="https://wa.me/page.me?text=Hi%21%20I%27d%20like%20to%20claim%20Yellow%20Tower.%20%28ref%20kh34363%20claim%29">Claim this page</a></p></div>
+<h1 id="oh">Yellow Tower: fill in every field</h1>
+<div class="sq" id="sq" role="group" aria-label="Quick boxes">
+<button type="button" class="sqb pubb" data-p="publish" data-t="Changes"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg><span>Changes</span><i class="sts"><em class="dpill" id="bdp">Draft</em> <em id="bsc">No changes</em></i></button>
+<button type="button" class="sqb" data-p="search" data-t="Search"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span id="bsq">Search</span></button>
+<button type="button" class="sqb" data-p="prog" data-t="Progress"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg><span><b id="pcn">0/0</b> filled</span></button>
+<button type="button" class="sqb" data-p="refresh" data-t="Refresh"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M8 16H3v5"/></svg><span>Refresh</span></button>
+<button type="button" class="sqb" data-p="how" data-t="Help and FAQ"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span>Help</span></button>
+</div>
+<div id="sqh" hidden>
+<div class="sqp" id="p-publish"><p><span class="dpill" id="dp">Draft</span> <span class="dc" id="sc">No changes yet</span></p><p class="dn" id="dn">Subject to review. Nothing goes live until we have checked it.</p><ul class="chl" id="chl"></ul><a id="sb" href="#" aria-disabled="true" hidden>Publish</a></div>
+<div class="sqp" id="p-search"><input type="search" id="q" placeholder="e.g. phone, hours, parking" aria-label="Search fields"><p class="dn">The list filters as you type. Press Enter or close this card to see it.</p></div>
+<div class="sqp" id="p-prog"><b id="pc">0 of 0 fields filled</b><div class="bar"><i id="pb"></i></div><p>Empty fields are fine. Fill what you know, we help with the rest.</p></div>
+<div class="sqp" id="p-refresh"><p>Our agents check every source again and write to you when done. It takes about a day.</p><a class="btn sm" id="refresh" href="#">Refresh my page</a></div>
+<div class="sqp faq" id="p-how"><details open><summary>AI recommends you</summary><ol class="arl2"><li>Your page is clear and checked</li><li>AI assistants (ChatGPT, Gemini, Claude…) read it and recommend you</li><li>Customers reach you through your protected contact page</li></ol><p style="font-size:12px;font-style:italic;color:#757575">A clear, checked page helps AI assistants find and recommend you.</p></details><details><summary>What you can do here</summary><ol><li>Your own register record, only you see it</li><li>Refresh: our agents check every source again, about a day</li><li>Every field your page can hold, with ideas for your trade</li><li>"Try to find it" on any empty field, with your own sources</li><li>Your other registered companies, if any (coming later)</li><li>A one-question-at-a-time interview: announcements, your own FAQ, directions</li><li>One checklist of sections, all ticked; untick to hide, never deleted</li></ol></details>
+<details><summary>How do I change something?</summary><p>Tap a row and type. Every change is saved in this browser at once. Use Export JSON to keep a copy, Import JSON to load one, Reset to start again.</p></details>
+<details><summary>What do Public, Behind the check, Only you and We fill mean?</summary><p>Public: shown on your page. Behind the check: shown only after a visitor passes the security check. Only you: never public. We fill: our agents fill it, you can read it.</p></details>
+<details><summary>Can I hide a section?</summary><p>Yes. Untick "Show on my page" inside the section. It is hidden, never deleted, and you can tick it again. Export JSON lists it under hiddenSections.</p></details>
+<details><summary>Can I change a phone number or email?</summary><p>Add the new one. The old one is kept as an earlier line with its date, not deleted.</p></details>
+<details><summary>Who sees my register record?</summary><p>Only you, after sign-in.</p></details>
+<details><summary>What does "Try to find it" do?</summary><p>Not in this test version.</p></details>
+<details><summary>I need more help</summary><p><a href="mailto:kh34363@contact.page?subject=Owner%20help%20%28ref%20kh34363%20owner-help%29&amp;body=Hi%20contact.page%2C%0D%0A%0D%0AI%20need%20help%20with%20my%20page.%0D%0A%0D%0A%28ref%20kh34363%20owner-help%29">Email us</a>. We usually reply within a few hours, always within one business day.</p></details></div>
+</div>
+<div class="card" id="pv"><p class="s" style="margin:0 0 4px">How your website reads</p><b id="pvn"></b><div id="pvk" style="font-size:14px"></div><p class="s" id="pvs"></p></div>
+<div class="card" id="loc"><b>Saved in this browser only</b> <span class="s" id="svs"></span><p class="s">Nothing goes to any server or database. Keep phone numbers masked, like +85512869**XX.</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm" id="ex" type="button">Export JSON</button><button class="btn sm" id="im" type="button">Import JSON</button><button class="btn sm" id="rs" type="button">Reset</button><input type="file" id="imf" accept=".json,application/json" hidden></div><p class="s" id="msg" role="status"></p></div>
+<p class="xrow"><button class="lk" id="ea" type="button">Expand all</button> &middot; <button class="lk" id="ca" type="button">Collapse all</button> &middot; <label><input type="checkbox" id="oe"> Only empty</label></p>
+<ul class="tr" id="tree"></ul>
+<p class="s" style="font-size:12.5px;color:#757575;margin-top:18px"><b>One idea:</b> the box "How your website reads" updates as you type. Next step: show the same line the way an AI assistant would quote it, so owners see why a sharp Known for line pays off.</p>
+</div>
+
+
+<script>
+var FILL=true,CODE="kh34363",NAME="Yellow Tower",VIS=/[?&]as=visitor/.test(location.search);
+/* helpers: vis P public, G behind the check, X only you, R we fill (read-only) */
+function S(k,vis,hint,val){return{k:k,t:"s",v:vis,h:hint||"",val:val||""}}
+function A(k,vis,hint,vals){return{k:k,t:"a",v:vis,h:hint||"",vals:vals||[]}}
+function O(k,vis,hint){var c=[].slice.call(arguments,3);return{k:k,t:"o",v:vis,h:hint||"",c:c}}
+function L(k,vis,hint){var c=[].slice.call(arguments,3);return{k:k,t:"l",v:vis,h:hint||"",c:c}}
+var T=[
+S("identifier","R","Your page code","kh34363"),
+S("schemaVersion","R","Which schema version your record follows","2.1"),
+S("portal","R","The portal your page lives on","cambodia"),
+S("providerType","P","business or freelancer","business"),
+S("name","P","Your business name as you publish it","Yellow Tower"),
+S("legalName","P","Registered name, often longer, e.g. ... Co., Ltd."),
+A("alternateName","P","Other spellings or former names"),
+S("slogan","P","One line, e.g. what you promise"),
+S("description","P","Your own words about the business"),
+S("disambiguatingDescription","P","What the business is, max 160 characters, in English","Office building on the Chroy Changvar peninsula with full office floors, private offices and over 2,400 m² of vertical garden."),
+S("knownFor","P","The one real thing you are known for. Specific, never generic. Max 120 characters. Until filled, your website shows the short description."),
+L("translations","P","Short description in another language",S("lang","P","km, th, id, ms ..."),S("text","P","Max 160 characters")),
+S("primaryCategory","P","Your main category","gcid:office_space_rental_agency"),
+A("categories","P","All categories that fit",["gcid:office_space_rental_agency"]),
+S("logo","P","Link to your logo image"),
+L("image","P","Photos, the first is the main one",S("contentUrl","P","Link to the photo"),S("caption","P","What is in the photo"),S("width","P","Pixels"),S("height","P","Pixels"),S("creditText","P","Who took it"),S("license","P","Your own photo? Say so")),
+L("subjectOf","P","Albums, catalogues, brochures, price lists",S("name","P","Album or file name, max 40 characters"),A("imageIds","P","Which photos belong to the album"),S("contentUrl","P","Link to a PDF"),S("encodingFormat","P","e.g. application/pdf")),
+A("telephone","G","Digits with country code; first is the main one",["+85512869**XX"]),
+A("whatsapp","G","Digits; first is the main one",["+85512869**XX"]),
+S("messenger","G","Your Messenger link"),
+A("email","G","First is the main one"),
+L("contactPoint","G","A department, e.g. Sales or Billing",S("contactType","G","Sales, billing, support ..."),A("availableLanguage","P","English, Khmer, Chinese ...")),
+S("url","P","Your own website","https://yellow-tower.com/"),
+A("sameAs","P","Facebook, Instagram, LinkedIn, Telegram ... one link each"),
+O("address","P","Where you are",S("streetAddress","P","One line, number and street","191 Tonle Sap Road"),S("district","P","Khan, kecamatan ...","Chroy Changvar"),S("addressLocality","P","City","Phnom Penh"),S("addressRegion","P","Province or state"),S("postalCode","P",""),S("addressCountry","P","Two letters","KH")),
+O("geo","P","Map pin",S("latitude","P","A number, e.g. 11.5646"),S("longitude","P","A number, e.g. 104.9283")),
+A("areaServed","P","Areas you serve"),
+S("timeZone","P","e.g. Asia/Phnom_Penh"),
+O("directions","P","Help people find the door",S("landmark","P","e.g. opposite the market","across the river from the Royal Palace"),S("floor","P",""),S("entrance","P",""),S("parking","P","","900 m² parking on site"),S("mapPinNote","P","e.g. pin is on the main door"),O("local","P","Directions in your local language",S("lang","P","km, th ..."),S("text","P",""))),
+L("openingHoursSpecification","P","One line per day group",A("dayOfWeek","P","Monday ... Sunday"),S("opens","P","HH:MM, 24 hours"),S("closes","P","HH:MM, 24 hours")),
+L("makesOffer","P","What you sell or rent. Prices only from you",S("availability","P","In stock, out of stock ..."),O("itemOffered","P","The thing",S("type","P","Product or Service"),S("name","P",""),S("description","P",""),A("image","P","Photo links"),S("category","P",""),L("additionalProperty","P","Features",S("name","P","e.g. Air conditioning"),S("value","P","e.g. yes")),S("sku","P","Your own code"),S("brand","P","")),S("businessFunction","P","Lease, sell ..."),S("price","P","A number"),S("priceCurrency","P","USD, KHR ..."),O("priceSpecification","P","From-prices, ranges, per unit",S("price","P",""),S("minPrice","P",""),S("maxPrice","P",""),S("unitText","P","per month, per m2"),S("priceType","P","list or from"))),
+A("paymentAccepted","P","Cash, bank transfer, QR wallet ..."),
+A("currenciesAccepted","P","USD, KHR ..."),
+S("priceRange","P","Hospitality only; leave empty for offices"),
+A("brand","P","Brands you own"),
+S("foundingDate","P","YYYY, or YYYY-MM-DD"),
+L("employees","X","Owner or director only: name and title, no direct lines",S("name","P",""),S("jobTitle","P","")),
+S("registrationNumber","P","Your company registration number"),
+S("registrationStatus","P","Status in the official register"),
+A("isicV4","P","Activity codes from the register"),
+A("certifications","P","ISO 9001 ..."),
+S("vatID","P","Company VAT number, not a personal id"),
+L("announcements","P","News, offers, closures, new stock",S("kind","P","news, offer, closure ..."),S("text","P",""),S("datePosted","P","YYYY-MM-DD"),S("expires","P","YYYY-MM-DD")),
+L("ownerFaq","P","Questions from you, in your words",S("q","P","The question"),S("a","P","Your answer"),S("lang","P","en, km ...")),
+O("containedInPlace","P","Is your business inside another one? Give that page code",S("identifier","P","e.g. kh34363")),
+S("verifiedAt","R","The day we last verified you"),
+S("nextCheckAt","R","When we check you again"),
+S("taxID","X","Never public, never in search"),
+O("_registry","X","Your own register record: only you see it (owner-pass)",S("source_id","R","e.g. moc-kh"),S("registryId","R","The register's company id"),S("registeredOn","X",""),L("directors","X","Current and former",S("name","X",""),S("role","X",""),S("from","X",""),S("to","X","")),L("nameHistory","X","",S("name","X",""),S("from","X",""),S("to","X","")),L("addressHistory","X","",S("address","X",""),S("from","X",""),S("to","X","")),L("filings","X","Kind and date only, no amounts",S("kind","X",""),S("date","X",""),S("url","X","")),S("employeeCount","X","A number")),
+O("_verification","R","How we checked you: we fill this",S("status","R",""),S("verified_at","R",""),S("verified_by","R",""),S("source","R",""),L("evidence","R","",S("type","R",""),S("url","R",""),S("checked_at","R",""))),
+O("_provenance","R","Where each fact came from: we fill this",S("source_id","R",""),S("collected_by","R",""),S("collected_at","R",""),S("method","R",""),S("verification","R",""),S("updated_at","R","")),
+O("_media_license","R","Photo licences: we fill this")
+];
+function strip(a){return a.filter(function(n){return n.v!=="X"&&n.v!=="R"}).map(function(n){if(n.c)n.c=strip(n.c);return n})}
+if(VIS)T=strip(T);
+var VL={P:["Public",""],G:["Behind the check","g"],X:["Only you","x"],R:["We fill","r"]};
+var sent=false,uid=0,store={},changes={},total=0,tree=document.getElementById('tree');
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
+function tag(v){return '<span class="tag '+VL[v][1]+'">'+VL[v][0]+'</span>'}
+var LB={knownFor:"Known for",containedInPlace:"Inside another place",identifier:"Page code",schemaVersion:"Schema version",portal:"Portal",providerType:"Business or freelancer",name:"Name",legalName:"Registered name",alternateName:"Also known as",slogan:"Slogan",description:"About",disambiguatingDescription:"Short description",translations:"Short description in other languages",lang:"Language",text:"Text",primaryCategory:"Main category",categories:"All categories",logo:"Logo",image:"Photos",contentUrl:"Link",caption:"Caption",width:"Width",height:"Height",creditText:"Photo credit",license:"Licence",subjectOf:"Albums and files",imageIds:"Photos in the album",encodingFormat:"File type",telephone:"Phone numbers",whatsapp:"WhatsApp numbers",messenger:"Messenger",email:"Emails",contactPoint:"Departments",contactType:"Department",availableLanguage:"Languages spoken",url:"Website",sameAs:"Social profiles",address:"Address",streetAddress:"Street",district:"District",addressLocality:"City",addressRegion:"Province or state",postalCode:"Postal code",addressCountry:"Country",geo:"Map pin",latitude:"Latitude",longitude:"Longitude",areaServed:"Areas served",timeZone:"Time zone",directions:"Directions",landmark:"Landmark",floor:"Floor",entrance:"Entrance",parking:"Parking",mapPinNote:"Map pin note",local:"Directions in your language",openingHoursSpecification:"Opening hours",dayOfWeek:"Days",opens:"Opens",closes:"Closes",makesOffer:"Products and services",availability:"Availability",itemOffered:"The product or service",type:"Type",category:"Category",additionalProperty:"Features",value:"Value",sku:"Product code",brand:"Brand",businessFunction:"For rent or for sale",price:"Price",priceCurrency:"Currency",priceSpecification:"Price details",minPrice:"Lowest price",maxPrice:"Highest price",unitText:"Per",priceType:"Price type",paymentAccepted:"Payment methods",currenciesAccepted:"Currencies accepted",priceRange:"Price band",foundingDate:"Founded",employees:"Owner or director",jobTitle:"Job title",registrationNumber:"Registration number",registrationStatus:"Register status",isicV4:"Activity codes",certifications:"Certifications",vatID:"VAT number",announcements:"News and offers",kind:"Kind",datePosted:"Posted on",expires:"Expires on",ownerFaq:"Questions from the owner",q:"Question",a:"Answer",verifiedAt:"Last verified",nextCheckAt:"Next check",taxID:"Tax ID",_registry:"Register record",source_id:"Source",registryId:"Register ID",registeredOn:"Registered on",directors:"Directors",role:"Role",from:"From",to:"To",nameHistory:"Past names",addressHistory:"Past addresses",filings:"Filings",date:"Date",employeeCount:"Number of staff",_verification:"How we checked you",status:"Status",verified_at:"Verified on",verified_by:"Verified by",source:"Source",evidence:"Evidence",checked_at:"Checked on",_provenance:"Where each fact came from",collected_by:"Collected by",collected_at:"Collected on",method:"Method",verification:"Verification",updated_at:"Updated on",_media_license:"Photo licences"};
+var TOPLB={name:"Business name",brand:"Brands we own",image:"Photos"};
+function lab(k,top){return (top&&TOPLB[k])||LB[k]||k.replace(/([A-Z])/g,' $1').replace(/^./,function(c){return c.toUpperCase()})}
+function norm(p){return p.replace(/\[\d*\]/g,"")}
+var META={"identifier": {"so": "identifier", "custom": false, "rule": "type: string, max 50 characters, format: ^[a-z0-9][a-z0-9-]*$", "num": false, "old": ["alias_id"]}, "name": {"so": "name", "custom": false, "rule": "type: string", "num": false, "old": ["name"]}, "description": {"so": "description", "custom": false, "rule": "type: string", "num": false, "old": ["description", "long_description", "about_us.content", "short_descriptions[]"]}, "slogan": {"so": "slogan", "custom": false, "rule": "type: string", "num": false, "old": ["headline"]}, "alternateName": {"so": "alternateName", "custom": false, "rule": "list of string", "num": false, "old": ["alias_names[]"]}, "logo": {"so": "logo", "custom": false, "rule": "type: string, format: ^https?://, uri", "num": false, "old": ["logo"]}, "sameAs": {"so": "sameAs", "custom": false, "rule": "list of string, format: ^https?://", "num": false, "old": ["instagram", "facebook_page", "twitter_account"]}, "url": {"so": "url", "custom": false, "rule": "type: string, format: ^https?://, uri", "num": false, "old": ["website"]}, "image": {"so": "image (ImageObject)", "custom": false, "rule": "type: list", "num": false, "old": ["photos[]", "business_photos[]"]}, "image.id": {"so": "id", "custom": true, "rule": "type: string", "num": false, "old": [], "part": ["photos[]", "business_photos[]"]}, "image.contentUrl": {"so": "contentUrl", "custom": false, "rule": "type: string, format: ^https?://, uri", "num": false, "old": ["photos[]"]}, "image.caption": {"so": "caption", "custom": false, "rule": "type: string", "num": false, "old": ["gallery_image.caption"]}, "image.height": {"so": "height", "custom": false, "rule": "type: integer", "num": true, "old": [], "part": ["photos[]", "business_photos[]"]}, "image.width": {"so": "width", "custom": false, "rule": "type: integer", "num": true, "old": [], "part": ["photos[]", "business_photos[]"]}, "image.creditText": {"so": "creditText", "custom": false, "rule": "type: string", "num": false, "old": [], "part": ["photos[]", "business_photos[]"]}, "image.license": {"so": "license", "custom": false, "rule": "type: string, format: ^https?://, uri", "num": false, "old": [], "part": ["photos[]", "business_photos[]"]}, "telephone": {"so": "telephone", "custom": false, "rule": "list of string, format: ^[1-9][0-9]{6,14}$", "num": false, "old": ["phone_number"]}, "email": {"so": "email", "custom": false, "rule": "list of string", "num": false, "old": ["email"]}, "contactPoint": {"so": "contactPoint (ContactPoint)", "custom": false, "rule": "type: list", "num": false, "old": []}, "contactPoint.availableLanguage": {"so": "availableLanguage", "custom": false, "rule": "list of string", "num": false, "old": []}, "contactPoint.contactType": {"so": "contactType", "custom": false, "rule": "one of: sales, customer service, reservations, technical support, other", "num": false, "old": []}, "address": {"so": "address (PostalAddress)", "custom": false, "rule": "type: object", "num": false, "old": []}, "address.streetAddress": {"so": "streetAddress", "custom": false, "rule": "type: string", "num": false, "old": ["street_number", "street_name", "unit"]}, "address.addressLocality": {"so": "addressLocality", "custom": false, "rule": "type: string", "num": false, "old": ["city"]}, "address.addressRegion": {"so": "addressRegion", "custom": false, "rule": "type: string", "num": false, "old": ["state"]}, "address.postalCode": {"so": "postalCode", "custom": false, "rule": "type: string", "num": false, "old": ["postal_code"]}, "address.addressCountry": {"so": "addressCountry", "custom": false, "rule": "type: string, format: ^[A-Z]{2}$", "num": false, "old": ["country"]}, "address.district": {"so": "district", "custom": true, "rule": "type: string", "num": false, "old": []}, "geo": {"so": "geo (GeoCoordinates)", "custom": false, "rule": "type: object", "num": false, "old": []}, "geo.latitude": {"so": "latitude", "custom": false, "rule": "type: number, -90 to 90", "num": true, "old": ["lat"]}, "geo.longitude": {"so": "longitude", "custom": false, "rule": "type: number, -180 to 180", "num": true, "old": ["long"]}, "areaServed": {"so": "areaServed", "custom": false, "rule": "list of string", "num": false, "old": []}, "openingHoursSpecification": {"so": "openingHoursSpecification", "custom": false, "rule": "type: list", "num": false, "old": ["opening_hours[]"]}, "openingHoursSpecification.dayOfWeek": {"so": "dayOfWeek", "custom": false, "rule": "list of string", "num": false, "old": ["opening_hours[].day"]}, "openingHoursSpecification.opens": {"so": "opens", "custom": false, "rule": "type: string, format: ^([01][0-9]|2[0-3]):[0-5][0-9]$", "num": false, "old": ["opening_hours[].open"]}, "openingHoursSpecification.closes": {"so": "closes", "custom": false, "rule": "type: string, format: ^([01][0-9]|2[0-3]):[0-5][0-9]$", "num": false, "old": ["opening_hours[].close"]}, "subjectOf": {"so": "subjectOf", "custom": false, "rule": "type: list", "num": false, "old": ["albums[]", "e_catalogs[]", "attachments[]"]}, "subjectOf.type": {"so": "type", "custom": true, "rule": "one of: ImageGallery, MediaObject", "num": false, "old": [], "part": ["albums[]", "e_catalogs[]", "attachments[]"]}, "subjectOf.name": {"so": "name", "custom": false, "rule": "type: string, max 40 characters", "num": false, "old": ["albums[].name"]}, "subjectOf.imageIds": {"so": "imageIds", "custom": true, "rule": "list of string", "num": false, "old": [], "part": ["albums[]", "e_catalogs[]", "attachments[]"]}, "subjectOf.contentUrl": {"so": "contentUrl", "custom": false, "rule": "type: string, format: ^https?://, uri", "num": false, "old": ["e_catalogs[]", "attachments[]"]}, "subjectOf.encodingFormat": {"so": "encodingFormat", "custom": false, "rule": "type: string", "num": false, "old": [], "part": ["albums[]", "e_catalogs[]", "attachments[]"]}, "makesOffer": {"so": "makesOffer (Offer)", "custom": false, "rule": "type: list", "num": false, "old": ["products[]", "services[]"]}, "makesOffer.availability": {"so": "availability", "custom": false, "rule": "type: string", "num": false, "old": [], "part": ["products[]", "services[]"]}, "makesOffer.itemOffered": {"so": "itemOffered", "custom": false, "rule": "type: object", "num": false, "old": ["products[]", "services[]"]}, "makesOffer.itemOffered.type": {"so": "type", "custom": false, "rule": "one of: Product, Service", "num": false, "old": ["products[] or services[] (the list it sat in)"]}, "makesOffer.itemOffered.name": {"so": "name", "custom": false, "rule": "type: string", "num": false, "old": ["product.name", "service.name"]}, "makesOffer.itemOffered.description": {"so": "description", "custom": false, "rule": "type: string", "num": false, "old": ["product.description", "service.description"]}, "makesOffer.itemOffered.image": {"so": "image (ImageObject)", "custom": false, "rule": "list of string, format: ^https?://", "num": false, "old": ["product.photos[]", "service.photos[]"]}, "makesOffer.itemOffered.category": {"so": "category", "custom": false, "rule": "type: string", "num": false, "old": ["product.category_names[]", "service.category_name"]}, "makesOffer.itemOffered.additionalProperty": {"so": "additionalProperty (PropertyValue)", "custom": false, "rule": "type: list", "num": false, "old": ["product.features[]", "service.properties[]"]}, "makesOffer.itemOffered.additionalProperty.name": {"so": "name", "custom": false, "rule": "type: string", "num": false, "old": [], "part": ["product.features[]", "service.properties[]"]}, "makesOffer.itemOffered.additionalProperty.value": {"so": "value", "custom": false, "rule": "", "num": false, "old": [], "part": ["product.features[]", "service.properties[]"]}, "makesOffer.itemOffered.sku": {"so": "sku", "custom": false, "rule": "type: string", "num": false, "old": ["product.sku"]}, "makesOffer.itemOffered.brand": {"so": "brand", "custom": false, "rule": "type: string", "num": false, "old": ["product.brand"]}, "makesOffer.price": {"so": "price", "custom": false, "rule": "type: number", "num": true, "old": ["product.price", "product.sale_price", "service.price"]}, "makesOffer.priceCurrency": {"so": "priceCurrency", "custom": false, "rule": "type: string, format: ^[A-Z]{3}$", "num": false, "old": ["currency"]}, "makesOffer.businessFunction": {"so": "businessFunction", "custom": true, "rule": "one of: Buy, ConstructionInstallation, Dispose, LeaseOut, Maintain, ProvideService, Repair, Sell", "num": false, "old": [], "part": ["products[]", "services[]"]}, "makesOffer.priceSpecification": {"so": "priceSpecification (UnitPriceSpecification)", "custom": true, "rule": "type: object", "num": false, "old": [], "part": ["products[]", "services[]"]}, "makesOffer.priceSpecification.price": {"so": "price", "custom": false, "rule": "type: number", "num": true, "old": [], "part": ["products[]", "services[]"]}, "makesOffer.priceSpecification.minPrice": {"so": "minPrice", "custom": false, "rule": "type: number", "num": true, "old": [], "part": ["products[]", "services[]"]}, "makesOffer.priceSpecification.maxPrice": {"so": "maxPrice", "custom": false, "rule": "type: number", "num": true, "old": [], "part": ["products[]", "services[]"]}, "makesOffer.priceSpecification.unitText": {"so": "unitText", "custom": false, "rule": "type: string", "num": false, "old": [], "part": ["products[]", "services[]"]}, "makesOffer.priceSpecification.priceType": {"so": "priceType", "custom": false, "rule": "type: string", "num": false, "old": [], "part": ["products[]", "services[]"]}, "employees": {"so": "employee", "custom": false, "rule": "type: list", "num": false, "old": ["people[]"]}, "employees.name": {"so": "name", "custom": false, "rule": "type: string", "num": false, "old": [], "part": ["people[]"]}, "employees.jobTitle": {"so": "jobTitle", "custom": false, "rule": "type: string", "num": false, "old": [], "part": ["people[]"]}, "currenciesAccepted": {"so": "currenciesAccepted", "custom": false, "rule": "list of string", "num": false, "old": ["currency"]}, "paymentAccepted": {"so": "paymentAccepted", "custom": false, "rule": "type: list; one of: cash, card, bank_transfer, qr_wallet, cod, other", "num": false, "old": []}, "priceRange": {"so": "priceRange", "custom": false, "rule": "one of: $, $$, $$$, $$$$", "num": false, "old": []}, "brand": {"so": "brand", "custom": false, "rule": "list of string", "num": false, "old": []}, "foundingDate": {"so": "foundingDate", "custom": false, "rule": "type: string, format: ^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?$", "num": false, "old": []}, "taxID": {"so": "taxID", "custom": false, "rule": "type: string", "num": false, "old": []}, "whatsapp": {"so": "whatsapp", "custom": true, "rule": "list of string, format: ^[1-9][0-9]{6,14}$", "num": false, "old": ["whatsapp"]}, "messenger": {"so": "messenger", "custom": true, "rule": "type: string, format: ^https?://, uri", "num": false, "old": ["facebook_messenger"]}, "registrationNumber": {"so": "registrationNumber", "custom": true, "rule": "type: string", "num": false, "old": ["official_numbers[]", "registration_number"]}, "categories": {"so": "categories", "custom": true, "rule": "list of string, format: ^gcid:[a-z0-9_]+$", "num": false, "old": ["categories[]"]}, "_verification": {"so": "_verification", "custom": true, "rule": "type: object", "num": false, "old": []}, "_verification.status": {"so": "status", "custom": true, "rule": "one of: verified, unverified, closed_temporarily, closed_permanently", "num": false, "old": []}, "_verification.verified_at": {"so": "verified_at", "custom": true, "rule": "type: string, date", "num": false, "old": []}, "_verification.verified_by": {"so": "verified_by", "custom": true, "rule": "type: string", "num": false, "old": []}, "_verification.evidence": {"so": "evidence", "custom": true, "rule": "type: list", "num": false, "old": []}, "_verification.evidence.type": {"so": "type", "custom": true, "rule": "type: string", "num": false, "old": []}, "_verification.evidence.url": {"so": "url", "custom": true, "rule": "type: string, format: ^https?://, uri", "num": false, "old": []}, "_verification.evidence.checked_at": {"so": "checked_at", "custom": true, "rule": "type: string, date", "num": false, "old": []}, "_verification.source": {"so": "source", "custom": true, "rule": "type: string", "num": false, "old": []}, "_trade_attributes": {"so": "_trade_attributes", "custom": true, "rule": "type: object", "num": false, "old": []}, "_media_license": {"so": "license (per photo)", "custom": true, "rule": "type: object", "num": false, "old": []}, "_provenance": {"so": "_provenance", "custom": true, "rule": "type: object", "num": false, "old": ["source", "source_name"]}, "_provenance.source_id": {"so": "source_id", "custom": true, "rule": "type: string", "num": false, "old": [], "part": ["source", "source_name"]}, "_provenance.collected_by": {"so": "collected_by", "custom": true, "rule": "type: string", "num": false, "old": [], "part": ["source", "source_name"]}, "_provenance.collected_at": {"so": "collected_at", "custom": true, "rule": "type: string, date", "num": false, "old": [], "part": ["source", "source_name"]}, "_provenance.method": {"so": "method", "custom": true, "rule": "type: string", "num": false, "old": [], "part": ["source", "source_name"]}, "_provenance.verification": {"so": "verification", "custom": true, "rule": "type: string", "num": false, "old": [], "part": ["source", "source_name"]}, "_provenance.updated_at": {"so": "updated_at", "custom": true, "rule": "type: string, date", "num": false, "old": [], "part": ["source", "source_name"]}, "_provenance.fields": {"so": "fields", "custom": true, "rule": "type: object", "num": false, "old": [], "part": ["source", "source_name"]}, "_provenance.rounds": {"so": "rounds", "custom": true, "rule": "type: list", "num": false, "old": [], "part": ["source", "source_name"]}, "_provenance.rounds.round_id": {"so": "round_id", "custom": true, "rule": "type: string", "num": false, "old": [], "part": ["source", "source_name"]}, "_provenance.rounds.attempted": {"so": "attempted", "custom": true, "rule": "list of string", "num": false, "old": [], "part": ["source", "source_name"]}, "_provenance.rounds.not_found": {"so": "not_found", "custom": true, "rule": "list of string", "num": false, "old": [], "part": ["source", "source_name"]}, "_provenance.collectors": {"so": "collectors", "custom": true, "rule": "list of string", "num": false, "old": [], "part": ["source", "source_name"]}, "schemaVersion": {"so": "schemaVersion", "custom": true, "rule": "type: string, format: ^2\\.[0-9]+$", "num": false, "old": []}, "portal": {"so": "portal", "custom": true, "rule": "type: string, format: ^[a-z0-9][a-z0-9-]*$", "num": false, "old": []}, "providerType": {"so": "providerType", "custom": true, "rule": "one of: business, freelancer", "num": false, "old": []}, "legalName": {"so": "legalName", "custom": false, "rule": "type: string", "num": false, "old": []}, "vatID": {"so": "vatID", "custom": false, "rule": "type: string", "num": false, "old": []}, "disambiguatingDescription": {"so": "disambiguatingDescription", "custom": false, "rule": "type: string, max 160 characters", "num": false, "old": []}, "knownFor": {"so": "knownFor", "custom": true, "rule": "type: string, max 120 characters", "num": false, "old": []}, "translations": {"so": "translations", "custom": true, "rule": "type: list", "num": false, "old": []}, "translations.lang": {"so": "lang", "custom": true, "rule": "type: string, format: ^[a-z]{2,3}(-[A-Za-z0-9]+)*$", "num": false, "old": []}, "translations.field": {"so": "field", "custom": true, "rule": "one of: disambiguatingDescription", "num": false, "old": []}, "translations.text": {"so": "text", "custom": true, "rule": "type: string, max 160 characters", "num": false, "old": []}, "primaryCategory": {"so": "primaryCategory", "custom": true, "rule": "type: string, format: ^gcid:[a-z0-9_]+$", "num": false, "old": []}, "verifiedAt": {"so": "verifiedAt", "custom": true, "rule": "type: string, date", "num": false, "old": []}, "nextCheckAt": {"so": "nextCheckAt", "custom": true, "rule": "type: string, date", "num": false, "old": []}, "timeZone": {"so": "timeZone", "custom": false, "rule": "type: string", "num": false, "old": []}, "certifications": {"so": "certifications", "custom": false, "rule": "list of string", "num": false, "old": []}, "isicV4": {"so": "isicV4", "custom": false, "rule": "list of string, format: ^[0-9]{2,4}$", "num": false, "old": []}, "registrationStatus": {"so": "registrationStatus", "custom": true, "rule": "one of: active, suspended, struck-off, dissolved, unknown", "num": false, "old": []}, "_registry": {"so": "_registry", "custom": true, "rule": "type: object", "num": false, "old": []}, "_registry.source_id": {"so": "source_id", "custom": true, "rule": "type: string", "num": false, "old": []}, "_registry.registryId": {"so": "registryId", "custom": true, "rule": "type: string", "num": false, "old": []}, "_registry.registeredOn": {"so": "registeredOn", "custom": true, "rule": "type: string, format: ^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?$", "num": false, "old": []}, "_registry.directors": {"so": "directors", "custom": true, "rule": "type: list", "num": false, "old": []}, "_registry.directors.name": {"so": "name", "custom": true, "rule": "type: string", "num": false, "old": []}, "_registry.directors.role": {"so": "role", "custom": true, "rule": "type: string", "num": false, "old": []}, "_registry.directors.from": {"so": "from", "custom": true, "rule": "type: string", "num": false, "old": []}, "_registry.directors.to": {"so": "to", "custom": true, "rule": "type: string", "num": false, "old": []}, "_registry.nameHistory": {"so": "nameHistory", "custom": true, "rule": "type: list", "num": false, "old": []}, "_registry.nameHistory.name": {"so": "name", "custom": true, "rule": "type: string", "num": false, "old": []}, "_registry.nameHistory.from": {"so": "from", "custom": true, "rule": "type: string", "num": false, "old": []}, "_registry.nameHistory.to": {"so": "to", "custom": true, "rule": "type: string", "num": false, "old": []}, "_registry.addressHistory": {"so": "addressHistory", "custom": true, "rule": "type: list", "num": false, "old": []}, "_registry.addressHistory.address": {"so": "address (PostalAddress)", "custom": true, "rule": "type: string", "num": false, "old": []}, "_registry.addressHistory.from": {"so": "from", "custom": true, "rule": "type: string", "num": false, "old": []}, "_registry.addressHistory.to": {"so": "to", "custom": true, "rule": "type: string", "num": false, "old": []}, "_registry.filings": {"so": "filings", "custom": true, "rule": "type: list", "num": false, "old": []}, "_registry.filings.kind": {"so": "kind", "custom": true, "rule": "type: string", "num": false, "old": []}, "_registry.filings.date": {"so": "date", "custom": true, "rule": "type: string", "num": false, "old": []}, "_registry.filings.url": {"so": "url", "custom": true, "rule": "type: string", "num": false, "old": []}, "_registry.employeeCount": {"so": "employeeCount", "custom": true, "rule": "type: integer", "num": true, "old": []}, "announcements": {"so": "announcements", "custom": true, "rule": "type: list", "num": false, "old": ["announcements[]"]}, "announcements.kind": {"so": "kind", "custom": true, "rule": "one of: news, offer, closure, new-stock, other", "num": false, "old": [], "part": ["announcements[]"]}, "announcements.text": {"so": "text", "custom": true, "rule": "type: string, max 500 characters", "num": false, "old": ["announcements.text"]}, "announcements.datePosted": {"so": "datePosted", "custom": true, "rule": "type: string, date", "num": false, "old": [], "part": ["announcements[]"]}, "announcements.expires": {"so": "expires", "custom": true, "rule": "type: string, date", "num": false, "old": [], "part": ["announcements[]"]}, "ownerFaq": {"so": "ownerFaq", "custom": true, "rule": "type: list", "num": false, "old": []}, "ownerFaq.q": {"so": "q", "custom": true, "rule": "type: string, max 200 characters", "num": false, "old": []}, "ownerFaq.a": {"so": "a", "custom": true, "rule": "type: string, max 1000 characters", "num": false, "old": []}, "ownerFaq.lang": {"so": "lang", "custom": true, "rule": "type: string, format: ^[a-z]{2,3}$", "num": false, "old": []}, "directions": {"so": "directions", "custom": true, "rule": "type: object", "num": false, "old": []}, "directions.landmark": {"so": "landmark", "custom": true, "rule": "type: string, max 120 characters", "num": false, "old": []}, "directions.floor": {"so": "floor", "custom": true, "rule": "type: string, max 40 characters", "num": false, "old": []}, "directions.entrance": {"so": "entrance", "custom": true, "rule": "type: string, max 120 characters", "num": false, "old": []}, "directions.parking": {"so": "parking", "custom": true, "rule": "type: string, max 200 characters", "num": false, "old": []}, "directions.mapPinNote": {"so": "mapPinNote", "custom": true, "rule": "type: string, max 200 characters", "num": false, "old": []}, "directions.local": {"so": "local", "custom": true, "rule": "type: object", "num": false, "old": []}, "directions.local.lang": {"so": "lang", "custom": true, "rule": "type: string, format: ^[a-z]{2,3}$", "num": false, "old": []}, "directions.local.text": {"so": "text", "custom": true, "rule": "type: string, max 500 characters", "num": false, "old": []}, "hiddenSections": {"so": "hiddenSections", "custom": true, "rule": "type: list; one of: about, location, hours, photos, offerings, products, services, faq, announcements, payment, languages, delivery, booking, team", "num": false, "old": []}, "containedInPlace": {"so": "containedInPlace", "custom": false, "rule": "type: object", "num": false, "old": []}, "containedInPlace.identifier": {"so": "identifier", "custom": false, "rule": "type: string, max 50 characters, format: ^[a-z0-9][a-z0-9-]*$", "num": false, "old": []}, "containedInPlace.floor": {"so": "floor", "custom": false, "rule": "type: string, max 40 characters", "num": false, "old": []}, "containedInPlace.unit": {"so": "unit", "custom": false, "rule": "type: string, max 40 characters", "num": false, "old": []}};
+function more(path){var m=META[norm(path)];if(!m)return "";var o="";if(m.old&&m.old.length)o=m.old.map(function(x){return '<code>'+esc(x)+'</code>'}).join('');else if(m.part&&m.part.length)o='<span class="s">Part of the old </span>'+m.part.map(function(x){return '<code>'+esc(x)+'</code>'}).join('');else o='<span class="bdg n">NEW: no old field</span>';return '<details class="more"><summary>More about this field</summary><div class="mr"><b>schema.org name</b><code>'+esc(m.so)+'</code>'+(m.custom?'<span class="bdg c">custom, not schema.org</span>':'')+'</div><div class="mr"><b>Old CMS field</b>'+o+'</div>'+(m.rule?'<div class="mr"><b>Rules</b>'+esc(m.rule)+'</div>':'')+'</details>'}
+function leaf(path,n,idx,top){
+  var id='f'+(uid++),val=idx==null?n.val:n.vals[idx],ro=false;
+  store[id]={path:path,orig:val||""};total++;
+  var e=!val,L=idx==null?lab(n.k,top):'Entry '+(idx+1);
+  return '<li class="n leaf'+(e?' e':'')+'" data-p="'+esc(path)+'" data-l="'+esc(L)+'" data-id="'+id+'"><div class="h" tabindex="0" role="button" aria-expanded="false"><button class="car" tabindex="-1" aria-hidden="true"></button><span class="k">'+esc(L)+'</span><span class="dot'+(e?'':' f')+'"></span></div>'+
+   '<div class="body"><div class="val">'+tag(n.v)+'</div><div class="val"><input id="'+id+'" value="'+esc(val||"")+'" '+(ro?'readonly':'')+' placeholder="'+(ro?'We fill this':'')+'" aria-label="'+esc(L)+'"></div>'+
+   (n.h?'<div class="hint">'+esc(n.h)+'</div>':'')+more(path)+
+   (e&&!ro&&!VIS&&!FILL?'<div class="val"><button class="find" type="button" data-find="'+id+'">Try to find it</button></div><div class="fb" id="fb'+id+'"><b>Try to find it</b><p class="fbs">Pick one. You stay in charge: nothing is saved until you press Send.</p>'+(n.v==="X"?'':'<div class="fbo"><span>1. Ask an AI, then paste the answer here</span><a class="btn sm" target="_blank" rel="noopener nofollow" href="https://www.google.com/search?udm=50&amp;hl=en&amp;q='+encodeURIComponent(NAME+", Phnom Penh: what is the "+L.toLowerCase()+"? Reply with only the answer in one short line, then where you found it. If you cannot find it, say so.")+'">Ask Google AI</a> <button class="btn sm" type="button" data-copy="'+id+'">Copy a prompt for my own AI</button><textarea rows="2" placeholder="Paste the answer here" aria-label="Answer from your AI"></textarea><button class="btn sm" type="button" data-use="'+id+'">Use this answer</button></div>')+'<div class="fbo"><span>'+(n.v==="X"?'Ask us':'2. Or ask us')+'</span>We will research this field. There is no guarantee we find it. Add your own sources if you like:<textarea rows="2" placeholder="Websites, registers, people to ask"></textarea><a class="btn sm" data-go="'+id+'" href="#">Ask us to look</a></div></div>':'')+'</div></li>';
+}
+function branch(L,p,inner,top,hint,showtick){
+  return '<li class="n'+(top?' top':'')+'" data-p="'+esc(p)+'" data-l="'+esc(L)+'"><div class="h" tabindex="0" role="button" aria-expanded="false"><button class="car" tabindex="-1" aria-hidden="true"></button><span class="k">'+esc(L)+'</span></div><ul class="kids">'+(hint?'<li class="hintrow">'+esc(hint)+'</li>':'')+(showtick?'<li class="hintrow"><label class="show"><input type="checkbox" checked data-show> Show on my page</label></li>':'')+inner+'</ul></li>';
+}
+function node(n,path,top){
+  var p=path?path+'.'+n.k:n.k;
+  if(n.t==="s")return leaf(p,n,null,top);
+  var L=lab(n.k,top),tick=top&&!VIS,inner='';
+  if(n.t==="a"){
+    var vals=n.vals.length?n.vals:[""];
+    vals.forEach(function(v,i){inner+=leaf(p+'['+i+']',{k:n.k,v:n.v,h:i?'':n.h,vals:vals},i)});
+    inner+='<li><button class="add" type="button" data-addarr="'+esc(p)+'" data-v="'+n.v+'" data-k="'+n.k+'">+ Add another</button></li>';
+    return branch(L,p,inner,top,"",tick);
+  }
+  if(n.t==="l"){var kids='';n.c.forEach(function(c){kids+=node(c,p+'[0]',false)});inner=branch('Entry 1',p+'[0]',kids,false,"",false)}
+  else n.c.forEach(function(c){inner+=node(c,p,false)});
+  return branch(L,p,inner,top,n.h,tick);
+}
+/* PRIORITY ORDER: mirrors "x-priority" in CONTACT/schemas/master-listing.schema.json (the schema is the single source, architect session edc6466) EXCEPT Kim's later word 2026-10-09: WhatsApp, email and the short description are top priority; the chief was asked to put the same order into x-priority, then this list is re-copied. Kim 2026-10-09: the five fields every page needs come first, then most useful first, owner-only private fields, and the fields we fill ourselves last. This list is the first draft of the schema priority column. */
+var ORDER=["name", "whatsapp", "telephone", "email", "disambiguatingDescription", "primaryCategory", "address", "openingHoursSpecification", "url", "description", "image", "logo", "sameAs", "messenger", "areaServed", "categories", "makesOffer", "directions", "geo", "contactPoint", "paymentAccepted", "currenciesAccepted", "announcements", "ownerFaq", "slogan", "foundingDate", "alternateName", "legalName", "translations", "subjectOf", "brand", "providerType", "priceRange", "timeZone", "registrationNumber", "registrationStatus", "vatID", "certifications", "isicV4", "employees", "taxID", "_registry", "hiddenSections", "identifier", "schemaVersion", "portal", "verifiedAt", "nextCheckAt", "_verification", "_provenance", "_media_license", "_trade_attributes", "containedInPlace", "knownFor"];
+T.sort(function(x,y){var i=ORDER.indexOf(x.k),j=ORDER.indexOf(y.k);return (i<0?99:i)-(j<0?99:j)});
+var CAP={employees:"Only you see these",identifier:"We fill these"};
+tree.innerHTML=T.map(function(n){return (CAP[n.k]?'<li class="cap">'+CAP[n.k]+'</li>':'')+node(n,"",true)}).join('');
+function recount(){
+  var all=tree.querySelectorAll('.leaf:not(.ro)'),f=0,n=0;
+  [].forEach.call(tree.querySelectorAll('.leaf'),function(li){var v=li.querySelector('input');if(v.readOnly&&!v.value)return;n++;if(v.value)f++});
+  document.getElementById('pc').textContent=f+' of '+n+' fields filled';document.getElementById('pcn').textContent=f+'/'+n;
+  document.getElementById('pb').style.width=(n?100*f/n:0)+'%';
+  [].forEach.call(tree.querySelectorAll('.n:not(.leaf)'),function(nd){var ls=nd.querySelectorAll('.leaf'),k=0,m=0;[].forEach.call(ls,function(li){var v=li.querySelector('input');if(v.readOnly&&!v.value)return;m++;if(v.value)k++});var c=nd.querySelector(':scope>.h .cnt');if(c)c.textContent=k+'/'+m});
+}
+function chg(){
+  var keys=Object.keys(changes),n=keys.length;
+  var dp=document.getElementById('dp'),pb=document.getElementById('sb');dp.textContent=n?'Draft':(sent?'In review':'Draft');dp.classList.toggle('chg',n>0);pb.setAttribute('aria-disabled',n?'false':'true');
+  document.getElementById('sc').textContent=n?(n+(VIS?' suggestion':' change')+(n>1?'s':'')+' in your draft'):(sent?'Sent for review. We reply by email.':'No changes yet');
+  var L=["Hi contact.page,","",VIS?"I know something about "+NAME+". Please check these details and add them if they are right:":"Please update my page "+NAME+" with:"];
+  keys.forEach(function(k){L.push(k+": "+changes[k])});
+  var hid=[].map.call(tree.querySelectorAll('li.top.hid'),function(x){return x.dataset.p});
+  if(hid.length)L.push("","Hide these sections (do not delete): "+hid.join(", "));
+  L.push("",VIS?"I am a customer or visitor. Please reply to this email if you need more from me.":"I am the owner or staff. Please reply to this email.","(ref "+CODE+(VIS?" suggest":" owner")+")");
+  var body=L.join("\r\n\r\n").replace(/(\r\n){4,}/g,"\r\n\r\n");
+  var href="mailto:"+CODE+"@contact.page?subject="+encodeURIComponent((VIS?"Suggestion: ":"Owner update: ")+NAME+" (ref "+CODE+(VIS?" suggest":" owner")+")")+"&body="+encodeURIComponent(body);
+  var sb=document.getElementById('sb');sb.href=n?href:'#';
+  if(n&&href.length>1800)document.getElementById('sc').innerHTML+=' <span class="warn">Long: publish in two parts.</span>';
+}
+tree.addEventListener('input',function(e){var li=e.target.closest('.leaf');if(!li)return;var st=store[li.dataset.id],v=e.target.value;
+  if(v!==st.orig){changes[st.path]=v}else delete changes[st.path];
+  li.querySelector('.val').classList.toggle('ch',v!==st.orig);li.classList.toggle('e',!v);li.querySelector('.dot').classList.toggle('f',!!v);recount();chg()});
+tree.addEventListener('click',function(e){
+  var t=e.target;
+  var hh=t.closest('.h');if(hh&&!t.closest('label,input,a')){var nd=hh.parentNode;nd.classList.toggle('open');hh.setAttribute('aria-expanded',nd.classList.contains('open'));return}
+  var cp=t.closest('[data-copy]');if(cp){var li0=cp.closest('.leaf'),txt="I need to fill in one detail on my business page.\nBusiness: "+NAME+", Phnom Penh.\nDetail: "+li0.dataset.l+" ("+(li0.querySelector('.hint')?li0.querySelector('.hint').textContent:'')+").\nPlease search and reply with only the answer in one short line, then the source link. If you cannot find it, say so. Do not guess.";
+    var done=function(){cp.textContent='Copied. Paste it into your AI'};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){window.prompt('Copy this:',txt)})}else{window.prompt('Copy this:',txt)}return}
+  var us=t.closest('[data-use]');if(us){var li1=us.closest('.leaf'),ta1=us.parentNode.querySelector('textarea'),v1=ta1.value.trim();if(v1){var inp=li1.querySelector('input');inp.value=v1;inp.dispatchEvent(new Event('input',{bubbles:true}));document.getElementById('fb'+us.dataset.use).classList.remove('on');inp.focus()}return}
+  var f=t.closest('[data-find]');if(f){document.getElementById('fb'+f.dataset.find).classList.toggle('on');return}
+  var go=t.closest('[data-go]');if(go){e.preventDefault();var li=go.closest('.leaf'),ta=go.closest('.fb').querySelector('textarea').value;
+    location.href="mailto:"+CODE+"@contact.page?subject="+encodeURIComponent("Find: "+store[li.dataset.id].path+" for "+NAME+" (ref "+CODE+" find)")+"&body="+encodeURIComponent("Hi contact.page,\r\n\r\nPlease try to find: "+store[li.dataset.id].path+"\r\n\r\nMy own sources: "+ta+"\r\n\r\nI know there is no guarantee.\r\n\r\n(ref "+CODE+" find)");return}
+  var ad=t.closest('[data-addarr]');if(ad){var ul=ad.closest('.kids'),n=ul.querySelectorAll(':scope>.leaf').length;
+    var tmp=document.createElement('ul');tmp.innerHTML=leaf(ad.dataset.addarr+'['+n+']',{k:ad.dataset.k,v:ad.dataset.v,h:'',vals:[""]},n);
+    var li=tmp.firstChild;li.querySelector('.k').textContent='Entry '+(n+1);li.classList.add("open");ul.insertBefore(li,ad.parentNode);li.querySelector('input').focus();recount();return}
+  if(t.matches('[data-show]')){t.closest('li.top').classList.toggle('hid',!t.checked);chg()}
+});
+document.getElementById('ea').onclick=function(){[].forEach.call(tree.querySelectorAll('li.n'),function(n){n.classList.add('open')})};tree.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('h')){e.preventDefault();e.target.click()}});
+document.getElementById('ca').onclick=function(){[].forEach.call(tree.querySelectorAll('li.n'),function(n){n.classList.remove('open')})};
+document.getElementById('oe').onchange=function(){tree.classList.toggle('hide-empty',this.checked)};
+document.getElementById('q').addEventListener('input',function(){
+  var q=this.value.trim().toLowerCase();
+  [].forEach.call(tree.querySelectorAll('li.n'),function(n){n.style.display=''});
+  if(!q)return;
+  [].forEach.call(tree.querySelectorAll('li.n'),function(n){n.dataset.m=(n.dataset.p+' '+(n.dataset.l||'')).toLowerCase().indexOf(q)>-1?1:0});
+  [].forEach.call(tree.querySelectorAll('li.n'),function(n){
+    var hit=n.dataset.m==="1"||n.querySelector('li.n[data-m="1"]');
+    var anc=false;for(var p=n.parentNode.closest('li.n');p;p=p.parentNode.closest&&p.parentNode.closest('li.n')){if(p.dataset.m==="1")anc=true}
+    if(!hit&&!anc)n.style.display='none';else if(hit&&!n.classList.contains('leaf'))n.classList.add('open');
+  });
+});
+document.getElementById('refresh').href="mailto:"+CODE+"@contact.page?subject="+encodeURIComponent("Refresh: "+NAME+" (ref "+CODE+" refresh)")+"&body="+encodeURIComponent("Hi contact.page,\r\n\r\nPlease check every source again for "+NAME+" and write to me when you are done. I know it takes about a day.\r\n\r\n(ref "+CODE+" refresh)");
+(function(){ /* FOCUS CARD, same pattern as the channel boxes on the contact details page: the box grows into a card over a dimmed page; tap outside, X or Esc shrinks it back. */
+  var sh=document.createElement('div');sh.id='fshade';var cd=document.createElement('div');cd.id='fcard';cd.setAttribute('role','dialog');cd.setAttribute('aria-modal','true');
+  cd.innerHTML='<div class="fh"><b id="fct"></b><button type="button" class="fx" aria-label="Close">&#215;</button></div><div class="fbd"></div>';
+  document.body.appendChild(sh);document.body.appendChild(cd);
+  var cur=null,home=null,from=null;
+  function open(btn){var p=document.getElementById('p-'+btn.dataset.p);if(!p)return;cur=btn;home=p.parentNode;from=btn.getBoundingClientRect();
+    document.getElementById('fct').textContent=btn.dataset.t||'';
+    var body=cd.querySelector('.fbd');body.appendChild(p);p.hidden=false;
+    sh.classList.add('on');cd.classList.add('on');
+    var r=cd.getBoundingClientRect(),dx=from.left+from.width/2-(r.left+r.width/2),dy=from.top+from.height/2-(r.top+r.height/2),k=Math.max(.3,from.width/r.width);
+    cd.style.transition='none';cd.style.transform='translate('+dx+'px,'+dy+'px) scale('+k+')';cd.style.opacity='0';cd.getBoundingClientRect();
+    cd.style.transition='';cd.style.transform='';cd.style.opacity='1';var qi=cd.querySelector('input[type=search]');(qi||cd.querySelector('.fx')).focus();setTimeout(function(){place();nv.classList.add('on')},240);}
+  var nv=document.createElement('div');nv.className='fnav';nv.innerHTML='<button type="button" data-d="-1">&#8249; Previous</button><button type="button" data-d="1">Next &#8250;</button>';document.body.appendChild(nv);
+  function place(){var r=cd.getBoundingClientRect();nv.style.left=r.left+'px';nv.style.width=r.width+'px';nv.style.top=(r.bottom+8)+'px'}
+  nv.addEventListener('click',function(e){var b=e.target.closest('button');if(!b||!cur)return;var l=[].slice.call(document.querySelectorAll('.sqb')).filter(function(x){return x.style.display!=='none'}),i=l.indexOf(cur),nx=l[(i+ +b.dataset.d+l.length)%l.length];close();open(nx);});
+  function close(){if(!cur)return;var p=cd.querySelector('.sqp');if(p){p.hidden=true;home.appendChild(p)}cd.classList.remove('on');sh.classList.remove('on');cd.style.opacity='';nv.classList.remove('on');var b=cur;cur=null;b.focus();}
+  document.getElementById('sq').addEventListener('click',function(e){var b=e.target.closest('.sqb');if(b)open(b)});
+  sh.addEventListener('click',close);cd.querySelector('.fx').addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+})();
+if(VIS){
+  document.title="Help improve Yellow Tower · contact.page";
+  document.querySelector('h1').textContent="Help improve Yellow Tower";
+  document.querySelector('.crumb').href="yellow-tower-contact-details-page.html?role=customer";
+  ['refresh','prog'].forEach(function(k){document.querySelector('[data-p="'+k+'"]').style.display='none'});
+  document.getElementById('sq').style.gridTemplateColumns='repeat(3,minmax(0,1fr))';
+  document.getElementById('p-how').innerHTML='<p>Type what you know in any box. Tap Send for review when you are ready. We check every suggestion before anything goes on the page, and we only publish facts that are true and useful. You do not need an account.</p>';
+  document.querySelector('[data-p="publish"] span').textContent='Send for review';document.querySelector('[data-p="publish"]').dataset.t='Send for review';
+  document.getElementById('sb').textContent='Send for review';document.getElementById('dn').textContent='We check every suggestion before it goes on the page.';
+}
+document.getElementById('sb').addEventListener('click',function(e){if(this.getAttribute('aria-disabled')==='true'){e.preventDefault();return}var self=this;setTimeout(function(){sent=true;changes={};[].forEach.call(document.querySelectorAll('.val.ch'),function(v){v.classList.remove('ch')});[].forEach.call(document.querySelectorAll('.leaf input'),function(i){var st=store[i.id];if(st)st.orig=i.value});chg()},400)});
+function drawList(){var ul=document.getElementById('chl'),h='';Object.keys(changes).forEach(function(p){var li=document.querySelector('li.leaf[data-p="'+p.replace(/"/g,'\\"')+'"]');var cr=[];for(var n=li;n;n=n.parentNode.closest&&n.parentNode.closest('li.n')){if(n.dataset.l)cr.unshift(n.dataset.l)}h+='<li><span class="cl"><b>'+esc(cr.join(' \u203a '))+'</b><br>'+esc(changes[p]||'(emptied)')+'</span><button type="button" class="lk undo" data-undo="'+esc(p)+'">Undo</button></li>'});ul.innerHTML=h}
+document.addEventListener('click',function(e){var u=e.target.closest('[data-undo]');if(!u)return;var li=document.querySelector('li.leaf[data-p="'+u.dataset.undo.replace(/"/g,'\\"')+'"]');if(!li)return;var inp=li.querySelector('input');inp.value=store[li.dataset.id].orig;inp.dispatchEvent(new Event('input',{bubbles:true}))});
+var _chg=chg;chg=function(){_chg();drawList();document.getElementById('bdp').textContent=document.getElementById('dp').textContent;var c=document.getElementById('sc').textContent;document.getElementById('bsc').textContent=c.replace(' in your draft','').replace('No changes yet','No changes').replace(/Sent for review\. We reply by email\./,'Sent');document.querySelector('.pubb').classList.toggle('chg',document.getElementById('dp').classList.contains('chg'))};
+document.getElementById('q').addEventListener('input',function(){var v=this.value.trim();document.getElementById('bsq').textContent=v?'\u201c'+v+'\u201d':'Search'});
+document.getElementById('q').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();document.querySelector('#fcard .fx').click()}});
+/* SIGN-IN FIRST (Kim 2026-10-09: "the sign in must happen when anyone goes to the owner page"). Mockup only: any email or number works; production sends a one-time link to the email on the record, or a code by WhatsApp, and the owner-pass cookie opens this page. The visitor suggestion view (?as=visitor) needs no sign-in. */
+(function(){var K='cp_owner_signed',ok=false;try{ok=sessionStorage.getItem(K)==='1'}catch(e){}
+  function open(){document.body.classList.remove('locked');try{sessionStorage.setItem(K,'1')}catch(e){}}
+  if(VIS||ok){document.body.classList.remove('locked');return}
+  document.getElementById('gf').addEventListener('submit',function(e){e.preventDefault();this.hidden=true;document.getElementById('gsent').hidden=false});
+  document.getElementById('genter').addEventListener('click',open)})();
+/* FILL-IN: save in this browser only, export, import, reset */
+(function(){
+var KEY='cp_yt_fillin_v1',loading=true,tm=null;
+function leaves(){return [].slice.call(tree.querySelectorAll('li.leaf'))}
+function inp(li){return li.querySelector('.val input')||li.querySelector('input')}
+function state(){var m={};leaves().forEach(function(li){m[li.dataset.p]=inp(li).value});
+  var hid=[].map.call(tree.querySelectorAll('li.top.hid'),function(x){return x.dataset.p});return {v:m,hid:hid}}
+function say(t){document.getElementById('msg').textContent=t}
+function saved(ok){document.getElementById('svs').textContent=ok?'· saved '+new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}):'· could not save here (private window?). Use Export JSON.'}
+function save(){if(loading)return;var ok=false;try{localStorage.setItem(KEY,JSON.stringify(state()));ok=true}catch(e){}saved(ok)}
+function preview(){function v(p){var li=tree.querySelector('li.leaf[data-p="'+p+'"]');return li?inp(li).value.trim():''}
+  var k=v('knownFor'),d=v('disambiguatingDescription');
+  document.getElementById('pvn').textContent=v('name')||'Your business';
+  document.getElementById('pvk').textContent=k?'Known for: '+k:(d||'Add a short description or a Known for line.');
+  document.getElementById('pvs').textContent=k?(k.length+' of 120 characters'):(d?'Showing the short description until Known for is filled.':'')}
+function leafAt(p){return tree.querySelector('li.leaf[data-p="'+p.replace(/"/g,'\\"')+'"]')}
+function ensure(p){var m=p.match(/^(.*)\[(\d+)\]$/);if(!m||leafAt(p))return;var b=tree.querySelector('[data-addarr="'+m[1]+'"]');var n=0;while(b&&!leafAt(p)&&n++<60)b.click()}
+function apply(s,full){loading=true;
+  Object.keys(s.v||{}).forEach(ensure);
+  leaves().forEach(function(li){var p=li.dataset.p,i=inp(li),has=Object.prototype.hasOwnProperty.call(s.v||{},p);
+    if(has||full){var nv=has?String(s.v[p]):'';if(i.value!==nv){i.value=nv;i.dispatchEvent(new Event('input',{bubbles:true}))}}});
+  [].forEach.call(tree.querySelectorAll('li.top'),function(li){var cb=li.querySelector('[data-show]');if(!cb)return;var hide=(s.hid||[]).indexOf(li.dataset.p)>-1;if(cb.checked===hide){cb.checked=!hide;li.classList.toggle('hid',hide)}});
+  loading=false;preview();recount();chg()}
+function setPath(o,p,v){var t=p.match(/[^.\[\]]+|\[\d+\]/g),c=o;
+  for(var i=0;i<t.length;i++){var k=t[i],last=i===t.length-1,nx=t[i+1],isI=/^\[/.test(k);if(isI)k=+k.slice(1,-1);
+    if(last){c[k]=v}else{if(c[k]==null)c[k]=/^\[/.test(nx)?[]:{};c=c[k]}}}
+function toJSON(){var o={},s=state();
+  leaves().forEach(function(li){var v=inp(li).value.trim();if(!v)return;var m=META[norm(li.dataset.p)];if(m&&m.num&&!isNaN(+v))v=+v;setPath(o,li.dataset.p,v)});
+  if(s.hid.length)o.hiddenSections=s.hid.map(function(x){return x});
+  return o}
+function flat(o,pre,out){if(Array.isArray(o)){o.forEach(function(x,i){flat(x,pre+'['+i+']',out)})}
+  else if(o&&typeof o==='object'){Object.keys(o).forEach(function(k){if(!pre&&k==='hiddenSections')return;flat(o[k],pre?pre+'.'+k:k,out)})}
+  else out[pre]=o==null?'':String(o);return out}
+document.getElementById('ex').onclick=function(){try{var b=new Blob([JSON.stringify(toJSON(),null,2)],{type:'application/json'}),a=document.createElement('a');
+  a.href=URL.createObjectURL(b);a.download='yellow-tower-fillin.json';document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500);say('Exported. The file stays on your device.')}catch(e){say('Could not make the file here.')}};
+document.getElementById('im').onclick=function(){document.getElementById('imf').click()};
+document.getElementById('imf').onchange=function(){var f=this.files[0],self=this;if(!f)return;var r=new FileReader();
+  r.onload=function(){try{var o=JSON.parse(r.result);if(!o||typeof o!=='object'||Array.isArray(o))throw 0;var h=Array.isArray(o.hiddenSections)?o.hiddenSections:[];
+    apply({v:flat(o,'',{}),hid:h},true);save();say('Imported '+f.name+'. Fields not in the file are now empty.')}catch(e){say('That file is not a JSON object from this page.')}self.value=''};
+  r.readAsText(f)};
+document.getElementById('rs').onclick=function(){if(!confirm('Reset to the Yellow Tower starting facts? Your typing in this browser is cleared.'))return;
+  try{localStorage.removeItem(KEY)}catch(e){}location.reload()};
+tree.addEventListener('input',function(){save();preview()});
+tree.addEventListener('change',function(e){if(e.target.matches('[data-show]'))save()});
+var st=null;try{st=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){}
+if(st&&st.v){apply(st,true);say('Loaded what you saved earlier in this browser.')}
+loading=false;preview();saved(!!st);if(!st)document.getElementById('svs').textContent='';
+})();
+
+recount();chg();
+</script>
+<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
+<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
+
+<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-owner-fillin-notes.html">Developer notes: what changed and why, every version</a></p>
+</details>
+</body>
+</html>
