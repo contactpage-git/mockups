@@ -14,8 +14,8 @@ body{margin:0;background:#fff;color:var(--ink);font:15px/1.5 Arial,Helvetica,san
 .crumb{display:inline-flex;align-items:center;gap:2px;margin:16px 0 6px;font-size:14px;font-weight:600;text-decoration:none;color:var(--ink)}
 h1{font-size:23px;line-height:1.2;margin:4px 0 2px}
 .sub{color:var(--grey);font-size:14px;margin:0 0 10px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:var(--ink);border:2px solid var(--yellow);font:600 13px Arial;border-radius:10px;padding:7px 12px;cursor:pointer;text-decoration:none}
-.btn:hover{background:#fffbea}.btn.sm{padding:4px 9px;font-size:12.5px;border-width:1.5px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:var(--ink);border:2px solid var(--yellow);font:600 14px Arial;border-radius:10px;padding:9px 14px;cursor:pointer;text-decoration:none}
+.btn:hover{background:#fffbea}.btn.sm{padding:5px 10px;font-size:13px;border-width:1.5px}
 .card{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}
 .card p{margin:0 0 8px;font-size:14px}.card .s{font-size:12.5px;color:var(--grey);margin:6px 0 0}
 .bar{height:6px;border-radius:3px;background:var(--chip);overflow:hidden;margin:6px 0 2px}.bar i{display:block;height:100%;width:0;background:var(--yellow)}
@@ -80,7 +80,7 @@ ul.tr ul{margin:0 0 0 11px;padding-left:12px}
 .drbar .dn{margin:5px 0 8px}.dr{display:flex;align-items:center;gap:10px}
 .dpill{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:5px;padding:3px 8px;background:var(--chip);color:#555;white-space:nowrap}.dpill.chg{background:#fffbea;box-shadow:inset 0 0 0 1px var(--yellow);color:var(--ink)}
 .dc{flex:1;font-size:13px;color:var(--grey)}
-.btn.pub{background:var(--yellow);border-color:var(--yellow);padding:6px 14px}.btn.pub[aria-disabled=true]{background:#fff;border-color:#e0e0e0;color:#b5b5b5;cursor:default}
+.btn.pub{background:var(--yellow);border-color:var(--yellow);padding:7px 16px}.btn.pub[aria-disabled=true]{background:#fff;border-color:#e0e0e0;color:#b5b5b5;cursor:default}
 .dn{font-size:12px;color:#9a9a9a;margin:5px 0 8px}
 #fshade{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}#fshade.on{opacity:1;pointer-events:auto}
 #fcard{position:fixed;left:50%;top:50%;width:min(360px,calc(100vw - 32px));margin:0;translate:-50% -50%;background:#fff;border-radius:14px;box-shadow:0 14px 40px rgba(0,0,0,.25);padding:14px 16px 16px;z-index:21;opacity:0;pointer-events:none;transition:transform .22s ease,opacity .18s}#fcard.on{pointer-events:auto}
@@ -310,10 +310,5 @@ document.getElementById('q').addEventListener('input',function(){var v=this.valu
 document.getElementById('q').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();document.querySelector('#fcard .fx').click()}});
 recount();chg();
 </script>
-<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
-<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
-
-<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-owner-page-notes.html">Developer notes: what changed and why, every version</a></p>
-</details>
 </body>
 </html>
