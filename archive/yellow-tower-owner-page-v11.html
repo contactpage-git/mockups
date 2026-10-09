@@ -96,7 +96,6 @@ ul.tr ul{margin:0 0 0 11px;padding-left:12px}
 #fcard input[type=search]{width:100%;font:15px Arial;border:1px solid #d0d0d0;border-radius:8px;padding:9px 10px}
 #fcard .dn{margin:8px 0 10px}
 #fcard .btn.pub{width:100%}
-.chl{list-style:none;margin:8px 0 10px;padding:0;max-height:240px;overflow:auto}.chl li{display:flex;gap:10px;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--line);font-size:13px}.chl .cl{min-width:0;overflow-wrap:anywhere}.chl .cl b{font-size:12px;color:var(--grey);font-weight:600}.chl .undo{flex:none;font:600 12.5px Arial;color:#161616;text-decoration:underline;border:0;background:none;cursor:pointer}
 </style>
 </head>
 <body>
@@ -111,7 +110,7 @@ ul.tr ul{margin:0 0 0 11px;padding-left:12px}
 <button type="button" class="sqb" data-p="how" data-t="How it works"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span>How it works</span></button>
 </div>
 <div id="sqh" hidden>
-<div class="sqp" id="p-publish"><p><span class="dpill" id="dp">Draft</span> <span class="dc" id="sc">No changes yet</span></p><p class="dn" id="dn">Subject to review. Nothing goes live until we have checked it.</p><ul class="chl" id="chl"></ul><a class="btn pub" id="sb" href="#" aria-disabled="true">Publish</a></div>
+<div class="sqp" id="p-publish"><p><span class="dpill" id="dp">Draft</span> <span class="dc" id="sc">No changes yet</span></p><p class="dn" id="dn">Subject to review. Nothing goes live until we have checked it.</p><a class="btn pub" id="sb" href="#" aria-disabled="true">Publish</a></div>
 <div class="sqp" id="p-search"><input type="search" id="q" placeholder="e.g. phone, hours, parking" aria-label="Search fields"><p class="dn">The list filters as you type. Press Enter or close this card to see it.</p></div>
 <div class="sqp" id="p-prog"><b id="pc">0 of 0 fields filled</b><div class="bar"><i id="pb"></i></div><p>Empty fields are fine. Fill what you know, we help with the rest.</p></div>
 <div class="sqp" id="p-refresh"><p>Our agents check every source again and write to you when done. It takes about a day.</p><a class="btn sm" id="refresh" href="#">Refresh my page</a></div>
@@ -302,17 +301,10 @@ if(VIS){
   document.getElementById('sb').textContent='Send for review';document.getElementById('dn').textContent='We check every suggestion before it goes on the page.';
 }
 document.getElementById('sb').addEventListener('click',function(e){if(this.getAttribute('aria-disabled')==='true'){e.preventDefault();return}var self=this;setTimeout(function(){sent=true;changes={};[].forEach.call(document.querySelectorAll('.val.ch'),function(v){v.classList.remove('ch')});[].forEach.call(document.querySelectorAll('.leaf input'),function(i){var st=store[i.id];if(st)st.orig=i.value});chg()},400)});
-function drawList(){var ul=document.getElementById('chl'),h='';Object.keys(changes).forEach(function(p){var li=document.querySelector('li.leaf[data-p="'+p.replace(/"/g,'\\"')+'"]');var cr=[];for(var n=li;n;n=n.parentNode.closest&&n.parentNode.closest('li.n')){if(n.dataset.l)cr.unshift(n.dataset.l)}h+='<li><span class="cl"><b>'+esc(cr.join(' \u203a '))+'</b><br>'+esc(changes[p]||'(emptied)')+'</span><button type="button" class="lk undo" data-undo="'+esc(p)+'">Undo</button></li>'});ul.innerHTML=h}
-document.addEventListener('click',function(e){var u=e.target.closest('[data-undo]');if(!u)return;var li=document.querySelector('li.leaf[data-p="'+u.dataset.undo.replace(/"/g,'\\"')+'"]');if(!li)return;var inp=li.querySelector('input');inp.value=store[li.dataset.id].orig;inp.dispatchEvent(new Event('input',{bubbles:true}))});
-var _chg=chg;chg=function(){_chg();drawList();document.getElementById('bdp').textContent=document.getElementById('dp').textContent;var c=document.getElementById('sc').textContent;document.getElementById('bsc').textContent=c.replace(' in your draft','').replace('No changes yet','No changes').replace(/Sent for review\. We reply by email\./,'Sent');document.querySelector('.pubb').classList.toggle('chg',document.getElementById('dp').classList.contains('chg'))};
+var _chg=chg;chg=function(){_chg();document.getElementById('bdp').textContent=document.getElementById('dp').textContent;var c=document.getElementById('sc').textContent;document.getElementById('bsc').textContent=c.replace(' in your draft','').replace('No changes yet','No changes').replace(/Sent for review\. We reply by email\./,'Sent');document.querySelector('.pubb').classList.toggle('chg',document.getElementById('dp').classList.contains('chg'))};
 document.getElementById('q').addEventListener('input',function(){var v=this.value.trim();document.getElementById('bsq').textContent=v?'\u201c'+v+'\u201d':'Search'});
 document.getElementById('q').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();document.querySelector('#fcard .fx').click()}});
 recount();chg();
 </script>
-<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
-<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
-
-<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-owner-page-notes.html">Developer notes: what changed and why, every version</a></p>
-</details>
 </body>
 </html>
