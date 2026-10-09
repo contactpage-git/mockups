@@ -60,17 +60,6 @@ ul.tr ul{list-style:none;margin:0 0 0 10px;padding:0 0 0 12px;border-left:1px so
 .send .in span{flex:1;font-size:13px}
 .send .btn{background:var(--yellow);border-color:var(--yellow)}
 .warn{color:#8a5a00;font-size:12px}
-.tr .h{cursor:pointer;padding:9px 0;min-height:42px;border-bottom:1px solid var(--line);flex-wrap:nowrap}
-.tr .h:focus-visible{outline:2px solid var(--yellow);outline-offset:-2px}
-.tr .k,.top>.h .k{font:600 15px Arial,Helvetica,sans-serif}
-.tr .dot{margin-left:auto}
-ul.tr ul{margin:0 0 0 11px;padding-left:12px}
-.body{display:none;padding:6px 0 8px 28px}.open>.body{display:block}
-.body .val{margin:0 0 6px;flex:1 1 100%}.body .hint{margin:0 0 6px}.body .tag{align-self:flex-start}
-.hintrow{font-size:12px;color:#9a9a9a;padding:6px 0 4px 28px}
-.hintrow .show{margin-left:0;font-size:12.5px}
-.open>.h .car::before{content:"\25BE"}
-.car{pointer-events:none}
 </style>
 </head>
 <body>
@@ -162,34 +151,31 @@ var VL={P:["Public",""],G:["Behind the check","g"],X:["Only you","x"],R:["We fil
 var uid=0,store={},changes={},total=0,tree=document.getElementById('tree');
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
 function tag(v){return '<span class="tag '+VL[v][1]+'">'+VL[v][0]+'</span>'}
-var LB={identifier:"Page code",schemaVersion:"Schema version",portal:"Portal",providerType:"Business or freelancer",name:"Name",legalName:"Registered name",alternateName:"Also known as",slogan:"Slogan",description:"About",disambiguatingDescription:"Short description",translations:"Short description in other languages",lang:"Language",text:"Text",primaryCategory:"Main category",categories:"All categories",logo:"Logo",image:"Photos",contentUrl:"Link",caption:"Caption",width:"Width",height:"Height",creditText:"Photo credit",license:"Licence",subjectOf:"Albums and files",imageIds:"Photos in the album",encodingFormat:"File type",telephone:"Phone numbers",whatsapp:"WhatsApp numbers",messenger:"Messenger",email:"Emails",contactPoint:"Departments",contactType:"Department",availableLanguage:"Languages spoken",url:"Website",sameAs:"Social profiles",address:"Address",streetAddress:"Street",district:"District",addressLocality:"City",addressRegion:"Province or state",postalCode:"Postal code",addressCountry:"Country",geo:"Map pin",latitude:"Latitude",longitude:"Longitude",areaServed:"Areas served",timeZone:"Time zone",directions:"Directions",landmark:"Landmark",floor:"Floor",entrance:"Entrance",parking:"Parking",mapPinNote:"Map pin note",local:"Directions in your language",openingHoursSpecification:"Opening hours",dayOfWeek:"Days",opens:"Opens",closes:"Closes",makesOffer:"Products and services",availability:"Availability",itemOffered:"The product or service",type:"Type",category:"Category",additionalProperty:"Features",value:"Value",sku:"Product code",brand:"Brand",businessFunction:"For rent or for sale",price:"Price",priceCurrency:"Currency",priceSpecification:"Price details",minPrice:"Lowest price",maxPrice:"Highest price",unitText:"Per",priceType:"Price type",paymentAccepted:"Payment methods",currenciesAccepted:"Currencies accepted",priceRange:"Price band",foundingDate:"Founded",employees:"Owner or director",jobTitle:"Job title",registrationNumber:"Registration number",registrationStatus:"Register status",isicV4:"Activity codes",certifications:"Certifications",vatID:"VAT number",announcements:"News and offers",kind:"Kind",datePosted:"Posted on",expires:"Expires on",ownerFaq:"Questions from the owner",q:"Question",a:"Answer",verifiedAt:"Last verified",nextCheckAt:"Next check",taxID:"Tax ID",_registry:"Register record",source_id:"Source",registryId:"Register ID",registeredOn:"Registered on",directors:"Directors",role:"Role",from:"From",to:"To",nameHistory:"Past names",addressHistory:"Past addresses",filings:"Filings",date:"Date",employeeCount:"Number of staff",_verification:"How we checked you",status:"Status",verified_at:"Verified on",verified_by:"Verified by",source:"Source",evidence:"Evidence",checked_at:"Checked on",_provenance:"Where each fact came from",collected_by:"Collected by",collected_at:"Collected on",method:"Method",verification:"Verification",updated_at:"Updated on",_media_license:"Photo licences"};
-var TOPLB={name:"Business name",brand:"Brands we own",image:"Photos"};
-function lab(k,top){return (top&&TOPLB[k])||LB[k]||k.replace(/([A-Z])/g,' $1').replace(/^./,function(c){return c.toUpperCase()})}
-function leaf(path,n,idx,top){
+function leaf(path,n,idx){
   var id='f'+(uid++),val=idx==null?n.val:n.vals[idx],ro=n.v==="R";
   store[id]={path:path,orig:val||""};total++;
-  var e=!val,L=idx==null?lab(n.k,top):'Entry '+(idx+1);
-  return '<li class="n leaf'+(e?' e':'')+'" data-p="'+esc(path)+'" data-l="'+esc(L)+'" data-id="'+id+'"><div class="h" tabindex="0" role="button" aria-expanded="false"><button class="car" tabindex="-1" aria-hidden="true"></button><span class="k">'+esc(L)+'</span><span class="dot'+(e?'':' f')+'"></span></div>'+
-   '<div class="body"><div class="val">'+tag(n.v)+'</div><div class="val"><input id="'+id+'" value="'+esc(val||"")+'" '+(ro?'readonly':'')+' placeholder="'+(ro?'We fill this':'')+'" aria-label="'+esc(L)+'"></div>'+
+  var e=!val;
+  var h='<li class="n leaf'+(e?' e':'')+'" data-p="'+esc(path)+'" data-id="'+id+'"><div class="h"><span class="sp"></span><span class="dot'+(e?'':' f')+'"></span><span class="k">'+esc(idx==null?n.k:n.k+'['+idx+']')+'</span>'+tag(n.v)+'</div>'+
+   '<div class="val"><input id="'+id+'" value="'+esc(val||"")+'" '+(ro?'readonly':'')+' placeholder="'+(ro?'We fill this':'')+'" aria-label="'+esc(path)+'"></div>'+
    (n.h?'<div class="hint">'+esc(n.h)+'</div>':'')+
-   (e&&!ro&&!VIS?'<div class="val"><button class="find" type="button" data-find="'+id+'">Try to find it</button></div><div class="fb" id="fb'+id+'">We will research this field. There is no guarantee we find it. Add your own sources if you like:<textarea rows="2" placeholder="Websites, registers, people to ask"></textarea><a class="btn sm" data-go="'+id+'" href="#">Ask us to look</a></div>':'')+'</div></li>';
-}
-function branch(L,p,inner,top,hint,showtick){
-  return '<li class="n'+(top?' top':'')+'" data-p="'+esc(p)+'" data-l="'+esc(L)+'"><div class="h" tabindex="0" role="button" aria-expanded="false"><button class="car" tabindex="-1" aria-hidden="true"></button><span class="k">'+esc(L)+'</span></div><ul class="kids">'+(hint?'<li class="hintrow">'+esc(hint)+'</li>':'')+(showtick?'<li class="hintrow"><label class="show"><input type="checkbox" checked data-show> Show on my page</label></li>':'')+inner+'</ul></li>';
+   (e&&!ro&&!VIS?'<div class="val" style="margin-top:0"><button class="find" type="button" data-find="'+id+'">Try to find it</button></div><div class="fb" id="fb'+id+'">We will research this field. There is no guarantee we find it. Add your own sources if you like:<textarea rows="2" placeholder="Websites, registers, people to ask"></textarea><a class="btn sm" data-go="'+id+'" href="#">Ask us to look</a></div>':'')+'</li>';
+  return h;
 }
 function node(n,path,top){
   var p=path?path+'.'+n.k:n.k;
-  if(n.t==="s")return leaf(p,n,null,top);
-  var L=lab(n.k,top),tick=top&&!VIS,inner='';
+  if(n.t==="s")return leaf(p,n);
   if(n.t==="a"){
+    var h='<li class="n top-'+top+(top?' top':'')+'" data-p="'+esc(p)+'"><div class="h"><button class="car" aria-label="Open or close"></button><span class="k">'+n.k+'</span><span class="brace">[ ]</span>'+tag(n.v)+'<span class="cnt"></span></div><ul class="kids">';
     var vals=n.vals.length?n.vals:[""];
-    vals.forEach(function(v,i){inner+=leaf(p+'['+i+']',{k:n.k,v:n.v,h:i?'':n.h,vals:vals},i)});
-    inner+='<li><button class="add" type="button" data-addarr="'+esc(p)+'" data-v="'+n.v+'" data-k="'+n.k+'">+ Add another</button></li>';
-    return branch(L,p,inner,top,"",tick);
+    vals.forEach(function(v,i){h+=leaf(p+'['+i+']',{k:n.k,v:n.v,h:i?'':n.h,vals:vals},i)});
+    return h+'<li><button class="add" type="button" data-addarr="'+esc(p)+'" data-v="'+n.v+'" data-k="'+n.k+'">+ Add another</button></li></ul></li>';
   }
-  if(n.t==="l"){var kids='';n.c.forEach(function(c){kids+=node(c,p+'[0]',false)});inner=branch('Entry 1',p+'[0]',kids,false,"",false)}
-  else n.c.forEach(function(c){inner+=node(c,p,false)});
-  return branch(L,p,inner,top,n.h,tick);
+  var br=n.t==="l"?"[ { } ]":"{ }";
+  var h='<li class="n '+(top?'top':'')+'" data-p="'+esc(p)+'"><div class="h"><button class="car" aria-label="Open or close"></button><span class="k">'+n.k+'</span><span class="brace">'+br+'</span>'+tag(n.v)+'<span class="cnt"></span>'+(top&&!VIS?'<label class="show"><input type="checkbox" checked data-show> Show on my page</label>':'')+'</div>'+(n.h?'<div class="hint">'+esc(n.h)+'</div>':'')+'<ul class="kids">';
+  if(n.t==="l"){h+='<li class="n" data-p="'+esc(p)+'[0]"><div class="h"><button class="car" aria-label="Open or close"></button><span class="k">[0]</span><span class="brace">{ }</span><span class="cnt"></span></div><ul class="kids">';
+    n.c.forEach(function(c){h+=node(c,p+'[0]',false)});h+='</ul></li>';}
+  else n.c.forEach(function(c){h+=node(c,p,false)});
+  return h+'</ul></li>';
 }
 tree.innerHTML=T.map(function(n){return node(n,"",true)}).join('');
 function recount(){
@@ -218,23 +204,23 @@ tree.addEventListener('input',function(e){var li=e.target.closest('.leaf');if(!l
   li.querySelector('.val').classList.toggle('ch',v!==st.orig);li.classList.toggle('e',!v);li.querySelector('.dot').classList.toggle('f',!!v);recount();chg()});
 tree.addEventListener('click',function(e){
   var t=e.target;
-  var hh=t.closest('.h');if(hh&&!t.closest('label,input,a')){var nd=hh.parentNode;nd.classList.toggle('open');hh.setAttribute('aria-expanded',nd.classList.contains('open'));return}
+  var car=t.closest('.car');if(car){car.closest('.n').classList.toggle('open');return}
   var f=t.closest('[data-find]');if(f){document.getElementById('fb'+f.dataset.find).classList.toggle('on');return}
   var go=t.closest('[data-go]');if(go){e.preventDefault();var li=go.closest('.leaf'),ta=go.closest('.fb').querySelector('textarea').value;
     location.href="mailto:"+CODE+"@contact.page?subject="+encodeURIComponent("Find: "+store[li.dataset.id].path+" for "+NAME+" (ref "+CODE+" find)")+"&body="+encodeURIComponent("Hi contact.page,\r\n\r\nPlease try to find: "+store[li.dataset.id].path+"\r\n\r\nMy own sources: "+ta+"\r\n\r\nI know there is no guarantee.\r\n\r\n(ref "+CODE+" find)");return}
   var ad=t.closest('[data-addarr]');if(ad){var ul=ad.closest('.kids'),n=ul.querySelectorAll(':scope>.leaf').length;
-    var tmp=document.createElement('ul');tmp.innerHTML=leaf(ad.dataset.addarr+'['+n+']',{k:ad.dataset.k,v:ad.dataset.v,h:'',vals:[""]},n);
-    var li=tmp.firstChild;li.querySelector('.k').textContent='Entry '+(n+1);ul.insertBefore(li,ad.parentNode);li.querySelector('input').focus();recount();return}
+    var tmp=document.createElement('ul');tmp.innerHTML=leaf(ad.dataset.addarr+'['+n+']',{k:ad.dataset.k,v:ad.dataset.v,h:'',vals:[""]},0);
+    var li=tmp.firstChild;li.querySelector('.k').textContent=ad.dataset.k+'['+n+']';ul.insertBefore(li,ad.parentNode);li.querySelector('input').focus();recount();return}
   if(t.matches('[data-show]')){t.closest('li.top').classList.toggle('hid',!t.checked);chg()}
 });
-document.getElementById('ea').onclick=function(){[].forEach.call(tree.querySelectorAll('li.n'),function(n){n.classList.add('open')})};tree.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('h')){e.preventDefault();e.target.click()}});
-document.getElementById('ca').onclick=function(){[].forEach.call(tree.querySelectorAll('li.n'),function(n){n.classList.remove('open')})};
+document.getElementById('ea').onclick=function(){[].forEach.call(tree.querySelectorAll('.n:not(.leaf)'),function(n){n.classList.add('open')})};
+document.getElementById('ca').onclick=function(){[].forEach.call(tree.querySelectorAll('.n:not(.leaf)'),function(n){n.classList.remove('open')})};
 document.getElementById('oe').onchange=function(){tree.classList.toggle('hide-empty',this.checked)};
 document.getElementById('q').addEventListener('input',function(){
   var q=this.value.trim().toLowerCase();
   [].forEach.call(tree.querySelectorAll('li.n'),function(n){n.style.display=''});
   if(!q)return;
-  [].forEach.call(tree.querySelectorAll('li.n'),function(n){n.dataset.m=(n.dataset.p+' '+(n.dataset.l||'')).toLowerCase().indexOf(q)>-1?1:0});
+  [].forEach.call(tree.querySelectorAll('li.n'),function(n){n.dataset.m=n.dataset.p.toLowerCase().indexOf(q)>-1?1:0});
   [].forEach.call(tree.querySelectorAll('li.n'),function(n){
     var hit=n.dataset.m==="1"||n.querySelector('li.n[data-m="1"]');
     var anc=false;for(var p=n.parentNode.closest('li.n');p;p=p.parentNode.closest&&p.parentNode.closest('li.n')){if(p.dataset.m==="1")anc=true}
@@ -254,10 +240,5 @@ if(VIS){
 }
 recount();chg();
 </script>
-<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
-<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
-
-<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-owner-page-notes.html">Developer notes: what changed and why, every version</a></p>
-</details>
 </body>
 </html>
