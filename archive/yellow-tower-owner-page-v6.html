@@ -19,7 +19,7 @@ h1{font-size:23px;line-height:1.2;margin:4px 0 2px}
 .card{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}
 .card p{margin:0 0 8px;font-size:14px}.card .s{font-size:12.5px;color:var(--grey);margin:6px 0 0}
 .bar{height:6px;border-radius:3px;background:var(--chip);overflow:hidden;margin:6px 0 2px}.bar i{display:block;height:100%;width:0;background:var(--yellow)}
-.tb{position:sticky;top:70px;background:#fff;z-index:6;padding:8px 0;border-bottom:1px solid var(--line);margin-top:6px}
+.tb{position:sticky;top:0;background:#fff;z-index:6;padding:8px 0;border-bottom:1px solid var(--line);margin-top:6px}
 .tb input[type=search]{width:100%;font:14px Arial;border:1px solid #d0d0d0;border-radius:8px;padding:8px 10px}
 .tb .r{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-top:7px;font-size:12.5px}
 .tb button.t{font:600 12.5px Arial;border:1px solid #d0d0d0;background:#fff;border-radius:6px;padding:4px 9px;cursor:pointer}
@@ -76,20 +76,12 @@ ul.tr ul{margin:0 0 0 11px;padding-left:12px}
 .sqb{aspect-ratio:1/1;border:1px solid var(--line);border-radius:12px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font:600 13px/1.25 Arial;color:var(--ink);cursor:pointer;padding:8px;text-align:center}
 .sqb svg{color:var(--ink)}.sqb:hover{background:#fffbea}.sqb[aria-expanded=true]{border-color:var(--yellow);background:#fffbea;box-shadow:inset 0 0 0 1px var(--yellow)}
 .sqp{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0 0;font-size:14px}.sqp p{margin:0 0 8px}.sqp p:last-child{margin:0}
-.drbar{position:sticky;top:0;background:#fff;z-index:7;padding:8px 0 2px;margin-top:4px;border-bottom:1px solid var(--line)}
-.drbar .dn{margin:5px 0 8px}.dr{display:flex;align-items:center;gap:10px}
-.dpill{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:5px;padding:3px 8px;background:var(--chip);color:#555;white-space:nowrap}.dpill.chg{background:#fffbea;box-shadow:inset 0 0 0 1px var(--yellow);color:var(--ink)}
-.dc{flex:1;font-size:13px;color:var(--grey)}
-.btn.pub{background:var(--yellow);border-color:var(--yellow);padding:7px 16px}.btn.pub[aria-disabled=true]{background:#fff;border-color:#e0e0e0;color:#b5b5b5;cursor:default}
-.dn{font-size:12px;color:#9a9a9a;margin:5px 0 8px}
 </style>
 </head>
 <body>
 <div class="w">
 <a class="crumb" href="yellow-tower-contact-details-page.html?role=owner">&#8592; Contact details</a>
 <h1>Yellow Tower: owner page</h1>
-<div class="drbar"><div class="dr"><span class="dpill" id="dp">Draft</span><span class="dc" id="sc">No changes yet</span><a class="btn pub" id="sb" href="#" aria-disabled="true">Publish</a></div>
-<div class="dn" id="dn">Subject to review. Nothing goes live until we have checked it.</div></div>
 <div class="sq" id="sq" role="group" aria-label="Quick boxes">
 <button type="button" class="sqb" data-p="refresh" aria-expanded="false"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M8 16H3v5"/></svg><span>Refresh</span></button>
 <button type="button" class="sqb" data-p="prog" aria-expanded="false"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg><span><b id="pcn">0/0</b> filled</span></button>
@@ -106,6 +98,7 @@ ul.tr ul{margin:0 0 0 11px;padding-left:12px}
 <ul class="tr" id="tree"></ul>
 </div>
 
+<div class="send" id="send"><div class="in"><span id="sc"></span><a class="btn" id="sb" href="#">Send</a></div></div>
 
 <script>
 var CODE="kh34363",NAME="Yellow Tower",VIS=/[?&]as=visitor/.test(location.search);
@@ -169,7 +162,7 @@ O("_media_license","R","Photo licences: we fill this")
 function strip(a){return a.filter(function(n){return n.v!=="X"&&n.v!=="R"}).map(function(n){if(n.c)n.c=strip(n.c);return n})}
 if(VIS)T=strip(T);
 var VL={P:["Public",""],G:["Behind the check","g"],X:["Only you","x"],R:["We fill","r"]};
-var sent=false,uid=0,store={},changes={},total=0,tree=document.getElementById('tree');
+var uid=0,store={},changes={},total=0,tree=document.getElementById('tree');
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
 function tag(v){return '<span class="tag '+VL[v][1]+'">'+VL[v][0]+'</span>'}
 var LB={identifier:"Page code",schemaVersion:"Schema version",portal:"Portal",providerType:"Business or freelancer",name:"Name",legalName:"Registered name",alternateName:"Also known as",slogan:"Slogan",description:"About",disambiguatingDescription:"Short description",translations:"Short description in other languages",lang:"Language",text:"Text",primaryCategory:"Main category",categories:"All categories",logo:"Logo",image:"Photos",contentUrl:"Link",caption:"Caption",width:"Width",height:"Height",creditText:"Photo credit",license:"Licence",subjectOf:"Albums and files",imageIds:"Photos in the album",encodingFormat:"File type",telephone:"Phone numbers",whatsapp:"WhatsApp numbers",messenger:"Messenger",email:"Emails",contactPoint:"Departments",contactType:"Department",availableLanguage:"Languages spoken",url:"Website",sameAs:"Social profiles",address:"Address",streetAddress:"Street",district:"District",addressLocality:"City",addressRegion:"Province or state",postalCode:"Postal code",addressCountry:"Country",geo:"Map pin",latitude:"Latitude",longitude:"Longitude",areaServed:"Areas served",timeZone:"Time zone",directions:"Directions",landmark:"Landmark",floor:"Floor",entrance:"Entrance",parking:"Parking",mapPinNote:"Map pin note",local:"Directions in your language",openingHoursSpecification:"Opening hours",dayOfWeek:"Days",opens:"Opens",closes:"Closes",makesOffer:"Products and services",availability:"Availability",itemOffered:"The product or service",type:"Type",category:"Category",additionalProperty:"Features",value:"Value",sku:"Product code",brand:"Brand",businessFunction:"For rent or for sale",price:"Price",priceCurrency:"Currency",priceSpecification:"Price details",minPrice:"Lowest price",maxPrice:"Highest price",unitText:"Per",priceType:"Price type",paymentAccepted:"Payment methods",currenciesAccepted:"Currencies accepted",priceRange:"Price band",foundingDate:"Founded",employees:"Owner or director",jobTitle:"Job title",registrationNumber:"Registration number",registrationStatus:"Register status",isicV4:"Activity codes",certifications:"Certifications",vatID:"VAT number",announcements:"News and offers",kind:"Kind",datePosted:"Posted on",expires:"Expires on",ownerFaq:"Questions from the owner",q:"Question",a:"Answer",verifiedAt:"Last verified",nextCheckAt:"Next check",taxID:"Tax ID",_registry:"Register record",source_id:"Source",registryId:"Register ID",registeredOn:"Registered on",directors:"Directors",role:"Role",from:"From",to:"To",nameHistory:"Past names",addressHistory:"Past addresses",filings:"Filings",date:"Date",employeeCount:"Number of staff",_verification:"How we checked you",status:"Status",verified_at:"Verified on",verified_by:"Verified by",source:"Source",evidence:"Evidence",checked_at:"Checked on",_provenance:"Where each fact came from",collected_by:"Collected by",collected_at:"Collected on",method:"Method",verification:"Verification",updated_at:"Updated on",_media_license:"Photo licences"};
@@ -214,9 +207,9 @@ function recount(){
   [].forEach.call(tree.querySelectorAll('.n:not(.leaf)'),function(nd){var ls=nd.querySelectorAll('.leaf'),k=0,m=0;[].forEach.call(ls,function(li){var v=li.querySelector('input');if(v.readOnly&&!v.value)return;m++;if(v.value)k++});var c=nd.querySelector(':scope>.h .cnt');if(c)c.textContent=k+'/'+m});
 }
 function chg(){
-  var keys=Object.keys(changes),n=keys.length;
-  var dp=document.getElementById('dp'),pb=document.getElementById('sb');dp.textContent=n?'Draft':(sent?'In review':'Draft');dp.classList.toggle('chg',n>0);pb.setAttribute('aria-disabled',n?'false':'true');
-  document.getElementById('sc').textContent=n?(n+(VIS?' suggestion':' change')+(n>1?'s':'')+' in your draft'):(sent?'Sent for review. We reply by email.':'No changes yet');
+  var keys=Object.keys(changes),b=document.getElementById('send');
+  b.classList.toggle('on',keys.length>0);
+  document.getElementById('sc').textContent=keys.length+(VIS?' suggestion':' change')+(keys.length>1?'s':'')+' ready';
   var L=["Hi contact.page,","",VIS?"I know something about "+NAME+". Please check these details and add them if they are right:":"Please update my page "+NAME+" with:"];
   keys.forEach(function(k){L.push(k+": "+changes[k])});
   var hid=[].map.call(tree.querySelectorAll('li.top.hid'),function(x){return x.dataset.p});
@@ -224,8 +217,8 @@ function chg(){
   L.push("",VIS?"I am a customer or visitor. Please reply to this email if you need more from me.":"I am the owner or staff. Please reply to this email.","(ref "+CODE+(VIS?" suggest":" owner")+")");
   var body=L.join("\r\n\r\n").replace(/(\r\n){4,}/g,"\r\n\r\n");
   var href="mailto:"+CODE+"@contact.page?subject="+encodeURIComponent((VIS?"Suggestion: ":"Owner update: ")+NAME+" (ref "+CODE+(VIS?" suggest":" owner")+")")+"&body="+encodeURIComponent(body);
-  var sb=document.getElementById('sb');sb.href=n?href:'#';
-  if(n&&href.length>1800)document.getElementById('sc').innerHTML+=' <span class="warn">Long: publish in two parts.</span>';
+  var sb=document.getElementById('sb');sb.href=href;
+  document.getElementById('sc').innerHTML+=href.length>1800?' <span class="warn">Long: send in two parts.</span>':'';
 }
 tree.addEventListener('input',function(e){var li=e.target.closest('.leaf');if(!li)return;var st=store[li.dataset.id],v=e.target.value;
   if(v!==st.orig){changes[st.path]=v}else delete changes[st.path];
@@ -267,15 +260,9 @@ if(VIS){
   document.querySelector('[data-p="refresh"]').style.display='none';document.querySelector('[data-p="prog"]').style.display='none';
   document.getElementById('sq').style.gridTemplateColumns='1fr';document.querySelector('[data-p="how"]').style.aspectRatio='auto';document.querySelector('[data-p="how"]').style.padding='14px';
   document.getElementById('p-how').innerHTML='<p>Type what you know in any box, then tap Send. We check every suggestion before anything goes on the page, and we only publish facts that are true and useful. You do not need an account.</p>';
-  document.getElementById('sb').textContent='Send for review';document.getElementById('dn').textContent='We check every suggestion before it goes on the page.';
+  document.getElementById('send').querySelector('.btn').textContent='Send my suggestions';
 }
-document.getElementById('sb').addEventListener('click',function(e){if(this.getAttribute('aria-disabled')==='true'){e.preventDefault();return}var self=this;setTimeout(function(){sent=true;changes={};[].forEach.call(document.querySelectorAll('.val.ch'),function(v){v.classList.remove('ch')});[].forEach.call(document.querySelectorAll('.leaf input'),function(i){var st=store[i.id];if(st)st.orig=i.value});chg()},400)});
 recount();chg();
 </script>
-<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
-<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
-
-<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-owner-page-notes.html">Developer notes: what changed and why, every version</a></p>
-</details>
 </body>
 </html>
