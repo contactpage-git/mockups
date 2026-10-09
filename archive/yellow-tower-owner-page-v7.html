@@ -150,7 +150,7 @@ A("currenciesAccepted","P","USD, KHR ..."),
 S("priceRange","P","Hospitality only; leave empty for offices"),
 A("brand","P","Brands you own"),
 S("foundingDate","P","YYYY, or YYYY-MM-DD"),
-L("employees","X","Owner or director only: name and title, no direct lines",S("name","P",""),S("jobTitle","P","")),
+L("employees","P","Owner or director only: name and title, no direct lines",S("name","P",""),S("jobTitle","P","")),
 S("registrationNumber","P","Your company registration number"),
 S("registrationStatus","P","Status in the official register"),
 A("isicV4","P","Activity codes from the register"),
@@ -201,10 +201,10 @@ function node(n,path,top){
   else n.c.forEach(function(c){inner+=node(c,p,false)});
   return branch(L,p,inner,top,n.h,tick);
 }
-/* PRIORITY ORDER: mirrors "x-priority" in CONTACT/schemas/master-listing.schema.json (the schema is the single source, 2026-10-09, architect session edc6466; re-copy when it changes). Kim 2026-10-09: the five fields every page needs come first, then most useful first, owner-only private fields, and the fields we fill ourselves last. This list is the first draft of the schema priority column. */
-var ORDER=["name","primaryCategory","telephone","address","openingHoursSpecification","whatsapp","email","url","description","image","logo","sameAs","messenger","areaServed","categories","makesOffer","directions","disambiguatingDescription","geo","contactPoint","paymentAccepted","currenciesAccepted","announcements","ownerFaq","slogan","foundingDate","alternateName","legalName","translations","subjectOf","brand","providerType","priceRange","timeZone","registrationNumber","registrationStatus","vatID","certifications","isicV4","employees","taxID","_registry","hiddenSections","identifier","schemaVersion","portal","verifiedAt","nextCheckAt","_verification","_provenance","_media_license","_trade_attributes"];
+/* PRIORITY ORDER (Kim 2026-10-09): the five fields every page needs come first, then most useful first, owner-only private fields, and the fields we fill ourselves last. This list is the first draft of the schema priority column. */
+var ORDER=["name","primaryCategory","telephone","address","openingHoursSpecification","description","image","whatsapp","email","url","logo","makesOffer","sameAs","categories","messenger","areaServed","directions","disambiguatingDescription","slogan","geo","contactPoint","paymentAccepted","currenciesAccepted","announcements","ownerFaq","foundingDate","alternateName","legalName","translations","subjectOf","brand","employees","timeZone","providerType","priceRange","registrationNumber","registrationStatus","vatID","certifications","isicV4","taxID","_registry","identifier","schemaVersion","portal","verifiedAt","nextCheckAt","_verification","_provenance","_media_license"];
 T.sort(function(x,y){var i=ORDER.indexOf(x.k),j=ORDER.indexOf(y.k);return (i<0?99:i)-(j<0?99:j)});
-var CAP={name:"Start with these five",whatsapp:"Then, most useful first",employees:"Only you see these",identifier:"We fill these"};
+var CAP={name:"Start with these five",description:"Then, most useful first",taxID:"Only you see these",identifier:"We fill these"};
 tree.innerHTML=T.map(function(n){return (CAP[n.k]?'<li class="cap">'+CAP[n.k]+'</li>':'')+node(n,"",true)}).join('');
 function recount(){
   var all=tree.querySelectorAll('.leaf:not(.ro)'),f=0,n=0;
@@ -272,10 +272,5 @@ if(VIS){
 document.getElementById('sb').addEventListener('click',function(e){if(this.getAttribute('aria-disabled')==='true'){e.preventDefault();return}var self=this;setTimeout(function(){sent=true;changes={};[].forEach.call(document.querySelectorAll('.val.ch'),function(v){v.classList.remove('ch')});[].forEach.call(document.querySelectorAll('.leaf input'),function(i){var st=store[i.id];if(st)st.orig=i.value});chg()},400)});
 recount();chg();
 </script>
-<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
-<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
-
-<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-owner-page-notes.html">Developer notes: what changed and why, every version</a></p>
-</details>
 </body>
 </html>
