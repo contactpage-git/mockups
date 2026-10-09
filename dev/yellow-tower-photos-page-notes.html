@@ -12,24 +12,26 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 <h2>What changed and why (newest first)</h2>
 <p>Each step with the reason behind it: the lessons learned along the way. Open any version to see it as it was.</p>
 <ul class="hist">
-<li><b><a href="../yellow-tower-photos-page.html">v3</a></b> 2026-10-09 (.page Mockups, Kim via Page Bot): the &quot;← Yellow Tower&quot; back link is gone (the home chip does the same job). v2 in archive/.</li>
-<li><b><a href="../archive/yellow-tower-photos-page-v2.html">v2</a></b> 2026-10-09 (.page Mockups, Kim via Page Bot): standard tab row: home icon (the website&#x27;s main page) and Contact before the six section chips. v1 in archive/.</li>
-<li><b><a href="../archive/yellow-tower-photos-page-v1.html">v1</a></b> 2026-10-09 (Page Claude Code, Kim): first version of the Photos sub-page.</li>
+<li><b><a href="../yellow-tower-photos-page.html">v4</a></b> 2026-10-10 (.page Mockups, staged during the wiki freeze): the tab row wraps onto a second line instead of scrolling sideways, so FAQ is always visible; no &quot;Update&quot;/&quot;Add&quot; links on public pages; photos: one per row at natural ratio on phones, two columns with mixed heights on wide screens (CSS columns, container query), each photo links to its own photo page; product images in fixed 4:3 frames, never stretched. v3 in archive/.</li>
+<li><b><a href="../archive/yellow-tower-photos-page-v3.html">v3</a></b> 2026-10-09 (.page Mockups, the founder via Page Bot): the &quot;← Yellow Tower&quot; back link is gone (the home chip does the same job). v2 in archive/.</li>
+<li><b><a href="../archive/yellow-tower-photos-page-v2.html">v2</a></b> 2026-10-09 (.page Mockups, the founder via Page Bot): standard tab row: home icon (the website&#x27;s main page) and Contact before the six section chips. v1 in archive/.</li>
+<li><b><a href="../archive/yellow-tower-photos-page-v1.html">v1</a></b> 2026-10-09 (Page Claude Code, the founder): first version of the Photos sub-page.</li>
 </ul>
 <h2>All notes, summary first, then in page order</h2>
 <ol>
-<li><pre>YELLOW TOWER PHOTOS SUB-PAGE (current: version 3, 2026-10-09; Page Claude Code, design desk; v2-v3 .page Mockups). Route in production: kh34363.contact.page/photos/ . Built by
+<li><pre>YELLOW TOWER PHOTOS SUB-PAGE (current: version 4, 2026-10-10; Page Claude Code, design desk; v2-v4 .page Mockups). Route in production: kh34363.contact.page/photos/ . Built by
 CONTACT/design/tools/build_subpages.py from the listing page&#x27;s own section, so a change on the listing shows here after a rebuild.
-Kim 2026-10-09: &quot;Open map is a full page of the map section. Let us make all sub sections correctly, a mockup for each.&quot;
+the founder 2026-10-09: &quot;Open map is a full page of the map section. Let us make all sub sections correctly, a mockup for each.&quot;
 Sub-pages: about, products, hours, map (location), photos, faq; the contact details page is page 4 of the set. Every sub-page: the standard tab row
 (home icon, Contact, the six sub-page chips; this one marked), one section in full, the small &quot;update&quot; or &quot;add&quot; link of that section, Dev notes at the end.
 Not here: no ads in this mockup, no contact values (they stay behind the gate), no embedded map (a static picture, links to the map apps).
 CHANGE LOG
-v3 2026-10-09 (.page Mockups, Kim via Page Bot): the &quot;← Yellow Tower&quot; back link is gone (the home chip does the same job). v2 in archive/.
-v2 2026-10-09 (.page Mockups, Kim via Page Bot): standard tab row: home icon (the website&#x27;s main page) and Contact before the six section chips. v1 in archive/.
-v1 2026-10-09 (Page Claude Code, Kim): first version of the Photos sub-page.</pre></li>
+v4 2026-10-10 (.page Mockups, staged during the wiki freeze): the tab row wraps onto a second line instead of scrolling sideways, so FAQ is always visible; no &quot;Update&quot;/&quot;Add&quot; links on public pages; photos: one per row at natural ratio on phones, two columns with mixed heights on wide screens (CSS columns, container query), each photo links to its own photo page; product images in fixed 4:3 frames, never stretched. v3 in archive/.
+v3 2026-10-09 (.page Mockups, the founder via Page Bot): the &quot;← Yellow Tower&quot; back link is gone (the home chip does the same job). v2 in archive/.
+v2 2026-10-09 (.page Mockups, the founder via Page Bot): standard tab row: home icon (the website&#x27;s main page) and Contact before the six section chips. v1 in archive/.
+v1 2026-10-09 (Page Claude Code, the founder): first version of the Photos sub-page.</pre></li>
 <li><pre>WHY IT IS THIS WAY
 - Each sub-page is the full version of one section of the listing, one topic per page, so Google and people get a clear page for &quot;Photos&quot; (SEO: own URL, own title, link back).
 - The six sub-page chips repeat on every sub-page so a visitor can move sideways without going back (design-state &quot;sub-page chips&quot;).
-- Map: a free static picture (kb/static-map-images.md) plus links to Google Maps and Directions (Kim 2026-10-09); never an embedded map (listing-page-design-decisions).</pre></li>
+- Map: a free static picture (kb/static-map-images.md) plus links to Google Maps and Directions (the founder 2026-10-09); never an embedded map (listing-page-design-decisions).</pre></li>
 </ol></body></html>

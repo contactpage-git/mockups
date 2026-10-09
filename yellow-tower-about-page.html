@@ -257,6 +257,27 @@ span.chip:hover{background:#f1f2f3}
 .topmap{margin:14px 0 0;font-size:14px}.topmap a{display:inline-flex;align-items:center;gap:5px;font-weight:600}.topmap svg{color:var(--grey)}
 .ad:not(.top){margin-top:150px;margin-bottom:150px} 
 .ansby{margin:-8px 0 14px;font-size:11.5px;font-style:italic;color:#757575}.idea{margin:12px 0 0;padding:6px 10px;border-left:3px solid var(--yellow);background:#fffbea;font-size:12px;font-style:italic;color:#555;line-height:1.45}.idea b{font-style:normal;font-weight:800;color:var(--ink)}
+.serp{margin:28px 0 0;padding:12px 14px;background:#f8f9fa;border:1px solid #e3e3e3;border-radius:10px;font:13px/1.45 Arial,sans-serif;color:#4d5156;text-align:left}
+.serp .sh{display:flex;align-items:center;gap:8px}.serp .fi{width:26px;height:26px;border-radius:50%;background:#fff;border:1px solid #e3e3e3;display:flex;align-items:center;justify-content:center;flex:none;overflow:hidden}.serp .fi img{width:18px;height:18px;display:block}
+.serp .sn{display:block;color:#202124;font-size:13px;line-height:1.2}.serp .su{display:block;color:#4d5156;font-size:12px;line-height:1.3}
+.serp .st{display:block;margin:6px 0 2px;color:#1a0dab;font-size:17px;line-height:1.3}.serp .sd{margin:0;font-size:13px;color:#4d5156}
+#seo{font:11.5px/1.45 Arial,sans-serif;color:#8a8a8a;text-align:left}#seo table{border-collapse:collapse;width:100%}#seo th,#seo td{border-top:1px solid #eee;padding:3px 4px;vertical-align:top;text-align:left;word-break:break-word}#seo th{color:#6f6f6f;font-weight:700;white-space:nowrap}#seo b{color:#6f6f6f}
+
+.jump.subchips.tabs{display:grid;grid-template-columns:1fr 1fr;gap:10px;height:auto;overflow:visible;margin:22px 0 0}
+.jump.tabs .chip{height:48px;justify-content:flex-start;gap:10px;padding:0 14px;font-size:15px;border-radius:10px}
+.jump.tabs .chip svg{color:var(--grey);flex:none}
+.contact .label .lt{color:#b3b3b3;font-weight:600}
+.chans{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px}
+.chans li{height:28px;gap:6px}.chans .cn{flex:1;order:3}.chans .ck{order:1;flex:none}
+.chans .cm{order:2;width:16px;height:3px;border-radius:2px;background:#2f8f4e}.chans .cm i{display:none}.chans .vf{display:none}
+
+.photos img,.prod img{height:auto;aspect-ratio:4/3;object-fit:cover}
+.ph-a{display:block;line-height:0}
+
+.cpf .footer__listing-name{font-size:15px}.cpf .footer__listing-category{font-size:13.5px}
+.cpf .cpf-info,.cpf .cpf-ph,.cpf .cpf-sec{font-size:13.5px}
+.cpf .cpf-sec .br{flex-basis:100%;height:0}
+.cpf-out .cpf-mail a{font-weight:600}
 
 .sph{font-size:24px;line-height:1.2;margin:14px 0 4px}.spsub{margin:0 0 12px;color:var(--grey);font-size:13px}
 .subchips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}.subchips .chip[aria-current]{background:#fff;box-shadow:inset 0 0 0 1.5px var(--yellow);font-weight:700}
@@ -266,6 +287,17 @@ span.chip:hover{background:#f1f2f3}
 .df{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px;margin:12px 0}.df dt{font-weight:700}.df dd{margin:0}
 .allphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px}.allphotos img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line);border-radius:8px}
 .sec h2.sph,.sec h1.sph{margin-top:0}
+.jump.subchips{flex-wrap:wrap;height:auto;overflow:visible}
+.wrap{container-type:inline-size}
+.allphotos{display:block;columns:1;column-gap:8px}.allphotos a{display:block;margin:0 0 8px;break-inside:avoid;line-height:0}
+.allphotos img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:fill;border:1px solid var(--line);border-radius:8px}
+@container (min-width:600px){.allphotos{columns:2}}
+.prods img,.prod img{height:auto;aspect-ratio:4/3;object-fit:cover}
+.back2{display:inline-block;margin:10px 0 0;font-size:13px;color:var(--grey);text-decoration-color:#d0d0d0}
+.pfull{display:block;max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;margin:12px 0 0}
+.pcap{margin:8px 0 0;color:#333}.pbiz{margin:10px 0 0;font-size:14px;color:var(--grey)}.pbiz b{color:var(--ink)}
+.prel{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 0}.prel a{display:block;line-height:0}
+.prel img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line);border-radius:8px}
 </style>
 <script>if(/[?&]full=1/.test(location.search))document.documentElement.classList.add('full')</script>
 <style>.fullbtn{display:none}@media(min-width:440px){html:not(.full) .fullbtn{display:inline-flex;align-items:center;gap:6px;position:fixed;top:16px;left:min(calc(50% + 209px),calc(100% - 150px));background:#fff;color:#161616;border:1px solid #d5d8dc;border-radius:8px;padding:7px 11px;font:600 13px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.06);z-index:50}html:not(.full) .fullbtn:hover{background:#fffbea}}html.full,html.full body{background:#fff!important}html.full body{padding:0!important}html.full .keyline{display:block!important}html.full .wrap{width:auto!important;max-width:var(--desk,760px)!important;height:auto!important;overflow:visible!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:#fff!important}</style>
@@ -278,7 +310,6 @@ span.chip:hover{background:#f1f2f3}
 <h1 class="sph">About</h1><p class="spsub">Yellow Tower · Chroy Changvar, Phnom Penh</p>
 
 <p>The seven-story Yellow Tower is the greenest office space in Phnom Penh, wrapped in over 2,400 square meters of vertical garden that keeps the building cool and calm. Offices have high ceilings and mezzanines, natural light and high-speed internet, set on the Chroy Changva peninsula with parking and a view over the river.</p>
-<a class="small-act" href="https://wa.me/page.me?text=Hi%21%20I%27d%20like%20to%20update%20the%20description%20of%20Yellow%20Tower.%20%28ref%20kh34363%20edit%29">Edit description</a>
 </section>
 <section class="sec" aria-labelledby="fa-h">
 <h2 id="fa-h">Facts</h2>
@@ -289,11 +320,10 @@ span.chip:hover{background:#f1f2f3}
 <dt>Amenities</dt><dd class="amen"><span>Parking</span><span>High-speed internet</span><span>Open office plan</span><span>River view</span></dd>
 <dt>Company</dt><dd>Yellow Tower Co., Ltd.</dd>
 </dl>
-<p class="upd"><a class="small-act" href="https://wa.me/page.me?text=Hi%21%20I%27d%20like%20to%20update%20the%20facts%20on%20Yellow%20Tower.%20%28ref%20kh34363%20update-facts%29">Update facts</a></p>
 </section>
 <div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
 <details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
-<div style="text-align:left;margin:8px 0;padding:8px 10px;background:#fafafa;border:1px solid #eee;border-radius:8px"><p style="margin:0 0 4px;font-weight:700;color:#6f6f6f;font-size:12px">Why it is this way (reasons and lessons)</p><ul style="margin:0;padding-left:16px;color:#6f6f6f;font-size:12px;line-height:1.5"><li style="margin:0 0 4px">Each sub-page is the full version of one section of the listing, one topic per page, so Google and people get a clear page for &quot;About&quot; (SEO: own URL, own title, link back).</li><li style="margin:0 0 4px">The six sub-page chips repeat on every sub-page so a visitor can move sideways without going back (design-state &quot;sub-page chips&quot;).</li><li style="margin:0 0 4px">Map: a free static picture (kb/static-map-images.md) plus links to Google Maps and Directions (Kim 2026-10-09); never an embedded map (listing-page-design-decisions).</li></ul></div>
+<div style="text-align:left;margin:8px 0;padding:8px 10px;background:#fafafa;border:1px solid #eee;border-radius:8px"><p style="margin:0 0 4px;font-weight:700;color:#6f6f6f;font-size:12px">Why it is this way (reasons and lessons)</p><ul style="margin:0;padding-left:16px;color:#6f6f6f;font-size:12px;line-height:1.5"><li style="margin:0 0 4px">Each sub-page is the full version of one section of the listing, one topic per page, so Google and people get a clear page for &quot;About&quot; (SEO: own URL, own title, link back).</li><li style="margin:0 0 4px">The six sub-page chips repeat on every sub-page so a visitor can move sideways without going back (design-state &quot;sub-page chips&quot;).</li><li style="margin:0 0 4px">Map: a free static picture (kb/static-map-images.md) plus links to Google Maps and Directions (the founder 2026-10-09); never an embedded map (listing-page-design-decisions).</li></ul></div>
 <p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/yellow-tower-about-page-notes.html">Developer notes: what changed and why, every version</a></p>
 </details>
 </div>
