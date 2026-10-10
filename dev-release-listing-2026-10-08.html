@@ -29,7 +29,7 @@ html,body{margin:0;background:#D3D3D3}
 @media screen and (max-width:360px){.cpf{padding-left:8px;padding-right:8px}}
 .devnote{max-width:640px;margin:0 auto;padding:28px 20px 56px;background:#fff;font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#222;text-align:left}
 .devnote h1{font-size:22px;margin:0 0 4px}.devnote h2{font-size:17px;margin:26px 0 8px}.devnote p{margin:0 0 10px;color:#555}
-.devnote pre{margin:6px 0 0;padding:10px 12px;background:#f3f3f3;border-radius:8px;font:12.5px/1.5 ui-monospace,Menlo,Consolas,monospace;overflow-x:auto;white-space:pre}.devnote ul{margin:0 0 6px;padding-left:20px}.devnote li{margin:0 0 8px}
+.devnote pre{margin:6px 0 0;padding:10px 12px;background:#f3f3f3;border-radius:8px;font:12.5px/1.5 ui-monospace,Menlo,Consolas,monospace;overflow-x:auto;white-space:pre}.devnote ul{margin:0 0 6px;padding-left:20px}.devnote ol{margin:0 0 6px;padding-left:22px}.devnote li{margin:0 0 8px}
 body{background:#D3D3D3}.cpf-wrap{max-width:430px;margin:0 auto}
 .cpf{padding-bottom:32px;padding-left:16px;padding-right:16px}
 .cpf .cpf-ph{margin:.8em 0 0;text-align:center;font-size:12.5px}
@@ -81,21 +81,29 @@ body{background:#D3D3D3}.cpf-wrap{max-width:430px;margin:0 auto}
 <main class="devnote">
 <h1>Footer for the listing template (all listings)</h1>
 <p>Sample above.</p>
-<ul>
-<li>Card: faded logo, grey name, category</li>
+<h2>1. Security and privacy</h2>
+<ol>
+<li>Mail links show the number hidden exactly as on the page (this page: +85512869**XX), never the full number. Two different masks read together give away the number.</li>
 <li>Masked number + lock, underlined, opens /contact-details (replaces Call)</li>
+<li>Mail text: copy the text from the links above, fill in the listing's data, same mask as the page, max 1,800 characters</li>
+</ol>
+<h2>2. Money and ads</h2>
+<ol start="4">
+<li>Under the card: Edit · Claim · Upgrade · Start your.contact.page. Contact details page: show the same four also near the top, under the business name</li>
+<li>Mail: Edit, Claim, Report → code@contact.page. Upgrade, Start → hello@contact.page</li>
+<li>Subject and last line "(ref CODE action)"</li>
+</ol>
+<h2>3. Layout</h2>
+<ol start="7">
+<li>Card: faded logo, grey name, category</li>
 <li>Address in an outlined box, plain text (the Address link below opens the map)</li>
 <li>Links: Home Contact Address Images Profile, with icons. Same tab. Current page not a link</li>
-<li>Under the card: Edit · Claim · Upgrade · Start your.contact.page</li>
 <li>Share icons + Report · Privacy. Facebook link: remove the "#", use https</li>
-<li>Contact details page: show Edit · Claim · Upgrade · Start your.contact.page also near the top, under the business name</li>
-<li>Mail: Edit, Claim, Report → code@contact.page. Upgrade, Start → hello@contact.page</li>
-<li>Subject and last line "(ref CODE action)". Copy the text from the links above, fill in the listing's data, same mask as the page, max 1,800 characters</li>
 <li>Optional, CSS only, no effect on speed or SEO (the faded card):
 <pre>.footer__logo img{width:48px;height:48px;opacity:.55}
 .footer__listing-name{font-weight:400;color:#757575}
 .footer__listing-category{color:#9a9a9a}</pre></li>
-</ul>
+</ol>
 </main>
 
 <script>

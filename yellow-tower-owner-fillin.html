@@ -115,6 +115,7 @@ details.more .mr{margin:6px 0 0;color:#333;overflow-wrap:anywhere}details.more .
 details.more code{font:12.5px ui-monospace,Menlo,Consolas,monospace;background:var(--chip);border-radius:4px;padding:1px 5px;margin:0 3px 0 0;display:inline-block}
 .bdg{font-size:10.5px;border-radius:4px;padding:1px 6px;font-weight:700;white-space:nowrap}.bdg.c{background:#fff;border:1px solid #bbb;color:#555}.bdg.n{background:var(--yellow);color:var(--ink)}
 .card{margin:10px 0}
+.devn{margin:26px 0 0;border-top:1px solid var(--line);padding-top:6px;font-size:13px;color:#444}.devn h2{font-size:15px;margin:10px 0 2px}.devn h3{font-size:13px;margin:10px 0 2px;color:#161616}.devn ol{margin:2px 0 4px;padding-left:20px}.devn li{margin:3px 0}
 </style>
 </head>
 <body>
@@ -152,6 +153,16 @@ details.more code{font:12.5px ui-monospace,Menlo,Consolas,monospace;background:v
 <p class="xrow"><button class="lk" id="ea" type="button">Expand all</button> &middot; <button class="lk" id="ca" type="button">Collapse all</button> &middot; <label><input type="checkbox" id="oe"> Only empty</label></p>
 <ul class="tr" id="tree"></ul>
 <p class="s" style="font-size:12.5px;color:#757575;margin-top:18px"><b>One idea:</b> the box "How your website reads" updates as you type. Next step: show the same line the way an AI assistant would quote it, so owners see why a sharp Known for line pays off.</p>
+<section class="devn"><h2>Developer notes</h2>
+<h3>1. Security and privacy</h3>
+<ol><li>Phone and WhatsApp stay masked exactly as on the live page (+85512869**XX), also in the exported JSON. Never put a full number in this file.</li>
+<li>Visibility tags decide what goes public: Public, Behind the check (masked until the visitor passes the security check), Only you, We fill. Only you and We fill never leave the owner page.</li>
+<li>This mockup sends nothing: it saves in the browser only. Production saves to the owner record after sign-in (owner-pass), and our agents check the change before it goes live.</li></ol>
+<h3>2. Money and ads</h3>
+<ol start="4"><li>No ads and no prices on this page. Prices only come from the owner, never from scraping.</li></ol>
+<h3>3. Layout</h3>
+<ol start="5"><li>Phone width first. One closed row per field; the top boxes open as cards. Fields follow x-priority in master-listing.schema.json; Known for (max 120 characters) is its own field, separate from the short description.</li>
+<li>"More about this field" shows the schema.org name (custom fields marked), the old CMS field names, or "NEW: no old field".</li></ol></section>
 </div>
 
 
