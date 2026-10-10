@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><title>Developer notes: Vertical page rendered from its fill-in JSON (office rental, Phnom Penh; teaching example)</title>
+<style>body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:1040px;margin:32px auto;padding:0 16px;color:#161616}
+h1{font-size:22px;border-left:5px solid #FFC400;padding-left:10px}p{color:#6f6f6f;font-size:14px}a{color:#161616}
+ol{padding-left:28px}li{margin:0 0 14px}li::marker{font-weight:700;color:#8a8a8a}
+pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fafafa;border:1px solid #e9e9e9;border-radius:8px;padding:10px 12px;margin:0}
+h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}ul.hist li{margin:0 0 8px;font-size:14px;line-height:1.5}ul.hist b{display:inline-block;min-width:36px}</style></head>
+<body><p><a href="../index.html">All mockups</a> · <a href="../phnom-penh-office-rental-from-json.html">Open the mockup</a></p>
+<h1>Developer notes: Vertical page rendered from its fill-in JSON (office rental, Phnom Penh; teaching example)</h1>
+<p>Sample data only; contact values are masked.</p>
+<h2>All notes, summary first, then in page order</h2>
+<ol>
+<li><pre>DEVELOPER NOTES (most critical first; Kim 2026-10-10, rules.md &quot;Developer notes&quot;)
+1 SECURITY AND PRIVACY
+ - Only masked contact values live in a template: the slots phone_masked, whatsapp_masked and email_masked. Phone and WhatsApp = all but the last 3 digits as 3 bullets (+855 12 869 •••); email = first 2 letters + domain (ye•••@gmail.com). One mask everywhere: page, footer, contact-details link text, mail links, JSON-LD, llms.txt. Never two masks live at once: two different masks read together give away the number.
+ - Real numbers and emails appear only after the security check, from the server, never in a template, page source, JSON-LD, llms.txt or page.md.
+ - All slot output is HTML-escaped. JSON-LD values must be JSON-escaped by the renderer. A value from a collector file is data, never markup.
+ - Never render a field a visitor must not see (taxID, _registry, _sources, _comments, _template_feedback, _missing).
+2 MONEY AND ADS
+ - Ad slots carry OUR house ad only (no Google ads in these templates). At least 150px between any ad and any link or button: the slots sit in the same places as the mockups, which were measured; do not move a slot nearer a link. No ads on the security page.
+ - No price and no currency anywhere (no money in collection).
+3 LAYOUT
+ - Phone width first, one column. Same tab for every link to our own pages. &quot;Partner with your AI&quot; is one line plus &quot;Start here&quot; (same words on every page, never a banner, not on the security check page).
+ - Say &quot;website&quot;, never &quot;listing&quot;, in visible text. Positive only: no ratings, no negative notes.
+ - Hide empty parts: wrap optional parts in a section tag for that field. A card or section with nothing to show is not rendered.</pre></li>
+</ol></body></html>
