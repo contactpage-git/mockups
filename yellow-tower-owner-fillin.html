@@ -149,13 +149,13 @@ details.more code{font:12.5px ui-monospace,Menlo,Consolas,monospace;background:v
 <details><summary>I need more help</summary><p><a href="mailto:kh34363@contact.page?subject=Owner%20help%20%28ref%20kh34363%20owner-help%29&amp;body=Hi%20contact.page%2C%0D%0A%0D%0AI%20need%20help%20with%20my%20page.%0D%0A%0D%0A%28ref%20kh34363%20owner-help%29">Email us</a>. We usually reply within a few hours, always within one business day.</p></details></div>
 </div>
 <div class="card" id="pv"><p class="s" style="margin:0 0 4px">How your website reads</p><b id="pvn"></b><div id="pvk" style="font-size:14px"></div><p class="s" id="pvs"></p></div>
-<div class="card" id="loc"><b>Saved in this browser only</b> <span class="s" id="svs"></span><p class="s">Nothing goes to any server or database. Keep phone numbers masked, like 012 869 **XX.</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm" id="ex" type="button">Export JSON</button><button class="btn sm" id="im" type="button">Import JSON</button><button class="btn sm" id="rs" type="button">Reset</button><input type="file" id="imf" accept=".json,application/json" hidden></div><p class="s" id="msg" role="status"></p></div>
+<div class="card" id="loc"><b>Saved in this browser only</b> <span class="s" id="svs"></span><p class="s">Nothing goes to any server or database. Keep phone numbers masked, like +855 12 869 •••.</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm" id="ex" type="button">Export JSON</button><button class="btn sm" id="im" type="button">Import JSON</button><button class="btn sm" id="rs" type="button">Reset</button><input type="file" id="imf" accept=".json,application/json" hidden></div><p class="s" id="msg" role="status"></p></div>
 <p class="xrow"><button class="lk" id="ea" type="button">Expand all</button> &middot; <button class="lk" id="ca" type="button">Collapse all</button> &middot; <label><input type="checkbox" id="oe"> Only empty</label></p>
 <ul class="tr" id="tree"></ul>
 <p class="s" style="font-size:12.5px;color:#757575;margin-top:18px"><b>One idea:</b> the box "How your website reads" updates as you type. Next step: show the same line the way an AI assistant would quote it, so owners see why a sharp Known for line pays off.</p>
 <section class="devn"><h2>Developer notes</h2>
 <h3>1. Security and privacy</h3>
-<ol><li>Phone and WhatsApp stay masked exactly as on the live page (012 869 **XX), also in the exported JSON. Never put a full number in this file.</li>
+<ol><li>Phone and WhatsApp stay masked exactly as on the live page (+855 12 869 •••), also in the exported JSON. Never put a full number in this file.</li>
 <li>Visibility tags decide what goes public: Public, Behind the check (masked until the visitor passes the security check), Only you, We fill. Only you and We fill never leave the owner page.</li>
 <li>This mockup sends nothing: it saves in the browser only. Production saves to the owner record after sign-in (owner-pass), and our agents check the change before it goes live.</li></ol>
 <h3>2. Money and ads</h3>
@@ -191,8 +191,8 @@ A("categories","P","All categories that fit",["gcid:office_space_rental_agency"]
 S("logo","P","Link to your logo image"),
 L("image","P","Photos, the first is the main one",S("contentUrl","P","Link to the photo"),S("caption","P","What is in the photo"),S("width","P","Pixels"),S("height","P","Pixels"),S("creditText","P","Who took it"),S("license","P","Your own photo? Say so")),
 L("subjectOf","P","Albums, catalogues, brochures, price lists",S("name","P","Album or file name, max 40 characters"),A("imageIds","P","Which photos belong to the album"),S("contentUrl","P","Link to a PDF"),S("encodingFormat","P","e.g. application/pdf")),
-A("telephone","G","Digits with country code; first is the main one",["012 869 **XX"]),
-A("whatsapp","G","Digits; first is the main one",["012 869 **XX"]),
+A("telephone","G","Digits with country code; first is the main one",["+855 12 869 •••"]),
+A("whatsapp","G","Digits; first is the main one",["+855 12 869 •••"]),
 S("messenger","G","Your Messenger link"),
 A("email","G","First is the main one"),
 L("contactPoint","G","A department, e.g. Sales or Billing",S("contactType","G","Sales, billing, support ..."),A("availableLanguage","P","English, Khmer, Chinese ...")),
