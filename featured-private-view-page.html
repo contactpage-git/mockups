@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow"><meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Featured: who paid (private) · contact.page</title>
+
+<style>
+:root{--yellow:#FFC400;--ink:#161616;--grey:#6f6f6f;--line:#e9e9e9;--chip:#f1f2f3}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font:15px/1.5 Arial,Helvetica,sans-serif;border-top:4px solid var(--yellow)}
+.w{max-width:430px;margin:0 auto;padding:0 16px 80px}
+h1{font-size:22px;line-height:1.2;margin:18px 0 2px}
+.sub{color:var(--grey);font-size:13.5px;margin:0 0 12px}
+.ex{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;background:var(--chip);color:#555;border-radius:4px;padding:1px 6px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.tile{border:1px solid var(--line);border-radius:12px;padding:10px 12px}.tile b{display:block;font-size:22px}.tile span{font-size:12.5px;color:var(--grey)}
+h2{font-size:16px;margin:22px 0 6px}
+.c{border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:8px 0}
+.c .n{display:flex;justify-content:space-between;gap:8px;font-weight:700}
+.c .m{font-size:13px;color:#444;margin:3px 0 0}.c .m span{color:var(--grey)}
+.pill{font-size:11px;font-weight:800;border-radius:999px;padding:1px 9px;background:var(--chip);color:#555;white-space:nowrap}
+.pill.p{background:#e8f4ea;color:#14532d}.pill.r{background:#fff6d6;color:#7a5a00}.pill.x{background:#fde8e8;color:#8a1c1c}.pill.e{background:#eee;color:#555}
+.c.due{border-color:var(--yellow);background:#fffbea}
+.places{width:100%;border-collapse:collapse;font-size:14px}.places td{padding:6px 0;border-bottom:1px solid var(--line)}.places td:last-child{text-align:right}
+.idea{font-size:12.5px;color:#757575;margin-top:24px;border-top:1px solid var(--line);padding-top:10px}
+.devn{margin:20px 0 0;border-top:1px solid var(--line);padding-top:6px;font-size:13px;color:#444}.devn h2{font-size:15px;margin:10px 0 2px}.devn h3{font-size:13px;margin:10px 0 2px;color:#161616}.devn ol{margin:2px 0 4px;padding-left:20px}.devn li{margin:3px 0}
+</style>
+</head>
+<body><div class="w">
+<h1>Featured: who paid</h1>
+<p class="sub">Private. Read-only. <span class="ex">EXAMPLE DATA</span></p>
+<div class="tiles">
+<div class="tile"><b>$87</b><span>this month <span class="ex">EXAMPLE</span></span></div>
+<div class="tile"><b>3</b><span>placements live <span class="ex">EXAMPLE</span></span></div>
+<div class="tile"><b>2</b><span>renewals due in 7 days <span class="ex">EXAMPLE</span></span></div>
+<div class="tile"><b>1</b><span>refunded this month <span class="ex">EXAMPLE</span></span></div>
+</div>
+<h2>Renewals due</h2>
+<div class="c due"><div class="n"><span>EXAMPLE business 1 <small style="font-weight:400;color:#6f6f6f">(id0000001)</small></span><span class="pill r">3 days left</span></div><p class="m">Office space for rent, Phnom Penh <span>· paid 10 Oct · until 10 Nov · ref …A1B2</span></p></div>
+<div class="c due"><div class="n"><span>EXAMPLE business 2 <small style="font-weight:400;color:#6f6f6f">(id0000002)</small></span><span class="pill r">6 days left</span></div><p class="m">Coworking space, Phnom Penh <span>· paid 13 Oct · until 13 Nov · ref …C3D4</span></p></div>
+<h2>All payments</h2>
+<div class="c"><div class="n"><span>EXAMPLE business 3 <small style="font-weight:400;color:#6f6f6f">(id0000003)</small></span><span class="pill p">paid</span></div><p class="m">Serviced offices, Phnom Penh <span>· $29 · until 28 Nov · ref …E5F6</span></p></div>
+<div class="c"><div class="n"><span>EXAMPLE business 4 <small style="font-weight:400;color:#6f6f6f">(id0000004)</small></span><span class="pill x">refunded</span></div><p class="m">Office space for rent, Phnom Penh <span>· $29 · ended the same minute · ref …G7H8</span></p></div>
+<div class="c"><div class="n"><span>EXAMPLE business 5 <small style="font-weight:400;color:#6f6f6f">(id0000005)</small></span><span class="pill e">expired</span></div><p class="m">Office space for rent, Phnom Penh <span>· $29 · ended 3 Oct · ref …J9K0</span></p></div>
+<h2>Places this month</h2>
+<table class="places"><tr><td>Office space for rent, Phnom Penh</td><td>2 of 3 taken</td></tr><tr><td>Coworking space, Phnom Penh</td><td>1 of 3 taken</td></tr><tr><td>Serviced offices, Phnom Penh</td><td>0 of 3 taken</td></tr></table>
+<p class="idea"><b>One idea decided I40 (7/10):</b> the renewals list also shows the ones that lapsed in the last 30 days, because a gentle "come back" works best in the first month. Measure: renewals within 7 days of a reminder versus after a lapse.</p>
+<section class="devn"><h2>Developer notes</h2>
+<h3>1. Security and privacy</h3>
+<ol><li>Private: sign-in required, noindex, never in a sitemap or linked from a public page. It reads the private payments ledger (never in the wiki or the room). Payment references show only the last 4 characters. No contact values; websites are shown by code and name.</li>
+<li>Read-only for everyone except the payment listener, which writes after PayPal verifies the notice.</li></ol>
+<h3>2. Money and ads</h3>
+<ol start="3"><li>Amounts come from the ledger, never recomputed in the browser. Paid only if PayPal confirmed; a refund or chargeback ends the placement the same minute. No ads on this page.</li></ol>
+<h3>3. Layout</h3>
+<ol start="4"><li>Phone width first: a card per payment, renewals due first, then newest first. Every row in this mockup is EXAMPLE data.</li></ol></section>
+</div><div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
+<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
+
+<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/featured-private-view-page-notes.html">Developer notes: what changed and why, every version</a></p>
+</details>
+</body></html>

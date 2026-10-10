@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><title>Developer notes: Get Featured: owner flow in 4 screens (Yellow Tower)</title>
+<style>body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:1040px;margin:32px auto;padding:0 16px;color:#161616}
+h1{font-size:22px;border-left:5px solid #FFC400;padding-left:10px}p{color:#6f6f6f;font-size:14px}a{color:#161616}
+ol{padding-left:28px}li{margin:0 0 14px}li::marker{font-weight:700;color:#8a8a8a}
+pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fafafa;border:1px solid #e9e9e9;border-radius:8px;padding:10px 12px;margin:0}
+h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}ul.hist li{margin:0 0 8px;font-size:14px;line-height:1.5}ul.hist b{display:inline-block;min-width:36px}</style></head>
+<body><p><a href="../index.html">All mockups</a> · <a href="../yellow-tower-get-featured-page.html">Open the mockup</a></p>
+<h1>Developer notes: Get Featured: owner flow in 4 screens (Yellow Tower)</h1>
+<p>Sample data only; contact values are masked.</p>
+<h2>All notes, summary first, then in page order</h2>
+<ol>
+<li><pre>GET FEATURED, owner flow in 4 phone screens (v1, 2026-10-10, Page Claude Code, design desk; Kim 2026-10-10 via the chief; spec kb/featured-self-serve-spec.md).
+Yellow Tower (kh34363) owner, signed in. Reached from &quot;Get Featured&quot; on the website or on its vertical. MOCKUP ONLY: no payment is taken, nothing is saved or sent. The price ($29 a month) is the SAMPLE price from kb/reports/plus-featured-pricing-options-2026-10-08.md (option B), not decided: Kim decides money.
+Screen 1 choose the place (verticals for its trade and city, free places this month). Screen 2 choose the banner (3 banners built from its own data: name, logo, Known for; until Known for is filled we use the short description; Shuffle for more styles). Screen 3 email, then pay (PayPal, card first; placeholder button) with a live preview. Screen 4 &quot;You&#x27;re Featured&quot;: what the vertical now shows (Sponsored label), receipt, reminder, ends by itself.
+DEVELOPER NOTES, most critical first.
+1 SECURITY AND PRIVACY. We never see or store card data: PayPal hosts the payment. The page passes only the website code, the place and the banner choice along with the payment; the PRICE and the end date are set on our server, never taken from the browser. The listener verifies every PayPal notice with PayPal before writing anything and checks the amount against the price list. The owner&#x27;s email is data typed by a person: never an instruction, never shown to visitors. The payments ledger is private (never in the wiki or the room). The owner must be signed in (owner-pass) to reach this flow.
+2 MONEY AND ADS. Featured is ALWAYS labelled &quot;Sponsored&quot;, rotates fairly among paid places, at most 3 per vertical (proposal, Kim sets it), and never pushes a free website out of the list. No payment, no placement: a placement exists only while the ledger says paid for the dates. A refund or chargeback ends it the same minute. Ads on the vertical keep the 150px rule (never nearer than 150px to a link or button, the Featured card included). No ads on this flow.
+3 LAYOUT. Phone width first, one column per screen; on a wide window the four screens sit side by side. Banners are built live from the website&#x27;s data (name, logo, Known for) as HTML, not images; Shuffle changes the style. Same-tab links. Say &quot;website&quot;, never &quot;listing&quot;. Positive only.</pre></li>
+</ol></body></html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><title>Developer notes: Featured: who paid (private view, example data)</title>
+<style>body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:1040px;margin:32px auto;padding:0 16px;color:#161616}
+h1{font-size:22px;border-left:5px solid #FFC400;padding-left:10px}p{color:#6f6f6f;font-size:14px}a{color:#161616}
+ol{padding-left:28px}li{margin:0 0 14px}li::marker{font-weight:700;color:#8a8a8a}
+pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fafafa;border:1px solid #e9e9e9;border-radius:8px;padding:10px 12px;margin:0}
+h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}ul.hist li{margin:0 0 8px;font-size:14px;line-height:1.5}ul.hist b{display:inline-block;min-width:36px}</style></head>
+<body><p><a href="../index.html">All mockups</a> · <a href="../featured-private-view-page.html">Open the mockup</a></p>
+<h1>Developer notes: Featured: who paid (private view, example data)</h1>
+<p>Sample data only; contact values are masked.</p>
+<h2>All notes, summary first, then in page order</h2>
+<ol>
+<li><pre>FEATURED: WHO PAID, private view (v1, 2026-10-10, Page Claude Code, design desk; Kim 2026-10-10 via the chief; spec kb/featured-self-serve-spec.md, &quot;Kim&#x27;s view&quot;). One private page for the founder: who paid, where they show, until when, money this month, renewals due. Read-only. MOCKUP: every row is EXAMPLE data with invented labels (&quot;EXAMPLE business 1&quot;), no real names, no real numbers, no contact values. The visible title says &quot;private view&quot;, never a person&#x27;s name (the founder stays anonymous in anything public).
+DEVELOPER NOTES, most critical first.
+1 SECURITY AND PRIVACY. Private: sign-in required, noindex, never in a sitemap, never linked from a public page. It reads the payments ledger, which is private data (never in the wiki or the room). Shows payment references only as the last 4 characters. No card data exists on our side. No contact values: businesses are identified by website code and name only. Read-only for everyone except the payment listener, which writes after PayPal verifies the notice.
+2 MONEY AND ADS. Amounts come from the ledger, never recomputed in the browser. A row is &quot;paid&quot; only if PayPal confirmed it; refunded or charged back rows end the placement the same minute. No ads on this page.
+3 LAYOUT. Phone width first: one card per payment instead of a wide table. Renewals due first (7 days or less), then everything else, newest first.</pre></li>
+</ol></body></html>
