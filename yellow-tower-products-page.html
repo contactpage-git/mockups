@@ -301,6 +301,7 @@ span.chip:hover{background:#f1f2f3}
 </style>
 <script>document.documentElement.classList.add('full')</script>
 <style>.fullbtn{display:none}@media(min-width:440px){html:not(.full) .fullbtn{display:inline-flex;align-items:center;gap:6px;position:fixed;top:16px;left:min(calc(50% + 209px),calc(100% - 150px));background:#fff;color:#161616;border:1px solid #d5d8dc;border-radius:8px;padding:7px 11px;font:600 13px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.06);z-index:50}html:not(.full) .fullbtn:hover{background:#fffbea}}html.full,html.full body{background:#fff!important}html.full body{padding:0!important}html.full .keyline{display:block!important}html.full .wrap{width:auto!important;max-width:var(--desk,430px)!important;height:auto!important;overflow:visible!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:#fff!important}</style>
+<link rel="icon" type="image/x-icon" href="assets/contact-page-logo.ico">
 </head>
 <body>
 <div class="keyline"></div>
@@ -316,6 +317,8 @@ span.chip:hover{background:#f1f2f3}
 <figure class="prod"><a class="ph-a" href="yellow-tower-photo-private-office-500.html"><img src="assets/yellow-tower-photo-10-600.webp" srcset="assets/yellow-tower-photo-10-320.webp 320w, assets/yellow-tower-photo-10-600.webp 600w" sizes="(max-width: 440px) 46vw, 240px" width="600" height="451" alt="Private office, 500 m², 1st floor: office with a desk by the window" loading="lazy" decoding="async"></a><figcaption>Private office, 500 m², 1st floor</figcaption></figure>
 </div>
 </section>
+
+<p class="footer-ref" style="margin:160px 0 110px;text-align:center;font-size:12px;color:#8a8a8a"><a href="dev-release-listing-2026-10-08.html" style="color:inherit">see footer</a></p>
 <div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
 <details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
 <div style="text-align:left;margin:8px 0;padding:8px 10px;background:#fafafa;border:1px solid #eee;border-radius:8px"><p style="margin:0 0 4px;font-weight:700;color:#6f6f6f;font-size:12px">Why it is this way (reasons and lessons)</p><ul style="margin:0;padding-left:16px;color:#6f6f6f;font-size:12px;line-height:1.5"><li style="margin:0 0 4px">Each sub-page is the full version of one section of the listing, one topic per page, so Google and people get a clear page for &quot;Products and services&quot; (SEO: own URL, own title, link back).</li><li style="margin:0 0 4px">The six sub-page chips repeat on every sub-page so a visitor can move sideways without going back (design-state &quot;sub-page chips&quot;).</li><li style="margin:0 0 4px">Map: a free static picture (kb/static-map-images.md) plus links to Google Maps and Directions (the founder 2026-10-09); never an embedded map (listing-page-design-decisions).</li></ul></div>

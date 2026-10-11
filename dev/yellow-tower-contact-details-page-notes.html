@@ -5,14 +5,16 @@
 h1{font-size:22px;border-left:5px solid #FFC400;padding-left:10px}p{color:#6f6f6f;font-size:14px}a{color:#161616}
 ol{padding-left:28px}li{margin:0 0 14px}li::marker{font-weight:700;color:#8a8a8a}
 pre{white-space:pre-wrap;word-wrap:break-word;font:14px/1.6 -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fafafa;border:1px solid #e9e9e9;border-radius:8px;padding:10px 12px;margin:0}
-h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}ul.hist li{margin:0 0 8px;font-size:14px;line-height:1.5}ul.hist b{display:inline-block;min-width:36px}</style></head>
+h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}ul.hist li{margin:0 0 8px;font-size:14px;line-height:1.5}ul.hist b{display:inline-block;min-width:36px}</style><link rel="icon" type="image/x-icon" href="../assets/contact-page-logo.ico">
+</head>
 <body><p><a href="../index.html">All mockups</a> · <a href="../yellow-tower-contact-details-page.html">Open the mockup</a></p>
 <h1>Developer notes: Contact details</h1>
 <p>Sample data only; contact values are masked.</p>
 <h2>What changed and why (newest first)</h2>
 <p>Each step with the reason behind it: the lessons learned along the way. Open any version to see it as it was.</p>
 <ul class="hist">
-<li><b><a href="../yellow-tower-contact-details-page.html">v66</a></b> 2026-10-10 (.page Mockups, staged during the wiki freeze): &quot;Also useful for your new office&quot; (the Works with cards, moved from the main page) after the contact items, with the See all link; Edit and Upgrade mailtos byte-identical to dev-release-listing-2026-10-08.html. v65 in archive/. 2026-10-09 (Page Claude Code, Kim: &quot;check that clicking email also cc to us hello@&quot;): every Email button that goes to a business (the Email card, the unconfirmed email under Other, an email typed in a note) now has cc hello@contact.page and the subject &quot;Via contact.page (ref kh34363 email)&quot;. Checked in the page: the Email card link is mailto:[email]?cc=hello@contact.page&amp;subject=... Our own mails (help, edit, report, question) go to the page code address, no cc.</li>
+<li><b><a href="../yellow-tower-contact-details-page.html">v67</a></b> 2026-10-11 (Page Vibe, Kim): Contact details has no footer. Document the exception in developer notes; remove repeated footer from chat alternate.</li>
+<li><b><a href="../archive/yellow-tower-contact-details-page-v66.html">v66</a></b> 2026-10-10 (.page Mockups, staged during the wiki freeze): &quot;Also useful for your new office&quot; (the Works with cards, moved from the main page) after the contact items, with the See all link; Edit and Upgrade mailtos byte-identical to dev-release-listing-2026-10-08.html. v65 in archive/. 2026-10-09 (Page Claude Code, Kim: &quot;check that clicking email also cc to us hello@&quot;): every Email button that goes to a business (the Email card, the unconfirmed email under Other, an email typed in a note) now has cc hello@contact.page and the subject &quot;Via contact.page (ref kh34363 email)&quot;. Checked in the page: the Email card link is mailto:[email]?cc=hello@contact.page&amp;subject=... Our own mails (help, edit, report, question) go to the page code address, no cc.</li>
 <li><b><a href="../archive/yellow-tower-contact-details-page-v65.html">v65</a></b> 2026-10-09 (Page Claude Code, the founder via the chief, room 22:32): open FAQ: a quiet &quot;Ask a question about Yellow Tower. We answer it on the page.&quot; line under the Community notes heading (email to the page code address, ref question), far from the Upgrade ad (more than 150px). Merged on top of v64 (.page Mockups).</li>
 <li><b>v64</b> 2026-10-09 (.page Mockups, the founder via Page Bot: standard tab row): under the back link, the standard tab row (home icon, Contact marked current, About, Products, Hours, Map, Photos, FAQ); no X close button. No ads on this page. v63 in archive/.</li>
 <li><b><a href="../archive/yellow-tower-contact-details-page-v63.html">v63</a></b> 2026-10-09 (Page Claude Code, the founder via the chief): new short block &quot;AI recommends you&quot; with the 3 steps (your page is clear and checked; AI assistants read it and recommend you; customers reach you through your protected contact page), above Community notes, far from the Upgrade ad (more than 150px); the Upgrade ad now says &quot;Helps AI assistants find and recommend you.&quot;</li>
@@ -81,7 +83,8 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 </ul>
 <h2>All notes, summary first, then in page order</h2>
 <ol>
-<li><pre>YELLOW TOWER CONTACT DETAILS PAGE (current: version 66, 2026-10-09; v1-v5 .page Mockups). Design task D015. Route in production:
+<li><pre>DEVELOPER SUMMARY: CONTACT DETAILS HAS NO FOOTER (Kim 2026-10-11). No shared footer card and no see footer reference on this page. Existing page actions are separate from the footer.</pre></li>
+<li><pre>YELLOW TOWER CONTACT DETAILS PAGE (current: version 67, 2026-10-09; v1-v5 .page Mockups). Design task D015. Route in production:
 kh34363.contact.page/contact-details after the check (the security page and this page share the route; the server shows
 this page once cp_verified is set). Page 4 of the standard mockup set (the founder 2026-10-06):
 1 phnom-penh-office-rental-vertical-page.html -&gt; 2 yellow-tower-listing-page.html -&gt; 3 yellow-tower-security-page.html -&gt; 4 this page.
@@ -113,6 +116,7 @@ OPEN FOR KIM
 - Which channel leads when there are no votes yet (proposal: the one the owner marks main, else phone).
 
 CHANGE LOG
+v67 2026-10-11 (Page Vibe, Kim): Contact details has no footer. Document the exception in developer notes; remove repeated footer from chat alternate.
 v66 2026-10-10 (.page Mockups, staged during the wiki freeze): &quot;Also useful for your new office&quot; (the Works with cards, moved from the main page) after the contact items, with the See all link; Edit and Upgrade mailtos byte-identical to dev-release-listing-2026-10-08.html. v65 in archive/.
 v66 2026-10-09 (Page Claude Code, Kim: &quot;check that clicking email also cc to us hello@&quot;): every Email button that goes to a business (the Email card, the unconfirmed email under Other, an email typed in a note) now has cc hello@contact.page and the subject &quot;Via contact.page (ref kh34363 email)&quot;. Checked in the page: the Email card link is mailto:[email]?cc=hello@contact.page&amp;subject=... Our own mails (help, edit, report, question) go to the page code address, no cc.
 v65 2026-10-09 (Page Claude Code, the founder via the chief, room 22:32): open FAQ: a quiet &quot;Ask a question about Yellow Tower. We answer it on the page.&quot; line under the Community notes heading (email to the page code address, ref question), far from the Upgrade ad (more than 150px). Merged on top of v64 (.page Mockups).
