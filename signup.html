@@ -1,7 +1,9 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta name="robots" content="noindex,nofollow"><meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Get started · contact.page</title>
@@ -43,11 +45,11 @@ section{padding:22px 0;border-bottom:1px solid #f3f4f6}h2{font-size:22px;margin:
 .done{text-align:center;padding:20px 0}.done .ok{width:54px;height:54px;border-radius:50%;background:var(--y);display:inline-flex;align-items:center;justify-content:center;font-size:28px;font-weight:800}
 footer{background:#fafafa;border-top:1px solid var(--line);margin:0;color:var(--mute);font-size:12px;padding:16px 0;text-align:center}.fl{line-height:2}.fl a{color:#374151;text-decoration:underline;text-underline-offset:2px}.fl span{color:#c4c8cd;margin:0 4px}.about{font-size:11px;color:#9ca3af;margin-top:6px}
 @media(min-width:600px){.hero h1{font-size:38px}}
-</style>
+.page{max-width:430px}</style>
 </head>
 <body>
 <div class="page">
-<div class="w"><div class="bar"><a class="logo" href="home-with-pricing.html"><span class="lgm lgimg" aria-hidden="true"></span>contact<i>.page</i></a><nav class="nav"><a href="pricing.html">Pricing</a><a class="cta sm" href="signup.html">Get started</a></nav></div></div>
+<div class="w"><div class="bar"><a class="logo" href="contact-page-home-page.html"><span class="lgm lgimg" aria-hidden="true"></span>contact<i>.page</i></a><nav class="nav"><a href="pricing.html">Pricing</a><a class="cta sm" href="signup.html">Get started</a></nav></div></div>
 <div class="w" style="padding-top:8px;padding-bottom:20px">
 <div class="steps" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
 
@@ -91,7 +93,7 @@ footer{background:#fafafa;border-top:1px solid var(--line);margin:0;color:var(--
 <div class="st" data-s="5"><div class="done"><div class="ok">✓</div><h2 style="margin-top:12px">You're all set</h2>
 <p class="mute" id="dn">Your Plus plan is active. Your receipt is on its way by email.</p>
 <p>Next: say hi to your AI assistant on WhatsApp <a href="https://wa.me/page.me">@page.me</a> and it starts updating your website.</p>
-<p><a class="cta" href="home-with-pricing.html">Back to contact.page</a></p></div></div>
+<p><a class="cta" href="contact-page-home-page.html">Back to contact.page</a></p></div></div>
 </div>
 <footer><div class="w"><div class="fl"><a href="pricing.html">Pricing</a> <span>·</span> <a href="featured.html">Featured</a> <span>·</span> <a href="terms.html">Terms</a> <span>·</span> <a href="refund-policy.html">Refund Policy</a> <span>·</span> <a href="privacy.html">Privacy</a> <span>·</span> <a href="contact.html">Support</a></div><div class="about">contact.page is operated by [Legal entity TBD]. Payments are processed by our payment partner.</div></div></footer>
 </div>
@@ -112,5 +114,10 @@ document.getElementById('toPay').onclick=function(){if(plan==='basic'){document.
 var a=document.getElementById('agree2'),p=document.getElementById('pay');a.onchange=function(){p.classList.toggle('off',!a.checked);p.setAttribute('aria-disabled',a.checked?'false':'true')};
 pick(plan);bill();})();
 </script>
+<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
+<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
+
+<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/signup-notes.html">Developer notes: what changed and why, every version</a></p>
+</details>
 </body>
 </html>
