@@ -13,7 +13,8 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 <h2>What changed and why (newest first)</h2>
 <p>Each step with the reason behind it: the lessons learned along the way. Open any version to see it as it was.</p>
 <ul class="hist">
-<li><b><a href="../yellow-tower-listing-page.html">v59</a></b> 2026-10-11 (Page Vibe, Kim): readable two-column search metadata table; reusable pattern first, example below; distinguish current metadata from release tasks.</li>
+<li><b><a href="../yellow-tower-listing-page.html">v60</a></b> 2026-10-11 (Page Vibe, Kim): try question headings at location/contact, logo beside the business name; retain header description and all ad units/clearances.</li>
+<li><b><a href="../archive/yellow-tower-listing-page-v59.html">v59</a></b> 2026-10-11 (Page Vibe, Kim): readable two-column search metadata table; reusable pattern first, example below; distinguish current metadata from release tasks.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v58.html">v58</a></b> 2026-10-11 (Page Vibe, Kim): boxed footer reference; preview title and description match real head metadata; social metadata and WebSite schema; append reasons and lessons.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v57.html">v57</a></b> 2026-10-11 (Page Vibe, Kim): Footer replaced by one see footer master link; Google search preview moved to the top inside Dev notes.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v56.html">v56</a></b> 2026-10-10 (.page Mockups, staged during the wiki freeze, reapplied on v55): Google search result preview card before the Dev notes and the search meta table inside them; yellow bullets under the address removed; main-page tab row as big 2-column icon chips (48px); &quot;Contact&quot; lighter in the contact heading; unlock line, masked number preview and &quot;+ Add&quot; removed; contact items as a 2-column grid (WhatsApp, Map | Mobile, Email) with a check mark and a green line; profile completion meter and &quot;Is this yours&quot; removed (owner page only; its script removed); public Update/Add/Edit-description links removed (the FAQ &quot;Ask a question&quot; from v55 kept); Location block removed (the address under the top ad with Open map is the only one); photos and products in fixed 4:3 frames (height:auto, cover), each a link to its own photo page; footer mailtos byte-identical to dev-release-listing-2026-10-08.html; Images renamed Photos; TEMP footer dev note copy in the Dev notes (delete after the developer release, Tue 2026-10-13). v55 in archive/. 2026-10-10 footer (.page Mockups): Suggest edits block (button, Gmail option, email + copy) removed; footer card text +1px; section links on two lines (Home, Contact, Address / Images, Profile); Edit, Claim, Upgrade, Start in 600; Help line and Report this page under the footer removed (Report and Privacy stay in the share row). 2026-10-10 (.page Mockups, founder approved): &quot;Works with&quot; moved to the contact details page as &quot;Also useful for your new office&quot;; the &quot;More office space rental&quot; competitor block removed (no competitors on a business&#x27;s own pages). &quot;Inside this building&quot; stays.</li>
@@ -74,7 +75,7 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 <h2>All notes, summary first, then in page order</h2>
 <ol>
 <li><pre>SEARCH AND SHARE (Page Vibe 2026-10-11): preview and metadata share the same truthful wording. Google chooses its own title/snippet; the example is not a guaranteed result. Public mockup image is real; production must use a stable owner-approved image URL.</pre></li>
-<li><pre>YELLOW TOWER LISTING PAGE (current: version 59, 2026-10-09; design owner Page Claude Code, v17-v20 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
+<li><pre>YELLOW TOWER LISTING PAGE (current: version 60, 2026-10-09; design owner Page Claude Code, v17-v20 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
 Built from v3 (Page Muse) after the review in CONTACT/kb/listing-page-v3-review-2026-10-06.md.
 
 ORDER, mobile first (rules: mobile first; design-evidence rules 1-3; engine &quot;the page earns its ads&quot;; decisions file):
@@ -106,6 +107,7 @@ STILL OPEN FOR KIM (from the 2026-10-03 review)
 - Currency: decided &quot;never&quot;; schema.org expects priceCurrency on offers. Kept out as decided.
 
 CHANGE LOG
+v60 2026-10-11 (Page Vibe, Kim): try question headings at location/contact, logo beside the business name; retain header description and all ad units/clearances.
 v59 2026-10-11 (Page Vibe, Kim): readable two-column search metadata table; reusable pattern first, example below; distinguish current metadata from release tasks.
 v58 2026-10-11 (Page Vibe, Kim): boxed footer reference; preview title and description match real head metadata; social metadata and WebSite schema; append reasons and lessons.
 v57 2026-10-11 (Page Vibe, Kim): Footer replaced by one see footer master link; Google search preview moved to the top inside Dev notes.
@@ -270,6 +272,11 @@ ADS (item 8): AdSense script async and loaded lazily (after first interaction or
 slot has a fixed reserved height (300x250 -&gt; 250px) so nothing shifts (CLS 0). NO AdSense on the home page or the
 security page. Cloudflare Turnstile ONLY on the security page, nowhere else.</pre></li>
 <li><pre>WHY IT IS THIS WAY (reasons and lessons)
+- Kim 2026-10-11: revenue first; do not move ad units or change reserved ad sizes/150px clearance. Question headings sit with answers, not above the ad.
+- Page Vibe 2026-10-11: category/city stay small, real logo and familiar name form the identity, then the short description. Do not immediately repeat the business name in “What does … do?”; About remains the deeper answer.
+- Header IF/THEN: use the recorded familiar display name when known, otherwise the actual business name; never guess abbreviations. Use a real logo when available, otherwise omit it. Intro uses knownFor when supplied, else verified short description, else a concise phrase from verified business activities; no keyword dump or invented strengths. These are implementation cases; Yellow Tower keeps its existing factual intro for this experiment.
+- Page Vibe 2026-10-11: question wording helps visitors understand the next answer; it is not a promised ranking boost or FAQ rich result. Contact values remain behind the security gate.
+
 - Kim 2026-10-11: metadata guidance is a phone-readable table, each pattern above its example, so the developer learns the reusable rule before seeing Yellow Tower.
 - Page Vibe 2026-10-11: label implemented metadata and remaining release work separately; a recommendation table is not proof the live website has changed.
 
