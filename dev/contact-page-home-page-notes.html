@@ -13,18 +13,20 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 <h2>What changed and why (newest first)</h2>
 <p>Each step with the reason behind it: the lessons learned along the way. Open any version to see it as it was.</p>
 <ul class="hist">
-<li><b><a href="../contact-page-home-page.html">v3</a></b> (2026-10-13, Page Vibe, Kim): bottom-of-home directory browse, real country/city/trade links with search/filter, shared component for mockup and live home build.</li>
+<li><b><a href="../contact-page-home-page.html">v4</a></b> (2026-10-13, Page Vibe, Kim): one footer-area Browse countries link beside the worldwide business count; no search, filters or country list on home.</li>
+<li><b><a href="../archive/contact-page-home-page-v3.html">v3</a></b> (2026-10-13, Page Vibe, Kim): bottom-of-home directory browse, real country/city/trade links with search/filter, shared component for mockup and live home build.</li>
 <li><b><a href="../archive/contact-page-home-page-v2.html">v2</a></b> (2026-10-11, Page Vibe, Kim): clearer find / select / publish story; readable grouped inputs; compact website preview; pricing cards replaced by a pricing link; chat narrowed; explain worldwide AI discovery and the business page that enables it.</li>
 <li><b><a href="../archive/contact-page-home-page-v1.html">v1</a></b> previous home layout, archived before this round. WHY IT IS THIS WAY 2026-10-11: Kim likes the funnel concept but asks for clearer layout and understanding; retain the transformation, make the steps explicit. 2026-10-11: Kim asks why a business needs a page for AI; explain readable strengths and customer contact without guaranteeing recommendations. Security/privacy: contact values remain behind the security check; placeholders only in this example. Money/ads: no ads or Turnstile on home; no prices or shopping in the example business website. IF fields are missing THEN placeholders illustrate the layout, never invented facts. Positive reviews remain faithful to the source; never turn mixed feedback into an attributed positive quote.</li>
 </ul>
 <h2>All notes, summary first, then in page order</h2>
 <ol>
 <li><pre>WHY IT IS THIS WAY (reasons and lessons)
-- Kim 2026-10-13: home must connect the entire directory, verticals and business websites. Real country/city/category links exist in HTML so crawling does not depend on filters or JavaScript.
-- Page Vibe 2026-10-13: search and filters progressively enhance existing links; a no-JS visitor can still browse. Links support discovery, not an implied ad-network approval.
+- Kim 2026-10-13: one Browse countries link and the worldwide business count fit the footer; no search, filters or country list on home. The next page is the country directory, leading to city/category pages and business websites.
+- Page Vibe 2026-10-13: ordinary navigation works without JavaScript; a no-JS visitor can still browse. Links support discovery, not an implied ad-network approval.
 - Kim 2026-10-13: mockup first, then live home; directory change is separate from listing ad experiments. One browse.mjs component generates both from current site data.</pre></li>
-<li><pre>HOME PAGE current: version 3
+<li><pre>HOME PAGE current: version 4
 CHANGE LOG
+v4 (2026-10-13, Page Vibe, Kim): one footer-area Browse countries link beside the worldwide business count; no search, filters or country list on home.
 v3 (2026-10-13, Page Vibe, Kim): bottom-of-home directory browse, real country/city/trade links with search/filter, shared component for mockup and live home build.
 v2 (2026-10-11, Page Vibe, Kim): clearer find / select / publish story; readable grouped inputs; compact website preview; pricing cards replaced by a pricing link; chat narrowed; explain worldwide AI discovery and the business page that enables it.
 v1: previous home layout, archived before this round.
@@ -49,7 +51,7 @@ IF fields are missing THEN placeholders illustrate the layout, never invented fa
 <li><pre>AGENT TO AGENT (Kim 2026-10-09): show that agents talking to agents, with a real business behind each one, is where this is going. Placeholders only (&quot;Your business&quot;, never invented names; Kim 2026-10-09), B2B, no icons, no mascot, no claims of numbers or results. Four short messages appear one by one (looping, still when reduced motion is on): the buyer&#x27;s agent asks, the supplier&#x27;s page agent answers, a visit is booked, both owners are told. IF copy changes keep: 1 heading, 1 line, the two business cards, at most 4 messages.</pre></li>
 <li><pre>PRICING (Kim 2026-10-11): plan cards live on pricing.html. IF an owner wants options THEN this compact same-tab link takes them to the existing pricing page.</pre></li>
 <li><pre>FAQ review (Kim 2026-10-08: nothing cheesy or made up, only what is really valuable). Kept 3 of 8: what you need to start (merged with &quot;do I need a website&quot;), claim an existing page, whose name is on top. Dropped: &quot;Is it really free?&quot; (sounds spammy, the Plans say it), &quot;How do I change my site?&quot; (the phone shows it), &quot;Will spammers get my number?&quot; (the security section says it), &quot;Where do you work?&quot; (empty).</pre></li>
-<li><pre>BROWSE (Kim 2026-10-13): home connects the whole directory. Real links are in HTML without JavaScript; filters progressively enhance them. Country → city/category → vertical → business website. Overrides owner-only/no-browse home for this directory purpose. Generated by site/worker/build/browse.mjs from site data; never hand-copy business data.</pre></li>
+<li><pre>BROWSE (Kim 2026-10-13): home connects the whole directory. One Browse countries link opens the directory. No home search, dropdowns or country list. Country → city/category → vertical → business website. Overrides owner-only/no-browse home for this directory purpose. Generated by site/worker/build/browse.mjs from site data; never hand-copy business data.</pre></li>
 <li><pre>DIRECTORY BROWSE START</pre></li>
 <li><pre>DIRECTORY BROWSE END</pre></li>
 </ol></body></html>
