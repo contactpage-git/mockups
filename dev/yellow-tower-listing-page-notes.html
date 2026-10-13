@@ -13,7 +13,8 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 <h2>What changed and why (newest first)</h2>
 <p>Each step with the reason behind it: the lessons learned along the way. Open any version to see it as it was.</p>
 <ul class="hist">
-<li><b><a href="../yellow-tower-listing-page.html">v60</a></b> 2026-10-11 (Page Vibe, Kim): try question headings at location/contact, logo beside the business name; retain header description and all ad units/clearances.</li>
+<li><b><a href="../yellow-tower-listing-page.html">v61</a></b> 2026-10-13 (Page Vibe, Kim): larger 72px logo; top dynamic-anchor mockup with identity below it; manual ad stack and same-tab navigation retained; inline Auto ads off per Kim.</li>
+<li><b><a href="../archive/yellow-tower-listing-page-v60.html">v60</a></b> 2026-10-11 (Page Vibe, Kim): try question headings at location/contact, logo beside the business name; retain header description and all ad units/clearances.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v59.html">v59</a></b> 2026-10-11 (Page Vibe, Kim): readable two-column search metadata table; reusable pattern first, example below; distinguish current metadata from release tasks.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v58.html">v58</a></b> 2026-10-11 (Page Vibe, Kim): boxed footer reference; preview title and description match real head metadata; social metadata and WebSite schema; append reasons and lessons.</li>
 <li><b><a href="../archive/yellow-tower-listing-page-v57.html">v57</a></b> 2026-10-11 (Page Vibe, Kim): Footer replaced by one see footer master link; Google search preview moved to the top inside Dev notes.</li>
@@ -75,7 +76,7 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 <h2>All notes, summary first, then in page order</h2>
 <ol>
 <li><pre>SEARCH AND SHARE (Page Vibe 2026-10-11): preview and metadata share the same truthful wording. Google chooses its own title/snippet; the example is not a guaranteed result. Public mockup image is real; production must use a stable owner-approved image URL.</pre></li>
-<li><pre>YELLOW TOWER LISTING PAGE (current: version 60, 2026-10-09; design owner Page Claude Code, v17-v20 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
+<li><pre>YELLOW TOWER LISTING PAGE (current: version 61, 2026-10-09; design owner Page Claude Code, v17-v20 by .page Mockups). Older versions: archive/. Production route: kh34363.contact.page/
 Built from v3 (Page Muse) after the review in CONTACT/kb/listing-page-v3-review-2026-10-06.md.
 
 ORDER, mobile first (rules: mobile first; design-evidence rules 1-3; engine &quot;the page earns its ads&quot;; decisions file):
@@ -107,6 +108,7 @@ STILL OPEN FOR KIM (from the 2026-10-03 review)
 - Currency: decided &quot;never&quot;; schema.org expects priceCurrency on offers. Kept out as decided.
 
 CHANGE LOG
+v61 2026-10-13 (Page Vibe, Kim): larger 72px logo; top dynamic-anchor mockup with identity below it; manual ad stack and same-tab navigation retained; inline Auto ads off per Kim.
 v60 2026-10-11 (Page Vibe, Kim): try question headings at location/contact, logo beside the business name; retain header description and all ad units/clearances.
 v59 2026-10-11 (Page Vibe, Kim): readable two-column search metadata table; reusable pattern first, example below; distinguish current metadata from release tasks.
 v58 2026-10-11 (Page Vibe, Kim): boxed footer reference; preview title and description match real head metadata; social metadata and WebSite schema; append reasons and lessons.
@@ -272,6 +274,15 @@ ADS (item 8): AdSense script async and loaded lazily (after first interaction or
 slot has a fixed reserved height (300x250 -&gt; 250px) so nothing shifts (CLS 0). NO AdSense on the home page or the
 security page. Cloudflare Turnstile ONLY on the security page, nowhere else.</pre></li>
 <li><pre>WHY IT IS THIS WAY (reasons and lessons)
+- Kim 2026-10-13: larger subheadings and body text make sparse business pages comfortable to read; increase breathing room rather than inventing filler. Main content 18px, section headings 24px, familiar name 34px. Navigation chips keep the shared compact token.
+
+- Kim 2026-10-13: 150px between any ad and page button/link is mandatory, including top-anchor presentation; its own dismiss control is intrinsic ad UI. No burger menu, no in-page jump links that skip ads; same-tab subpage links preserve vignette opportunities.
+
+- Kim 2026-10-13: survival first. Inline Auto ads off produced better performance; allow anchor top or bottom; vignette earns over half. Dynamic anchor is newer and must not be credited with the whole earlier increase. Manual in-page units stay.
+- Page Vibe 2026-10-13: 90-day format export through 8 October: vignette 51.34%, in-page 31.77%, anchor 13.97%. These are historical totals, not current performance or a causal experiment. Revenue choices use RPM, impressions, CTR and active view over comparable days.
+- Kim 2026-10-13: make the logo recognizable, not constrained to the old tiny header. A 72px real logo sits beside the large name, below a simulated top anchor. Demo uses 96px only to illustrate the overlay; production must follow Google sizing/placement and preserve usable identity/actions, without permanent blank space when no anchor serves.
+- Page Vibe 2026-10-13: protect vignette flow with ordinary same-tab internal links; retain manual header slot 2140649070 and lower units, with 150px minimum action clearance. No inline Auto-ad placeholder, no multiplex, no live ad requests in mockups.
+
 - Kim 2026-10-11: revenue first; do not move ad units or change reserved ad sizes/150px clearance. Question headings sit with answers, not above the ad.
 - Page Vibe 2026-10-11: category/city stay small, real logo and familiar name form the identity, then the short description. Do not immediately repeat the business name in “What does … do?”; About remains the deeper answer.
 - Header IF/THEN: use the recorded familiar display name when known, otherwise the actual business name; never guess abbreviations. Use a real logo when available, otherwise omit it. Intro uses knownFor when supplied, else verified short description, else a concise phrase from verified business activities; no keyword dump or invented strengths. These are implementation cases; Yellow Tower keeps its existing factual intro for this experiment.
@@ -305,6 +316,7 @@ security page. Cloudflare Turnstile ONLY on the security page, nowhere else.</pr
 - Section headers link to their own subpages; chips are tight and square (the founder&#x27;s chip rule); icons only from the design package.
 - Lessons: v15 left five old photo placeholders and a stray closing tag that pushed everything after Photos out of the phone
   frame until v21. Replace a block up to its own closing tag, then look at the page in the frame before publishing.</pre></li>
+<li><pre>ANCHOR DEMO (Kim 2026-10-13): static mockup only, no ad request. Represents a possible top anchor; Google chooses top OR bottom and dynamic height. Demo space is not a production sizing instruction. Dismissing removes only demo space. Never force bottom-only.</pre></li>
 <li><pre>IDENTITY. Only identity above Ad #1 (design-evidence rule 1). Kicker links to the one existing office rental vertical.
 IF data: kicker, H1 with the frozen yellow line, logo when a real logo file exists (none in the repo yet, so none shown:
 never an &quot;awaiting asset&quot; placeholder), short description. IF no short description: the bridge cascade (engine decision 1).
