@@ -1,0 +1,124 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>ตึกเหลือง | contact.page</title><style>/* contact.page design tokens and shared parts (design package, 2026-10-07).
+   One place for the values every page and mockup uses. Mockups are single files, so copy the blocks you need into the
+   page's <style>; when a value changes, change it here first, then in the pages (newest Kim rule wins; rules in
+   CONTACT/design/README.md and CONTACT/kb/conflicts-and-decisions-2026-10-04.md). Copied from the live listing page v20. */
+
+/* COLOURS. Light only. Yellow is the accent, not the theme: no heavy yellow fills, no black blocks. */
+:root{
+ --yellow:#FFC400;      /* frozen brand yellow: accents, button outlines, the 4px top line, the H1 line */
+ --yellow-soft:#FFF6D6; /* small light fills (pills, notices) */
+ --gold:#E0A500;        /* the lock icon (Kim 2026-10-06), the one icon that is not ink or grey */
+ --green:#22c55e;       /* ONLY the security gate unlock button (live gate colour) */
+ --green-ink:#052e16;   /* text on the green button */
+ --ink:#161616;         /* text, icons */
+ --grey:#6f6f6f;        /* secondary text, secondary icons */
+ --grey-2:#9a9a9a;      /* small grey links and labels */
+ --line:#e9e9e9;        /* 1px separators and frames */
+ --bg:#fff;
+ --g-bg:#eaf6ec;--g-line:#2f8f4e;--g-ink:#14532d; /* the frozen green category box in the footer */
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+
+/* LAYOUT. Mobile first; one centred column, 430px max on EVERY screen (Kim 2026-10-07, N36: phone width forever).
+   Ad slots: reserve 336x280 (large rectangle), width 100% max 336px; AdSense serves 300x250 on phones under ~370px. */
+.keyline{height:4px;background:var(--yellow)}   /* frozen: the 4px yellow top line (Kim: "subtle yet not branding") */
+:root{--desk:430px}
+.wrap{max-width:430px;margin:0 auto;padding:0 16px 36px;position:relative;background:#fff}
+
+/* BUTTONS. Yellow outline, dark text, yellow highlight stroke. 44px+ high. */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:var(--ink);border:2px solid var(--yellow);
+ font-weight:800;border-radius:10px;padding:11px 18px;font-size:16px;text-decoration:underline;text-decoration-color:var(--yellow);
+ text-decoration-thickness:.45em;text-underline-offset:-.22em;text-decoration-skip-ink:none;cursor:pointer}
+.btn:hover{background:#fffbea}
+.btn.wide{display:flex;width:100%}
+.btn.sm{padding:7px 12px;font-size:14px;gap:6px}
+.btn.unlock{background:#fff;border:2px solid var(--yellow);color:var(--ink);font-weight:600;text-decoration:none} /* outlined unlock button */
+.btn.gate{background:var(--green);color:var(--green-ink);border:0;text-decoration:none}                          /* security gate only */
+.lockic{color:var(--gold)}
+
+/* CHIPS (Kim 2026-10-06: tight, neat, not fat, not round). 24px high, 5px corners, grey fill, no border. */
+.chip{display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 8px;border:0;border-radius:5px;background:#f1f2f3;
+ color:var(--ink);font:400 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;cursor:pointer;white-space:nowrap}
+.chip:hover{background:#e6e8ea}
+.chip:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+span.chip{color:var(--grey);cursor:default}       /* a chip that is not a link yet */
+span.chip:hover{background:#f1f2f3}
+.chiprow{display:flex;flex-wrap:wrap;gap:6px}
+/* picked chip (role pick): white, thin yellow ring, check icon, bold */
+.chip.picked{background:#fff;box-shadow:inset 0 0 0 1.5px var(--yellow);font-weight:700}
+
+/* PHOTOS (Kim 2026-10-06): every photo box the same size, 4:3 centre crop, 1px frame, 8px rounded corners (keep them). */
+.photo{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid #e3e3e3;border-radius:8px}
+
+/* SMALL GREY LINKS: owner actions (open our agent), footer help, version line. */
+.small-act{font-size:12px;color:var(--grey-2);text-decoration-color:#d6d6d6}
+.fhelp{font-size:13px;color:var(--grey);margin:12px 0 0}
+.fhelp a{color:var(--grey);text-decoration:underline;text-decoration-color:#d0d0d0;text-underline-offset:3px}
+.meta{margin-top:26px;color:#b5b5b5;font-size:12px;line-height:1.8}
+
+
+a{color:var(--ink);text-underline-offset:3px}svg{flex:none}
+.crumbs{margin:16px 0 8px;font-size:12px;font-style:italic;color:var(--grey)}.crumbs a{color:var(--grey);text-decoration-color:#d0d0d0}
+.h1row{display:flex;gap:12px;margin:0 0 6px}.h1bar{width:5px;background:var(--yellow);border-radius:2px;flex:none}h1{font-size:28px;line-height:1.2;margin:0}
+.vsub{font-size:14px;color:var(--grey);margin:6px 0 0;font-weight:600}.lede{color:#333;margin:10px 0 0}
+.ad{margin:150px auto;width:100%;max-width:336px}.ad .slot{height:280px;background:#f3f3f3;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.ad .slot span{font-size:11px;color:var(--grey-2);letter-spacing:2px;text-transform:uppercase}.adlbl{font-size:11px;color:#757575;letter-spacing:1px;text-transform:uppercase;text-align:center;margin:0 0 4px}
+.tier{margin:26px 0 0}.tier h2{font-size:20px;font-weight:800;margin:0 0 4px}.tier .tsub{font-size:13px;color:var(--grey);margin:0 0 12px}
+.cards{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.card{position:relative;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}
+.card .photos{display:grid;grid-template-columns:1fr 1fr;gap:2px}.card .photos .ph{aspect-ratio:4/3;background:#f3f3f3;display:flex;align-items:center;justify-content:center;color:#c4c4c4}
+.card .photos .ph svg{width:34px;height:34px}.rankb{position:absolute;top:10px;left:10px;min-width:24px;height:24px;padding:0 7px;border-radius:6px;background:var(--yellow);font-size:13px;font-weight:800;line-height:24px;text-align:center}
+.card.nophoto .rankb{position:static;display:inline-block;margin:12px 0 0 14px}.cbody{padding:12px 14px 14px}.card h3{font-size:18px;line-height:1.25;margin:0}.where{font-size:13px;color:var(--grey);margin:2px 0 0}
+.known{font-size:14px;color:#333;margin:8px 0 0}.known b{font-weight:700}
+.lines{list-style:none;margin:10px 0 0;padding:0}.lines li{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;padding:7px 0;border-top:1px solid var(--line)}
+.lines .mk{font-weight:800;font-size:15px;letter-spacing:.5px;display:inline-flex;align-items:center;gap:6px;min-width:150px}.lines .mk svg{color:var(--grey)}
+.crow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0 0}
+/* LABEL CHIPS: same chip shape as every chip row, a colour per label (Kim 2026-10-17) */
+.chip.l{font-weight:400}.chip.l svg{width:12px;height:12px}
+span.chip.l-verified{background:#e6f4ea;color:#14532d}span.chip.l-unsure{background:#fff3cf;color:#7a5a00}span.chip.l-unchecked{background:#f1f2f3;color:#6f6f6f}
+span.chip.l-official{background:#e7effd;color:#1c3f94}span.chip.l-notworking{background:#fde8e6;color:#8a1c14}
+span.chip.b-list{background:#fff;box-shadow:inset 0 0 0 1px #d6d6d6;color:#6f6f6f}span.chip.b-graduated{background:var(--yellow-soft);color:#7a5a00}
+span.chip.b-owner{background:#fff;box-shadow:inset 0 0 0 1.5px var(--yellow);color:var(--ink);font-weight:700}
+a.chip.upd{background:#fff;box-shadow:inset 0 0 0 1px #d6d6d6;color:var(--grey);text-decoration:underline;text-decoration-color:#d0d0d0;text-underline-offset:3px}
+.more{margin:18px 0 0}.more .btn{width:100%}
+/* slim rows */
+.slim{list-style:none;margin:0;padding:0}.srow{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:0 0 10px;background:#fff}
+.srow h3{font-size:16px;margin:0}.srow .where{margin:1px 0 0}.srow .lines{margin-top:8px}.srow .lines li{padding:6px 0}.srow .lines .mk{font-size:14px;min-width:132px}
+.srow .head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.srow .chiprow{margin:8px 0 0}
+.srow .go{margin:10px 0 0}.srow .go .btn{width:100%}
+.legend{border:1px dashed #cfcfcf;border-radius:12px;padding:12px 14px;margin:18px 0 0;font-size:13px;color:var(--grey)}.legend .chiprow{margin:6px 0 0}
+.idea{margin:28px 0 0;padding:12px 14px;background:var(--yellow-soft);border-radius:10px;font-size:13px;color:#4d3a00}
+.note{font-size:12px;color:var(--grey);margin:26px 0 0}
+/* gate page */
+.gatebox{border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0 0;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.gatebox .gt{display:flex;align-items:center;gap:8px;font-weight:800;margin:0 0 4px}
+.bcard{border:1px solid var(--line);border-radius:14px;padding:14px;margin:16px 0 0}
+.hl{margin:12px 0 0;font-size:12px;color:var(--grey-2)}
+
+span.chip.l-unv{background:var(--yellow-soft);color:#5c4400;box-shadow:inset 0 0 0 1px #f3dc8a}
+.vote{background:none;border:0;padding:0;font:inherit;font-size:12px;color:var(--grey-2);text-decoration:underline;text-decoration-color:#d6d6d6;text-underline-offset:3px;cursor:pointer;display:inline-flex;align-items:center;gap:3px;margin-left:auto}
+.sw{display:flex;gap:6px;align-items:center;justify-content:flex-end;margin:10px 0 0;font-size:12px;color:var(--grey)}
+.draft{font-size:11px;color:#8a6d00;background:var(--yellow-soft);border-radius:6px;padding:3px 8px;margin:8px 0 0;display:inline-block}
+.lines .mk{min-width:0;flex:0 1 auto}.chip{height:auto;min-height:24px;padding-top:4px;padding-bottom:4px;line-height:1.2;white-space:normal}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px;margin:0}.facts dt{color:var(--grey)}.facts dd{margin:0}
+.hours{width:100%;border-collapse:collapse;font-size:14px}.hours td{padding:5px 0;border-bottom:1px solid var(--line)}.hours td:last-child{text-align:right}
+.amen{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:14px}.amen span::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--yellow);margin-right:7px}
+h1,h2,h3,p,li,.btn{overflow-wrap:anywhere}
+</style></head><body>
+<!-- WHY IT IS THIS WAY (Claude Design 2026-10-17, brief-local-language-interface, I105): whole interface in th-th; layout identical to the English templates. Draft translation: a native speaker must check. Only countries with lead_language=local in schemas/countries.csv. Dates and numbers in the local format. Masked numbers, invented businesses. -->
+<div class="keyline"></div><div class="wrap"><div class="sw"><span class="chip picked">ไทย</span><a class="chip" href="../../../yellow-tower-listing-page.html" hreflang="en">English</a></div><span class="draft">ร่างคำแปล: โปรดให้เจ้าของภาษาตรวจสอบ</span>
+<nav class="crumbs"><a href="#">กรุงเทพฯ</a> › อาคารสำนักงาน</nav>
+<div class="h1row"><div class="h1bar"></div><h1>ตึกเหลือง</h1></div><p class="vsub">อาคารสำนักงาน · สาทร, กรุงเทพฯ</p>
+<div class="chiprow" style="margin-top:8px"><span class="chip l b-owner"> <svg class="lucide lucide-check" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> เจ้าของยืนยัน</span><a class="chip upd" href="#"> <svg class="lucide lucide-pencil" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /> <path d="m15 5 4 4" /> </svg> อัปเดตข้อมูลนี้</a></div>
+<div class="gatebox" style="margin-top:18px"><p class="gt"><span class="lockic"> <svg class="lucide lucide-lock" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /> </svg> </span>ติดต่อ</p>
+<ul class="lines"><li><span class="mk"><svg width="14" height="14" fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>+66 81 234 •••</span><span class="chiprow"><span class="chip l l-verified"> <svg class="lucide lucide-check" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> ตรวจสอบแล้ว</span></span><button class="vote" type="button"> <svg class="lucide lucide-thumbs-down" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z" /> <path d="M17 14V2" /> </svg> ใช้ไม่ได้</button></li><li><span class="mk"> <svg class="lucide lucide-phone" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /> </svg> +66 2 234 •••</span><span class="chiprow"><span class="chip l l-unv">ยังไม่ยืนยัน</span></span><button class="vote" type="button"> <svg class="lucide lucide-thumbs-down" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z" /> <path d="M17 14V2" /> </svg> ใช้ไม่ได้</button></li></ul>
+<p style="font-size:13px;color:var(--grey);margin:6px 0 12px">ข้อมูลติดต่อได้รับการปกป้อง ปลดล็อกในหนึ่งวินาที เพื่อไม่ให้บอทสแปมเก็บเบอร์</p><a class="btn gate wide" href="th-gate.html"> <svg class="lucide lucide-lock-open" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 9.9-1" /> </svg> ปลดล็อกการติดต่อ</a></div>
+<section class="sec"><h2>เกี่ยวกับ</h2><p style="margin:0">อาคารสำนักงาน 28 ชั้น มีพื้นที่ทำงานร่วมกันและห้องประชุม พื้นที่ใช้สอย 1,250 ตร.ม.</p></section>
+<section class="sec"><h2>ที่อยู่</h2><p class="addr">88 ถนนสาทรเหนือ กรุงเทพฯ</p></section>
+<section class="sec"><h2>เวลาทำการ</h2><span class="chip l l-verified" style="margin-bottom:8px">เปิดอยู่ตอนนี้</span><table class="hours"><tr><td>จันทร์–ศุกร์</td><td>08:00–17:00</td></tr><tr><td>เสาร์</td><td>09:00–13:00</td></tr><tr><td>อาทิตย์</td><td>ปิด</td></tr></table></section>
+<section class="sec"><h2>สิ่งอำนวยความสะดวก</h2><div class="amen"><span>ลิฟต์</span><span>ที่จอดรถ</span><span>ไวไฟ</span><span>1,250 ตร.ม.</span></div></section>
+<p class="fhelp"><a href="#">แจ้งปัญหา</a> · ปรับปรุงล่าสุด: 17 ต.ค. 2569</p>
+<p class="note">ตัวอย่างจำลอง: ธุรกิจสมมติ เบอร์ที่ปิดบังบางส่วน · <a href="compare.html">1 / 4</a></p></div></body></html>
