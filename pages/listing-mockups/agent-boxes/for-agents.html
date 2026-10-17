@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>For agents boxes | contact.page mockup</title><style>/* contact.page design tokens and shared parts (design package, 2026-10-07).
+   One place for the values every page and mockup uses. Mockups are single files, so copy the blocks you need into the
+   page's <style>; when a value changes, change it here first, then in the pages (newest Kim rule wins; rules in
+   CONTACT/design/README.md and CONTACT/kb/conflicts-and-decisions-2026-10-04.md). Copied from the live listing page v20. */
+
+/* COLOURS. Light only. Yellow is the accent, not the theme: no heavy yellow fills, no black blocks. */
+:root{
+ --yellow:#FFC400;      /* frozen brand yellow: accents, button outlines, the 4px top line, the H1 line */
+ --yellow-soft:#FFF6D6; /* small light fills (pills, notices) */
+ --gold:#E0A500;        /* the lock icon (Kim 2026-10-06), the one icon that is not ink or grey */
+ --green:#22c55e;       /* ONLY the security gate unlock button (live gate colour) */
+ --green-ink:#052e16;   /* text on the green button */
+ --ink:#161616;         /* text, icons */
+ --grey:#6f6f6f;        /* secondary text, secondary icons */
+ --grey-2:#9a9a9a;      /* small grey links and labels */
+ --line:#e9e9e9;        /* 1px separators and frames */
+ --bg:#fff;
+ --g-bg:#eaf6ec;--g-line:#2f8f4e;--g-ink:#14532d; /* the frozen green category box in the footer */
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;font-size:16px}
+
+/* LAYOUT. Mobile first; one centred column, 430px max on EVERY screen (Kim 2026-10-07, N36: phone width forever).
+   Ad slots: reserve 336x280 (large rectangle), width 100% max 336px; AdSense serves 300x250 on phones under ~370px. */
+.keyline{height:4px;background:var(--yellow)}   /* frozen: the 4px yellow top line (Kim: "subtle yet not branding") */
+:root{--desk:430px}
+.wrap{max-width:430px;margin:0 auto;padding:0 16px 36px;position:relative;background:#fff}
+
+/* BUTTONS. Yellow outline, dark text, yellow highlight stroke. 44px+ high. */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:var(--ink);border:2px solid var(--yellow);
+ font-weight:800;border-radius:10px;padding:11px 18px;font-size:16px;text-decoration:underline;text-decoration-color:var(--yellow);
+ text-decoration-thickness:.45em;text-underline-offset:-.22em;text-decoration-skip-ink:none;cursor:pointer}
+.btn:hover{background:#fffbea}
+.btn.wide{display:flex;width:100%}
+.btn.sm{padding:7px 12px;font-size:14px;gap:6px}
+.btn.unlock{background:#fff;border:2px solid var(--yellow);color:var(--ink);font-weight:600;text-decoration:none} /* outlined unlock button */
+.btn.gate{background:var(--green);color:var(--green-ink);border:0;text-decoration:none}                          /* security gate only */
+.lockic{color:var(--gold)}
+
+/* CHIPS (Kim 2026-10-06: tight, neat, not fat, not round). 24px high, 5px corners, grey fill, no border. */
+.chip{display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 8px;border:0;border-radius:5px;background:#f1f2f3;
+ color:var(--ink);font:400 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;cursor:pointer;white-space:nowrap}
+.chip:hover{background:#e6e8ea}
+.chip:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+span.chip{color:var(--grey);cursor:default}       /* a chip that is not a link yet */
+span.chip:hover{background:#f1f2f3}
+.chiprow{display:flex;flex-wrap:wrap;gap:6px}
+/* picked chip (role pick): white, thin yellow ring, check icon, bold */
+.chip.picked{background:#fff;box-shadow:inset 0 0 0 1.5px var(--yellow);font-weight:700}
+
+/* PHOTOS (Kim 2026-10-06): every photo box the same size, 4:3 centre crop, 1px frame, 8px rounded corners (keep them). */
+.photo{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid #e3e3e3;border-radius:8px}
+
+/* SMALL GREY LINKS: owner actions (open our agent), footer help, version line. */
+.small-act{font-size:12px;color:var(--grey-2);text-decoration-color:#d6d6d6}
+.fhelp{font-size:13px;color:var(--grey);margin:12px 0 0}
+.fhelp a{color:var(--grey);text-decoration:underline;text-decoration-color:#d0d0d0;text-underline-offset:3px}
+.meta{margin-top:26px;color:#b5b5b5;font-size:12px;line-height:1.8}
+
+
+a{color:var(--ink);text-underline-offset:3px}svg{flex:none}
+.crumbs{margin:16px 0 8px;font-size:12px;font-style:italic;color:var(--grey)}.crumbs a{color:var(--grey);text-decoration-color:#d0d0d0}
+.h1row{display:flex;gap:12px;margin:0 0 6px}.h1bar{width:5px;background:var(--yellow);border-radius:2px;flex:none}h1{font-size:28px;line-height:1.2;margin:0}
+.vsub{font-size:14px;color:var(--grey);margin:6px 0 0;font-weight:600}.lede{color:#333;margin:10px 0 0}
+.ad{margin:150px auto;width:100%;max-width:336px}.ad .slot{height:280px;background:#f3f3f3;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.ad .slot span{font-size:11px;color:var(--grey-2);letter-spacing:2px;text-transform:uppercase}.adlbl{font-size:11px;color:#757575;letter-spacing:1px;text-transform:uppercase;text-align:center;margin:0 0 4px}
+.tier{margin:26px 0 0}.tier h2{font-size:20px;font-weight:800;margin:0 0 4px}.tier .tsub{font-size:13px;color:var(--grey);margin:0 0 12px}
+.cards{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.card{position:relative;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}
+.card .photos{display:grid;grid-template-columns:1fr 1fr;gap:2px}.card .photos .ph{aspect-ratio:4/3;background:#f3f3f3;display:flex;align-items:center;justify-content:center;color:#c4c4c4}
+.card .photos .ph svg{width:34px;height:34px}.rankb{position:absolute;top:10px;left:10px;min-width:24px;height:24px;padding:0 7px;border-radius:6px;background:var(--yellow);font-size:13px;font-weight:800;line-height:24px;text-align:center}
+.card.nophoto .rankb{position:static;display:inline-block;margin:12px 0 0 14px}.cbody{padding:12px 14px 14px}.card h3{font-size:18px;line-height:1.25;margin:0}.where{font-size:13px;color:var(--grey);margin:2px 0 0}
+.known{font-size:14px;color:#333;margin:8px 0 0}.known b{font-weight:700}
+.lines{list-style:none;margin:10px 0 0;padding:0}.lines li{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;padding:7px 0;border-top:1px solid var(--line)}
+.lines .mk{font-weight:800;font-size:15px;letter-spacing:.5px;display:inline-flex;align-items:center;gap:6px;min-width:150px}.lines .mk svg{color:var(--grey)}
+.crow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0 0}
+/* LABEL CHIPS: same chip shape as every chip row, a colour per label (Kim 2026-10-17) */
+.chip.l{font-weight:400}.chip.l svg{width:12px;height:12px}
+span.chip.l-verified{background:#e6f4ea;color:#14532d}span.chip.l-unsure{background:#fff3cf;color:#7a5a00}span.chip.l-unchecked{background:#f1f2f3;color:#6f6f6f}
+span.chip.l-official{background:#e7effd;color:#1c3f94}span.chip.l-notworking{background:#fde8e6;color:#8a1c14}
+span.chip.b-list{background:#fff;box-shadow:inset 0 0 0 1px #d6d6d6;color:#6f6f6f}span.chip.b-graduated{background:var(--yellow-soft);color:#7a5a00}
+span.chip.b-owner{background:#fff;box-shadow:inset 0 0 0 1.5px var(--yellow);color:var(--ink);font-weight:700}
+a.chip.upd{background:#fff;box-shadow:inset 0 0 0 1px #d6d6d6;color:var(--grey);text-decoration:underline;text-decoration-color:#d0d0d0;text-underline-offset:3px}
+.more{margin:18px 0 0}.more .btn{width:100%}
+/* slim rows */
+.slim{list-style:none;margin:0;padding:0}.srow{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:0 0 10px;background:#fff}
+.srow h3{font-size:16px;margin:0}.srow .where{margin:1px 0 0}.srow .lines{margin-top:8px}.srow .lines li{padding:6px 0}.srow .lines .mk{font-size:14px;min-width:132px}
+.srow .head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.srow .chiprow{margin:8px 0 0}
+.srow .go{margin:10px 0 0}.srow .go .btn{width:100%}
+.legend{border:1px dashed #cfcfcf;border-radius:12px;padding:12px 14px;margin:18px 0 0;font-size:13px;color:var(--grey)}.legend .chiprow{margin:6px 0 0}
+.idea{margin:28px 0 0;padding:12px 14px;background:var(--yellow-soft);border-radius:10px;font-size:13px;color:#4d3a00}
+.note{font-size:12px;color:var(--grey);margin:26px 0 0}
+/* gate page */
+.gatebox{border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0 0;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.gatebox .gt{display:flex;align-items:center;gap:8px;font-weight:800;margin:0 0 4px}
+.bcard{border:1px solid var(--line);border-radius:14px;padding:14px;margin:16px 0 0}
+.hl{margin:12px 0 0;font-size:12px;color:var(--grey-2)}
+
+.fa{margin:30px 0 0}.fa h2{font-size:20px;font-weight:800;margin:0 0 4px}.fa .sub{font-size:14px;color:#333;margin:0 0 14px}
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.box{border:1px solid var(--line);border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.05);padding:12px;display:flex;flex-direction:column;gap:4px;background:#fff;min-height:196px}
+.box .top{display:flex;justify-content:space-between;align-items:flex-start}.box .ico{color:var(--grey)}
+.box h3{font-size:15px;margin:2px 0 0;font-weight:800;line-height:1.2}.box .file{font:11px/1.3 ui-monospace,Menlo,Consolas,monospace;color:#8a929b;margin:0}
+.box .what{font-size:13px;color:#333;margin:2px 0 0;line-height:1.4}.box .foot{margin-top:auto;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.box.empty{background:#fafafa}.box.empty h3,.box.empty .what,.box.empty .ico{color:#a8a8a8}
+.cp{background:none;border:0;padding:0;font:inherit;font-size:12px;font-weight:600;color:var(--ink);text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:2px;text-underline-offset:3px;cursor:pointer;display:inline-flex;align-items:center;gap:4px}
+.box.empty .cp{display:none}
+span.chip.s-conf{background:#fff;box-shadow:inset 0 0 0 1.5px var(--yellow);color:var(--ink);font-weight:700}span.chip.s-inf{background:var(--yellow-soft);color:#5c4400}span.chip.s-none{background:#f1f2f3;color:#8a8a8a}
+.box.meet{border-color:#e6d28a}.meet .big{font-size:28px;font-weight:800;line-height:1}.meet .mrow{display:flex;gap:8px;align-items:center}
+.quiet{font-size:12px;color:var(--grey-2);margin:6px 0 0}.quiet a{color:var(--grey-2);text-decoration-color:#d6d6d6}
+.hint{font-size:12px;color:var(--grey);margin:12px 0 0}
+</style></head><body>
+<!--
+WHY IT IS THIS WAY (Claude Design 2026-10-17; brief-agent-boxes; files and meeting room: kb/business-soul-identity.md, I107, I116, I119)
+- One box per thing an AI can read or do: the six jobs of the file set (identity, soul, skills, knowledge, rules, meeting room). memory.md (Gut) is not shown: it is the owner's learning log, not for visitors (decision, tell Kim if he wants it).
+- Same square card style as the contact details boxes (--card-* from tokens.css): two columns, many rows. The meeting room is full width because it carries the number.
+- Each box: Kim's label (Who, Heart, Hands, Mind, Rules) as title, the file name small, one plain line a curious non-technical person understands.
+- States: not written yet = box greyed, no copy action; inferred = soft yellow chip; owner confirmed = white chip with yellow ring and check (same as the picked chip).
+- "Copy for my AI" copies the file's public address (sample text here). No contact value is ever in a box.
+- The number of free meetings is a SAMPLE: quota and price come from measured cost (N88). The upsell is one quiet line for the owner.
+-->
+<div class="keyline"></div><div class="wrap">
+<nav class="crumbs"><a href="#">Cambodia</a> › <a href="#">Phnom Penh</a> › Yellow Tower</nav>
+<div class="h1row"><div class="h1bar"></div><h1>For agents: the section</h1></div>
+<p class="lede">This block sits at the very bottom of a business page (detail page, above the footer). Related: <a href="../category-tiers/category-page.html">category tiers</a>.</p>
+<section class="fa"><h2>Your AI can read this business</h2><p class="sub">Copy what you need and paste it into your own AI. It will know how Yellow Tower works and sounds.</p>
+<ul class="grid">
+<li class="box"><div class="top"><span class="ico"> <svg class="lucide lucide-id-card" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M13 19a4 4 0 00-8 0" /> <path d="M16 10h2" /> <path d="M16 14h2" /> <circle cx="9" cy="12" r="3" /> <rect x="2" y="5" width="20" height="14" rx="2" /> </svg> </span></div><h3>Who</h3><p class="file">identity.md</p><p class="what">Who this business is, where, and when it is open.</p>
+<div class="foot"><span class="chip s-conf"> <svg class="lucide lucide-check" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> Owner confirmed</span><button class="cp" type="button" data-file="identity.md"> <svg class="lucide lucide-copy" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="14" height="14" x="8" y="8" rx="2" ry="2" /> <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /> </svg> Copy for my AI</button></div></li>
+<li class="box"><div class="top"><span class="ico"> <svg class="lucide lucide-message-circle" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /> </svg> </span></div><h3>Heart</h3><p class="file">soul.md</p><p class="what">How this business sounds when it talks to you.</p>
+<div class="foot"><span class="chip s-inf">Inferred</span><button class="cp" type="button" data-file="soul.md"> <svg class="lucide lucide-copy" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="14" height="14" x="8" y="8" rx="2" ry="2" /> <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /> </svg> Copy for my AI</button></div></li>
+<li class="box"><div class="top"><span class="ico"> <svg class="lucide lucide-sparkles" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" /> <path d="M20 2v4" /> <path d="M22 4h-4" /> <circle cx="4" cy="20" r="2" /> </svg> </span></div><h3>Hands</h3><p class="file">skills.md</p><p class="what">What it can do for you, step by step.</p>
+<div class="foot"><span class="chip s-conf"> <svg class="lucide lucide-check" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> Owner confirmed</span><button class="cp" type="button" data-file="skills.md"> <svg class="lucide lucide-copy" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="14" height="14" x="8" y="8" rx="2" ry="2" /> <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /> </svg> Copy for my AI</button></div></li>
+<li class="box"><div class="top"><span class="ico"> <svg class="lucide lucide-briefcase" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /> <rect width="20" height="14" x="2" y="6" rx="2" /> </svg> </span></div><h3>Mind</h3><p class="file">knowledge.md</p><p class="what">What it knows: services, how it works, real answers.</p>
+<div class="foot"><span class="chip s-inf">Inferred</span><button class="cp" type="button" data-file="knowledge.md"> <svg class="lucide lucide-copy" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="14" height="14" x="8" y="8" rx="2" ry="2" /> <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /> </svg> Copy for my AI</button></div></li>
+<li class="box"><div class="top"><span class="ico"> <svg class="lucide lucide-shield-check" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /> </svg> </span></div><h3>Rules</h3><p class="file">rules.md</p><p class="what">What its AI may promise, and when a person steps in.</p>
+<div class="foot"><span class="chip s-conf"> <svg class="lucide lucide-check" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg> Owner confirmed</span><button class="cp" type="button" data-file="rules.md"> <svg class="lucide lucide-copy" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="14" height="14" x="8" y="8" rx="2" ry="2" /> <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /> </svg> Copy for my AI</button></div></li>
+<li class="box meet"><div class="top"><span class="ico"> <svg class="lucide lucide-users" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <path d="M16 3.128a4 4 0 0 1 0 7.744" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <circle cx="9" cy="7" r="4" /> </svg> </span></div><h3>Meeting room</h3><p class="file">meeting-room.md</p><p class="what">Talk it through with your AI before people join.</p>
+<div class="mrow"><span class="big">3</span><span style="font-size:13px;color:#333">free meetings left this month (sample)</span></div>
+<div class="foot" style="margin-top:8px"><button class="cp" type="button" data-file="meeting-room.md"> <svg class="lucide lucide-copy" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="14" height="14" x="8" y="8" rx="2" ry="2" /> <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /> </svg> Copy for my AI</button></div>
+<p class="quiet">Owner? More meetings each month with a paid plan. <a href="#">See plans</a></p></li></ul>
+<p class="hint" id="msg" aria-live="polite">&nbsp;</p></section>
+<section class="fa"><h2 style="font-size:16px">Other states</h2><p class="sub">A brand new business: most files not written yet.</p>
+<ul class="grid">
+<li class="box empty"><div class="top"><span class="ico"> <svg class="lucide lucide-id-card" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M13 19a4 4 0 00-8 0" /> <path d="M16 10h2" /> <path d="M16 14h2" /> <circle cx="9" cy="12" r="3" /> <rect x="2" y="5" width="20" height="14" rx="2" /> </svg> </span></div><h3>Who</h3><p class="file">identity.md</p><p class="what">Who this business is, where, and when it is open.</p>
+<div class="foot"><span class="chip s-none">Not written yet</span><button class="cp" type="button" data-file="identity.md"> <svg class="lucide lucide-copy" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="14" height="14" x="8" y="8" rx="2" ry="2" /> <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /> </svg> Copy for my AI</button></div></li>
+<li class="box empty"><div class="top"><span class="ico"> <svg class="lucide lucide-message-circle" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /> </svg> </span></div><h3>Heart</h3><p class="file">soul.md</p><p class="what">How this business sounds when it talks to you.</p>
+<div class="foot"><span class="chip s-none">Not written yet</span><button class="cp" type="button" data-file="soul.md"> <svg class="lucide lucide-copy" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="14" height="14" x="8" y="8" rx="2" ry="2" /> <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /> </svg> Copy for my AI</button></div></li>
+<li class="box empty"><div class="top"><span class="ico"> <svg class="lucide lucide-sparkles" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" /> <path d="M20 2v4" /> <path d="M22 4h-4" /> <circle cx="4" cy="20" r="2" /> </svg> </span></div><h3>Hands</h3><p class="file">skills.md</p><p class="what">What it can do for you, step by step.</p>
+<div class="foot"><span class="chip s-none">Not written yet</span><button class="cp" type="button" data-file="skills.md"> <svg class="lucide lucide-copy" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="14" height="14" x="8" y="8" rx="2" ry="2" /> <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /> </svg> Copy for my AI</button></div></li>
+<li class="box"><div class="top"><span class="ico"> <svg class="lucide lucide-briefcase" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /> <rect width="20" height="14" x="2" y="6" rx="2" /> </svg> </span></div><h3>Mind</h3><p class="file">knowledge.md</p><p class="what">What it knows: services, how it works, real answers.</p>
+<div class="foot"><span class="chip s-inf">Inferred</span><button class="cp" type="button" data-file="knowledge.md"> <svg class="lucide lucide-copy" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="14" height="14" x="8" y="8" rx="2" ry="2" /> <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /> </svg> Copy for my AI</button></div></li>
+<li class="box empty"><div class="top"><span class="ico"> <svg class="lucide lucide-shield-check" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /> </svg> </span></div><h3>Rules</h3><p class="file">rules.md</p><p class="what">What its AI may promise, and when a person steps in.</p>
+<div class="foot"><span class="chip s-none">Not written yet</span><button class="cp" type="button" data-file="rules.md"> <svg class="lucide lucide-copy" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="14" height="14" x="8" y="8" rx="2" ry="2" /> <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /> </svg> Copy for my AI</button></div></li>
+<li class="box meet"><div class="top"><span class="ico"> <svg class="lucide lucide-users" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <path d="M16 3.128a4 4 0 0 1 0 7.744" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <circle cx="9" cy="7" r="4" /> </svg> </span></div><h3>Meeting room</h3><p class="file">meeting-room.md</p><p class="what">Talk it through with your AI before people join.</p>
+<div class="mrow"><span class="big">3</span><span style="font-size:13px;color:#333">free meetings left this month (sample)</span></div>
+<div class="foot" style="margin-top:8px"><button class="cp" type="button" data-file="meeting-room.md"> <svg class="lucide lucide-copy" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="14" height="14" x="8" y="8" rx="2" ry="2" /> <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /> </svg> Copy for my AI</button></div>
+<p class="quiet">Owner? More meetings each month with a paid plan. <a href="#">See plans</a></p></li></ul></section>
+<div class="idea"><b>One idea decided I125 (7/10):</b> A tiny "Ask this business's AI" example question under each filled box ("What does a leak repair cost?"), so a curious visitor sees what the files are for in one tap. Measure: taps on copy per 1,000 views.</div>
+<p class="note">Mockup: invented example business (Yellow Tower), no contact values.</p>
+</div>
+<script>
+document.addEventListener('click',function(e){var b=e.target.closest('.cp');if(!b)return;var t='https://example.contact.page/yellow-tower/'+b.dataset.file;
+try{navigator.clipboard.writeText(t)}catch(x){};var m=document.getElementById('msg');m.textContent='Copied '+b.dataset.file+' for your AI.'});
+</script></body></html>
