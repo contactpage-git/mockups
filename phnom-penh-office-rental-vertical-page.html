@@ -278,8 +278,19 @@ span.chip:hover{background:#f1f2f3}
 <div class="ad"><div class="slot"><span>Advertisements</span></div></div>
 
 
+<style>/* Why are you here? check boxes (Kim 2026-10-28): NO script. Ticking hides the listings that do not serve the ticked needs (CSS :has). Sample data. */
+.nstrip{border:0;margin:6px 0 12px;padding:0}.nstrip legend{padding:0;margin:0 0 6px;font-size:13px;font-weight:700;color:#202124}.nstrip label{display:inline-flex;align-items:center;gap:6px;margin:0 12px 6px 0;font-size:13px;color:#555;cursor:pointer}.nstrip input{width:16px;height:16px;accent-color:#2f8f4e;margin:0}.nstrip p{margin:2px 0 0;font-size:11px;font-style:italic;color:#9a9a9a}
+.nstrip:has(input:checked) ~ .cards .card{display:none}
+.nstrip:has(#n-rent:checked) ~ .cards .card.n-rent{display:list-item}
+.nstrip:has(#n-cowork:checked) ~ .cards .card.n-cowork{display:list-item}
+.nstrip:has(#n-day:checked) ~ .cards .card.n-day{display:list-item}
+.nstrip:has(#n-lease:checked) ~ .cards .card.n-lease{display:list-item}
+.nstrip:has(#n-addr:checked) ~ .cards .card.n-addr{display:list-item}
+.nstrip:has(#n-reg:checked) ~ .cards .card.n-reg{display:list-item}
+</style>
+<fieldset class="nstrip"><legend>What are you looking for?</legend><label><input type="checkbox" id="n-rent"><span>Rent an office</span></label><label><input type="checkbox" id="n-cowork"><span>Co-working desk</span></label><label><input type="checkbox" id="n-day"><span>Day pass</span></label><label><input type="checkbox" id="n-lease"><span>Long-term lease</span></label><label><input type="checkbox" id="n-addr"><span>Company address</span></label><label><input type="checkbox" id="n-reg"><span>Register a company</span></label><p>Tick what you need: the list shows the businesses that serve it. Untick to see all.</p></fieldset>
 <ol class="cards">
-<li class="card first" aria-label="Rank 1">
+<li class="card n-rent n-lease n-addr first" aria-label="Rank 1">
 <div class="photo" aria-hidden="true"><img src="assets/yellow-tower-exterior-600.webp" srcset="assets/yellow-tower-exterior-320.webp 320w, assets/yellow-tower-exterior-600.webp 600w" sizes="(max-width: 900px) 100vw, 420px" width="600" height="450" alt="Yellow Tower: the seven-storey tower wrapped in its vertical garden, palms in front, blue sky" decoding="async"><span class="rankb">1</span></div>
 <div class="cbody">
 <h3><a href="yellow-tower-listing-page.html">Yellow Tower</a></h3>
@@ -292,7 +303,7 @@ span.chip:hover{background:#f1f2f3}
 </div>
 </li>
 
-<li class="card" aria-label="Rank 2">
+<li class="card n-cowork n-day n-addr" aria-label="Rank 2">
 
 <div class="photo" aria-hidden="true"><img src="assets/static-map-kh56012.webp" width="660" height="440" alt="Map: Vattanac Capital on Preah Monivong Blvd, Daun Penh" loading="lazy" decoding="async"><span class="rankb">2</span></div>
 <div class="cbody">
@@ -305,7 +316,7 @@ span.chip:hover{background:#f1f2f3}
 </div>
 </li>
 
-<li class="card" aria-label="Rank 3">
+<li class="card n-rent n-lease" aria-label="Rank 3">
 <div class="photo ph" aria-label="No photo yet"><svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 12h4" /> <path d="M10 8h4" /> <path d="M14 21v-3a2 2 0 0 0-4 0v3" /> <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" /> <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" /></svg><span class="rankb">3</span></div>
 <div class="cbody">
 <h3><a href="https://kh50588.contact.page/">Regus Business Centre (Cambodia) Co., Ltd.</a></h3>
@@ -317,7 +328,7 @@ span.chip:hover{background:#f1f2f3}
 </div>
 </li>
 
-<li class="card" aria-label="Rank 4">
+<li class="card n-rent n-cowork n-addr n-reg" aria-label="Rank 4">
 <div class="photo ph" aria-label="No photo yet"><svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 12h4" /> <path d="M10 8h4" /> <path d="M14 21v-3a2 2 0 0 0-4 0v3" /> <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" /> <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" /></svg><span class="rankb">4</span></div>
 <div class="cbody">
 <h3><a href="https://kh18308.contact.page/">Phnom Penh Center</a></h3>
@@ -332,7 +343,7 @@ span.chip:hover{background:#f1f2f3}
 
 <li class="ad"><div class="slot"><span>Advertisements</span></div></li>
 
-<li class="card" aria-label="Rank 5">
+<li class="card n-rent n-lease" aria-label="Rank 5">
 <div class="photo ph" aria-label="No photo yet"><svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 12h4" /> <path d="M10 8h4" /> <path d="M14 21v-3a2 2 0 0 0-4 0v3" /> <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" /> <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" /></svg><span class="rankb">5</span></div>
 <div class="cbody">
 <h3><a href="https://kh62909.contact.page/">City Tower</a></h3>
@@ -344,7 +355,7 @@ span.chip:hover{background:#f1f2f3}
 </div>
 </li>
 
-<li class="card" aria-label="Rank 6">
+<li class="card n-cowork n-day" aria-label="Rank 6">
 <div class="photo ph" aria-label="No photo yet"><svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 12h4" /> <path d="M10 8h4" /> <path d="M14 21v-3a2 2 0 0 0-4 0v3" /> <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" /> <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" /></svg><span class="rankb">6</span></div>
 <div class="cbody">
 <h3><a href="https://kh81111-the-helix-office.contact.page/">The Helix Office</a></h3>
