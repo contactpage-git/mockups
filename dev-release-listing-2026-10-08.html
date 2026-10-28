@@ -36,10 +36,10 @@ body{background:#D3D3D3}.cpf-wrap{max-width:430px;margin:0 auto}
 .cpf .cpf-info{display:flex;width:fit-content;max-width:100%;align-items:center;justify-content:center;border:1px solid #d0d0d0;border-radius:12px;padding:11px 12px;margin:.6em auto 0;text-align:center}
 .cpf .cpf-addr{display:inline-flex;align-items:center;justify-content:center;gap:6px;max-width:100%;min-width:0}
 .cpf .cpf-t{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;white-space:normal;min-width:0}
-.cpf .cpf-sec,.cpf-out .cpf-mail{display:flex;flex-wrap:wrap;justify-content:center;margin:0;font-size:13.5px;line-height:1.7}
+.cpf .cpf-sec,.cpf-out .cpf-mail{display:block;text-align:center;text-wrap:balance;margin:0;font-size:13.5px;line-height:1.7}
 .cpf .cpf-sec{margin:12px auto 0;max-width:100%;font-size:12.5px}.cpf .cpf-sec .mi{margin:0 7px}
 .cpf .cpf-sec a,.cpf-out a{color:#757575;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#b5b5b5}
-.cpf .mi{white-space:nowrap;display:inline-flex;align-items:center}.cpf .dt{margin:0 6px;color:#757575}
+.cpf .mi{white-space:nowrap;display:inline-block;vertical-align:baseline}.cpf .dt{margin:0 6px;color:#757575}
 .cpf-out{margin-top:22px;text-align:center;font:13.5px/1.6 Arial,sans-serif;color:#757575}
 .cpf-out .cpf-share{display:flex;justify-content:center;gap:16px;margin:22px 0 0}
 .cpf-out .cpf-share a,.cpf-out .cpf-share button{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;background:none;border:0;padding:0;cursor:pointer}
@@ -56,7 +56,7 @@ body{background:#D3D3D3}.cpf-wrap{max-width:430px;margin:0 auto}
 .cpf .cpf-t{color:#8f8f8f}
 .cpf .cpf-sec a{color:#8f8f8f;text-decoration-color:#cfcfcf}.cpf .cpf-sec .dt{color:#b5b5b5}.cpf .cpf-sec .cur{color:#6f6f6f}
 .cpf .cpf-sec a,.cpf .cpf-sec .cur{display:inline-flex;align-items:center}.cpf .cpf-sec svg{width:12px;height:12px;fill:#9a9a9a;margin-right:4px}.cpf .cpf-sec .cur svg{fill:#8a8a8a}
-.pai{margin:20px auto 0;max-width:430px;padding:0 16px;text-align:center;font:12.5px/1.5 Arial,sans-serif;color:#757575}.pai b{color:#212121;font-weight:600}.pai a{color:#757575;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#b5b5b5}
+.pai{margin:20px auto 0;max-width:430px;padding:0 16px;text-align:center;font:12.5px/1.5 Arial,sans-serif;color:#757575}.pai{text-wrap:balance}.pai b{display:block;color:#212121;font-weight:600;margin-bottom:2px}.pai a{color:#757575;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#b5b5b5}
 </style>
 <link rel="icon" type="image/x-icon" href="assets/contact-page-logo.ico">
 </head>
@@ -97,6 +97,7 @@ body{background:#D3D3D3}.cpf-wrap{max-width:430px;margin:0 auto}
 <h2>3. Layout</h2>
 <ol start="7">
 <li>Partner with your AI (Kim 2026-10-10, kb/partner-with-your-ai.md): one line plus "Start here" under the footer links, same tab, at least 150px from any ad, never a banner, not on the security check page, the same words on every page. Start here opens yellow-tower-start-here-page.html (on other websites the same page with that business's code).</li>
+<li>No ragged lines (Kim 2026-10-28): the link rows and the Partner line use CSS text-wrap:balance, no script. Five links break 3 + 2, never 4 + 1. "Partner with your AI." is its own bold line, the sentence below it is balanced.</li>
 <li>Card: faded logo, grey name, category</li>
 <li>Address in an outlined box, plain text (the Address link below opens the map)</li>
 <li>Links: Home Contact Address Images Profile, with icons. Same tab. Current page not a link</li>
