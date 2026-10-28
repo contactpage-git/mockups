@@ -78,36 +78,7 @@ body{background:#D3D3D3}.cpf-wrap{max-width:430px;margin:0 auto}
 </div>
 </div>
 </footer>
-<p class="counts" id="counts"></p>
-<main class="devnote">
-<h1>Footer for the listing template (all listings)</h1>
-<p>Sample above.</p>
-<h2>1. Security and privacy</h2>
-<ol>
-<li>New mask: all but the last 3 digits as 3 bullets (+855 12 869 •••). Switch every place in the same release (page, footer, contact-details link text, mail links, JSON-LD, llms.txt), never two masks live at once: two different masks read together give away the number.</li>
-<li>Masked number + lock, underlined, opens /contact-details (replaces Call)</li>
-<li>Mail text: copy the text from the links above, fill in the listing's data, same mask as the page, max 1,800 characters</li>
-</ol>
-<h2>2. Money and ads</h2>
-<ol start="4">
-<li>Under the card: Edit · Claim · Upgrade · Start your.contact.page. Contact details page: show the same four also near the top, under the business name</li>
-<li>Mail: Edit, Claim, Report → code@contact.page. Upgrade, Start → hello@contact.page</li>
-<li>Subject and last line "(ref CODE action)"</li>
-</ol>
-<h2>3. Layout</h2>
-<ol start="7">
-<li>Partner with your AI (Kim 2026-10-10, kb/partner-with-your-ai.md): one line plus "Start here" under the footer links, same tab, at least 150px from any ad, never a banner, not on the security check page, the same words on every page. Start here opens yellow-tower-start-here-page.html (on other websites the same page with that business's code).</li>
-<li>No ragged lines (Kim 2026-10-28): the link rows and the Partner line use CSS text-wrap:balance, no script. Five links break 3 + 2, never 4 + 1. "Partner with your AI." is its own bold line, the sentence below it is balanced.</li>
-<li>Card: faded logo, grey name, category</li>
-<li>Address in an outlined box, plain text (the Address link below opens the map)</li>
-<li>Links: Home Contact Address Images Profile, with icons. Same tab. Current page not a link</li>
-<li>Share icons + Report · Privacy. Facebook link: remove the "#", use https</li>
-<li>Optional, CSS only, no effect on speed or SEO (the faded card):
-<pre>.footer__logo img{width:48px;height:48px;opacity:.55}
-.footer__listing-name{font-weight:400;color:#757575}
-.footer__listing-category{color:#9a9a9a}</pre></li>
-</ol>
-</main>
+
 
 <script>
 /* MAIL TEMPLATE CHAT APPS (v42, Kim; developer config, never shown): group 3 of the shared mail body lists Telegram
@@ -115,14 +86,6 @@ body{background:#D3D3D3}.cpf-wrap{max-width:430px;margin:0 auto}
 var CP_CHAT_APPS={always:["Telegram"],KH:[],TH:["Line"],VN:["Zalo"],JP:["Line"],TW:["Line"],KR:["KakaoTalk"],CN:["WeChat"],PH:["Viber"],MM:["Viber"],other:["Viber","Signal"]};
 function cpChatApps(cc){return CP_CHAT_APPS.always.concat(CP_CHAT_APPS.hasOwnProperty(cc)&&cc!=="always"?CP_CHAT_APPS[cc]:CP_CHAT_APPS.other);}
 </script>
-<script>
-/* LINK LENGTHS (Kim 2026-10-08): every mail link must stay under 1,800 characters; measured here on the real hrefs. */
-(function(){var o=[];[].forEach.call(document.querySelectorAll('.cpf a[href^="mailto:"]'),function(a){var n=a.getAttribute('href').length;o.push(a.textContent+': '+n+(n>=1800?' TOO LONG':''))});document.getElementById('counts').textContent='Link length in characters (limit 1,800): '+o.join(' · ')})();
-</script>
-<div class="endmark" style="text-align:center;color:#c4c4c4;font-size:11px;letter-spacing:2px;margin:28px 0 6px">— end —</div>
-<details class="devn" style="color:#9a9a9a;font-size:12px;margin:0 0 8px"><summary style="cursor:pointer;text-align:center;color:#b0b0b0;font-size:11px;list-style-position:inside">Dev notes</summary>
 
-<p class="vhist" style="font-size:12px;margin:6px 0 0"><a style="color:#8a8a8a" href="dev/dev-release-listing-2026-10-08-notes.html">Developer notes: what changed and why, every version</a></p>
-</details>
 </body>
 </html>

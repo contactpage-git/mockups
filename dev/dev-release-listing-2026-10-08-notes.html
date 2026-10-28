@@ -11,6 +11,29 @@ h2{font-size:17px;margin:26px 0 6px}ul.hist{list-style:none;padding:0;margin:0}u
 <h1>Developer notes: Footer master</h1>
 <p>Sample data only; contact values are masked.</p>
 <h2>All notes, summary first, then in page order</h2>
+<h2>1. Security and privacy</h2>
 <ol>
-
-</ol></body></html>
+<li>New mask: all but the last 3 digits as 3 bullets (+855 12 869 •••). Switch every place in the same release (page, footer, contact-details link text, mail links, JSON-LD, llms.txt), never two masks live at once: two different masks read together give away the number.</li>
+<li>Masked number + lock, underlined, opens /contact-details (replaces Call)</li>
+<li>Mail text: copy the text from the links above, fill in the listing's data, same mask as the page, max 1,800 characters</li>
+</ol>
+<h2>2. Money and ads</h2>
+<ol start="4">
+<li>Under the card: Edit · Claim · Upgrade · Start your.contact.page. Contact details page: show the same four also near the top, under the business name</li>
+<li>Mail: Edit, Claim, Report → code@contact.page. Upgrade, Start → hello@contact.page</li>
+<li>Subject and last line "(ref CODE action)"</li>
+</ol>
+<h2>3. Layout</h2>
+<ol start="7">
+<li>Partner with your AI (Kim 2026-10-10, kb/partner-with-your-ai.md): one line plus "Start here" under the footer links, same tab, at least 150px from any ad, never a banner, not on the security check page, the same words on every page. Start here opens yellow-tower-start-here-page.html (on other websites the same page with that business's code).</li>
+<li>No ragged lines (Kim 2026-10-28): the link rows and the Partner line use CSS text-wrap:balance, no script. Five links break 3 + 2, never 4 + 1. "Partner with your AI." is its own bold line, the sentence below it is balanced.</li>
+<li>Card: faded logo, grey name, category</li>
+<li>Address in an outlined box, plain text (the Address link below opens the map)</li>
+<li>Links: Home Contact Address Images Profile, with icons. Same tab. Current page not a link</li>
+<li>Share icons + Report · Privacy. Facebook link: remove the "#", use https</li>
+<li>Optional, CSS only, no effect on speed or SEO (the faded card):
+<pre>.footer__logo img{width:48px;height:48px;opacity:.55}
+.footer__listing-name{font-weight:400;color:#757575}
+.footer__listing-category{color:#9a9a9a}</pre></li>
+</ol>
+</body></html>
